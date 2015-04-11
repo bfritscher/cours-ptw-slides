@@ -1,5 +1,35 @@
 # <br>Zero to Hero
 
+
+
+
+# multi page app vs SPA
+
+//see pic
+
+There is a big trend towards “single-page applications”, where some of the
+responsibilities are moved from the server to the client side.
+• The client initially fetches a single “shell” page, which provides a rendering
+context and loads application modules (scripts, markup partials, stylesheets, etc.).
+• When the user clicks on hyperlinks, the browser does not (immediately) send an
+HTTP request to fetch a new page. Instead, the event is caught and processed by
+a JavaScript router on the client side.
+• Routing is done on the client side. The JavaScript router (typically provided by
+an application framework) looks at the target URL and decides which JavaScript
+function needs to be invoked. This function can update the DOM, sometimes in
+drastic manners (giving the impression that we move from an “Customers List”
+page to a “Customer Details” page).
+
++ MOBILE
+
+
+
+
+# paper
+
+
+
+
 only focus on frontent-app
 
 other
@@ -25,6 +55,33 @@ https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgah
 
 formulaire et validation
 ngMessages
+
+
+## Javascript libraries
+
+
+### How do you pick a generator for your project?
+
+You probably have an idea of the framework(s) you want to use on the server
+and or client side (express, angular, backbone, etc.). You will use this as a first
+filter.
+
+* Some of the generators are supported by the Yeoman Team. That is probably a
+good indication about the quality and support over time (evolution).
+
+* Developers who use generators can “star” those they like. Sorting by
+popularity is also an interesting indication. If the community is big, you can
+expect issues to be reported and fixed, to see new features, etc.
+
+* After you have identified promising candidates, you need to get a first
+impression. Generate and build a project with each candidate. Look at their
+Github repository. Do you like what you see? Do you like the documentation?
+
+* Often, you will need to choose between “lightweight” and very “rich”
+generators. Lightweight generators are easier to learn and give you more control
+(but more work). Rich generators do a lot of things out-of-the-box but can be
+intimidating at first (learning curve to understand the skeleton).
+
 
 
 #################
@@ -163,6 +220,59 @@ ngClass
 ngStyle
 listenning to events
 $fitler function
+
+
+# Asynchronous programming techniques
+
+
+We have already seen that JavaScript relies on asynchronous
+programming:
+• The JS engine is single-threaded. For this reason, IO operations
+have to be non-blocking.
+• An event loop is used both in the browser and on the server (node.js):
+• As the program executes, events are added to a queue. Every
+event has an associate callback function.
+• A dispatcher takes the next event in the queue and invokes the
+callback function (on the single thread).
+• When the callback function returns, the dispatcher takes the next
+event in the queue, and continues forever (it’s an event loop).
+
+
+
+
+setTimeout( function() {
+console.log(“the callback has been invoked”);
+}, 2000);
+An event will be added to the queue in 2000 ms. In other
+words, the function passed as the first argument will be invoked
+in 2 seconds or more (the thread might be busy when the event
+is posted...).
+
+$(document).mousemove(function(event){
+$("span").text(event.pageX + ", " +
+event.pageY);
+});
+An event will be added to the queue whenever the mouse
+moves. In each case, the callback function has access to the
+event attributes (coordinates, key states, etc.).
+$.get( "ajax/test.html", function( data ) {
+$( ".result" ).html( data );
+alert( "Load was performed." );
+});
+An event will be added when the AJAX request has been
+processed, i.e. when a response has been received. The
+callback function has access to the payload.
+
+
+
+
+## wait
+
+\\ insert callback slides -> 34-47
+-> Promise
+
+
+
 
 # api
 
