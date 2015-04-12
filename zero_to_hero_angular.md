@@ -55,6 +55,8 @@ http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angul
 https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek
 
 
+http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
+
 formulaire et validation
 ngMessages
 
@@ -540,8 +542,9 @@ A/B testing on similar list
 
 theory
 
+ng-wat 5
 
-
+https://www.youtube.com/watch?v=M_Wp-2XA9ZU
 
 
 virutal page views

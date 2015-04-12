@@ -379,6 +379,21 @@ pseudoclass
 :nth-child(N)
 
 
+*	selects all elements
+aa *	selects all elements within the aa tag.
+aa bb	selects all bb elements within the aa tag.
+aa, bb	selects all aa and bb classes, it's just a list.
+aa.classname	selects all aa tags with the class classname.
+aa#idname	selects the aa tag with the id idname.
+a:link	selects the a tag if it's a normal hyperlink.
+a:visited	selects the a tag if it's a visited hyperlink.
+a:hover	selects the a tag if the mouse hovers over it.
+a:active	selects the a tag if user is clicking on it.
+aa > bb	selects the bb tag if it's a direct child of aa.
+aa + bb	selects the bb tag if it's immediately preceded by aa.
+aa[attr="value"]	selects the aa tag with a attr="value" attribute.
+
+
 
 
 ### CSS: Cascading Rules
@@ -395,8 +410,16 @@ border
 padding
 width
 
+center block element
+
 box-sizing: content-box;
 box-sizing: border-box;
+
+Collapsing margins
+depending on setting a border or padding - your margins are likely collapsing or put apart. Normally, margins are merged together. The bottom and top margin
+
+position absolute, relative
+float: left, right
 
 
 
@@ -545,6 +568,50 @@ http://getbootstrap.com/
 ![](images/yeoman-packages.png)
 
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>My First Bootstrap Page</h1>
+    <p>Resize this responsive page to see the effect!</p> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+```
+
+http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h
+
+
 
 
 # Tooling
@@ -563,6 +630,8 @@ TODO Script loader: Require, Webpack, none
 TODO Test framework: Jasmine, Mocha, Qunit
 
 ![](images/build_pipline.png)
+
+
 
 
 ### Yeoman
@@ -600,6 +669,9 @@ http://gruntjs.com/
 
 ![](images/yeoman-webapp.png)
 
+
+
+
 # node.js &  npm
 
 not use node js for backend only for dev environnement
@@ -611,6 +683,8 @@ https://www.npmjs.com/
 ![](images/nodejs-logo.svg)
 
 ![](images/npm-logo.svg)
+
+
 
 
 # Lab01: MonCV
@@ -792,6 +866,11 @@ CNAME?
 
 # JavaScript
 
+![](images/JavaScript-logo.png)
+<!-- .element: class="w-50" -->
+
+<!-- .element: class="center" -->
+
 
 
 
@@ -844,6 +923,8 @@ Current knowledge:
 
 Douglas Crockford: JavaScript: The Good Parts
 https://www.youtube.com/watch?v=_DKkVvOt6dk
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/_DKkVvOt6dk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -1310,6 +1391,12 @@ aFruits.forEach(function (fruit) {
 ```
 <!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/zumaci/1/edit?js,console" data-height="500px" -->
 
+
+
+
+https://www.destroyallsoftware.com/talks/wat
+
+http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-bizarre-javascript-behaviours-mentioned-in-the
 
 
 # task JS
