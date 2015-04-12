@@ -80,10 +80,14 @@ Server also JS
 
 # Goals
 
+![](images/yeoman-illustration-home-inverted.png)
+
 
 
 
 # Planning
+
+![](images/yeoman-plan.png)
 
 
 
@@ -97,74 +101,265 @@ Server also JS
 
 
 
-## HTML
+# <br/>HTML
 
+## Hyper Text Markup Language
+
+
+
+
+### HTML
 ```html
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>A RMScreenprint</title>
-</head>
-<body>
-  <h1>Main heading in my document</h1>
-  <p>Look Ma, I am coding <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
-</body>
+<html>
+  <head>
+    <title>Document Title</title>
+  </head>
+  <body>
+    <h1>Main heading in my document</h1>
+    <p>Look Ma, I am coding <strong>HTML</strong>.</p>
+  
+    <!-- This is a comment -->
+    <h2>Sub heading</h2>  
+    <p>Some more text</p>
+  </body>
 </html>
 ```
 
-Elements
-<div>
-<a>
-<input>
-<img>
-strong
+![](images/html-1st-page.png)
+<!-- .element: class="pageborder"-->
 
-block inline
+<!-- .element: class="center"-->
 
 
-Attributes
-name value
 
-comments
-<!-- This is comment text -->
+```html
 
-<div id="welcome-text">Welcome!</div>
-<div class="container">
-    <button class="button button-red" id="cancel">No</button>
-    <button class="button button-blue" id="accept">Yes</button>
-    <button class="button button-yellow" id="not-sure">Maybe</button>
+```
+<!-- .element: class="nodpf jsbin-embed" data-href="http://jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
+
+
+
+
+### HTML: Elements
+
+| Element     | Description
+|-------------|------------
+| `<!DOCTYPE html>` | Document type must be the very first thing in your HTML document
+| `<html>`    | Root of an HTML document 
+| &nbsp;&nbsp;&nbsp;&nbsp;`<head>`    | Metadata section of the document
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<title>`   | Defines the title of the document (only text)
+| &nbsp;&nbsp;&nbsp;&nbsp;`<body>`    | Contains the content of the document
+| `<!--  -->` | Comment everything between < and >
+| `<h1>,<h2>,<h3>,<h4>` | Heading most important to least
+| `<p>` | A paragraph of text
+| `<strong>` | Give text strong importance, displayed in bold
+
+
+
+
+### HTML: Attributes
+
+Elements can have attributes **`name="value"`**
+
+| Attribute   | Description
+|-------------|------------
+| `< ... id="" ... >` | All element can have an id, must be unique in the page!
+| `< ... class="" ... >` | All element can have a list of classes (used for CSS)
+| `<img src="" alt="">` | Image from `src` with `alt` description
+| `<a href="">` | Anchor, hyperlink to a target destination
+
+```html
+<div id="page2">
+  <p>A <span class="fun">funny</span> dog:
+     <img src="" alt="" /></p>
+  <p>go to <a href="page3.html">page 3</a></p>
 </div>
+```
 
 Ids and classes are used by css and javascript to reference specific indvidual or groups of elements.
 
-
-
-http://jsbin.com/bokize/1/edit
-
-
-
-http://hack.rice.edu/webdev/#/
-
-https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Introduction
-
-http://www.simplehtmlguide.com/cheatsheet.php
-
-http://codingdomain.com/webdevelopment/css/crash-course/
-
-http://css.sutterlity.fr/les-bases-css/introduction-au-css/
-
-https://developer.mozilla.org/fr/docs/Web/HTML/Element
-https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Les_blocs_de_formulaires_natifs
-https://developer.mozilla.org/fr/docs/Web/CSS/Reference
-http://css.sutterlity.fr/
-http://caniuse.com/
-
-http://tympanus.net/codrops/css_reference/
+<!-- .element: class="small" -->
 
 
 
 
-## CSS
+### HTML: More Elements
+
+| Element     | Description
+|-------------|------------
+| `<div>` | A generic container for elements
+| `<nav>` | Represents a section of a page that links to other pages or parts
+| `<section>` | A thematic grouping of content
+| `<header>` | A page header container for logo, nav, search
+| `<footer>` | A page or section footer container
+| `<pre>` | Preformatted text, whitespace are displayed as typed
+| `<ul>, <ol>` | Unordered list and ordered list
+| `<li>` | List item inside a ul or ol
+| `<span>` | A generic inline container
+
+
+
+
+### HTML: Tables
+
+```html
+<!DOCTYPE html>
+<table>
+  <caption>Caption of the table (optional)</caption>
+  <thead>
+    <tr>
+      <th>Column A</th> <th>Column B</th> <th>Column C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td> <td>2</td> <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td> <td colspan="2" rowspan="2">5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+![](images/table.png)
+<!-- .element: class="top right pageborder" -->
+
+
+
+```html
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
+
+
+
+
+### HTML: Forms
+
+```html
+<form>
+  <!-- two ways to associate labels -->
+  <p><label for="n">Name: </label>
+  <input id="n" name="name"
+         type="text" placeholder="name"/></p>
+  
+  <p><label>Password: <input type="password" /></label></p>
+  
+  <p><input type="checkbox" name="on" value="1"/>on
+  <!-- radio groups need same name -->
+  <input type="radio" name="r" value="1" checked/>1
+  <input type="radio" name="r" value="2"/>2</p>
+  
+  <p><textarea name="multiline"></textarea></p>
+  
+  <p><select name="choice">
+    <option value="v1">Value 1</option>
+    <option value="v2" selected>Value 2</option>
+    <option value="v3">Value 3</option>
+    </select></p>
+  
+  <p><button>Hello</button>
+     <input type="submit" /></p>
+</form>
+```
+
+![](images/form.png)
+<!-- .element: class="top right pageborder" -->
+
+
+
+```html
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
+
+
+
+
+### HTML: inline elements
+
+An inline element occupies only the space bounded by the tags that define the inline element.
+
+* may contain only data and other inline elements.
+* do not begin with new line.
+ 
+> strong, a, img, span, button, input, label, select, textarea
+
+
+
+
+### HTML: block-level elements
+
+A block-level element occupies the entire space of its parent element (container), thereby creating a "block."
+ 
+* block-level elements begin on new lines.
+ 
+> div, ul, form, h1, h2, header, nav, pre, p
+
+
+
+
+### HTML5: content categories
+
+In HTML5, this binary distinction of **block-level** vs. **inline** elements is is replaced with a more complex set of content categories
+
+![](images/Content_categories_venn.png)
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="center" -->
+ 
+**block-level** ≈ flow content, 
+**inline** ≈ phrasing content
+
+<!-- .element: class="small" -->
+ 
+https://developer.mozilla.org/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu
+
+<!-- .element: class="credits" -->
+
+
+
+
+### HTML: including CSS and JavaScript
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>External files</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    ...
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/myscript.js"></script>
+  </body>
+</html>
+```
+
+Later listings take precedence.
+
+Script tags at the end in order to not block page loading.
+
+
+
+
+# <br/>CSS
+
+## Cascading Style Sheets
+
+
+
+
+### CSS: Selectors
+
+tag, id, class, 
 
 body {width: 500px;}
 .tag-class {
@@ -177,12 +372,143 @@ body {width: 500px;}
 }
 Notice that "#" delimites an id and "." a class.
 
+child, direct child >,  next tag +
+attr value
+pseudoclass
+:hover
+:nth-child(N)
 
-cascading
 
-box-model
 
-media queries
+
+### CSS: Cascading Rules
+
+
+
+
+### CSS: box-model
+
+![](images/css_boxmodel.gif)
+
+margin
+border
+padding
+width
+
+box-sizing: content-box;
+box-sizing: border-box;
+
+
+
+
+### CSS: Media Queries
+
+Let the presentation of content be **tailored** to a specific range of output devices **without having to change the content** itself.
+
+> `@media` **some rule** `[and|or]` **some other rule**
+> { **CSS for only this selection** }
+ 
+**rules:** min-width, max-width, min-device-width, max-device-width, orientation: [landscape | portrait], ...
+
+https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
+
+
+
+### CSS: Media Queries Bootstrap3 breakpoints
+```css
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+```
+
+
+
+#### Media Queries Examples
+
+![](images/media-queries.png)
+
+http://mediaqueri.es/spa/
+http://mediaqueri.es/int/
+
+<!-- .element: class="credits" -->
+
+
+
+```html
+<div id="box1">Box 1</div><div id="box2">Box 2</div><div id="box3">Box 3</div>
+```
+
+```css
+*{ box-sizing: border-box; }
+body{ font-family: sans-serif; font-size: 20px; }
+/* default mobile first */
+#box1{ background-color: #3D9970; }
+#box2{ background-color: #FF4136; }
+#box3{ background-color: #FFDC00; }
+#box1, #box2, #box3{ padding: 1em; }
+/* first breakpoint */
+@media only screen and (min-width : 600px) {
+  #box1, #box2, #box3{
+    float:left;
+    width: 50%;
+    text-align: center;
+    border: 1em solid #fff;
+  }
+}
+/* second breakpoint */
+@media only screen and (min-width : 992px) {
+  #box1, #box2, #box3{
+    width: 33%;
+    text-align: right;
+  }
+}
+```
+
+![](images/media-queries-demo.png)
+
+<!-- .element: class="center" -->
+
+
+
+```css
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
+
+
+
+
+### References
+
+* http://caniuse.com/
+* https://developer.mozilla.org/fr/docs/Web/HTML/Element
+* https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Les_blocs_de_formulaires_natifs
+* http://tympanus.net/codrops/css_reference/
+* https://developer.mozilla.org/fr/docs/Web/CSS/Reference
+* http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
+* http://codingdomain.com/webdevelopment/css/crash-course/
+* http://css.sutterlity.fr/
+* https://developer.mozilla.org/fr/docs/CSS/Premiers_pas
+
+![](images/yeoman-library.png)
+<!-- .element: class="background top right w-33" -->
 
 
 
@@ -191,6 +517,8 @@ media queries
 
 Show your HTML/CSS skill by creating a webpage monCV
 with the following elements
+
+![](images/yeoman-plan.png)
 
 
 
@@ -214,6 +542,9 @@ Bootstrap
 http://getbootstrap.com/
 
 
+![](images/yeoman-packages.png)
+
+
 
 
 # Tooling
@@ -231,7 +562,7 @@ HTML preprocessor: Jade, Haml, Handlebars, none
 TODO Script loader: Require, Webpack, none
 TODO Test framework: Jasmine, Mocha, Qunit
 
-
+![](images/build_pipline.png)
 
 
 ### Yeoman
@@ -257,6 +588,18 @@ http://bower.io/
 http://gruntjs.com/
 
 
+![](images/grunt-logo.png)
+
+![](images/bower-logo.png)
+
+![](images/yeoman-logo.png)
+
+![](images/yeoman-workflow.jpg)
+
+
+
+![](images/yeoman-webapp.png)
+
 # node.js &  npm
 
 not use node js for backend only for dev environnement
@@ -265,6 +608,9 @@ https://nodejs.org/
 https://www.npmjs.com/
 
 
+![](images/nodejs-logo.svg)
+
+![](images/npm-logo.svg)
 
 
 # Lab01: MonCV
@@ -314,7 +660,7 @@ http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
 
 
 
-### jQuery
+### jQuery ![](images/jQuery-Logo.png)
 
 jQuery is a **fast, small**, and feature-rich JavaScript
 library. It makes things like HTML **document traversal** 
@@ -390,7 +736,13 @@ commenter des vieux bouts de code...
 
 # what is git
 
+![](images/code_quality_wtf.png)
 
+![](images/git-lifecycle.png)
+
+![](images/vcs-centralized.png)
+
+![](images/vcs-distributed.png)
 
 http://rogerdudler.github.io/git-guide/
 
@@ -418,6 +770,8 @@ git push origin
 
 
 # deploy to github pages
+
+![](images/yeoman-ship.png)
 
 git remote add origin git@github.com:bfritscher/test-lab.git
 git push origin master:gh-pages --set-upstream
@@ -968,7 +1322,7 @@ aFruits.forEach(function (fruit) {
  
 
 
-# JavaScript 101 (part 2)
+# JavaScript 101 (Part 2)
 
 * Functions are objects
 * Closures
