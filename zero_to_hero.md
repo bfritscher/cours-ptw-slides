@@ -875,6 +875,8 @@ $ npm install && bower install
 ```
 
 
+
+
 # Assignment 2
 
 Recreate your CV by redowing lab1
