@@ -113,7 +113,7 @@ Server also JS
 
 
 ### HTML
-```html
+```xml
 <!DOCTYPE html>
 <html>
   <head>
@@ -137,7 +137,7 @@ Server also JS
 
 
 
-```html
+```xml
 
 ```
 <!-- .element: class="nodpf jsbin-embed" data-href="http://jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
@@ -173,7 +173,7 @@ Elements can have attributes **`name="value"`**
 | `<img src="" alt="">` | Image from `src` with `alt` description
 | `<a href="">` | Anchor, hyperlink to a target destination
 
-```html
+```xml
 <div id="page2">
   <p>A <span class="fun">funny</span> dog:
      <img src="" alt="" /></p>
@@ -207,7 +207,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 ### HTML: Tables
 
-```html
+```xml
 <!DOCTYPE html>
 <table>
   <caption>Caption of the table (optional)</caption>
@@ -235,7 +235,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 
 
-```html
+```xml
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
@@ -245,7 +245,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 ### HTML: Forms
 
-```html
+```xml
 <form>
   <!-- two ways to associate labels -->
   <p><label for="n">Name: </label>
@@ -277,7 +277,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 
 
-```html
+```xml
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
@@ -331,7 +331,7 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu
 
 ### HTML: including CSS and JavaScript
 
-```html
+```xml
 <!DOCTYPE html>
 <html>
   <head>
@@ -478,7 +478,7 @@ http://mediaqueri.es/int/
 
 
 
-```html
+```xml
 <div id="box1">Box 1</div><div id="box2">Box 2</div><div id="box3">Box 3</div>
 ```
 
@@ -614,45 +614,18 @@ Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Ea
 
 ![](images/bootstrap.png)
 
-![](images/yeoman-packages.png)
-
-common HTML elements, dozens of custom HTML and CSS components, and awesome jQuery plugins.
 
 
-```html
-
+```xml
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
+    <!-- Bootstrap core CSS -->    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <title>Jumbotron Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
-
   <body>
-
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -686,7 +659,7 @@ common HTML elements, dozens of custom HTML and CSS components, and awesome jQue
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
-
+    
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
@@ -706,25 +679,25 @@ common HTML elements, dozens of custom HTML and CSS components, and awesome jQue
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
+    </div>
+    <hr>
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2014</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <footer>
+      <p>&copy; Company 2014</p>
+    </footer>
+        
+    <!-- JavaScript part to make navbar-toggle work -->
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   </body>
 </html>
 ```
+<!-- .element: class="jsbin-embed" data-href="http://jsbin.com/lelopa/1/edit?html,output" data-height="600px" -->
+
+
+
+
+![](images/yeoman-packages.png)
 
 
 
@@ -756,6 +729,13 @@ Preprocessor is a program that processes its input data to produce output that i
 
 
 ![](images/build_pipline.png)
+
+
+
+```
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/mumavu/9/edit?html,css,js" data-height="600px" -->
 
 
 
@@ -1017,7 +997,74 @@ git push origin
 
 
 
-# markdown
+
+### Markdown Basics
+
+[Markdown](http://daringfireball.net/projects/markdown/syntax) allows you to write using an easy-to-**read**, easy-to-**write** plain **text format**, which then converts to valid HTML.
+
+```markdown
+# The largest heading (an <h1> tag)
+## The second largest heading (an <h2> tag)
+
+> Blockquotes
+
+Text styling *italic* and **bold**
+
+Links (<a href="url">title</a>)
+[title](url)
+
+Images (<img src="src" alt="">)
+![alt](src)
+```
+
+
+
+### Markdown List and Table
+
+```markdown
+Unordered lists
+* Item
+* Item
+
+- Item
+- Item
+
+Ordered lists
+1. Item 1
+2. Item 2
+3. Item 3
+
+some: `c0de`
+
+| Name | Description          |
+| ------------- | ----------- |
+| Help      | Display the help window.|
+| Close     | Closes a window     |
+```
+<!-- .element: class="float-left w-50" -->
+
+* Item
+* Item
+
+<br/>
+
+1. Item 1
+2. Item 2
+
+&nbsp;&nbsp;some: `c0de`
+
+| Name | Description          |
+| ------------- | ----------- |
+| Help      | Display the help window.|
+| Close     | Closes a window     |
+
+
+
+<iframe data-src="http://dillinger.io/" class="nopdf" style="width:100%;height:100%"></iframe>
+
+http://dillinger.io/
+
+<!-- .element: class="credits" -->
 
 
 
