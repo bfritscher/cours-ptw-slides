@@ -30,6 +30,8 @@ page to a “Customer Details” page).
 # paper
 
 
+![](images/web_development_process.jpg)
+
 
 
 only focus on frontent-app

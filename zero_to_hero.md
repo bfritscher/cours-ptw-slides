@@ -7,6 +7,10 @@
 
 # About you?
 
+![](images/technical-cofounder.jpg)
+
+<!-- .element: class="center nopdf" -->
+
 
 
 
@@ -92,7 +96,7 @@ Server also JS
 
 
 
-## Coding for the WEB
+## Web Development
 
 * **HTML** for content
 * **CSS** for styling
@@ -536,98 +540,220 @@ body{ font-family: sans-serif; font-size: 20px; }
 
 
 
-## TASK1
+## Assignment 1
 
-Show your HTML/CSS skill by creating a webpage monCV
-with the following elements
+Show your HTML/CSS skills by creating a Curriculum vitae webpage.
 
 ![](images/yeoman-plan.png)
+<!-- .element: class="w-30 float-right" style="transform: scaleX(-1);" -->
+
+*- What tools do you use?*
+
+*- What are all the tasks involved?*
+
+
+
+## Debriefing Assignment 1
+
+Tools:
+
+* Text editor
+* Web browser
+* Server?
+* Image editor
+
+
+
+## Debriefing Assignment 1
+
+Tasks:
+
+* Create content
+* Edit Layout
+* Download eventual external dependency
+* Repetitive tasks edit<->reload
 
 
 
 
-## Debriefing
+# CSS Frameworks
 
-Démarche choisie
-Problème rencontrées
-d/l fichier
-Editeur,
-serveur
-reload
+<br/>
 
-
+* don't reinvent the wheel
+* use best practices
+* get reusable components
+* design oriented
 
 
-# Framework CSS
 
-Presentation framework libraries css + JS 
-Bootstrap
-http://getbootstrap.com/
 
+### [Bootstrap](http://getbootstrap.com/)
+
+![](images/bootstrap-logo.png)
+<!-- .element: class="top right" -->
+
+One framework, every device
+
+**CSS**
+
+Global CSS settings, fundamental HTML elements styled and enhanced with extensible classes, and an advanced grid system.
+<!-- .element: class="smaller" -->
+
+**Components**
+
+Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.
+<!-- .element: class="smaller" -->
+
+**Javascript**
+
+Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.
+<!-- .element: class="smaller" -->
+
+
+
+![](images/bootstrap.png)
 
 ![](images/yeoman-packages.png)
 
+common HTML elements, dozens of custom HTML and CSS components, and awesome jQuery plugins.
+
 
 ```html
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<div class="container">
-  <div class="jumbotron">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p> 
-  </div>
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
+    <title>Jumbotron Template for Bootstrap</title>
 
-</body>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
 ```
-
-http://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_default&stacked=h
 
 
 
 
 # Tooling
 
+notepad++? <-> webstorm
 online editors
+chrome dev tools
 
 
 
 
 
-## 
-CSS pre-processor: Less, Sass with Ruby and Node, Stylus, none
-JS preprocessor: CoffeeScript, TypeScript, ECMAScript 6 (Traceur and Babel), none
-HTML preprocessor: Jade, Haml, Handlebars, none
-TODO Script loader: Require, Webpack, none
-TODO Test framework: Jasmine, Mocha, Qunit
+### Preprocessors
+
+Preprocessor is a program that processes its input data to produce output that is used as input to another program
+
+**CSS preprocessor:** Less, Sass, Stylus, ...
+
+**JS preprocessor:** CoffeeScript, TypeScript, ECMAScript 6 (Traceur and Babel), ...
+
+**HTML preprocessor:** Jade, Haml, Handlebars, ...
+
+**Script loader:** Require, Webpack, ...
+
+**Test framework:** Jasmine, Mocha, Qunit, ...
+
+
 
 ![](images/build_pipline.png)
 
@@ -639,102 +765,148 @@ TODO Test framework: Jasmine, Mocha, Qunit
 Yeoman is a combination of tools, which allows to you to setup a complete,
 automated, efficient and reliable development workflow.
 
+![](images/yeoman-workflow.jpg)
+
+<!-- .element: class="center" -->
+
+It is composed of three tools: yo, bower and grunt (or gulp).
+
+
+
+![](images/yeoman-logo.png) <!-- .element: class="float-right w-15" -->
 **Yo** is a tool for generating project skeletons (scaffolding). You can create and
-share your skeletons. Yo generators are npm modules and you can find one
+share your skeletons. Yo *generators* are npm modules and you can find one
 for most popular web frameworks.
+http://yeoman.io/
 
-**Bower** is a tool for managing “web dependencies”. Not only javascript
+![](images/bower-logo.png) <!-- .element: class="float-right w-15" -->
+**Bower** is a tool for managing *web dependencies*. Not only JavaScript
 modules, but also CSS files, images, etc.
+http://bower.io/
 
-**Grunt** is a task runner. It is the tool that drives your automated process, by
+![](images/grunt-logo.png) <!-- .element: class="float-right w-15" -->
+**Grunt** is a task runner. It is the tool that drives your *automated process*, by
 executing a series of tasks. There are lots of grunt plugins provided by the
 community for all aspects of your project.
-
-
-http://yeoman.io/
-http://yeoman.io/learning/
-http://bower.io/
 http://gruntjs.com/
 
 
-![](images/grunt-logo.png)
-
-![](images/bower-logo.png)
-
-![](images/yeoman-logo.png)
-
-![](images/yeoman-workflow.jpg)
 
 
+## Node.js & npm
 
-![](images/yeoman-webapp.png)
-
-
-
-
-# node.js &  npm
-
-not use node js for backend only for dev environnement
-
+![](images/nodejs-logo.png) <!-- .element: class="float-right w-15" -->
+**Node.js** is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
 https://nodejs.org/
+
+*It allows to run JavaScript outside of the browser*
+
+![](images/npm-logo.svg) <!-- .element: class="float-right w-15" -->
+**npm** is a package manager for JavaScript bundled with Node.js
 https://www.npmjs.com/
 
 
-![](images/nodejs-logo.svg)
-
-![](images/npm-logo.svg)
 
 
+## Lab 1: MonCV
+
+Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
+
+![](images/yeoman-packages.png)
+<!-- .element: class="w-30" -->
 
 
-# Lab01: MonCV
+
+### Step 0: Install development environment
+
+Download and install [Node.js](https://nodejs.org/) to get npm.
+
+Use npm to install yeoman, bower and grunt
 
 ```sh
 $ npm install -g yo bower grunt-cli
 ```
 
+Use npm to install the desired yeoman generator
+
 ```sh
 $ npm install -g generator-webapp
 ```
+
 https://github.com/yeoman/generator-webapp
 
+<!-- .element: class="credits" -->
+
+*We are using the -g (--global flag) to install in the global shared space accessible to all projects.*
+<!-- .element: class="small" -->
+
+
+
+### Step 1: Create a new project
+
+Create project folder
+
 ```sh
-$ mkdir my-yo-project
-$ cd my-yo-project
+$ mkdir monCV
+$ cd monCV
 ```
+
+Use yeoman generator to scaffold a new application
 
 ```sh
 $ yo webapp
 ```
 
-bower install & npm install
+![](images/yeoman-webapp.png)
+<!-- .element: class="w-66" -->
+
+<!-- .element: class="center" -->
+
+
+
+### Step 2: Review the Yeoman-generated app
 
 package.json
 bower.json
 
+
+
+
+
+### Step 3: Preview your app in the browser
+
+
+Start the server
+
+Stop the server
+
 edit with livereload
+
+
+
+### Step 3: Use Bower to install packages
+
 
 bower install bootswatch --save
 https://bootswatch.com/
 
+```sh
+$ npm install && bower install
+```
+
+
+# Assignment 2
+
+Recreate your CV by redowing lab1
 
 
 
-# TASK 2 update your CV
+# lab continued with want some better interaction
 
 
 
 
-## Add some interaction JavaScript/jQuery
-
-https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
-
-http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
-
-
-
-
-### jQuery ![](images/jQuery-Logo.png)
+### ![jQuery](images/jQuery-Logo.png) <!-- .element: class="w-40" -->
 
 jQuery is a **fast, small**, and feature-rich JavaScript
 library. It makes things like HTML **document traversal** 
@@ -745,7 +917,7 @@ API that works **across a multitude of browsers**.
 
 
 
-### jQuery selecting
+### jQuery Selecting Elements
 
 **Selecting Elements by ID**
 
@@ -771,10 +943,13 @@ $('input[name="first_name"]'); // this can be very slow in older browsers
 $('#myId ul.people li');
 ```
 
+http://api.jquery.com/
+
+<!-- .element: class="credits" -->
 
 
 
-
+# Lab continued
 bower install jquery-smooth-scroll
 
 --> auto ajouté (rev-dep)
@@ -799,7 +974,11 @@ $(document).ready(function(){
  using console /dev tools dom inspector
 
 
-# ex..
+
+
+
+ 
+# New problems
 
 Problème gestion de version
 commenter des vieux bouts de code...
@@ -1614,3 +1793,5 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Une_r%C3%A9introduction_%C3
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
 
 
+https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
+http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
