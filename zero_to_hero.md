@@ -18,10 +18,16 @@
 
 Personal interest:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
 1. Web apps? It's **for junior developers and kids**, but real software engineers have better things to do.
 2. Web apps? I am not a **graphics designer…** what am I doing here?
 3. The Web is where some of the **most exciting technologies** are emerging.
 4. When I grow up, I want to be a **front-end engineer**.
+
+<!-- .element: class="float-left w-70 small" -->
 
 
 
@@ -30,19 +36,93 @@ Personal interest:
 
 Scope:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15" style="margin-right: 2em;" -->
+
 1. Web development is **purely about building user interfaces**. It's about HTML and CSS pages.
 2. Web development is about building **complete applications**, including a user interface.
 3. Is there **any kind of application** that does not rely on the Web, in one way or another? Mobile apps, interactive apps, business apps: all of this is built on the Web!
+
+<!-- .element: class="float-left w-70 small" -->
 
 
 
 
 # Introduction
-
-
-
-
+<br/>
 ## The Web as an Application Platform
+
+
+
+
+![HTML5](images/HTML5_Logo_512.png)
+
+<!-- .element: class="center" -->
+
+
+
+#### Web application are becoming more powerful; thanks to HTML5
+
+![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
+Multimedia
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Performance_512.png)
+Performance
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Device_Access_512.png)
+Device&nbsp;Access
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Connectivity_512.png)
+Connectivity
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Offline_Storage_512.png)
+Offline/Storage
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)
+<!-- .element: class="w-60" -->
+&nbsp;Graphics&nbsp;
+
+<!-- .element: class="w-33 float-left center" -->
+
+http://www.w3.org/html/logo/
+
+<!-- .element: class="credits" -->
+
+Note:
+
+Offline/Storage:
+Web Apps can start faster and work even if there is no internet connection, thanks to the HTML5 App Cache, as well as the Local Storage, Indexed DB, and the File API specifications.
+
+Connectivity:
+More efficient connectivity means more real-time chats, faster games, and better communication. Web Sockets and Server-Sent Events are pushing (pun intended) data between client and server more efficiently than ever before.
+
+Device Access:
+Beginning with the Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation
+
+Multimedia:
+Audio and video are first class citizens in the HTML5 web, living in harmony with your apps and sites. Lights, camera, action!
+
+Performance:
+Make your Web Apps and dynamic web content faster with a variety of techniques and technologies such as Web Workers and XMLHttpRequest 2. No user should ever wait on your watch.
+
+Graphics:
+Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your users with stunning visuals natively rendered in the browser.
 
 
 
@@ -89,12 +169,11 @@ Server also JS
 
 
 
-# Planning
+### Planning
 
 ![](images/yeoman-plan.png)
 
-
-
+<!-- .element: class="w-50" -->
 
 ## Web Development
 
@@ -571,7 +650,7 @@ Tasks:
 * Create content
 * Edit Layout
 * Download eventual external dependency
-* Repetitive tasks edit<->reload
+* Repetitive tasks edit <-> reload
 
 
 
@@ -1101,14 +1180,18 @@ CNAME?
 
 
 
-
 ### What is your current perception of JavaScript?
 
 Scope:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
 1. It's a "toy" language for creating animations on web pages, but I would not use it for anything "serious".
 2. It's a very powerful language. It is essential on the client side, but it is also really interesting on the server side.
 
+<!-- .element: class="float-left w-70 small" -->
 
 
 
@@ -1116,13 +1199,17 @@ Scope:
 
 Personal taste:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
 1. I hate it.
 2. I am not a big fan.
 3. It's kind of interesting.
 4. I love it.
 5. I don't care.
 
-
+<!-- .element: class="float-left w-70 small" -->
 
 
 
@@ -1130,9 +1217,14 @@ Personal taste:
 
 Relationship to Java:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
 1. It's Java, with a few syntactic differences.
 2. It has nothing to do with Java, except for some common syntax.
 
+<!-- .element: class="float-left w-70 small" -->
 
 
 
@@ -1140,11 +1232,15 @@ Relationship to Java:
 
 Current knowledge:
 
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
 * **Novice:** I may have hacked a few scripts on web pages, but mostly by copy-pasting examples and without fully understanding the language (what is a prototype?).
 * **Intermediate:** I have used JavaScript quite a bit. I can describe the object-oriented model, I understand what a constructor is and how it works. I have quite a bit of experience with JQuery and other libraries. I am always working with a debugger.
 * **Expert:** closures and modules have no secret for me, I have read "JavaScript: the good parts". I have designed my development workflow with yeoman, grunt, bower and a few other tools. I know who Paul Irish is.
 
-<!-- .element: class="small" -->
+<!-- .element: class="float-left w-70 smaller" -->
 
 
 
@@ -1201,7 +1297,7 @@ should never be undertaken in ignorance.**
 
 <!-- .element: class="small" -->
 
-JavaScript: The Goods Parts -- Douglas Crockford
+JavaScript: The Good Parts -- Douglas Crockford
 
 
 
@@ -1622,9 +1718,24 @@ aFruits.forEach(function (fruit) {
 
 
 
-https://www.destroyallsoftware.com/talks/wat
+# JavaScript WAT
+
+![](images/Wat.jpg)
+
+<!-- .element: class="center" -->
+
+
+
+<p><video data-src="videos/wat.mp4"></p>
 
 http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-bizarre-javascript-behaviours-mentioned-in-the
+<!-- .element: class="credits" -->
+
+https://www.destroyallsoftware.com/talks/wat
+
+<!-- .element: class="credits" -->
+
+
 
 
 # task JS
