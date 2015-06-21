@@ -1,6 +1,18 @@
-# <br>Zero to Hero
+643-1-1 Projet de technologies WEB de présentation
+<!-- .element style="font-size:0.7em;margin:4em 0;" -->
 
-#### Build and deploy a Single Page Application
+# Zero to Hero
+
+![](images/common/logo_heg.png)
+<!-- .element style="position:absolute; top:0; left:0;width:40%;" -->
+
+![](images/common/logo_hes-so.jpg)
+<!-- .element style="position:absolute; top:0; right:0;width:10%;" -->
+ 
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
+<!-- .element style="position:absolute; bottom:20px; left:0;" -->
+
+#### Part 2: Build and deploy a Single Page Application
 
 
 
@@ -8,6 +20,10 @@
 # multi page app vs SPA
 
 //see pic
+
+![](images/multipage_app.png)
+
+![](images/spa.png)
 
 There is a big trend towards “single-page applications”, where some of the
 responsibilities are moved from the server to the client side.
@@ -33,6 +49,13 @@ page to a “Customer Details” page).
 ![](images/web_development_process.jpg)
 
 
+![](images/movies_03_movie.png)
+![](images/movies_03_upcoming.png)
+![](images/movies_04_third_party_directives.png)
+![](images/movies_05_custom_directive.png)
+![](images/movies_06_firebase.png)
+![](images/movies_06_firebase_login.png)
+
 
 only focus on frontent-app
 
@@ -40,27 +63,25 @@ other
 Bootstrap, Foundation, Angular Material, 
 Ionic for mobile
 
+
+
+
 history
 
 http://mattiash.github.io/angular-presentation/presentation.html#1
-
 http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
-
-
 https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
 
 form
-
 http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angularjs
-
-
 https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek
-
-
 http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
 
 formulaire et validation
 ngMessages
+
+
+
 
 
 ## Javascript libraries
@@ -87,6 +108,15 @@ Github repository. Do you like what you see? Do you like the documentation?
 generators. Lightweight generators are easier to learn and give you more control
 (but more work). Rich generators do a lot of things out-of-the-box but can be
 intimidating at first (learning curve to understand the skeleton).
+
+
+![](images/AngularJS-large.png)
+
+![](images/google_trends.jpg)
+
+
+
+
 
 
 
@@ -130,6 +160,9 @@ ngClick
 evenenemts
 
 
+
+
+
 Exercice setup:
 
 yo angular
@@ -156,6 +189,9 @@ yo angular
  (*) angular-sanitize.js
  (*) angular-touch.js
 
+
+
+
 Explore Folder
 grunt serve
 
@@ -165,9 +201,10 @@ map to file system resource
 
 Focus on MainCtrl + view/main.html
 styles/main.css
-
-
 cleanup main.css, index.html add title
+
+
+
 
 Step0
 
@@ -176,9 +213,12 @@ Exercice:
 First task:
 - Create a form to add a new movie to a list of movies
 - display the list of movies
-- be able to delete a movie from the lsit
+- be able to delete a movie from the list
 
 ![](images/movie_01.png)
+
+
+
 
 
 # Theory
@@ -193,6 +233,9 @@ $routeParams
 $index
 ngHref
 ngSrc
+
+
+
 
 
 Exercice:
@@ -213,6 +256,9 @@ use a filter to display the title in uppercase
 
 - make title in the main.html page clickable to lead to your new movie detail page
 
+
+
+
 #### Theory
 constante
 $watch && $watchArray
@@ -226,6 +272,8 @@ ngClass
 ngStyle
 listenning to events
 $fitler function
+
+
 
 
 # Asynchronous programming techniques
@@ -280,6 +328,7 @@ callback function has access to the payload.
 
 
 
+
 # api
 
 https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop
@@ -287,6 +336,7 @@ https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinj
 https://www.getpostman.com/docs/introduction
 
 ![](images/postman-logo.png)
+
 
 
 
@@ -345,6 +395,8 @@ url( baseUrlofmoviedb/w185/movie_poster_path_property)
 
 
 
+
+
 alter moviectrl to get the movie from the net by id 
 explore data structure of the movie json
 alter the movie.html view 
@@ -382,6 +434,8 @@ set this variable in the moviectrl (hint: since its a child scope it can see its
 don't forget to reset the backdrop when path changes.
 
 
+
+
 ### theory
 
 utilisation d'autres directives
@@ -398,7 +452,13 @@ add 'slick' to movieApp
     </slick>
 </div>
 
+
+
+
 ng-animate?
+
+
+
 
 
 exercice
@@ -436,12 +496,20 @@ and this css
 
 ####
 
+
+
+
 créer ses directives
+
+
+
 
 
 Exercice
 
 Lets fix our data and make poster more reusable with a custom directive
+
+
 
 
 #step1 replace poster
@@ -464,6 +532,8 @@ favoriteMovies
 
 
 ## 
+
+
 
 
 ###
@@ -538,6 +608,9 @@ $firebaseAuth, $firebaseObject
     if(savedMovies && Object.keys(movies).length === 0){
 
 
+
+
+
 ### after deploy
 
 A/B testing on similar list
@@ -551,6 +624,9 @@ https://www.youtube.com/watch?v=M_Wp-2XA9ZU
 
 virutal page views
 event
+
+
+
 
 #exercice
 http://luisfarzati.github.io/angulartics/

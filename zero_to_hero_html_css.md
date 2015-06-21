@@ -12,7 +12,7 @@
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
 <!-- .element style="position:absolute; bottom:20px; left:0;" -->
 
-#### From blank page to deployed web application
+#### Part 1: From blank page to deployed website
 
 
 
@@ -206,6 +206,16 @@ Learn theory and tools, see examples and practice!
 
 
 
+## Labs: MonCV & Movie 
+![](images/monCV_final.png)
+<!-- .element: class="w-30" -->
+![](images/movies_03_upcoming.png)
+<!-- .element: class="w-33" -->
+![](images/movies_04_third_party_directives.png)
+<!-- .element: class="w-33" -->
+
+
+
 
 ### Planning
 
@@ -213,15 +223,15 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
 * HTML, CSS, JavaScript
-* Lab
+* Lab 1: MonCV
 * Assignments
 
 <!-- .element: class="w-50" -->
 
 
 * AngularJS
-* Lab
-* Project
+* Lab: Movie
+* Project: Your choice
 
 <!-- .element: class="w-40" -->
 

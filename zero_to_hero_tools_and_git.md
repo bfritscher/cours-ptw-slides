@@ -119,16 +119,26 @@ Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Ea
 
 
 
+# Tooling
+
 ![](images/yeoman-packages.png)
 
 
 
 
-# Tooling
+### Editors
 
-notepad++? <-> webstorm
-online editors
-chrome dev tools
+Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrains.com/webstorm/)
+
+![](images/notepad.png)
+<!-- .element: class="w-40 float-left" -->
+
+![](images/webstorm.png)
+<!-- .element: class="w-60 float-left" -->
+
+In between: [Notepad++](https://notepad-plus-plus.org/)
+<br/>Online editors: [Cloud9](https://c9.io/)
+<br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
 
@@ -136,7 +146,7 @@ chrome dev tools
 
 ### Preprocessors
 
-Preprocessor is a program that processes its input data to produce output that is used as input to another program
+A preprocessor is a program that processes its input data to produce output, that is used as input to another program
 
 **CSS preprocessor:** Less, Sass, Stylus, ...
 
@@ -164,7 +174,7 @@ Preprocessor is a program that processes its input data to produce output that i
 
 ### Yeoman
 
-Yeoman is a combination of tools, which allows to you to setup a complete,
+Yeoman is a combination of tools, which allows you to setup a complete,
 automated, efficient and reliable development workflow.
 
 ![](images/yeoman-workflow.jpg)
@@ -210,7 +220,7 @@ https://www.npmjs.com/
 
 
 
-## Lab 1: MonCV
+## Lab 1a: MonCV
 
 Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
@@ -268,29 +278,9 @@ $ yo webapp
 
 ### Step 2: Review the Yeoman-generated app
 
-package.json
-bower.json
+package.json <-- npm dependencies
 
-
-
-
-
-### Step 3: Preview your app in the browser
-
-
-Start the server
-
-Stop the server
-
-edit with livereload
-
-
-
-### Step 3: Use Bower to install packages
-
-
-bower install bootswatch --save
-https://bootswatch.com/
+bower.json <-- bower dependencies
 
 ```sh
 $ npm install && bower install
@@ -298,14 +288,42 @@ $ npm install && bower install
 
 
 
-
-# Assignment 2
-
-Recreate your CV by redowing lab1
+### Step 3: Preview your app in the browser
 
 
+Start the server
+```sh
+grunt serve
+```
 
-# lab continued with want some better interaction
+edit a file and watch livereload in action
+
+Stop the server (ctrl+c)
+
+
+
+### Step 4: Use Bower to install packages
+
+
+bower install bootswatch --save
+https://bootswatch.com/
+
+try different CSS files from bootswatch in index.html
+```xml
+<link rel="stylesheet" href="bower_components/bootswatch/???/bootstrap.css" />
+```
+
+
+
+
+# Assignment 2a
+
+Use lab1 to recreate/improve your CV with Boostrap and a development workflow
+
+
+
+
+# Adding interactions to the web
 
 
 
@@ -353,53 +371,75 @@ http://api.jquery.com/
 
 
 
-# Lab continued
-bower install jquery-smooth-scroll
+###TODO examples jQuery
 
---> auto ajouté (rev-dep)
 
-```javascript
-$('a').smoothScroll();
+
+
+# Lab 1b: better interactions
+
+We want to improve our page with some interactions and behaviors.
+
+
+
+### Step 5: Use bower to install jquery plugins
+
+```sh
+bower install jquery-smooth-scroll --save
 ```
 
---> jquery why 
---> jshint..
+*Notice that our index.html is automatically updated! (by grunt-rev-dep)*
+
+Use the plugin:
 
 ```javascript
 $(document).ready(function(){
   'use strict';
-  
+  $('a').smoothScroll();  
 });
 ```
 
-
-## dev tools dom + console
-
- using console /dev tools dom inspector
+*maybe you need to edit jshint file*
 
 
 
+### Step 6: DevTools
+
+**F12** opens the browser's developer tools, explore your webpage DOM structure.
+
+Can you edit the page?
+Can you test different CSS?  
 
 
- 
+
+
+
 # New problems
 
 Problème gestion de version
 commenter des vieux bouts de code...
 -> gestion version
-
-
-
-
-# what is git
-
 ![](images/code_quality_wtf.png)
+
+
+
+
+# GIT
 
 ![](images/git-lifecycle.png)
 
+
+
+
 ![](images/vcs-centralized.png)
 
+
+
+
 ![](images/vcs-distributed.png)
+
+
+
 
 http://rogerdudler.github.io/git-guide/
 
@@ -413,12 +453,26 @@ http://marklodato.github.io/visual-git-guide/index-fr.html
 
 http://pcottle.github.io/learnGitBranching/
 
+
+
 git init
 git add 
 git commit
 git push origin 
 .gitignore
 
+
+
+
+# What is github
+
+Readme.md
+
+
+
+
+# Markdown
+## From text to HTML
 
 
 
@@ -492,22 +546,71 @@ http://dillinger.io/
 
 
 
-# Lab continued
-# deploy to github pages
+
+
+# Lab 1c: deploy
 
 ![](images/yeoman-ship.png)
-
-git remote add origin git@github.com:bfritscher/test-lab.git
-git push origin master:gh-pages --set-upstream
-
-http://bfritscher.github.io/test-lab/
-
-change template? redo
+<!-- .element: class="w-30" -->
 
 
 
+### Step 7: Git Master
+
+Create a git repository for your project on Github
+
+Commit & push your code to Github
+
+Change something and create a new commit.
+
+Clone the project from your neighbour
+
+
+
+### Step 8: Production version
+
+Create a built, mimified version of your page with your toolchain
+```sh
 grunt
+```
+*Notice that you have a dist folder with this new content*
+
+```sh
 grunt serve:dist
+```
+Helps to test the minified version.
 
-CNAME?
 
+
+### Step 9: Deploy on Github Pages
+
+Create a new git repository inside your dist folder.
+
+Add your github repository as origin
+```sh
+git remote add origin git@github.com:XXX/test-lab.git
+```
+
+Push the master branch to the special gh-pages page
+```sh
+git push origin master:gh-pages --set-upstream
+```
+
+Test your site: http://XXX.github.io/test-lab/
+
+Try to deploy a new version with a changed CSS template.
+
+https://pages.github.com/
+
+<!-- .element: class="credits" -->
+
+Note:
+
+A special CNAME file can be put at the root of gh-pages to use a custom domain name. 
+
+
+
+
+# Assignment 2
+
+Publish your final CV site on Github and provide the link on cyberlearn.
