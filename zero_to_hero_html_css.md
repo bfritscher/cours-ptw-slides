@@ -508,44 +508,61 @@ Script tags at the end in order to not block page loading.
 
 ### CSS: Selectors
 
-tag, id, class, 
+```css
+body {
+  width: 500px;
+}
 
-body {width: 500px;}
 .tag-class {
     padding: 20px 40px;
     width: auto;
 }
+
+a:hover{
+  color: red;
+}
+
 #tag-id {
     height: 100px;
     float: left;
 }
-Notice that "#" delimites an id and "." a class.
 
-child, direct child >,  next tag +
-attr value
-pseudoclass
-:hover
-:nth-child(N)
+```
+
+element, class, pseudo-class, id
 
 
-*	selects all elements
-aa *	selects all elements within the aa tag.
-aa bb	selects all bb elements within the aa tag.
-aa, bb	selects all aa and bb classes, it's just a list.
-aa.classname	selects all aa tags with the class classname.
-aa#idname	selects the aa tag with the id idname.
-a:link	selects the a tag if it's a normal hyperlink.
-a:visited	selects the a tag if it's a visited hyperlink.
-a:hover	selects the a tag if the mouse hovers over it.
-a:active	selects the a tag if user is clicking on it.
-aa > bb	selects the bb tag if it's a direct child of aa.
-aa + bb	selects the bb tag if it's immediately preceded by aa.
-aa[attr="value"]	selects the aa tag with a attr="value" attribute.
+
+| CSS Selector     | Action                                                              |
+|----------------------------------------------------------------------------------------|
+| *		             | selects all elements                                                |
+| aa *		         | selects all elements within the aa elements.                        |
+| aa bb		         | selects all bb elements within the aa elements.                     |
+| aa, bb	         | selects all aa and bb elements, it's just a list.                   |
+| aa.classname	   | selects all aa elements with the class classname.                   |
+| #idname	         | selects the element with the id idname.                             |
+| a:hover	         | selects the a element if the mouse hovers over it (pseudo-classes). |
+| aa > bb	         | selects the bb element if it's a direct child of aa.                |
+| aa + bb	         | selects the bb element if it's immediately preceded by aa.          |
+| aa[attr="value"] | selects the aa element with a attr="value" attribute.               |
 
 
 
 
 ### CSS: Cascading Rules
+
+
+[![](images/specificitywars-05v2.jpg)](images/specificitywars-05v2.jpg)
+
+<!-- .element: class="w-50 float-left" -->
+
+[![](images/specificity3.jpg)](images/specificity3.jpg)
+
+<!-- .element: class="w-50 float-left" -->
+
+
+
+### TODO: EXAMPLE 
 
 
 
@@ -554,28 +571,50 @@ aa[attr="value"]	selects the aa tag with a attr="value" attribute.
 
 ![](images/css_boxmodel.gif)
 
-margin
-border
-padding
-width
+<!-- .element: class="w-50 float-left" -->
 
-center block element
+***box-sizing: content-box;*** default
 
-box-sizing: content-box;
-box-sizing: border-box;
+***box-sizing: border-box;*** width includes padding + border 
 
-Collapsing margins
-depending on setting a border or padding - your margins are likely collapsing or put apart. Normally, margins are merged together. The bottom and top margin
+Collapsing margins: depending on setting a border or padding, margins are collapsed or put apart. Normally, bottom and top margin margins are merged together. 
 
-position absolute, relative
+center a block element: *margin: 0 auto*;
+
+
+
+
+### CSS: Positioning
+
+
+position: fixed, relative, absolute
+top, right, bottom, left
+z-index:
 float: left, right
+
+
+
+### TODO:EXAMPLE
+
+
+
+
+### CSS: Flexbox
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+![](images/flexbox-flex-direction.png)
+
+http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
+
+<!-- .element: class="credits" -->
 
 
 
 
 ### CSS: Media Queries
 
-Let the presentation of content be **tailored** to a specific range of output devices **without having to change the content** itself.
+Lets the presentation of content be **tailored** to a specific range of output devices **without having to change the content** itself.
 
 > `@media` **some rule** `[and|or]` **some other rule**
 > { **CSS for only this selection** }
@@ -675,8 +714,8 @@ body{ font-family: sans-serif; font-size: 20px; }
 * http://tympanus.net/codrops/css_reference/
 * https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 * http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
-* http://codingdomain.com/webdevelopment/css/crash-course/
 * http://css.sutterlity.fr/
+* http://fr.learnlayout.com/
 * https://developer.mozilla.org/fr/docs/CSS/Premiers_pas
 
 ![](images/yeoman-library.png)
