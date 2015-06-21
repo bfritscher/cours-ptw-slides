@@ -4,13 +4,13 @@
 # Zero to Hero
 
 ![](images/common/logo_heg.png)
-<!-- .element style="position:absolute; top:0; left:0;width:40%;" -->
+<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
 
 ![](images/common/logo_hes-so.jpg)
-<!-- .element style="position:absolute; top:0; right:0;width:10%;" -->
+<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
  
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
-<!-- .element style="position:absolute; bottom:20px; left:0;" -->
+<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Project: Become a Hero
 
