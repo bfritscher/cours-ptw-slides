@@ -1,6 +1,27 @@
 [
     {
-        "filename": "zero_to_hero.md",
+        "filename": "zero_to_hero_html_css.md",
+        "attr": {
+            "data-separator": "^\\n\\n\\n\\n",
+            "data-separator-vertical": "^\\n\\n\\n"
+        }
+    },
+    {
+        "filename": "zero_to_hero_assignment_1.md",
+        "attr": {
+            "data-separator": "^\\n\\n\\n\\n",
+            "data-separator-vertical": "^\\n\\n\\n"
+        }
+    },
+    {
+        "filename": "zero_to_hero_tools_and_git.md",
+        "attr": {
+            "data-separator": "^\\n\\n\\n\\n",
+            "data-separator-vertical": "^\\n\\n\\n"
+        }
+    },
+    {
+        "filename": "zero_to_hero_javascript.md",
         "attr": {
             "data-separator": "^\\n\\n\\n\\n",
             "data-separator-vertical": "^\\n\\n\\n"

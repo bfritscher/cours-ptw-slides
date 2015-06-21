@@ -1,0 +1,684 @@
+643-1-1 Projet de technologies WEB de présentation
+<!-- .element style="font-size:0.7em;margin:4em 0;" -->
+
+# Zero to Hero
+
+![](images/common/logo_heg.png)
+<!-- .element style="position:absolute; top:0; left:0;width:40%;" -->
+
+![](images/common/logo_hes-so.jpg)
+<!-- .element style="position:absolute; top:0; right:0;width:10%;" -->
+ 
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
+<!-- .element style="position:absolute; bottom:20px; left:0;" -->
+
+#### From blank page to deployed web application
+
+
+
+
+# About you?
+
+![](images/technical-cofounder.jpg)
+
+<!-- .element: class="center nopdf" -->
+
+
+
+
+### What is your current *perception* of Web development?
+
+Personal interest:
+
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
+
+1. Web apps? It's **for junior developers and kids**, but real software engineers have better things to do.
+2. Web apps? I am not a **graphics designer…** what am I doing here?
+3. The Web is where some of the **most exciting technologies** are emerging.
+4. When I grow up, I want to be a **front-end engineer**.
+
+<!-- .element: class="float-left w-70 small" -->
+
+
+
+
+### What is your current *perception* of Web development?
+
+Scope:
+
+![](images/poll.png)
+
+<!-- .element: class="float-left w-15" style="margin-right: 2em;" -->
+
+1. Web development is **purely about building user interfaces**. It's about HTML and CSS pages.
+2. Web development is about building **complete applications**, including a user interface.
+3. Is there **any kind of application** that does not rely on the Web, in one way or another? Mobile apps, interactive apps, business apps: all of this is built on the Web!
+
+<!-- .element: class="float-left w-70 small" -->
+
+
+
+
+# Introduction
+<br/>
+## The Web as an Application Platform
+
+
+
+
+### Evolution of the web
+
+1993: Web on Mosaic 
+![](images/mosaic.jpg)
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-50 float-left center" -->
+
+2014: TinkerCAD on Chrome
+![](images/tinkercad.png)
+
+<!-- .element: class="w-50 float-left center" -->
+
+[![](images/Evolution_of_the_web.jpg)](http://www.evolutionoftheweb.com/)
+
+<!-- .element: class="center" -->
+
+
+
+
+![HTML5](images/HTML5_Logo_512.png)
+
+<!-- .element: class="center" -->
+
+
+
+#### Web application are becoming more powerful; thanks to HTML5
+
+![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
+Multimedia
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Performance_512.png)
+Performance
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Device_Access_512.png)
+Device&nbsp;Access
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Connectivity_512.png)
+Connectivity
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_Offline_Storage_512.png)
+Offline/Storage
+<!-- .element: class="w-60" -->
+
+<!-- .element: class="w-33 float-left center" -->
+
+![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)
+<!-- .element: class="w-60" -->
+&nbsp;Graphics&nbsp;
+
+<!-- .element: class="w-33 float-left center" -->
+
+http://www.w3.org/html/logo/
+
+<!-- .element: class="credits" -->
+
+Note:
+
+Offline/Storage:
+Web Apps can start faster and work even if there is no internet connection, thanks to the HTML5 App Cache, as well as the Local Storage, Indexed DB, and the File API specifications.
+
+Connectivity:
+More efficient connectivity means more real-time chats, faster games, and better communication. Web Sockets and Server-Sent Events are pushing (pun intended) data between client and server more efficiently than ever before.
+
+Device Access:
+Beginning with the Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation.
+
+Multimedia:
+Audio and video are first class citizens in the HTML5 web, living in harmony with your apps and sites. Lights, camera, action!
+
+Performance:
+Make your Web Apps and dynamic web content faster with a variety of techniques and technologies such as Web Workers and XMLHttpRequest 2. No user should ever wait on your watch.
+
+Graphics:
+Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your users with stunning visuals natively rendered in the browser.
+
+
+
+
+## Some Trends
+
+* Single Page Applications (SPA) 
+* Real-time
+* Tooling 
+* Automated Development Workflows
+![](images/intro-adw.png)
+
+
+
+
+## Languages, Platforms, Communities
+
+Client<br/>
+![](images/intro-html-css-js.png)
+
+<!-- .element: class="w-50 float-left center" -->
+
+Server<br/>
+<span>?</span><!-- .element: style="font-size:4em" -->
+
+<!-- .element: class="w-50 float-left center" -->
+
+Note:
+Server can be in a lot of different languages and Frameworks:
+* PHP: Larvel, Symfony, CakePHP
+* Python: django
+* Ruby: Rails
+* Java: J2EE, Spring, Play
+* .NET: ASP.NET
+
+But also in JavaScript
+* JS: Node.js, express.js
+
+
+
+
+### Goal: Learn to create and deploy a client web application. 
+
+![](images/yeoman-illustration-home-inverted.png)
+
+Note:
+
+Learn theory and tools, see examples and practice!
+
+
+
+
+### Planning
+
+Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
+
+
+* HTML, CSS, JavaScript
+* Lab
+* Assignments
+
+<!-- .element: class="w-50" -->
+
+
+* AngularJS
+* Lab
+* Project
+
+<!-- .element: class="w-40" -->
+
+<br/>Grades:
+* Assignments: individual grade
+* Project: team grade 
+  * product
+  * presentation 
+  
+<!-- .element: class="left" -->
+
+![](images/yeoman-plan-left.png)
+
+<!-- .element: class="w-30 right bottom background" -->
+
+
+
+
+
+## Web Development
+
+* **HTML** for content
+* **CSS** for styling
+* **JavaScript** for logic
+
+
+
+
+# <br/>HTML
+
+## Hyper Text Markup Language
+
+
+
+
+### HTML
+```xml
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Title</title>
+  </head>
+  <body>
+    <h1>Main heading in my document</h1>
+    <p>Look Ma, I am coding <strong>HTML</strong>.</p>
+  
+    <!-- This is a comment -->
+    <h2>Sub heading</h2>  
+    <p>Some more text</p>
+  </body>
+</html>
+```
+
+![](images/html-1st-page.png)
+<!-- .element: class="pageborder"-->
+
+<!-- .element: class="center"-->
+
+
+
+```xml
+
+```
+<!-- .element: class="nodpf jsbin-embed" data-href="http://jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
+
+
+
+
+### HTML: Elements
+
+| Element     | Description
+|-------------|------------
+| `<!DOCTYPE html>` | Document type must be the very first thing in your HTML document
+| `<html>`    | Root of an HTML document 
+| &nbsp;&nbsp;&nbsp;&nbsp;`<head>`    | Metadata section of the document
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<title>`   | Defines the title of the document (only text)
+| &nbsp;&nbsp;&nbsp;&nbsp;`<body>`    | Contains the content of the document
+| `<!--  -->` | Comment everything between < and >
+| `<h1>,<h2>,<h3>,<h4>` | Heading most important to least
+| `<p>` | A paragraph of text
+| `<strong>` | Give text strong importance, displayed in bold
+
+
+
+
+### HTML: Attributes
+
+Elements can have attributes **`name="value"`**
+
+| Attribute   | Description
+|-------------|------------
+| `< ... id="" ... >` | All element can have an id, must be unique in the page!
+| `< ... class="" ... >` | All element can have a list of classes (used for CSS)
+| `<img src="" alt="">` | Image from `src` with `alt` description
+| `<a href="">` | Anchor, hyperlink to a target destination
+
+```xml
+<div id="page2">
+  <p>A <span class="fun">funny</span> dog:
+     <img src="" alt="" /></p>
+  <p>go to <a href="page3.html">page 3</a></p>
+</div>
+```
+
+Ids and classes are used by css and javascript to reference specific indvidual or groups of elements.
+
+<!-- .element: class="small" -->
+
+
+
+
+### HTML: More Elements
+
+| Element     | Description
+|-------------|------------
+| `<div>` | A generic container for elements
+| `<nav>` | Represents a section of a page that links to other pages or parts
+| `<section>` | A thematic grouping of content
+| `<header>` | A page header container for logo, nav, search
+| `<footer>` | A page or section footer container
+| `<pre>` | Preformatted text, whitespace are displayed as typed
+| `<ul>, <ol>` | Unordered list and ordered list
+| `<li>` | List item inside a ul or ol
+| `<span>` | A generic inline container
+
+
+
+
+### HTML: Tables
+
+```xml
+<!DOCTYPE html>
+<table>
+  <caption>Caption of the table (optional)</caption>
+  <thead>
+    <tr>
+      <th>Column A</th> <th>Column B</th> <th>Column C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td> <td>2</td> <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td> <td colspan="2" rowspan="2">5</td>
+    </tr>
+    <tr>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+![](images/table.png)
+<!-- .element: class="top right pageborder" -->
+
+
+
+```xml
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
+
+
+
+
+### HTML: Forms
+
+```xml
+<form>
+  <!-- two ways to associate labels -->
+  <p><label for="n">Name: </label>
+  <input id="n" name="name"
+         type="text" placeholder="name"/></p>
+  
+  <p><label>Password: <input type="password" /></label></p>
+  
+  <p><input type="checkbox" name="on" value="1"/>on
+  <!-- radio groups need same name -->
+  <input type="radio" name="r" value="1" checked/>1
+  <input type="radio" name="r" value="2"/>2</p>
+  
+  <p><textarea name="multiline"></textarea></p>
+  
+  <p><select name="choice">
+    <option value="v1">Value 1</option>
+    <option value="v2" selected>Value 2</option>
+    <option value="v3">Value 3</option>
+    </select></p>
+  
+  <p><button>Hello</button>
+     <input type="submit" /></p>
+</form>
+```
+
+![](images/form.png)
+<!-- .element: class="top right pageborder" -->
+
+
+
+```xml
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
+
+
+
+
+### HTML: inline elements
+
+An inline element occupies only the space bounded by the tags that define the inline element.
+
+* may contain only data and other inline elements.
+* do not begin with new line.
+ 
+> strong, a, img, span, button, input, label, select, textarea
+
+
+
+
+### HTML: block-level elements
+
+A block-level element occupies the entire space of its parent element (container), thereby creating a "block."
+ 
+* block-level elements begin on new lines.
+ 
+> div, ul, form, h1, h2, header, nav, pre, p
+
+
+
+
+### HTML5: content categories
+
+In HTML5, this binary distinction of **block-level** vs. **inline** elements is is replaced with a more complex set of content categories
+
+![](images/Content_categories_venn.png)
+<!-- .element: class="w-50" -->
+
+<!-- .element: class="center" -->
+ 
+**block-level** ≈ flow content, 
+**inline** ≈ phrasing content
+
+<!-- .element: class="small" -->
+ 
+https://developer.mozilla.org/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu
+
+<!-- .element: class="credits" -->
+
+
+
+
+### HTML: including CSS and JavaScript
+
+```xml
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>External files</title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    ...
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/myscript.js"></script>
+  </body>
+</html>
+```
+
+Later listings take precedence.
+
+Script tags at the end in order to not block page loading.
+
+
+
+
+# <br/>CSS
+
+## Cascading Style Sheets
+
+
+
+
+### CSS: Selectors
+
+tag, id, class, 
+
+body {width: 500px;}
+.tag-class {
+    padding: 20px 40px;
+    width: auto;
+}
+#tag-id {
+    height: 100px;
+    float: left;
+}
+Notice that "#" delimites an id and "." a class.
+
+child, direct child >,  next tag +
+attr value
+pseudoclass
+:hover
+:nth-child(N)
+
+
+*	selects all elements
+aa *	selects all elements within the aa tag.
+aa bb	selects all bb elements within the aa tag.
+aa, bb	selects all aa and bb classes, it's just a list.
+aa.classname	selects all aa tags with the class classname.
+aa#idname	selects the aa tag with the id idname.
+a:link	selects the a tag if it's a normal hyperlink.
+a:visited	selects the a tag if it's a visited hyperlink.
+a:hover	selects the a tag if the mouse hovers over it.
+a:active	selects the a tag if user is clicking on it.
+aa > bb	selects the bb tag if it's a direct child of aa.
+aa + bb	selects the bb tag if it's immediately preceded by aa.
+aa[attr="value"]	selects the aa tag with a attr="value" attribute.
+
+
+
+
+### CSS: Cascading Rules
+
+
+
+
+### CSS: box-model
+
+![](images/css_boxmodel.gif)
+
+margin
+border
+padding
+width
+
+center block element
+
+box-sizing: content-box;
+box-sizing: border-box;
+
+Collapsing margins
+depending on setting a border or padding - your margins are likely collapsing or put apart. Normally, margins are merged together. The bottom and top margin
+
+position absolute, relative
+float: left, right
+
+
+
+
+### CSS: Media Queries
+
+Let the presentation of content be **tailored** to a specific range of output devices **without having to change the content** itself.
+
+> `@media` **some rule** `[and|or]` **some other rule**
+> { **CSS for only this selection** }
+ 
+**rules:** min-width, max-width, min-device-width, max-device-width, orientation: [landscape | portrait], ...
+
+https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
+
+
+
+### CSS: Media Queries Bootstrap3 breakpoints
+```css
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+```
+
+
+
+#### Media Queries Examples
+
+![](images/media-queries.png)
+
+http://mediaqueri.es/spa/
+http://mediaqueri.es/int/
+
+<!-- .element: class="credits" -->
+
+
+
+```xml
+<div id="box1">Box 1</div><div id="box2">Box 2</div><div id="box3">Box 3</div>
+```
+
+```css
+*{ box-sizing: border-box; }
+body{ font-family: sans-serif; font-size: 20px; }
+/* default mobile first */
+#box1{ background-color: #3D9970; }
+#box2{ background-color: #FF4136; }
+#box3{ background-color: #FFDC00; }
+#box1, #box2, #box3{ padding: 1em; }
+/* first breakpoint */
+@media only screen and (min-width : 600px) {
+  #box1, #box2, #box3{
+    float:left;
+    width: 50%;
+    text-align: center;
+    border: 1em solid #fff;
+  }
+}
+/* second breakpoint */
+@media only screen and (min-width : 992px) {
+  #box1, #box2, #box3{
+    width: 33%;
+    text-align: right;
+  }
+}
+```
+
+![](images/media-queries-demo.png)
+
+<!-- .element: class="center" -->
+
+
+
+```css
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
+
+
+
+
+### References
+
+* http://caniuse.com/
+* https://developer.mozilla.org/fr/docs/Web/HTML/Element
+* https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Les_blocs_de_formulaires_natifs
+* http://tympanus.net/codrops/css_reference/
+* https://developer.mozilla.org/fr/docs/Web/CSS/Reference
+* http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
+* http://codingdomain.com/webdevelopment/css/crash-course/
+* http://css.sutterlity.fr/
+* https://developer.mozilla.org/fr/docs/CSS/Premiers_pas
+
+![](images/yeoman-library.png)
+<!-- .element: class="background top right w-33" -->
+
