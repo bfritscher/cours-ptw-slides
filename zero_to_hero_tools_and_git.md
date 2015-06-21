@@ -191,16 +191,22 @@ share your skeletons. Yo *generators* are npm modules and you can find one
 for most popular web frameworks.
 http://yeoman.io/
 
-![](images/bower-logo.png) <!-- .element: class="float-right w-15" -->
+<!-- .element: class="pdf-w-30 pdf-float-left" -->
+
+![](images/bower-logo.png) <!-- .element: class="float-right w-15 pdf-w-30" -->
 **Bower** is a tool for managing *web dependencies*. Not only JavaScript
 modules, but also CSS files, images, etc.
 http://bower.io/
 
-![](images/grunt-logo.png) <!-- .element: class="float-right w-15" -->
+<!-- .element: class="pdf-w-30 pdf-float-left" -->
+
+![](images/grunt-logo.png) <!-- .element: class="float-right w-15 pdf-w-30" -->
 **Grunt** is a task runner. It is the tool that drives your *automated process*, by
 executing a series of tasks. There are lots of grunt plugins provided by the
 community for all aspects of your project.
 http://gruntjs.com/
+
+<!-- .element: class="pdf-w-30 pdf-float-left" -->
 
 
 
@@ -329,6 +335,8 @@ Use lab1 to recreate/improve your CV with Boostrap and a development workflow
 
 
 ### ![jQuery](images/jQuery-Logo.png) <!-- .element: class="w-40" -->
+
+<!-- .element: class="pdf-w-30" -->
 
 jQuery is a **fast, small**, and feature-rich JavaScript
 library. It makes things like HTML **document traversal** 

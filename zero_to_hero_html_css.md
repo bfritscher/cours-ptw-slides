@@ -89,6 +89,7 @@ Scope:
 
 
 ![HTML5](images/HTML5_Logo_512.png)
+<!-- .element: class="pdf-w-30" -->
 
 <!-- .element: class="center" -->
 
@@ -98,36 +99,36 @@ Scope:
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
 Multimedia
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Performance_512.png)
 Performance
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Device_Access_512.png)
 Device&nbsp;Access
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Connectivity_512.png)
 Connectivity
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Offline_Storage_512.png)
 Offline/Storage
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 &nbsp;Graphics&nbsp;
 
 <!-- .element: class="w-33 float-left center" -->
@@ -208,11 +209,13 @@ Learn theory and tools, see examples and practice!
 
 ## Labs: MonCV & Movie 
 ![](images/monCV_final.png)
-<!-- .element: class="w-30" -->
+<!-- .element: class="w-30 float-left pdf-w-30 pdf-float-left" -->
+
 ![](images/movies_03_upcoming.png)
-<!-- .element: class="w-33" -->
+<!-- .element: class="w-33 float-left pdf-w-30 pdf-float-left" -->
+
 ![](images/movies_04_third_party_directives.png)
-<!-- .element: class="w-33" -->
+<!-- .element: class="w-33 float-left pdf-w-30 pdf-float-left" -->
 
 
 
@@ -544,7 +547,7 @@ element, class, pseudo-class, id
 
 
 | CSS Selector     | Action                                                              |
-|----------------------------------------------------------------------------------------|
+|------------------|---------------------------------------------------------------------|
 | *		             | selects all elements                                                |
 | aa *		         | selects all elements within the aa elements.                        |
 | aa bb		         | selects all bb elements within the aa elements.                     |
@@ -731,3 +734,8 @@ body{ font-family: sans-serif; font-size: 20px; }
 ![](images/yeoman-library.png)
 <!-- .element: class="background top right w-33" -->
 
+
+
+### Sources
+* Cours TWEB@heig-vd, Olivier Liechti https://github.com/wasadigi/Teaching-HEIGVD-TWEB/
+* yeoman pictures - http://yeoman.io/

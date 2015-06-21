@@ -3,7 +3,7 @@
 ![](images/JavaScript-logo.png)
 <!-- .element: class="w-50" -->
 
-<!-- .element: class="center" -->
+<!-- .element: class="center pdf-w-30" -->
 
 
 
@@ -826,4 +826,3 @@ JSLint capabilities
 
 ### Sources
 * Cours TWEB@heig-vd, Olivier Liechti https://github.com/wasadigi/Teaching-HEIGVD-TWEB/
-* yeoman pictures - http://yeoman.io/
