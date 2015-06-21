@@ -602,13 +602,17 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 
 
 
-# LAB next
+# Lab 1d: JavaScript
 
- bower install Chart.js --save
-  some jQuery
- build a progressbar replacement as chart.
- 
+Use [Chart.js](http://www.chartjs.org/docs/#doughnut-pie-chart) to display your skill level with a doughnut chart.
 
+```sh
+bower install Chart.js --save
+```
+
+![](images/chartjs.jpg)
+
+*Read the documentation!* 
 
 
 
@@ -804,15 +808,10 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 
 
 
-# javascript lab?
+# Lab
 
-debugging
-ide setup
-
-Browsers and Developers Tools
-https://developer.chrome.com/devtools
-
-JSLint capabilities
+* Chrome DevTools as IDE
+* Debugging
 
 
 

@@ -575,7 +575,28 @@ element, class, pseudo-class, id
 
 
 
-### TODO: EXAMPLE 
+```css
+#b1.box{
+  color: yellow;
+}
+
+#b1.box{
+  color: pink;
+}
+
+.box{
+  color: green;
+}
+
+#b1 {
+  color: blue;
+}
+
+div {
+  color: red;
+}
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/gemuko/1/edit?html,css,output" data-height="600px" -->
 
 
 
@@ -599,15 +620,96 @@ center a block element: *margin: 0 auto*;
 
 ### CSS: Positioning
 
+`position: static|fixed|absolute|relative;`
+* **static** : default not positioned in any special way
+* **fixed** : positioned relative to the viewport
+* **absolute** : behaves like *fixed* except relative to the nearest positioned ancestor
+* **relative** : behaves the same as static unless you add some extra properties.
 
-position: fixed, relative, absolute
-top, right, bottom, left
-z-index:
-float: left, right
+`top|right|bottom|left: <<units>>;`
+<br/>`z-index: <<int>>;` *change ordering of positionned elements*
+<br/>`float: left|right;`
+<br/>`clear: left|right|both;` *disallow float*
 
 
 
-### TODO:EXAMPLE
+```xml
+  <header>
+    <nav>menu</nav>
+  </header>
+  <div id="s1" class="square"></div>
+  <div id="s2" class="square"></div>
+  <div id="s3" class="square"></div>
+  <footer>Bottom</footer>
+header{
+  position: relative;
+  top: 100px;
+  background-color: #FF4136;
+  height: 100px;
+}
+
+nav{
+  position: absolute;
+  background-color: #FFDC00;
+  width: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+.square{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+
+#s1{
+  top: 250px;
+  background-color: #001f3f;
+  left: calc(50% - 25px);
+  z-index: 99;
+}
+
+#s2{
+  top: 240px;
+  background-color: #0074D9;
+  left: 50%;
+}
+
+#s3{
+  top: 260px;
+  background-color: #7FDBFF;
+  left: 48%;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  background-color: #2ECC40;
+  width: 100%;
+}
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/danase/1/edit?html,css,output" data-height="600px" -->
+
+
+
+```xml
+  <div class="box">a</div>
+  <div class="box">b</div>
+  <div class="box">c</div>
+  <div class="box">d</div>
+  <h1>title</h1>
+.box{
+  border: 3px solid #FF851B;
+  width: 30%;
+  float:left;
+  margin: 1%;
+}
+
+h1{
+  clear: left;
+}
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/qositu/1/edit?html,css,output" data-height="600px" -->
 
 
 

@@ -379,7 +379,10 @@ http://api.jquery.com/
 
 
 
-###TODO examples jQuery
+```xml
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
 
 
 
@@ -424,57 +427,93 @@ Can you test different CSS?
 
 # New problems
 
-Problème gestion de version
-commenter des vieux bouts de code...
--> gestion version
+* Editing code and making backups
+* Commenting out code
+
+-> Need for a version control system
+
 ![](images/code_quality_wtf.png)
+<!-- .element: class="bottom right" -->
 
 
 
 
-# GIT
+# Git
+
+Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+
+
+
+### Centralized VCS
+
+![](images/vcs-centralized.png)
+<!-- .element: class="w-75" -->
+
+<!-- .element: class="center" -->
+
+
+
+### Distributed VCS like Git 
+
+![](images/vcs-distributed.png)
+<!-- .element: class="w-50" -->
+
+<!-- .element: class="center" -->
+
+
+
+### Git basics
+
+* `git init` create a new local git repository
+* `git add .` add all modified and new files to stage 
+* `git commit -m 'msg'` commit staged files with msg
+* `git push` send commits to remote server
+* `git pull` download remote commits
+* `git clone` copy a remote repository
+* `.gitignore` ignore files or folders
+
+
+
+### Git lifecycle
 
 ![](images/git-lifecycle.png)
 
-
-
-
-![](images/vcs-centralized.png)
-
-
-
-
-![](images/vcs-distributed.png)
-
-
-
-
-http://rogerdudler.github.io/git-guide/
-
-http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
-
 http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
-http://onlywei.github.io/explain-git-with-d3/#freeplay
-
-http://marklodato.github.io/visual-git-guide/index-fr.html
-
-http://pcottle.github.io/learnGitBranching/
+<!-- .element: class="credits" -->
 
 
 
-git init
-git add 
-git commit
-git push origin 
-.gitignore
+### Exercice 
+
+https://try.github.io/levels/1/challenges/1
+
+![](images/logo-trygit.gif)
+
+<!-- .element: class="top right" -->
+
+
+
+### Ressources
+
+* http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+* http://marklodato.github.io/visual-git-guide/index-fr.html
+* http://rogerdudler.github.io/git-guide/
+* http://onlywei.github.io/explain-git-with-d3/#freeplay
+* http://pcottle.github.io/learnGitBranching/
 
 
 
 
-# What is github
+# GitHub
 
-Readme.md
+[GitHub]((https://github.com/) is a web-based Git repository hosting service, adding
+its own features:
+
+Wikis, bug tracking, **Markdown** rendering and static page hosting.
+
+Unlike Git, which is strictly a command-line tool, GitHub provides
+a web-based **graphical interface and desktop integration** (https://windows.github.com/).
 
 
 
