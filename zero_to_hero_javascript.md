@@ -72,6 +72,254 @@ Current knowledge:
 
 
 
+
+#JavaScript Basics
+
+* Variables
+* Types
+* Operators
+* Array
+* Condition
+* Loop
+* Function
+* Object
+
+
+
+### Variables
+
+```js
+// This is a single line comment
+var foo;
+
+/*
+  This is a multi-line comment. It can go on
+  for several lines, like this.
+ */
+var anotherFoo;
+```
+
+
+
+### Types
+
+JavaScript defines **6 types**:
+
+* number
+* boolean
+* string
+* object
+* undefined
+* null
+
+<!-- .element: class="w-40 float-left" -->
+
+```javascript
+var aNumber = 3.12;
+var aBoolean = true;
+var aString = 'John Smith';
+var anObject = { aProperty: null };
+typeof aNumber === 'number';
+typeof aBoolean === 'boolean';
+typeof aString === 'string';
+typeof anObject === 'object';
+typeof anObject.aProperty === 'object';
+typeof anObject.foobar === 'undefined';
+// null is a type but
+typeof null === 'object';
+```
+<!-- .element: class="w-50 float-left" -->
+
+JavaScript is a dynamic language: when you declare a variable, you don't specify a type (and the type can change over time).
+<!-- .element: class="small clear" -->
+
+
+
+### Operators
+
+| Operator | Example |
+|----------| --------|
+| + | |
+| - | |
+| == | 3 == var3 <br> "3" == var3 <br> 3 == '3' |
+| != | |
+| === | |
+| !== | |
+
+
+
+### Array
+
+```js
+var myArray = [ 'a', 'b', 'c' ];
+var firstItem = myArray[ 0 ];
+var secondItem = myArray[ 1 ]; // access the item at index 1
+var arrayLength = myArray.length;
+```
+
+
+
+### Condition
+
+```js
+if ( notANumber ) {
+  // this code will not run!
+  console.log( 'notANumber was truthy' );
+} else if (notANumber > 0) {
+  console.log( 'notANumber > 0' );
+} else {
+  // this code will run
+  console.log( 'notANumber was falsy and <= 0' );
+}
+```
+
+
+
+### Loop
+
+```js
+var i;
+for (i = 0; i < myArray.length; i = i + 1) {
+  console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
+}
+```
+
+```js
+var i = 0;
+while (i < myArray.length) {
+  console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
+  i++;
+}
+```
+
+
+
+### Functions
+
+```js
+function cornify( unicorns /* integer */, rainbows /* integer */ ) {
+
+}
+
+var addTwoNumbers = function(a, b) {
+  return a + b;
+};
+```
+
+
+
+### Objects
+
+```js
+var obj = {
+  property1: 'some text',
+  age: 3
+}
+```
+
+More on this later...
+
+
+
+### ![jQuery](images/jQuery-Logo.png) <!-- .element: class="w-40" -->
+
+<!-- .element: class="pdf-w-30" -->
+
+jQuery is a **fast, small**, and feature-rich JavaScript
+library. It makes things like HTML **document traversal** 
+and **manipulation, event handling, animation**, 
+and **Ajax** much simpler with an easy-touse
+API that works **across a multitude of browsers**.
+
+
+
+
+### jQuery Selecting Elements
+
+**Selecting Elements by ID**
+
+```javascript
+$('#myId'); // IDs must be unique per page.
+```
+
+**Selecting Elements by Class Name**
+
+```javascript
+$('.myClass');
+```
+
+**Selecting Elements by Attributes**
+
+```javascript
+$('input[name="first_name"]'); // this can be very slow in older browsers
+```
+
+**Selecting Elements by Compound CSS Selector**
+
+```javascript
+$('#myId ul.people li');
+```
+
+http://api.jquery.com/
+
+<!-- .element: class="credits" -->
+
+
+
+```xml
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
+
+
+
+
+### References
+
+* http://jqfundamentals.com/chapter/javascript-basics
+* http://sutterlity.gitbooks.io/apprendre-jquery/content/
+
+
+
+
+# Lab 1c: better interactions
+
+We want to improve our page with some interactions and behaviors.
+
+
+
+### Step 8: Use bower to install jquery plugins
+
+```sh
+bower install jquery-smooth-scroll --save
+```
+
+*Notice that our index.html is automatically updated! (by grunt-rev-dep)*
+
+Use the plugin:
+
+```javascript
+$(document).ready(function(){
+  'use strict';
+  $('a').smoothScroll();  
+});
+```
+
+*maybe you need to edit jshint file*
+
+
+
+### Step 9: DevTools
+
+**F12** opens the browser's developer tools, explore your webpage DOM structure.
+
+Can you edit the page?
+Can you test different CSS?  
+
+
+
+
+
 Douglas Crockford: JavaScript: The Good Parts
 https://www.youtube.com/watch?v=_DKkVvOt6dk
 
@@ -131,48 +379,12 @@ JavaScript: The Good Parts -- Douglas Crockford
 
 ## JavaScript 101 (Part 1)
 
-* Types
 * Scopes
 * Objects
 * Prototypal inheritance
 * Functions
 * Constructors
 * Arrays
-
-
-
-
-### Types
-
-JavaScript defines **6 types**:
-
-* number
-* boolean
-* string
-* object
-* undefined
-* null
-
-<!-- .element: class="w-40 float-left" -->
-
-```javascript
-var aNumber = 3.12;
-var aBoolean = true;
-var aString = 'John Smith';
-var anObject = { aProperty: null };
-typeof aNumber === 'number';
-typeof aBoolean === 'boolean';
-typeof aString === 'string';
-typeof anObject === 'object';
-typeof anObject.aProperty === 'object';
-typeof anObject.foobar === 'undefined';
-// null is a type but
-typeof null === 'object';
-```
-<!-- .element: class="w-50 float-left" -->
-
-JavaScript is a dynamic language: when you declare a variable, you don't specify a type (and the type can change over time).
-<!-- .element: class="small clear" -->
 
 
 
@@ -822,6 +1034,7 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 * https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
 * https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
 * http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
+* http://eloquentjavascript.net/
 
 ### Sources
 * Cours TWEB@heig-vd, Olivier Liechti https://github.com/wasadigi/Teaching-HEIGVD-TWEB/

@@ -310,8 +310,10 @@ Stop the server (ctrl+c)
 
 ### Step 4: Use Bower to install packages
 
-
+```sh
 bower install bootswatch --save
+```
+
 https://bootswatch.com/
 
 try different CSS files from bootswatch in index.html
@@ -329,102 +331,6 @@ Use lab1 to recreate/improve your CV with Boostrap and a development workflow
 
 
 
-# Adding interactions to the web
-
-
-
-
-### ![jQuery](images/jQuery-Logo.png) <!-- .element: class="w-40" -->
-
-<!-- .element: class="pdf-w-30" -->
-
-jQuery is a **fast, small**, and feature-rich JavaScript
-library. It makes things like HTML **document traversal** 
-and **manipulation, event handling, animation**, 
-and **Ajax** much simpler with an easy-touse
-API that works **across a multitude of browsers**.
-
-
-
-
-### jQuery Selecting Elements
-
-**Selecting Elements by ID**
-
-```javascript
-$('#myId'); // IDs must be unique per page.
-```
-
-**Selecting Elements by Class Name**
-
-```javascript
-$('.myClass');
-```
-
-**Selecting Elements by Attributes**
-
-```javascript
-$('input[name="first_name"]'); // this can be very slow in older browsers
-```
-
-**Selecting Elements by Compound CSS Selector**
-
-```javascript
-$('#myId ul.people li');
-```
-
-http://api.jquery.com/
-
-<!-- .element: class="credits" -->
-
-
-
-```xml
-
-```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
-
-
-
-
-# Lab 1b: better interactions
-
-We want to improve our page with some interactions and behaviors.
-
-
-
-### Step 5: Use bower to install jquery plugins
-
-```sh
-bower install jquery-smooth-scroll --save
-```
-
-*Notice that our index.html is automatically updated! (by grunt-rev-dep)*
-
-Use the plugin:
-
-```javascript
-$(document).ready(function(){
-  'use strict';
-  $('a').smoothScroll();  
-});
-```
-
-*maybe you need to edit jshint file*
-
-
-
-### Step 6: DevTools
-
-**F12** opens the browser's developer tools, explore your webpage DOM structure.
-
-Can you edit the page?
-Can you test different CSS?  
-
-
-
-
-
 # New problems
 
 * Editing code and making backups
@@ -434,6 +340,39 @@ Can you test different CSS?
 
 ![](images/code_quality_wtf.png)
 <!-- .element: class="bottom right" -->
+
+
+
+# GitHub
+
+[GitHub]((https://github.com/) is a web-based Git repository hosting service, adding
+its own features:
+
+Wikis, bug tracking, **Markdown** rendering and static page hosting.
+
+Unlike Git, which is strictly a command-line tool, GitHub provides
+a web-based **graphical interface and desktop integration** (https://windows.github.com/).
+
+
+
+
+
+Deploy to our special repo/page
+
+### Step 6: Production version
+
+Create a built, mimified version of your page with your toolchain
+```sh
+grunt build
+```
+*Notice that you have a dist folder with this new content*
+
+```sh
+grunt serve:dist
+```
+Helps to test the minified version.
+
+
 
 
 
@@ -492,6 +431,14 @@ https://try.github.io/levels/1/challenges/1
 
 <!-- .element: class="top right" -->
 
+### Quiz
+
+What is the main branch called in Git?
+
+What is the default name for a remote server?
+
+How do you get a file of a version?
+
 
 
 ### Ressources
@@ -502,18 +449,6 @@ https://try.github.io/levels/1/challenges/1
 * http://onlywei.github.io/explain-git-with-d3/#freeplay
 * http://pcottle.github.io/learnGitBranching/
 
-
-
-
-# GitHub
-
-[GitHub]((https://github.com/) is a web-based Git repository hosting service, adding
-its own features:
-
-Wikis, bug tracking, **Markdown** rendering and static page hosting.
-
-Unlike Git, which is strictly a command-line tool, GitHub provides
-a web-based **graphical interface and desktop integration** (https://windows.github.com/).
 
 
 
@@ -594,15 +529,14 @@ http://dillinger.io/
 
 
 
-
-# Lab 1c: deploy
+# Lab 1b: deploy
 
 ![](images/yeoman-ship.png)
 <!-- .element: class="w-30" -->
 
 
 
-### Step 7: Git Master
+### Step 5: Git Master
 
 Create a git repository for your project on Github
 
@@ -612,26 +546,18 @@ Change something and create a new commit.
 
 Clone the project from your neighbour
 
-
-
-### Step 8: Production version
-
-Create a built, mimified version of your page with your toolchain
-```sh
-grunt
-```
-*Notice that you have a dist folder with this new content*
-
-```sh
-grunt serve:dist
-```
-Helps to test the minified version.
+Can you push a commit?
 
 
 
-### Step 9: Deploy on Github Pages
 
-Create a new git repository inside your dist folder.
+# Pull requests
+
+
+
+### Step 7: Deploy on Github Pages
+
+Create a new git repository inside your dist folder and commit your files.
 
 Add your github repository as origin
 ```sh
@@ -660,4 +586,13 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 # Assignment 2
 
-Publish your final CV site on Github and provide the link on cyberlearn.
+
+Publish your final CV site on Github and 
+provide the link in the REAMDE.md file of ...
+Create A Pull request.
+
+
+
+
+
+# Adding interactions to the web

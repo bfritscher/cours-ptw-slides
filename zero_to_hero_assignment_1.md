@@ -11,6 +11,16 @@ Show your HTML/CSS skills by creating a Curriculum vitae webpage.
 
 
 
+# Valid HTML/CSS
+
+https://validator.w3.org/
+
+https://jigsaw.w3.org/css-validator/validator
+
+https://validator.w3.org/unicorn/
+
+
+
 ## Debriefing Assignment 1
 
 Tools:
