@@ -32,6 +32,10 @@ Over a dozen reusable components built to provide iconography, dropdowns, input 
 Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.
 <!-- .element: class="smaller" -->
 
+Note:
+
+Alternatives: Bootstrap, Foundation, Angular Material,
+
 
 
 ![](images/bootstrap.png)

@@ -17,132 +17,102 @@
 
 
 
-# multi page app vs SPA
+# Multi Page App (classic)<br/>vs Single Page Application (SPA)
 
-//see pic
+
 
 ![](images/multipage_app.png)
 
+
+
 ![](images/spa.png)
+
+
 
 There is a big trend towards “single-page applications”, where some of the
 responsibilities are moved from the server to the client side.
-• The client initially fetches a single “shell” page, which provides a rendering
+
+* The client initially fetches a single “shell” page, which provides a rendering
 context and loads application modules (scripts, markup partials, stylesheets, etc.).
-• When the user clicks on hyperlinks, the browser does not (immediately) send an
+* When the user clicks on hyperlinks, the browser does not (immediately) send an
 HTTP request to fetch a new page. Instead, the event is caught and processed by
 a JavaScript router on the client side.
-• Routing is done on the client side. The JavaScript router (typically provided by
+* Routing is done on the client side. The JavaScript router (typically provided by
 an application framework) looks at the target URL and decides which JavaScript
 function needs to be invoked. This function can update the DOM, sometimes in
 drastic manners (giving the impression that we move from an “Customers List”
 page to a “Customer Details” page).
 
-+ MOBILE
+<!-- .element class="small" -->
+
+Note:
+
+Mobile application developement can also be done wiht HTML/CSS/JavaScript with this kind of application and then be packaged into a native app with awebview.
 
 
 
 
-# paper
+# Paper to WWW
 
 
 ![](images/web_development_process.jpg)
 
-
-![](images/movies_03_movie.png)
-![](images/movies_03_upcoming.png)
-![](images/movies_04_third_party_directives.png)
-![](images/movies_05_custom_directive.png)
-![](images/movies_06_firebase.png)
-![](images/movies_06_firebase_login.png)
-
-
-only focus on frontent-app
-
-other
-Bootstrap, Foundation, Angular Material, 
-Ionic for mobile
+<!-- .element class="center" -->
 
 
 
 
-history
+# Objectifs
 
-http://mattiash.github.io/angular-presentation/presentation.html#1
-http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
-https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
-
-form
-http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angularjs
-https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek
-http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
-
-formulaire et validation
-ngMessages
+* Learn SPA with AngularJS
+* Only focus on frontent-app
+* Learn by Example: Movie Collection App
 
 
 
 
-
-## Javascript libraries
-
-
-### How do you pick a generator for your project?
-
-You probably have an idea of the framework(s) you want to use on the server
-and or client side (express, angular, backbone, etc.). You will use this as a first
-filter.
-
-* Some of the generators are supported by the Yeoman Team. That is probably a
-good indication about the quality and support over time (evolution).
-
-* Developers who use generators can “star” those they like. Sorting by
-popularity is also an interesting indication. If the community is big, you can
-expect issues to be reported and fixed, to see new features, etc.
-
-* After you have identified promising candidates, you need to get a first
-impression. Generate and build a project with each candidate. Look at their
-Github repository. Do you like what you see? Do you like the documentation?
-
-* Often, you will need to choose between “lightweight” and very “rich”
-generators. Lightweight generators are easier to learn and give you more control
-(but more work). Rich generators do a lot of things out-of-the-box but can be
-intimidating at first (learning curve to understand the skeleton).
-
+# Why AngularJS
 
 ![](images/AngularJS-large.png)
 
-![](images/google_trends.jpg)
+![](images/google_trends.png)
 
 
 
 
+# Angular Basics
+
+MVC: http://mattiash.github.io/angular-presentation/presentation.html#1
+
+scope: http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs (slide 12)
+
+Tool: https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek
 
 
 
-#################
 
-Theory:
-angular basics
-MVC
+### Resources
+
+https://docs.angularjs.org/api
+
+* http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
+* https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
+* http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angularjs
+* http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
 
 
-resources: https://docs.angularjs.org/api
 
+
+```
 modules
 directives ng-model
 modules
-
- ng-app="movieApp"
-
+ng-app="movieApp"
 MVC
 directives standard
-
 vue et binding
-
 event ng-click
 controller $scope
-
 ngApp
 ngController
 {{}}
@@ -158,13 +128,48 @@ $filter
   uppercase
 ngClick
 evenenemts
+```
+
+
+
+## Javascript libraries
+
+*How do you pick a generator for your project?*
+
+You probably have an idea of the framework(s) you want to use on the server
+and or client side (express, angular, backbone, etc.). You will use this as a first
+filter.
+<!-- .element class="small" -->
+
+
+* Some of the generators are supported by the Yeoman Team. That is probably a
+good indication about the quality and support over time (evolution).
+
+* Developers who use generators can “star” those they like. Sorting by
+popularity is also an interesting indication. If the community is big, you can
+expect issues to be reported and fixed, to see new features, etc.
+
+<!-- .element class="small" -->
+
+
+
+* After you have identified promising candidates, you need to get a first
+impression. Generate and build a project with each candidate. Look at their
+Github repository. Do you like what you see? Do you like the documentation?
+
+* Often, you will need to choose between “lightweight” and very “rich”
+generators. Lightweight generators are easier to learn and give you more control
+(but more work). Rich generators do a lot of things out-of-the-box but can be
+intimidating at first (learning curve to understand the skeleton).
+
+<!-- .element class="small" -->
 
 
 
 
+## Exercice setup:
 
-Exercice setup:
-
+```sh
 yo angular
 
      _-----_
@@ -188,34 +193,36 @@ yo angular
  (*) angular-route.js
  (*) angular-sanitize.js
  (*) angular-touch.js
-
+```
 
 
 
 Explore Folder
+
+```sh
 grunt serve
+```
 
-chrome dev tool
-add folder to workspace
-map to file system resource
+Let's use Chrome DevTools as IDE
 
-Focus on MainCtrl + view/main.html
-styles/main.css
-cleanup main.css, index.html add title
+* add folder to workspace
+* map to file system resource
+
+* Focus on MainCtrl + view/main.html
+* styles/main.css
+* cleanup main.css, index.html add title
 
 
 
 
-Step0
+### Exercice: Step1
 
-Exercice:
+![](images/movies_01.png)
 
-First task:
 - Create a form to add a new movie to a list of movies
-- display the list of movies
-- be able to delete a movie from the list
+- Display the list of movies
+- Be able to delete a movie from the list
 
-![](images/movie_01.png)
 
 
 
@@ -224,6 +231,8 @@ First task:
 # Theory
 
 localstorage + JSON
+http://json.org/
+
 show chrome resource tab
 plusieurs controlleur
 services
@@ -255,6 +264,9 @@ it will display a movie at index id in the movies array
 use a filter to display the title in uppercase
 
 - make title in the main.html page clickable to lead to your new movie detail page
+
+![](images/movies_03_movie.png)
+![](images/movies_03_upcoming.png)
 
 
 
@@ -337,6 +349,8 @@ https://www.getpostman.com/docs/introduction
 
 ![](images/postman-logo.png)
 
+
+![](images/movies_04_third_party_directives.png)
 
 
 
@@ -469,6 +483,8 @@ bower install ng-flags#master --save
 
 https://github.com/asafdav/ng-flags
 
+world-flags-sprite
+
 make magic
 add class slide to ng-view
 
@@ -496,6 +512,8 @@ and this css
 
 ####
 
+formulaire et validation
+ngMessages
 
 
 
@@ -506,6 +524,8 @@ créer ses directives
 
 
 Exercice
+
+![](images/movies_05_custom_directive.png)
 
 Lets fix our data and make poster more reusable with a custom directive
 
@@ -538,6 +558,10 @@ favoriteMovies
 
 ###
 firebase
+
+![](images/movies_06_firebase.png)
+![](images/movies_06_firebase_login.png)
+
 
 https://www.firebase.com/docs/web/libraries/angular/quickstart.html
 

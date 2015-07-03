@@ -28,10 +28,8 @@
 
 * Doit être deployé (gh-pages, autre sur accord)
 * Code dans un repository github
-* Documentation démarrag rapide, configuration en format markdown dans readme.md
-* Autre documentation fichiers .md et/ou wiki github du projet
-* (Images de croquis papier)
-* Description du projet project idéa à la réalisation
+* Documentation en format markdown dans readme.md
+* Description du projet, de l'idée à la réalisation
   * Ce qui a fonctionné
   * Ce qui a posé problème
   * Principales leçons apprise

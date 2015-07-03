@@ -1,0 +1,46 @@
+monObj = {nom: 'Boris', test:33, l: [1, 2, 3]}
+Object {nom: "Boris", test: 33, l: Array[3]}l: Array[3]0: 11: 22: 3length: 3__proto__: Array[0]nom: "Boris"test: 33__proto__: Object
+JSON.stringify(monObj)
+"{"nom":"Boris","test":33,"l":[1,2,3]}"
+monJSON = JSON.stringify(monObj)
+"{"nom":"Boris","test":33,"l":[1,2,3]}"
+monObj.nom
+"Boris"
+monJSON
+"{"nom":"Boris","test":33,"l":[1,2,3]}"
+monJSON[3]
+"o"
+monJSON[0]
+"{"
+JSON.parse(monJSON)
+Object {nom: "Boris", test: 33, l: Array[3]}
+JSON.parse('[{"a1": 3}, 7]')
+[Objecta1: 3__proto__: Object, 7]
+variable1 = JSON.parse('[{"a1": 3}, 7]')
+[Object, 7]
+variable1[0].a1
+3
+localStorage
+Storage {adminFilter: "2", adminTab: "1", firebase:host:ptw.firebaseio.com: ""s-dal5-nss-15.firebaseio.com"", firebase:session::ptw: "{"uid":"github:338973","provider":"github","github…38973","provider":"github"},"expires":1435341951}", ls.CONTACTS: "[{"sql":"SELECT to_char(last_day(sysdate),'Day') A…OM DUAL\n","error":"vérifier select","result":1}]"…}adminFilter: "2"adminTab: "1"firebase:host:ptw.firebaseio.com: ""s-dal5-nss-15.firebaseio.com""firebase:session::ptw: "{"uid":"github:338973","provider":"github","github":{"id":"338973","accessToken":"c0222bbb35a038516b3cb1605cc8343fce9dd7cd","displayName":"Boris Fritscher","username":"bfritscher","email":null,"cachedUserProfile":{"login":"bfritscher","id":338973,"avatar_url":"https://avatars.githubusercontent.com/u/338973?v=3","gravatar_id":"","url":"https://api.github.com/users/bfritscher","html_url":"https://github.com/bfritscher","followers_url":"https://api.github.com/users/bfritscher/followers","following_url":"https://api.github.com/users/bfritscher/following{/other_user}","gists_url":"https://api.github.com/users/bfritscher/gists{/gist_id}","starred_url":"https://api.github.com/users/bfritscher/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bfritscher/subscriptions","organizations_url":"https://api.github.com/users/bfritscher/orgs","repos_url":"https://api.github.com/users/bfritscher/repos","events_url":"https://api.github.com/users/bfritscher/events{/privacy}","received_events_url":"https://api.github.com/users/bfritscher/received_events","type":"User","site_admin":false,"name":"Boris Fritscher","company":null,"blog":"http://fritscher.ch","location":"Switzerland","email":null,"hireable":true,"bio":null,"public_repos":32,"public_gists":7,"followers":3,"following":0,"created_at":"2010-07-20T19:54:04Z","updated_at":"2015-06-21T20:42:15Z"}},"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InVpZCI6ImdpdGh1YjozMzg5NzMiLCJwcm92aWRlciI6ImdpdGh1YiJ9LCJpYXQiOjE0MzUyNTU1NTF9.WED6T0TfDTwFT5CLJ0jo1DtrRvvGdPh3zDilzic0pVY","auth":{"uid":"github:338973","provider":"github"},"expires":1435341951}"length: 7ls.CONTACTS: "[{"sql":"SELECT to_char(last_day(sysdate),'Day') AS nom_jour, \n\t   to_char(last_day(sysdate),'DD') AS jour FROM dual ;","error":"vérifier select","result":1},{"sql":"SELECT to_char(last_day(sysdate),'DAY') AS nom_jour, \n\t   to_char(last_day(sysdate),'DD') AS jour FROM dual ;","result":1},{"sql":"SELECT to_char(last_day(sysdate),'DAY') AS nom_jour, \n\t   to_char(last_day(sysdate),'DD') AS jour FROM dual ;","result":1},{"sql":"SELECT to_char(last_day(sysdate),'DAY') AS nom_jour, \n\t   to_char(last_day(sysdate),'DD') AS jour FROM dual ;","result":1},{"sql":"SELECT to_char(last_day(sysdate),'DAY') AS nom_jour, \n\t   to_char(last_day(sysdate),'DD') AS jour FROM dual ;","result":1},{"sql":"SELECT TO_CHAR (LAST_DAY(sysdate),'Day'), TO_CHAR (LAST_DAY(sysdate),'DD')\nFROM DUAL\n","error":"vérifier select","result":1},{"sql":"SELECT TO_CHAR (LAST_DAY(sysdate),'Day') AS nom_jour, TO_CHAR (LAST_DAY(sysdate),'DD') AS jour\nFROM DUAL\n","error":"vérifier select","result":1},{"sql":"SELECT TO_CHAR (LAST_DAY(sysdate),'Day') AS nom_jour, TO_CHAR (LAST_DAY(sysdate),'DD') AS jour\nFROM DUAL\n","error":"vérifier select","result":1},{"sql":"SELECT TO_CHAR (LAST_DAY(sysdate),'Day') AS \"nom_jour\", TO_CHAR (LAST_DAY(sysdate),'DD') AS \"jour\"\nFROM DUAL\n","error":"vérifier select","result":1}]"ls.HR: "[{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT employee_id, employee_id\n\tFROM Employees \n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT employee_id, employee_id\n\tFROM Employees \n)\nORDER BY Last_Name","error":"vérifier conditions et schéma","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT employee_id, employee_id\n\tFROM Employees \n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT employee_id, employee_id\n\tFROM Employees \n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT (employee_id, employee_id)\n\tFROM Employees \n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00920: opérateur relationnel non valide\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT (employee_id, employee_id)\n\tFROM Employees \n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00920: opérateur relationnel non valide\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE (employee_id, employee_id) IN (SELECT (employee_id, employee_id)\n\tFROM Employees \n                                              UNION \n                                              SELECT manager_id FROM EMPLOYEES\n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00920: opérateur relationnel non valide\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n                                              UNION \n                                              SELECT manager_id FROM EMPLOYEES\n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n                                              UNION \n                                              SELECT manager_id FROM EMPLOYEES\n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n    ORDER BY salary\n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00907: parenthèse de droite absente\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n\n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM EMPLOYEES WHERE employee_id IN (SELECT employee_id\n\tFROM Employees \n    ORDER BY salary\n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00907: parenthèse de droite absente\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE id IN (SELECT id\n\tFROM Employees\n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00904: \"ID\" : identificateur non valide\n"},{"sql":"SELECT * FROM EMPLOYEES WHERE id IN (SELECT id\n\tFROM Employees\n\tORDER BY SALARY\n)\nORDER BY Last_Name","result":"","error":"Error: ORA-00907: parenthèse de droite absente\n"},{"sql":"SELECT * FROM (SELECT *\n\tFROM Employees\n\tORDER BY SALARY\n)\nORDER BY Last_Name","result":107},{"sql":"SELECT * FROM (SELECT *\n\tFROM Employees\n\tORDER BY SALARY\n)","result":107},{"sql":"SELECT *\nFROM Employees","result":107},{"sql":"adsf","result":"","error":"Error: ORA-00900: instruction SQL non valide\n"},{"sql":"SELECT *\nFROM Employees","result":107},{"sql":"dsaf","result":"Error: ORA-00900: instruction SQL non valide\n"},{"sql":"SELECT *\nFROM Employees","result":107},{"sql":"SELECT *\nFROM Employees","result":""},{"sql":"fdg","result":""},{"sql":"","result":""},{"sql":"SELECT *\nFROM Employees","result":""},{"sql":"SELECT * FROM Employees","result":""}]"movies: "[{"title":"test","comment":""}]"__proto__: Storage
+localStorage.setItem
+setItem() { [native code] }
+localStorage.setItem('stockage_ma_variable', variable1)
+undefined
+localStorage.setItem('stockage_ma_variable', JSON.stringify(variable1))
+undefined
+--refresh
+VM1232:2 Uncaught ReferenceError: refresh is not defined(…)(anonymous function) @ VM1232:2InjectedScript._evaluateOn @ VM1094:904InjectedScript._evaluateAndWrap @ VM1094:837InjectedScript.evaluate @ VM1094:693
+variable1
+VM1353:2 Uncaught ReferenceError: variable1 is not defined(…)(anonymous function) @ VM1353:2InjectedScript._evaluateOn @ VM1094:904InjectedScript._evaluateAndWrap @ VM1094:837InjectedScript.evaluate @ VM1094:693
+variable1
+VM1354:2 Uncaught ReferenceError: variable1 is not defined(…)(anonymous function) @ VM1354:2InjectedScript._evaluateOn @ VM1094:904InjectedScript._evaluateAndWrap @ VM1094:837InjectedScript.evaluate @ VM1094:693
+variable1 = localStorage.getItem('stockage_ma_variable')
+"[{"a1":3},7]"
+variable1.a1
+undefined
+variable1 = JSON.parse(variable1)
+[Objecta1: 3__proto__: Object, 7]
+variable1.a1
+undefined
+variable1[0].a1
+3
