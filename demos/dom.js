@@ -1,33 +1,18 @@
-
-<li>​b​</li>​
-$($0)
-[<li>​b​</li>​]
-$($0)[0]
-<li>​b​</li>​
-$0
-<li>​b​</li>​
-$0
-<li>​b​</li>​
-$0.className
-""
-$0.className
-"fun big"
-$0.className.split(' ')
-["fun", "big"]
-$0.className.split(' ').indexOf('big')
-1
-var list = $0.className.split(' ');.indexOf('big')
-VM11802:2 Uncaught SyntaxError: Unexpected token .(…)InjectedScript._evaluateOn @ VM10678:904InjectedScript._evaluateAndWrap @ VM10678:837InjectedScript.evaluate @ VM10678:693
+//$0 = <li>​b​</li>​
+$($0) // [<li>​b​</li>​]
+$($0)[0] //<li>​b​</li>​
+$0.className //""
+$0.className //"fun big"
+$0.className.split(' ') //["fun", "big"]
+$0.className.split(' ').indexOf('big') //1
 var list = $0.className.split(' ');
 var idx = list.indexOf('big');
-undefined
 var list = $0.className.split(' ');
 var idx = list.indexOf('big');
 if(idx >=0){
   list.splice(idx, 1);
   $0.className = list.join(' ');
 }
-"fun"
 var list = $0.className.split(' ');
 var className = 'big';
 var idx = list.indexOf('big');
@@ -38,7 +23,6 @@ if(idx >=0){
 }
 $0.className = list.join(' ');
 
-"fun big"
 var list = $0.className.split(' ');
 var className = 'big';
 var idx = list.indexOf('big');
@@ -49,7 +33,6 @@ if(idx >=0){
 }
 $0.className = list.join(' ');
 
-"fun"
 var list = $0.className.split(' ');
 var className = 'big';
 var idx = list.indexOf('big');
@@ -71,17 +54,14 @@ if(idx >=0){
 }
 element.className = list.join(' ');
 }
-undefined
+
 toggleClass($0, 'big')
-undefined
 toggleClass($0, 'hello')
-undefined
-jQuery($0)
-[<li class=​"fun hello">​b​</li>​]
-jQuery($0).toggleClass
-(a,b){var c=typeof a;return"boolean"==typeof b&&"string"===c?b?this.addClass(a):this.removeClass(a):this.each(n.isFunction(a)?function(c){n(this).toggleClass(a.call(this,c,this.className,b),b…
-jQuery($0).addClass
-(a){var b,c,d,e,f,g,h="string"==typeof a&&a,i=0,j=this.length;if(n.isFunction(a))return this.each(function(b){n(this).addClass(a.call(this,b,this.className))});if(h)for(b=(a||"").match(E)||[]…
+
+
+jQuery($0) //[<li class=​"fun hello">​b​</li>​]
+jQuery($0).toggleClass //(a,b){var c=typeof a;return"boolean"==typeof b&&"string"===c?b?this.addClass(a):this.removeClass(a):this.each(n.isFunction(a)?function(c){n(this).toggleClass(a.call(this,c,this.className,b),b…
+jQuery($0).addClass //(a){var b,c,d,e,f,g,h="string"==typeof a&&a,i=0,j=this.length;if(n.isFunction(a))return this.each(function(b){n(this).addClass(a.call(this,b,this.className))});if(h)for(b=(a||"").match(E)||[]…
 window.toggleClass
 toggleClass(element, className){
 var list = element.className.split(' ');
