@@ -1,0 +1,95 @@
+
+undefined
+hello
+"World"
+var table = ['a', 'b']
+undefined
+table
+undefined
+table
+undefined
+table.length
+VM7298:2 Uncaught TypeError: Cannot read property 'length' of undefined(…)(anonymous function) @ VM7298:2InjectedScript._evaluateOn @ VM7077:904InjectedScript._evaluateAndWrap @ VM7077:837InjectedScript.evaluate @ VM7077:693
+var table = ['a', 'b'];
+undefined
+table
+["a", "b"]
+table2 = [['a1', 'a2'],['b2']]
+[Array[2]0: "a1"1: "a2"length: 2__proto__: Array[0], Array[1]0: "b2"length: 1__proto__: Array[0]]
+table.push('c')
+3
+table
+["a", "b", "c"]
+table.push(23)
+4
+table
+["a", "b", "c", 23]
+table.push([])
+5
+table
+["a", "b", "c", 23, Array[0]]
+table.push(false)
+6
+table
+["a", "b", "c", 23, Array[0], false]
+table[4]
+[]
+table[4].push('test')
+1
+table
+["a", "b", "c", 23, Array[1]0: "test"length: 1__proto__: Array[0], false]
+'0' 
+"0"
+'0'  == false
+true
+'0'  === false
+false
+function plus2 (n){
+  return n +2;
+}
+undefined
+plus2
+plus2(n){
+  return n +2;
+}
+plus(4)
+VM7777:2 Uncaught ReferenceError: plus is not defined(…)(anonymous function) @ VM7777:2InjectedScript._evaluateOn @ VM7077:904InjectedScript._evaluateAndWrap @ VM7077:837InjectedScript.evaluate @ VM7077:693
+plus2(4)
+6
+var moins1 = function fsdfa(n){
+   return n-1;
+};
+undefined
+moins1
+fsdfa(n){
+   return n-1;
+}
+moins1(3)
+2
+var monObj = {};
+undefined
+monObj
+Object {}
+monObj.test = 'salut';
+"salut"
+monObj
+Object {test: "salut"}
+monObj.test2 = 'salut2';
+"salut2"
+monObj
+Object {test: "salut", test2: "salut2"}
+monObj.test2
+"salut2"
+function procedure (){
+}
+undefined
+procedure()
+undefined
+var test = moins1(3)
+undefined
+test
+2
+test = procedure()
+undefined
+test
+undefined

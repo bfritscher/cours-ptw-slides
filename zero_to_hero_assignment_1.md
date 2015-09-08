@@ -20,6 +20,16 @@ Highligh your technology skill with number, stars or percentages.
 Describe in a short txt. NO Word!
 
 
+# Valid HTML/CSS
+
+https://validator.w3.org/
+
+https://jigsaw.w3.org/css-validator/validator
+
+https://validator.w3.org/unicorn/
+
+
+
 ## Debriefing Assignment 1
 
 Tools:

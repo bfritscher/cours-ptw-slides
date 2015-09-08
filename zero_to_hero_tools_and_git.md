@@ -53,6 +53,10 @@ Over a dozen reusable components built to provide iconography, dropdowns, input 
 Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.
 <!-- .element: class="smaller" -->
 
+Note:
+
+Alternatives: Bootstrap, Foundation, Angular Material,
+
 
 
 ![](images/bootstrap.png)
@@ -92,6 +96,8 @@ Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Ea
 [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
 
 <!-- .element: class="credits" -->
+
+
 
 ```xml
 <!DOCTYPE html>
@@ -387,6 +393,7 @@ Add a progress bar for your skills.
 
 
 
+
 # New problems
 
 * Editing code and making backups
@@ -454,17 +461,14 @@ https://try.github.io/levels/1/challenges/1
 
 <!-- .element: class="top right" -->
 
-
-
 ### Quiz
 
-What new commands have you learned?
-
-What do they do?
-
-How to check the state of your git repository?
-
-How to revert changes to a file?
+- What is the main branch called in Git?
+- What is the default name for a remote server?
+- What new commands have you learned?
+- What do they do?
+- How to check the state of your git repository?
+- How to revert changes to a file?
 
 
 
@@ -475,6 +479,7 @@ How to revert changes to a file?
 * http://rogerdudler.github.io/git-guide/
 * http://onlywei.github.io/explain-git-with-d3/#freeplay
 * http://pcottle.github.io/learnGitBranching/
+
 
 
 
@@ -578,7 +583,6 @@ some: `c0de`
 http://dillinger.io/
 
 <!-- .element: class="credits" -->
-
 
 
 
