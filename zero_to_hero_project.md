@@ -8,7 +8,7 @@
 
 ![](images/common/logo_hes-so.jpg)
 <!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
- 
+
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
 <!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
@@ -28,14 +28,14 @@
 
 * Doit être deployé (gh-pages, autre sur accord)
 * Code dans un repository github
-* Documentation démarrag rapide, configuration en format markdown dans readme.md
+* Documentation démarrage rapide, configuration en format markdown dans readme.md
 * Autre documentation fichiers .md et/ou wiki github du projet
-* (Images de croquis papier)
-* Description du projet project idéa à la réalisation
+* Images de croquis papier
+* Description du projet project idée à la réalisation
   * Ce qui a fonctionné
   * Ce qui a posé problème
-  * Principales leçons apprise
-* L'application web devrait être compréhensible sans guide d'utilisateur (infobulle et indication sont intégrées) 
+  * Principales leçons apprises
+* L'application web devrait être compréhensible sans guide d'utilisateur (infobulle et indication sont intégrées)
 
 
 

@@ -8,11 +8,13 @@
 
 ![](images/common/logo_hes-so.jpg)
 <!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
- 
+
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
 <!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Part 1: From blank page to deployed website
+
+#### *HTML and CSS*
 
 
 
@@ -26,41 +28,6 @@
 
 
 
-### What is your current *perception* of Web development?
-
-Personal interest:
-
-![](images/poll.png)
-
-<!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
-
-1. Web apps? It's **for junior developers and kids**, but real software engineers have better things to do.
-2. Web apps? I am not a **graphics designer…** what am I doing here?
-3. The Web is where some of the **most exciting technologies** are emerging.
-4. When I grow up, I want to be a **front-end engineer**.
-
-<!-- .element: class="float-left w-70 small" -->
-
-
-
-
-### What is your current *perception* of Web development?
-
-Scope:
-
-![](images/poll.png)
-
-<!-- .element: class="float-left w-15" style="margin-right: 2em;" -->
-
-1. Web development is **purely about building user interfaces**. It's about HTML and CSS pages.
-2. Web development is about building **complete applications**, including a user interface.
-3. Is there **any kind of application** that does not rely on the Web, in one way or another? Mobile apps, interactive apps, business apps: all of this is built on the Web!
-
-<!-- .element: class="float-left w-70 small" -->
-
-
-
-
 # Introduction
 <br/>
 ## The Web as an Application Platform
@@ -70,7 +37,7 @@ Scope:
 
 ### Evolution of the web
 
-1993: Web on Mosaic 
+1993: Web on Mosaic
 ![](images/mosaic.jpg)
 <!-- .element: class="w-60" -->
 
@@ -162,9 +129,9 @@ Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your user
 
 ## Some Trends
 
-* Single Page Applications (SPA) 
+* Single Page Applications (SPA)
 * Real-time
-* Tooling 
+* Tooling
 * Automated Development Workflows
 ![](images/intro-adw.png)
 
@@ -197,7 +164,7 @@ But also in JavaScript
 
 
 
-### Goal: Learn to create and deploy a client web application. 
+### Goal: Learn to create and deploy a client web application.
 
 ![](images/yeoman-illustration-home-inverted.png)
 
@@ -207,7 +174,7 @@ Learn theory and tools, see examples and practice!
 
 
 
-## Labs: MonCV & Movie 
+## Labs: MonCV & Movie
 ![](images/monCV_final.png)
 <!-- .element: class="w-30 float-left pdf-w-30 pdf-float-left" -->
 
@@ -240,10 +207,10 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 <br/>Grades:
 * Assignments: individual grade
-* Project: team grade 
+* Project: team grade
   * product
-  * presentation 
-  
+  * presentation
+
 <!-- .element: class="left" -->
 
 ![](images/yeoman-plan-left.png)
@@ -276,13 +243,14 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 <html>
   <head>
     <title>Document Title</title>
+    <meta charset="utf-8" />
   </head>
   <body>
     <h1>Main heading in my document</h1>
     <p>Look Ma, I am coding <strong>HTML</strong>.</p>
-  
+
     <!-- This is a comment -->
-    <h2>Sub heading</h2>  
+    <h2>Sub heading</h2>
     <p>Some more text</p>
   </body>
 </html>
@@ -308,9 +276,10 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 | Element     | Description
 |-------------|------------
 | `<!DOCTYPE html>` | Document type must be the very first thing in your HTML document
-| `<html>`    | Root of an HTML document 
+| `<html>`    | Root of an HTML document
 | &nbsp;&nbsp;&nbsp;&nbsp;`<head>`    | Metadata section of the document
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<title>`   | Defines the title of the document (only text)
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<meta>`   | Provides machine parsable metadata about the HTML document
 | &nbsp;&nbsp;&nbsp;&nbsp;`<body>`    | Contains the content of the document
 | `<!--  -->` | Comment everything between < and >
 | `<h1>,<h2>,<h3>,<h4>` | Heading most important to least
@@ -409,22 +378,22 @@ Ids and classes are used by css and javascript to reference specific indvidual o
   <p><label for="n">Name: </label>
   <input id="n" name="name"
          type="text" placeholder="name"/></p>
-  
+
   <p><label>Password: <input type="password" /></label></p>
-  
+
   <p><input type="checkbox" name="on" value="1"/>on
   <!-- radio groups need same name -->
   <input type="radio" name="r" value="1" checked/>1
   <input type="radio" name="r" value="2"/>2</p>
-  
+
   <p><textarea name="multiline"></textarea></p>
-  
+
   <p><select name="choice">
     <option value="v1">Value 1</option>
     <option value="v2" selected>Value 2</option>
     <option value="v3">Value 3</option>
     </select></p>
-  
+
   <p><button>Hello</button>
      <input type="submit" /></p>
 </form>
@@ -449,7 +418,7 @@ An inline element occupies only the space bounded by the tags that define the in
 
 * may contain only data and other inline elements.
 * do not begin with new line.
- 
+
 > strong, a, img, span, button, input, label, select, textarea
 
 
@@ -458,9 +427,9 @@ An inline element occupies only the space bounded by the tags that define the in
 ### HTML: block-level elements
 
 A block-level element occupies the entire space of its parent element (container), thereby creating a "block."
- 
+
 * block-level elements begin on new lines.
- 
+
 > div, ul, form, h1, h2, header, nav, pre, p
 
 
@@ -474,12 +443,12 @@ In HTML5, this binary distinction of **block-level** vs. **inline** elements is 
 <!-- .element: class="w-50" -->
 
 <!-- .element: class="center" -->
- 
-**block-level** ≈ flow content, 
+
+**block-level** ≈ flow content,
 **inline** ≈ phrasing content
 
 <!-- .element: class="small" -->
- 
+
 https://developer.mozilla.org/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu
 
 <!-- .element: class="credits" -->
@@ -609,9 +578,9 @@ div {
 
 ***box-sizing: content-box;*** default
 
-***box-sizing: border-box;*** width includes padding + border 
+***box-sizing: border-box;*** width includes padding + border
 
-Collapsing margins: depending on setting a border or padding, margins are collapsed or put apart. Normally, bottom and top margin margins are merged together. 
+Collapsing margins: depending on setting a border or padding, margins are collapsed or put apart. Normally, bottom and top margin margins are merged together.
 
 center a block element: *margin: 0 auto*;
 
@@ -733,7 +702,7 @@ Lets the presentation of content be **tailored** to a specific range of output d
 
 > `@media` **some rule** `[and|or]` **some other rule**
 > { **CSS for only this selection** }
- 
+
 **rules:** min-width, max-width, min-device-width, max-device-width, orientation: [landscape | portrait], ...
 
 https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
@@ -742,11 +711,11 @@ https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
 
 ### CSS: Media Queries Bootstrap3 breakpoints
 ```css
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
 
 }
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (min-width : 480px) {
 
 }

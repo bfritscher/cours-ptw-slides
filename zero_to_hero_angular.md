@@ -8,11 +8,13 @@
 
 ![](images/common/logo_hes-so.jpg)
 <!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
- 
+
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
 <!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Part 2: Build and deploy a Single Page Application
+
+#### Angular.js
 
 
 
@@ -41,7 +43,7 @@ page to a “Customer Details” page).
 + MOBILE
 
 
-
+http://www.websiteoptimization.com/secrets/ajax/8-1-ajax-pattern.html
 
 # paper
 
@@ -60,7 +62,7 @@ page to a “Customer Details” page).
 only focus on frontent-app
 
 other
-Bootstrap, Foundation, Angular Material, 
+Bootstrap, Foundation, Angular Material,
 Ionic for mobile
 
 
@@ -243,7 +245,7 @@ transform your app to use a service as storage for the movies and helps persiste
 - create a service (factory) moviedb
 which has  2 private helper
 loadLocalStorage to help restore the movies array from storage (json->array)
-saveLocalStorage to help to save the movies array to storage array->json   
+saveLocalStorage to help to save the movies array to storage array->json
 4 public api methods
 getMovies returns a array of movies
 addMovie: takes a movie object and adds it to the internal movies array and also perssits to localstorage
@@ -363,7 +365,7 @@ css
 body {
   padding: 0;
   background-repeat: no-repeat;
-  background-size: cover;  
+  background-size: cover;
 }
 .movie{
   margin-bottom: 2em;
@@ -384,7 +386,7 @@ body {
 display the results with a new controller upcoming url and view results
 iterate over moviedb.getMovieResults()
 create a link for each movie with class movie and col-sm-3 point to the movie page with id from the movie result
-title of the movie as h2 
+title of the movie as h2
 for the poster image use a div with background-image
 <div class="poster" ng-style="{'background-image': (m|toBackgroundCSS) }"></div>
 
@@ -397,11 +399,11 @@ url( baseUrlofmoviedb/w185/movie_poster_path_property)
 
 
 
-alter moviectrl to get the movie from the net by id 
+alter moviectrl to get the movie from the net by id
 explore data structure of the movie json
-alter the movie.html view 
+alter the movie.html view
 to display the poster (same code as before)
-to display the title 
+to display the title
 the overview
 iterate over the data of these three array
 releases
@@ -409,7 +411,7 @@ similar movies
 credits of cast
 
 notice that there are two many release countries
-filter them down to only display fr,de,ch 
+filter them down to only display fr,de,ch
 by creating a filter function in the scope of moviectrl
 validCountry
 
@@ -522,7 +524,7 @@ use a scope for omovie
 
 #step2 add fuctionnality
 add a star button to the poster directive template and handle the click function inside the directives link function
-change moviedb to store a movie object with the needed information, id, title, poster_path 
+change moviedb to store a movie object with the needed information, id, title, poster_path
 create a isMovieFavorite
 modify addMovie/removeMovie to use object instead of array to make lookup by id easyer... (or loop array ...)
 cleanup unused functions  emptyMovie, getMovies
@@ -531,7 +533,7 @@ to reuse results.html in main we can create afunction that links movieResults wi
 favoriteMovies
 
 
-## 
+##
 
 
 
@@ -597,14 +599,14 @@ $firebaseAuth, $firebaseObject
         authObj.$unauth();
         authData = null;
     }
-    
+
     function saveLocalStorage(){
       localStorage.setItem('movies', angular.toJson(movies));
       if(authData){
         movies.$save();
       }
     }
-    
+
     if(savedMovies && Object.keys(movies).length === 0){
 
 

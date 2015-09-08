@@ -1,3 +1,24 @@
+643-1-1 Projet de technologies WEB de présentation
+<!-- .element style="font-size:0.7em;margin:4em 0;" -->
+
+# Zero to Hero
+
+![](images/common/logo_heg.png)
+<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
+
+![](images/common/logo_hes-so.jpg)
+<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
+
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
+<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
+
+#### Part 1: From blank page to deployed website
+
+#### *JavaScript*
+
+
+
+
 # JavaScript
 
 ![](images/JavaScript-logo.png)
@@ -63,9 +84,9 @@ Current knowledge:
 
 <!-- .element: class="float-left w-15"  style="margin-right: 2em;" -->
 
-* **Novice:** I may have hacked a few scripts on web pages, but mostly by copy-pasting examples and without fully understanding the language (what is a prototype?).
-* **Intermediate:** I have used JavaScript quite a bit. I can describe the object-oriented model, I understand what a constructor is and how it works. I have quite a bit of experience with JQuery and other libraries. I am always working with a debugger.
-* **Expert:** closures and modules have no secret for me, I have read "JavaScript: the good parts". I have designed my development workflow with yeoman, grunt, bower and a few other tools. I know who Paul Irish is.
+1. **Novice:** I may have hacked a few scripts on web pages, but mostly by copy-pasting examples and without fully understanding the language (what is a prototype?).
+2. **Intermediate:** I have used JavaScript quite a bit. I can describe the object-oriented model, I understand what a constructor is and how it works. I have quite a bit of experience with JQuery and other libraries. I am always working with a debugger.
+3. **Expert:** closures and modules have no secret for me, I have read "JavaScript: the good parts". I have designed my development workflow with yeoman, grunt, bower and a few other tools. I know who Paul Irish is.
 
 <!-- .element: class="float-left w-70 smaller" -->
 
@@ -132,10 +153,13 @@ JavaScript: The Good Parts -- Douglas Crockford
 ## JavaScript 101 (Part 1)
 
 * Types
+* Conditions
+* Loops
+* Functions
 * Scopes
 * Objects
 * Prototypal inheritance
-* Functions
+* More on functions
 * Constructors
 * Arrays
 
@@ -177,6 +201,57 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 
 
+### Conditions
+
+```javascript
+var name = "kittens";
+if (name === "puppies") {
+  name += "!";
+} else if (name === "kittens") {
+  name += "!!";
+} else {
+  name = "!" + name;
+}
+
+name === "kittens!!"
+```
+
+
+
+
+### Loop
+
+```javascript
+for (var i = 0; i < 5; i++) {
+  // Will execute 5 times
+}
+
+while ( true ) {
+  // an infinite loop!
+}
+```
+
+
+
+
+### Functions
+
+```javascript
+function add(x, y) {
+  var total = x + y;
+  return total;
+}
+
+add(); // NaN
+// You can't perform addition on undefined
+
+add(2, 3, 4); // 5
+// added the first two; 4 was ignored
+```
+
+
+
+
 ### Scopes
 
 There are 2 scopes for variables:
@@ -208,10 +283,10 @@ function myFunction() {
 
 function myFunction2() {
   //no block scope!
-  for(i=0; i<10; i++){
+  for(i = 0; i < 10; i++){
     //i is in global scope!
   }
-  for(var j=0; j<10; j++){
+  for(var j = 0; j < 10; j++){
     //j is in function scope!
   }
 }
@@ -612,7 +687,7 @@ bower install Chart.js --save
 
 ![](images/chartjs.jpg)
 
-*Read the documentation!* 
+*Read the documentation!*
 
 
 
@@ -732,7 +807,7 @@ var myModule = (function(){
         console.log('Hello ' + aPrivateVar);
     };
     var privateFunction2 = function(){};
-    
+
     // Make some elements public
     return {
       publicFunction: privateFunction1
@@ -792,7 +867,7 @@ var obj = {};
 obj.myMethod = function () {
 
   var that = this; //saving this scope
-  
+
   console.log(this); // this = obj
     setTimeout(function () {
         console.log(that); // that (this) = obj
@@ -822,6 +897,7 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 * https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
 * https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/JavaScript_basics
 * http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
+* https://developer.chrome.com/devtools
 
 ### Sources
 * Cours TWEB@heig-vd, Olivier Liechti https://github.com/wasadigi/Teaching-HEIGVD-TWEB/
