@@ -23,7 +23,9 @@
 
 
 
+
 ![](images/multipage_app.png)
+
 
 
 
@@ -45,8 +47,15 @@ function needs to be invoked. This function can update the DOM, sometimes in
 drastic manners (giving the impression that we move from an “Customers List”
 page to a “Customer Details” page).
 
+<!--- .element: class="small" -->
 
+
+
+![](images/8-1-ajax-pattern.png)
 http://www.websiteoptimization.com/secrets/ajax/8-1-ajax-pattern.html
+<!--- .element: class="credits" -->
+
+
 
 
 # Paper to WWW
@@ -59,13 +68,8 @@ http://www.websiteoptimization.com/secrets/ajax/8-1-ajax-pattern.html
 
 Note:
 
-Mobile application developement can also be done wiht HTML/CSS/JavaScript with this kind of application and then be packaged into a native app with awebview.
+Mobile application developement can also be done wiht HTML/CSS/JavaScript, with this kind of application and then be packaged into a native app with a webview.
 
-
-
-other
-Bootstrap, Foundation, Angular Material,
-Ionic for mobile
 
 
 
@@ -76,6 +80,12 @@ Ionic for mobile
 * Learn by Example: Movie Collection App
 
 
+![](images/movies_06_firebase_login.png)
+<!-- .element: class="w-40" -->
+![](images/movies_04_third_party_directives.png)
+<!-- .element: class="w-40" -->
+
+
 
 
 # Why AngularJS
@@ -84,6 +94,14 @@ Ionic for mobile
 
 ![](images/google_trends.png)
 
+Note:
+- address many of the challenges encountered in developing SPA
+- large acceptation
+- decouple DOM manipulation from application logic
+- decouple the client side of an application from the server side
+- declarative programming for user interface
+- imperative programming for application business logic
+
 
 
 
@@ -91,51 +109,33 @@ Ionic for mobile
 
 MVC: http://mattiash.github.io/angular-presentation/presentation.html#1
 
-scope: http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs (slide 12)
+Scope: http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs (slide 12)
 
 Tool: https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek
+
+
+
+![](images/angular_cycle.png)
 
 
 
 
 ### Resources
 
-https://docs.angularjs.org/api
+## https://docs.angularjs.org/api
 
 * http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
 * https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
 * http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angularjs
 * http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
 
+<!-- .element: class="smaller" -->
 
 
 
-```
-modules
-directives ng-model
-modules
-ng-app="movieApp"
-MVC
-directives standard
-vue et binding
-event ng-click
-controller $scope
-ngApp
-ngController
-{{}}
-expression
-ngBind
-ngModel
-ngRepeat
-ngHide/ngShow
-$filter
-  limitTo
-  filter
-  orderBy
-  uppercase
-ngClick
-evenenemts
-```
+
+![](images/angular_feelings.png)
+
 
 
 
@@ -204,8 +204,9 @@ yo angular
 
 
 
-Explore Folder
+Explore folder
 
+Launch server
 ```sh
 grunt serve
 ```
@@ -214,10 +215,40 @@ Let's use Chrome DevTools as IDE
 
 * add folder to workspace
 * map to file system resource
-
 * Focus on MainCtrl + view/main.html
 * styles/main.css
 * cleanup main.css, index.html add title
+
+
+
+
+
+```
+modules
+directives ng-model
+modules
+ng-app="movieApp"
+MVC
+directives standard
+vue et binding
+event ng-click
+controller $scope
+ngApp
+ngController
+{{}}
+expression
+ngBind
+ngModel
+ngRepeat
+ngHide/ngShow
+$filter
+  limitTo
+  filter
+  orderBy
+  uppercase
+ngClick
+evenenemts
+```
 
 
 
@@ -229,8 +260,6 @@ Let's use Chrome DevTools as IDE
 - Create a form to add a new movie to a list of movies
 - Display the list of movies
 - Be able to delete a movie from the list
-
-
 
 
 
@@ -254,7 +283,7 @@ ngSrc
 
 
 
-Exercice:
+## Exercice:
 transform your app to use a service as storage for the movies and helps persiste the into local storage. A movie is now more than a title it is an object which has two properties a title and a comment
 - create a service (factory) moviedb
 which has  2 private helper
@@ -278,7 +307,7 @@ use a filter to display the title in uppercase
 
 
 
-#### Theory
+## Theory
 constante
 $watch && $watchArray
 $rootScope
@@ -298,40 +327,50 @@ $fitler function
 # Asynchronous programming techniques
 
 
+
+
 We have already seen that JavaScript relies on asynchronous
 programming:
-• The JS engine is single-threaded. For this reason, IO operations
-have to be non-blocking.
-• An event loop is used both in the browser and on the server (node.js):
-• As the program executes, events are added to a queue. Every
-event has an associate callback function.
-• A dispatcher takes the next event in the queue and invokes the
-callback function (on the single thread).
-• When the callback function returns, the dispatcher takes the next
-event in the queue, and continues forever (it’s an event loop).
+
+* The JS engine is single-threaded. For this reason, IO operations have to be non-blocking.
+* An event loop is used both in the browser and on the server (node.js):
+  * As the program executes, events are added to a queue. Every event has an associate callback function.
+  * A dispatcher takes the next event in the queue and invokes the callback function (on the single thread).
+  * When the callback function returns, the dispatcher takes the next event in the queue, and continues forever (it’s an event loop).
 
 
 
 
+```javascript
 setTimeout( function() {
-console.log(“the callback has been invoked”);
+    console.log("the callback has been invoked");
 }, 2000);
+```
+
 An event will be added to the queue in 2000 ms. In other
 words, the function passed as the first argument will be invoked
 in 2 seconds or more (the thread might be busy when the event
 is posted...).
 
-$(document).mousemove(function(event){
-$("span").text(event.pageX + ", " +
-event.pageY);
+```javascript
+$(document).mousemove( function(event) {
+    $("span").text(event.pageX + ", " + event.pageY);
 });
+```
+
 An event will be added to the queue whenever the mouse
 moves. In each case, the callback function has access to the
 event attributes (coordinates, key states, etc.).
+
+
+
+```javascript
 $.get( "ajax/test.html", function( data ) {
-$( ".result" ).html( data );
-alert( "Load was performed." );
+    $( ".result" ).html( data );
+    alert( "Load was performed." );
 });
+```
+
 An event will be added when the AJAX request has been
 processed, i.e. when a response has been received. The
 callback function has access to the payload.
@@ -343,7 +382,6 @@ callback function has access to the payload.
 
 \\ insert callback slides -> 34-47
 -> Promise
-
 
 
 
@@ -361,26 +399,29 @@ https://www.getpostman.com/docs/introduction
 
 
 
-exercice
+
+## exercice
 
 For now we leave the first page as is and extend the app to display movies from an external web service
 
 add the following to the moviedb service
 internal varialbles
 
-var apiUrl = 'http://api.themoviedb.org/3/';
-var apiKey = 'c94d4f6ffca20fc972fe6f4e59db06e6';
+```javascript
+var apiUrl = 'http://api.themoviedb.org/3/'; //proxy
 var baseUrl = 'http://image.tmdb.org/t/p/';
-
-and any other needed
+```
 
 getMovie retunrs a promise http of a movie (http://apiUrlEndpoint/movie/id?api_key=apiKey&append_to_response=similar,releases,credits&language=fr)
 getMovieResults retrieve movie results array
 searchMovies:http://apiUrlEndpoint/search/movie?api_key=apiKey&language=fr&query=movie_name updates internal movieResults array
 upcomingMovies: http://apiUrlEndpoint/movie/upcoming?api_key=apiKey&language=fr updates internal movieResults array
-baseUrl: baseUrl as string not function
 
-css
+<!-- .element: class="smaller" -->
+
+
+
+```css
 body {
   padding: 0;
   background-repeat: no-repeat;
@@ -401,6 +442,9 @@ body {
 .box{
   background-color: rgba(255,255,255,0.8);
 }
+```
+
+
 
 display the results with a new controller upcoming url and view results
 iterate over moviedb.getMovieResults()
@@ -416,8 +460,6 @@ url( baseUrlofmoviedb/w185/movie_poster_path_property)
 
 
 
-
-
 alter moviectrl to get the movie from the net by id
 explore data structure of the movie json
 alter the movie.html view
@@ -429,13 +471,15 @@ releases
 similar movies
 credits of cast
 
+
+
 notice that there are two many release countries
 filter them down to only display fr,de,ch
-by creating a filter function in the scope of moviectrl
-validCountry
+by creating a filter function in the scope of moviectrl validCountry
 
 
-adding search
+
+## adding search
 create a controller search and map it to search with the
 we can reuse the result view of upcoming for the research
 
@@ -443,13 +487,17 @@ to start the research and handle the right navmenu highlight lets create a new c
 add it to the body
 add a serach bar to the menu and when it changes get the field value and trigger the search on moviedb
 
-highlight path and morenice
+
+
+
+## highlight path and more nice
 in the app controller we can listen to the $locationChangeSuccess event and if the path is not /search empty the search field
 set a new variable on this controller scope with the current path
 use this to add the active class on the link menu which is the current active one
 
 
-finally use a nice backdrop image
+
+## finally use a nice backdrop image
 add a background-image to the body with a variable on the app scope.
 set this variable in the moviectrl (hint: since its a child scope it can see its parent ;-) )
 don't forget to reset the backdrop when path changes.
@@ -457,45 +505,58 @@ don't forget to reset the backdrop when path changes.
 
 
 
-### theory
+## theory
 
 utilisation d'autres directives
 
 show carousel
 http://vasyabigi.github.io/angular-slick/
 
+```sh
 bower install angular-slick --save
+```
+
 add 'slick' to movieApp
 
+```html
 <div class="col-sm-10 col-sm-offset-1">
     <slick dots="true" infinite="false" slides-to-show="3" slides-to-scroll="3" responsive="breakpoints"  init-onload="true" class="slider multiple-items" data="movie.similar.results">
         <div ng-repeat="r in movie.similar.results"><div class="poster" ng-style="{'background-image': (r|toBackgroundCSS) }"></div></div>
     </slick>
 </div>
+```
+
+
+
+## ng-animate?
 
 
 
 
-ng-animate?
-
-
-
-
-
-exercice
+## exercice
 
 try to make the country as flags with ng-flags use master.
-bower install ng-flags#master --save
 
+```sh
+bower install ng-flags#master --save
+```
 
 https://github.com/asafdav/ng-flags
 
-world-flags-sprite
+```sh
+bower install world-flags-sprite --save
+```
 
-make magic
+
+
+
+## make magic
+
 add class slide to ng-view
 
 and this css
+
+```css
 .slide.ng-enter,
 .slide.ng-leave {
     -webkit-transition: all 1s ease;
@@ -515,22 +576,22 @@ and this css
 .slide.ng-leave-active {
     left: -100%;
 }
+```
 
 
-####
+
+
+## Theory
 
 formulaire et validation
 ngMessages
-
-
 
 créer ses directives
 
 
 
 
-
-Exercice
+## Exercice
 
 ![](images/movies_05_custom_directive.png)
 
@@ -539,15 +600,21 @@ Lets fix our data and make poster more reusable with a custom directive
 
 
 
-#step1 replace poster
+## Step1 replace poster
 
+```html
 <div class="poster" ng-style="{\'background-image\': (movie|toBackgroundCSS) }"></div>
-with <poster movie="m"></poster>
+```
+with `<poster movie="m"></poster>`
 in results and movie
 
 use a scope for omovie
 
-#step2 add fuctionnality
+
+
+
+## step2 add fuctionnality
+
 add a star button to the poster directive template and handle the click function inside the directives link function
 change moviedb to store a movie object with the needed information, id, title, poster_path
 create a isMovieFavorite
@@ -558,13 +625,9 @@ to reuse results.html in main we can create afunction that links movieResults wi
 favoriteMovies
 
 
-##
 
 
-
-
-###
-firebase
+## firebase
 
 ![](images/movies_06_firebase.png)
 ![](images/movies_06_firebase_login.png)
@@ -572,8 +635,11 @@ firebase
 
 https://www.firebase.com/docs/web/libraries/angular/quickstart.html
 
+```sh
 bower install angularfire --save
+```
 
+```javascript
 {
     "rules": {
        "users": {
@@ -585,12 +651,14 @@ bower install angularfire --save
       }
     }
 }
+```
 
 add login/logout button based on login state
 
 add 3 methods to moviedb
 $firebaseAuth, $firebaseObject
 
+```javascript
     var ref = new Firebase('https://ptw.firebaseio.com');
     var authObj = $firebaseAuth(ref);
     var authData = null;
@@ -637,12 +705,12 @@ $firebaseAuth, $firebaseObject
     }
 
     if(savedMovies && Object.keys(movies).length === 0){
+```
 
 
 
 
-
-### after deploy
+## After deploy
 
 A/B testing on similar list
 
@@ -652,31 +720,41 @@ ng-wat 5
 
 https://www.youtube.com/watch?v=M_Wp-2XA9ZU
 
-
 virutal page views
 event
 
 
 
 
-#exercice
+## Exercice
+
 http://luisfarzati.github.io/angulartics/
 https://github.com/GoAugust/angular-google-experiments
 
+```sh
 bower install angulartics --save
+```
+
+```javascript
 'angulartics', 'angulartics.google.analytics'
 // Google Analytics example
 ga('send', 'pageview'); // <---- delete this line!
+```
 
+```sh
 bower install angular-google-experiments --save
+```
+
+```javascript
 googleExperiments
  .config(function(googleExperimentsProvider) {
         googleExperimentsProvider.configure({
             experimentId: 'your-experiment-id-goes-here'
         });
     })
+```
 
-    <div variation="0">Original</div>
+```html
+<div variation="0">Original</div>
 <div variation="1">Variation #1</div>
-
-test both version of similaire
+```
