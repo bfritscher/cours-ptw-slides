@@ -119,10 +119,16 @@ Tool: https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopoc
 
 
 
+![](images/angular_scope.png)
+
+
+
 
 ### Resources
 
-## https://docs.angularjs.org/api
+### https://docs.angularjs.org/guide
+
+### https://docs.angularjs.org/api
 
 * http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
 * https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
