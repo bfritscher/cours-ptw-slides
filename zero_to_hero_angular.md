@@ -228,32 +228,63 @@ Let's use Chrome DevTools as IDE
 
 
 
+### Concepts
 
-```
-modules
-directives ng-model
-modules
-ng-app="movieApp"
-MVC
-directives standard
-vue et binding
-event ng-click
+| Concept              | Description                                                              |
+|----------------------|--------------------------------------------------------------------------|
+| Model                | the data shown to the user in the view and with which the user interacts |
+| View                 | what the user sees (the DOM)                                             |
+| Template             | HTML with additional markup                                              |
+| Directives           | extend HTML with custom attributes and elements                          |
+| Controller           | the business logic behind views                                          |
+| Data Binding         | sync data between the model and the view                                 |
+| Scope                | context where the model is stored so that controllers, directives and expressions can access it |
+| Expressions          | access variables and functions from the scope                            |
+| Filter               | formats the value of an expression for display to the user               |
+| Module               | a container for the different parts of an app including controllers, services, filters, directives which configures the Injector |
+| Dependency Injection | Creates and wires objects and functions                                  |
+| Service              | reusable business logic independent of views                             |
+
+https://docs.angularjs.org/guide/concepts
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Some Directives
+
+ng-app
+ng-model
+ng-bind
+ng-repeat
+$index
+ng-hide
+ng-show
+//event
+ng-click
+ng-controller
+//binding
+
 controller $scope
-ngApp
-ngController
+
+
+
+### Expression
 {{}}
 expression
-ngBind
-ngModel
-ngRepeat
-ngHide/ngShow
+
+
+
+
+### Filter
+
+```
 $filter
   limitTo
   filter
   orderBy
   uppercase
-ngClick
-evenenemts
 ```
 
 
@@ -272,18 +303,30 @@ evenenemts
 
 # Theory
 
-localstorage + JSON
+### JSON
 http://json.org/
 
+
+
+### localstorage
+
 show chrome resource tab
+
+
+
+### Router
 plusieurs controlleur
 services
 di injection
 router
 $routeParams
-$index
-ngHref
-ngSrc
+
+
+### More Directives
+ng-href
+ng-src
+ng-class
+ng-style
 
 
 
@@ -314,18 +357,17 @@ use a filter to display the title in uppercase
 
 
 ## Theory
+Postman
+
 constante
-$watch && $watchArray
 $rootScope
-promise
-http
-postman
 $http
 $location
-ngClass
-ngStyle
+
+$watch && $watchArray
+promise
 listenning to events
-$fitler function
+custom $fitler function
 
 
 
@@ -346,6 +388,8 @@ programming:
 
 
 
+
+### Callback
 
 ```javascript
 setTimeout( function() {
@@ -384,10 +428,333 @@ callback function has access to the payload.
 
 
 
-## wait
+## Beyond simple callbacks...
 
-\\ insert callback slides -> 34-47
--> Promise
+* The principle of passing a callback function when invoking
+an asynchronous operation is pretty straightforward.
+
+* Things get more tricky as soon as you want to coordinate
+multiple tasks. Consider this simple example...
+
+Do this first...
+
+... when done, do this.
+
+
+
+### A first attempt...
+
+```javascript
+var milkAvailable = false;
+
+function milkCow() {
+  console.log("Starting to milk cow...");
+  setTimeout(function() {
+    console.log("Milk is available.");
+    milkAvailable = true;
+  },  2000);
+}
+
+milkCow();
+console.log("Can I drink my milk? (" + milkAvailable + ")");
+```
+
+FAIL
+<!-- .element: class="fragment error" -->
+
+
+
+### Fixing the issue with a callback...
+
+```javascript
+var milkAvailable = false;
+
+function milkCow(done) {
+  console.log("Starting to milk cow...");
+  setTimeout(function() {
+    console.log("Milk is available.");
+    milkAvailable = true;
+    done();
+  }, 2000);
+}
+
+milkCow( function() {
+  console.log("Can I drink my milk? (" + milkAvailable + ")");   
+});
+```
+
+SUCCESS
+<!-- .element: class="fragment success" -->
+
+
+
+
+### Beyond simple callbacks...
+
+* Ok... but what happens when I have more than 2 tasks that I want to execute in sequence?
+
+* Let’s say we want to have the sequence B, C, D, X, Y, Z, E, F, where X, Y and Z are asynchronous tasks.
+
+```javascript
+function f() {
+  syncB();
+  syncC();
+  syncD();
+  asyncX();
+  asyncY();
+  asyncZ();
+  syncE();
+  syncF();
+}
+```
+
+<!-- .element: class="float-left w-40" -->
+
+```
+B  result  available
+C  result  available
+D  result  available
+E  result  available
+Z  result  available
+Y  result  available
+F  result  available
+X  result  available
+```
+<!-- .element: class="fragment float-right w-40" -->
+
+
+
+### Sequence with callbacks
+
+```javascript
+function f() {
+  syncB();
+  syncC();
+  syncD();
+  asyncX(function() {
+    asyncY(function() {
+      asyncZ(function() {
+        syncE();
+        syncF();
+      });
+    });
+  });
+}
+```
+<!-- .element: class="float-left w-40" -->
+
+
+```
+B  result  available
+C  result  available
+D  result  available
+X  result  available
+Y  result  available
+Z  result  available
+E  result  available
+F  result  available
+```
+<!-- .element: class="fragment float-right w-40" -->
+
+
+But welcome to the **"callback hell"** aka **"callback pyramid"**
+
+<!-- .element: class="clear fragment" -->
+
+
+
+
+### Callback parallel tasks
+* Now, let's imagine that we have 3 asynchronous tasks. We want to invoke them in parallel and wait until all of them complete.
+* Typical use case: you want to send several AJAX requests (to get different data models) and update your DOM once you have received all responses.
+
+<!-- .element: class="small" -->
+
+```javascript
+function f( done ) {
+ async1( function( r1 ) {
+    reportResult( r1 );
+  });
+  async2( function( r2 ) {
+    reportResult(r2);
+  });
+  async3( function( r3 ) {
+    reportResult( r3 );
+  })
+  done();
+}
+```
+
+<!-- .element: class="" -->
+
+Double fail: not only is done() invoked to early, but also there is no result to send back...
+
+<!-- .element: class="fragment error" -->
+
+
+
+### Callback parallel tasks with counter
+
+```javascript
+function f( done ) {
+  <span class="fragment highlight-current-red" data-fragment-index="1">var numberOfPendingTasks = 3;</span>
+  var results = [];
+  <span class="fragment highlight-current-red" data-fragment-index="2">
+  function reportResult( result ) {
+    result.push( result );
+    numberOfPendingTasks ‐= 1;
+    if ( numberOfPendingTasks === 0 ) {
+      done( null, results );
+    }
+  }
+  </span><span class="fragment highlight-current-red" data-fragment-index="3">
+  async1( function( r1 ) {
+    reportResult( r1 );
+  });
+  async2( function( r2 ) {
+    reportResult( r2 );
+  });
+  async3( function( r3 ) {
+    reportResult( r3 );
+  });</span>
+}
+```
+
+<!-- .element: class="parse-fragment float-left w-50" -->
+
+When this reaches 0, I know that all the tasks have completed. I can
+invoke the "done" callback function that I received from the client. I
+can pass the array of results to the function.
+
+<!-- .element: class="smaller float-right w-40" -->
+
+When a task completes, it invokes this function and passes its result.
+The result is added to the array and the number of pending tasks is
+decremented.
+
+<!-- .element: class="smaller float-right w-40"  -->
+
+The three tasks are asynchronous, so they pass their own callback
+functions and receive a result when the operation completes.
+
+<!-- .element: class="smaller float-right w-40"  -->
+
+
+
+
+# Async libs to the rescue: Promise
+
+
+
+
+A **promise** must be in **one of three states**: *pending*, *fulfilled*, or *rejected*.
+
+When *pending*, a promise:
+  - may transition to either the *fulfilled* or *rejected* state.
+
+When *fulfilled*, a promise:
+  - **must not transition** to any other state.
+  - must have a **value**, which must not change.
+
+When *rejected*, a promise:
+  - **must not transition** to any other state.
+  - must have a **reason**, which must not change.
+
+https://github.com/promises-aplus/promises-spec
+
+<!-- .element: class="credits" -->
+
+
+
+**A promise must provide a then method to access its current or eventual value or reason.**
+A promise's `then` method accepts two arguments:
+- `promise.then( onFullfilled,  onRejected )`
+- If `onFulfilled` is a function:
+  - it must be called after promise is *fulfilled*, with promise's value as its first argument.
+  - it must not be called before promise is *fulfilled*.
+  - it must not be called more than once.
+
+- If `onRejected` is a function,
+  - it must be called after promise is *rejected*, with promise's reason as its first argument.
+  - it must not be called before promise is *rejected*.
+  - it must not be called more than once
+
+<!-- .element: class="small" -->
+
+https://github.com/promises-aplus/promises-spec
+
+<!-- .element: class="credits" -->
+
+
+
+**then must return a promise.**
+
+`promise2  = promise1.then(onFulfilled, onRejected);`
+
+- If either onFulfilled or onRejected returns a value x, run the Promise Resolution Procedure Resolve(promise2, x).
+- If either onFulfilled or onRejected throws an exception e, promise2 must be rejected with e as the reason.
+- If onFulfilled is not a function and promise1 is fulfilled, promise2 must be fulfilled with the same value as promise1.
+- If onRejected is not a function and promise1 is rejected, promise2 must be rejected with the same reason as promise1.
+
+<!-- .element: class="small" -->
+
+https://github.com/promises-aplus/promises-spec
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Deferred objects in JQuery
+
+"a **promise** represents a value that is not yet known, a **deferred** represents work that is not yet finished"
+
+http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics
+
+<!-- .element: class="credits" -->
+
+```javascript
+var d1 = new $.Deferred();
+var d2 = new $.Deferred();
+$.when( d1, d2 ).done(function ( v1, v2 ) {
+  console.log( v1 ); // "Fish"
+  console.log( v2 ); // "Pizza"
+});
+d1.resolve( "Fish" );
+d2.resolve( "Pizza" );
+```
+
+
+
+
+### $q promise service
+
+```javascript
+function asyncGreet(name) {
+  // perform some asynchronous operation,
+  // resolve or reject the promise when appropriate.
+  return $q(function(resolve, reject) {
+    setTimeout(function() {
+      if (okToGreet(name)) {
+        resolve('Hello, ' + name + '!');
+      } else {
+        reject('Greeting ' + name + ' is not allowed.');
+      }
+    }, 1000);
+  });
+}
+
+var promise = asyncGreet('Robin Hood');
+promise.then(function(greeting) {
+  alert('Success: ' + greeting);
+}, function(reason) {
+  alert('Failed: ' + reason);
+});
+```
+
+https://docs.angularjs.org/api/ng/service/$q
+
+<!-- .element: class="credits" -->
 
 
 
