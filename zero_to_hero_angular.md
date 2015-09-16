@@ -228,9 +228,7 @@ Let's use Chrome DevTools as IDE
 
 
 
-### Concepts
-
-| Concept              | Description                                                              |
+| Angular Concepts     | Description                                                              |
 |----------------------|--------------------------------------------------------------------------|
 | Model                | the data shown to the user in the view and with which the user interacts |
 | View                 | what the user sees (the DOM)                                             |
@@ -243,6 +241,7 @@ Let's use Chrome DevTools as IDE
 | Filter               | formats the value of an expression for display to the user               |
 | Module               | a container for the different parts of an app including controllers, services, filters, directives which configures the Injector |
 | Dependency Injection | Creates and wires objects and functions                                  |
+| Provider             | Providers are objects that provide (create) instances of services and expose configuration APIs |
 | Service              | reusable business logic independent of views                             |
 
 https://docs.angularjs.org/guide/concepts
@@ -252,45 +251,98 @@ https://docs.angularjs.org/guide/concepts
 
 
 
+### Angular Expressions
+
+Angular expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
+
+For example, these are valid expressions in Angular:
+
+ - `1 + 2`
+ - `a + b`
+ - `user.name`
+ - `items[index]`
+
+https://docs.angularjs.org/guide/expression
+
+<!-- .element: class="credits" -->
+
+
+
+
 ### Some Directives
 
-ng-app
-ng-model
-ng-bind
-ng-repeat
-$index
-ng-hide
-ng-show
-//event
-ng-click
-ng-controller
-//binding
+| Directive         | Description |
+|-------------------|-------------|
+| ng-app            | auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page. |
+| ng-model          | binds an input, select, textarea (or custom form control) to a property on the scope. |
+| ng-bind           |  replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
+| ng-hide / ng-show | shows or hides the given HTML element based on the expression provided to the directive's attribute. |
+| ng-repeat         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
+| ng-click          | allows to specify custom behavior when an element is clicked. |
+| ng-controller     | attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern. |
 
-controller $scope
+https://docs.angularjs.org/api
 
-
-
-### Expression
-{{}}
-expression
+<!-- .element: class="credits" -->
 
 
 
 
-### Filter
+### Controller
+
+A *Controller* is defined by a JavaScript constructor **function** that is used to augment the Angular Scope.
+A new child **scope** will be created and made available as an injectable parameter to the Controller's constructor function as **$scope**.
+
+Use controllers to:
+
+- Set up the initial state of the $scope object.
+- Add behavior to the $scope object.
+
+Do **not** use controllers to: Manipulate DOM, Format input, Filter output, Share code or state across controllers
+
+
+
+### Controller Example
+
+```javascript
+var myApp = angular.module('myApp', []);
+
+myApp.controller('GreetingController', function( $scope ) {
+  $scope.greeting = 'Hola!';
+  $scope.double = function( value ) { return value * 2; };
+});
+```
+
+https://docs.angularjs.org/guide/controller
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Filters
+
+A filter formats the value of an expression for display to the user.
 
 ```
-$filter
-  limitTo
-  filter
-  orderBy
-  uppercase
+{{ expression | filter1:argument1:argument2:... | filter2 | ... }}
 ```
 
+| Filter | Description |
+|--------|-------------|
+| uppercase | Converts string to uppercase. |
+| limitTo:*limit* | Creates a new array or string containing only a specified number of elements. |
+| orderBy:*expression* | Orders a specified array by the expression predicate (string, array or function). |
+| filter:*expression* | Selects a subset of items from array and returns it as a new array (string, object or function(value, index, array)). |
+
+https://docs.angularjs.org/api/ng/filter
+
+<!-- .element: class="credits" -->
 
 
 
-### Exercice: Step1
+
+### Exercice: Step 1
 
 ![](images/movies_01.png)
 
@@ -301,73 +353,211 @@ $filter
 
 
 
-# Theory
-
 ### JSON
+
+JavaScript Object Notation is a lightweight data-interchange format. It is easy for *humans* to **read and write**. It is easy for *machines* to **parse and generate**. It is based on a subset of the JavaScript Programming Language
+
+```javascript
+{
+  "key_string": "hello",
+  "key_number": 3,
+  "key_array": ["some text", 34]
+  "key_object": {
+    "other_key": "value"
+    "key_boolean": true,
+    "null possible": null
+  }
+
+}
+```
 http://json.org/
 
 
 
-### localstorage
+### JSON API in JavaScript
 
-show chrome resource tab
+|                                   |                                                              |
+|-----------------------------------|--------------------------------------------------------------|
+| JSON.stringify( *object* )        | create a JSON_string                                         |
+| JSON.parse( *JSON_string* )       | create an object from a string                               |
+| angular.toJson( *object* )        | create a JSON_string (removing angular's internal variables) |
+| angular.fromJson( *JSON_string* ) | create an object from a string                               |
+
+```javascript
+//optional formatter and indentation spacing for pretty-print
+JSON.stringify( {hello: {text: 'world'}}, null, 2 )
+//results in the following string
+'{
+  "hello": {
+    "text": "world"
+  }
+}'
+```
 
 
 
-### Router
-plusieurs controlleur
-services
-di injection
-router
-$routeParams
+
+### localStorage
+
+Interface of the Web Storage API provides access to storage for a particular domain.
+
+|                                    |                                                                                        |
+|------------------------------------|----------------------------------------------------------------------------------------|
+| localStorage.length                | Returns an integer representing the number of data items stored in the Storage object. |
+| localStorage.key( number )         | will return the name of the nth key in the storage.                                    |
+| localStorage.getItem( key )        | will return that key's value.                                                          |
+| localStorage.setItem( key, value ) | will add that key to the storage, or update that key's value if it already exists.     |
+| localStorage.removeItem( key )     | will remove that key from the storage.                                                 |
+| localStorage.clear()               | will empty all keys out of the storage.                                                |
+
+*localStorage content can be viewed in chrome developer tools resource tab*
+
+<!-- .element: class="small" -->
+
+https://developer.mozilla.org/en-US/docs/Web/API/Storage
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Multiples Views and Router
+
+A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes with http fragment.
+
+Application routes in Angular are declared via the `$routeProvider`, which is the *provider* of the `$route` *service*.
+
+This service makes it easy to wire together controllers, view templates, and the current URL location in the browser
+
+https://docs.angularjs.org/tutorial/step_07
+
+<!-- .element: class="credits" -->
+
+
+
+### Dependency Injection
+
+Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
+
+When the application bootstraps, Angular creates an injector that will be used to find and inject all of the services that are required by your app.
+
+Providers are objects that provide (create) instances of services and expose configuration APIs.
+
+In case of the $route service, the $routeProvider exposes APIs that allow you to define routes for your application.
+
+https://docs.angularjs.org/guide/di
+
+<!-- .element: class="credits" -->
+
+
+
+### $routeProvider
+
+```javascript
+app.config( function( $routeProvider ) {
+    $routeProvider.
+      when('/phones', {
+        templateUrl: 'views/phone-list.html',
+        controller: 'PhoneListCtrl'
+      }).
+      when('/phones/:phoneId', {
+        templateUrl: 'views/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+      }).
+      otherwise({
+        redirectTo: '/phones'
+      });
+});
+```
+
+The $routeParams service allows you to retrieve the current set of route parameters.
+
+```javascript
+app.controller( 'PhoneDetailCtrl', function( $scope, $routeParams ) {
+    $scopre.phoneId = $routeParams.phoneId;
+});
+```
+
+
+
+### Template
+
+The $route and $routeParams service are usually used in conjunction with the ngView directive.
+
+The role of the ng-view directive is to include the view template for the current route into the layout template.
+
+```html
+<!-- index.html -->
+<html ng-app="app">
+  ...
+  <body>
+    <ng-view></ng-view>
+  </body>
+</html>
+```
+
+```html
+<!-- views/phone-detail.html -->
+<div>View content phone {{phoneId}}</div>
+```
+
+
 
 
 ### More Directives
-ng-href
-ng-src
-ng-class
-ng-style
+
+Using Angular markup like `{{hash}}` in an href or src attribute will make the link go to the wrong URL if Angular has not replaced the `{{hash}}` markup with its value.
+
+| Directive         | Description |
+|-------------------|-------------|
+| ng-href           | solves the wrong href problem. |
+| ng-src            | solves the wrong src problem. |
+| ng-class          | allows to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added. The result of the evaluation can be a string representing space delimited class names, an array, or a map of class names to boolean values.|
+| ng-style          | allows to set CSS style on an HTML element conditionally. Expression which evals to an object whose keys are CSS style names and values are corresponding values for those CSS keys. |
+
+https://docs.angularjs.org/api
+
+<!-- .element: class="credits" -->
 
 
 
+### Exercice: localStorage and routes
+
+Transform your app to use a service as storage for the movies and helps persiste the into local storage.
+A movie is now more than a title it is an object which has two properties a title and a comment.
+
+- create a moviedb service (factory)
+- create a controller and a view to display a movie
+- modify the frontpage
 
 
-## Exercice:
-transform your app to use a service as storage for the movies and helps persiste the into local storage. A movie is now more than a title it is an object which has two properties a title and a comment
-- create a service (factory) moviedb
-which has  2 private helper
-loadLocalStorage to help restore the movies array from storage (json->array)
-saveLocalStorage to help to save the movies array to storage array->json
-4 public api methods
-getMovies returns a array of movies
-addMovie: takes a movie object and adds it to the internal movies array and also perssits to localstorage
-removeMovie: removes the given movie from the list and perssistent storage
-emptyMovie: return as movie object which has two empty properties title, comment;
 
-- create a controller movie and view and map it to the /movie/:id url
-it will display a movie at index id in the movies array
-use a filter to display the title in uppercase
+### create a moviedb service (factory)
+
+  - which has 2 private helper methods
+    - `loadLocalStorage`: to help restore the movies array from storage (json->array)
+    - `saveLocalStorage`: to help to save the movies array to storage array->json
+  - 4 public api methods
+    - `getMovies`: returns a array of movies
+    - `addMovie`: takes a movie object and adds it to the internal movies array and also perssits to localstorage
+    - `removeMovie`: removes the given movie from the list and perssistent storage
+    - `emptyMovie`: return as movie object which has two empty properties title, comment;
+
+
+
+### create a controller and a view to display a movie
+
+  - map it to the /movie/:id url
+  - it will display a movie at index id in the movies array
+  - use a filter to display the title in uppercase
+
+TODO: screenshot?
+
+
+
+### modify the frontpage
 
 - make title in the main.html page clickable to lead to your new movie detail page
-
-![](images/movies_03_movie.png)
-![](images/movies_03_upcoming.png)
-
-
-
-
-## Theory
-Postman
-
-constante
-$rootScope
-$http
-$location
-
-$watch && $watchArray
-promise
-listenning to events
-custom $fitler function
 
 
 
@@ -759,40 +949,135 @@ https://docs.angularjs.org/api/ng/service/$q
 
 
 
-# api
-
-https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop
-
-https://www.getpostman.com/docs/introduction
+## API and remote data
 
 ![](images/postman-logo.png)
 
+[POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop) a tool to test apis
 
-![](images/movies_04_third_party_directives.png)
+https://www.getpostman.com/docs/introduction
 
 
 
 
-## exercice
+### Services
+
+|            |                     |
+|------------|---------------------|
+| $rootScope | Every application has a single root scope. All other scopes are descendant scopes of the root scope. Scopes provide separation between the model and the view, via a mechanism for watching the model for changes. |
+| $http      | is a core Angular service that facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object. |
+| $location  | parses the URL in the browser address bar (based on the window.location) and makes the URL available to your application. |
+
+
+
+
+### Constante
+
+Since simple values, like URL prefixes, don't have dependencies or configuration, it's often handy to make them available in both the configuration and run phases. This is what the Constant is for.
+
+```javascript
+myApp.constant('planetName', 'Greasy Giant');
+
+myApp.controller('DemoCtrl', function DemoCtrl( $scope, planetName ) {
+    $scopre.planetName = planetName;
+});
+
+```
+
+https://docs.angularjs.org/guide/providers#constant-recipe
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Scope characteristics
+
+Scopes provide APIs (`$watch`) to observe model mutations.
+
+```javascript
+$watch(watchExpression, listener, [objectEquality]);
+```
+
+Scopes provide APIs (`$apply`) to propagate any model changes through the system into the view from outside of the "Angular realm" (controllers, services, Angular event handlers).
+
+https://docs.angularjs.org/api/ng/type/$rootScope.Scope
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Custom filters
+
+`{{"hello"|reverse:true}}` ===  OLLEH
+
+```javascript
+angular.module('myReverseFilterApp', [])
+.filter('reverse', function() {
+  return function(input, uppercase) {
+    input = input || '';
+    var out = "";
+    for (var i = 0; i < input.length; i++) {
+      out = input.charAt(i) + out;
+    }
+    // conditional based on optional argument
+    if (uppercase) {
+      out = out.toUpperCase();
+    }
+    return out;
+  };
+});
+```
+
+https://docs.angularjs.org/guide/filter
+<!-- .element: class="credits" -->
+
+
+
+
+## Exercice real data
 
 For now we leave the first page as is and extend the app to display movies from an external web service
 
-add the following to the moviedb service
-internal varialbles
+Add the following to the moviedb service or even better make them constants.
 
 ```javascript
 var apiUrl = 'http://api.themoviedb.org/3/'; //proxy
 var baseUrl = 'http://image.tmdb.org/t/p/';
 ```
 
-getMovie retunrs a promise http of a movie (http://apiUrlEndpoint/movie/id?api_key=apiKey&append_to_response=similar,releases,credits&language=fr)
-getMovieResults retrieve movie results array
-searchMovies:http://apiUrlEndpoint/search/movie?api_key=apiKey&language=fr&query=movie_name updates internal movieResults array
-upcomingMovies: http://apiUrlEndpoint/movie/upcoming?api_key=apiKey&language=fr updates internal movieResults array
+- `getMovie()` returns a promise http of a movie (http://apiUrlEndpoint/movie/id?api_key=apiKey&append_to_response=similar,releases,credits&language=fr)
+- `getMovieResults()` retrieve movie results array
+- `searchMovies()`  http://apiUrlEndpoint/search/movie?api_key=apiKey&language=fr&query=movie_name updates internal movieResults array
+- `upcomingMovies()` http://apiUrlEndpoint/movie/upcoming?api_key=apiKey&language=fr updates internal movieResults array
 
 <!-- .element: class="smaller" -->
 
 
+
+### Extensions explore API
+- alter moviectrl to get the movie from the net by id
+- explore data structure of the movie json
+- alter the movie.html view
+  - to display the poster (same code as before)
+  - to display the title
+  - the overview
+  - iterate over the data of these three array
+    - releases
+    - similar movies
+    - credits of cast
+
+
+
+notice that there are too many release countries filter them down to only display **fr, de, ch**
+by creating a filter filter with a filter function in the scope of moviectrl.
+
+![](images/movies_03_movie.png)
+
+
+
+### Suggested CSS
 
 ```css
 body {
@@ -819,70 +1104,35 @@ body {
 
 
 
-display the results with a new controller upcoming url and view results
-iterate over moviedb.getMovieResults()
-create a link for each movie with class movie and col-sm-3 point to the movie page with id from the movie result
-title of the movie as h2
-for the poster image use a div with background-image
+### Extensions images
+
+- display the results with a new controller upcoming url and view results
+- iterate over moviedb.getMovieResults()
+- create a link for each movie with class movie and col-sm-3 point to the movie page with id from the movie result
+- title of the movie as h2
+- for the poster image use a div with background-image
+```html
 <div class="poster" ng-style="{'background-image': (m|toBackgroundCSS) }"></div>
+```
 
-create the toBackgroundCSS filter
-this is a function which get a movie object and returns either the css url to the placeholder picture or to the poster
-url(images/noposter.jpg)
-url( baseUrlofmoviedb/w185/movie_poster_path_property)
+- create the toBackgroundCSS filter:
+  - this is a function which get a movie object and returns either the css url to the placeholder picture or to the poster
+  - url(images/noposter.jpg)
+  - url( baseUrlofmoviedb/w185/movie_poster_path_property)
 
-
-
-alter moviectrl to get the movie from the net by id
-explore data structure of the movie json
-alter the movie.html view
-to display the poster (same code as before)
-to display the title
-the overview
-iterate over the data of these three array
-releases
-similar movies
-credits of cast
+<!-- .element: class="small" -->
 
 
 
-notice that there are two many release countries
-filter them down to only display fr,de,ch
-by creating a filter function in the scope of moviectrl validCountry
-
-
-
-## adding search
-create a controller search and map it to search with the
-we can reuse the result view of upcoming for the research
-
-to start the research and handle the right navmenu highlight lets create a new controllerfor the whole app
-add it to the body
-add a serach bar to the menu and when it changes get the field value and trigger the search on moviedb
+![](images/movies_03_upcoming.png)
 
 
 
 
-## highlight path and more nice
-in the app controller we can listen to the $locationChangeSuccess event and if the path is not /search empty the search field
-set a new variable on this controller scope with the current path
-use this to add the active class on the link menu which is the current active one
+## Third-Party directives
 
+Use a third-party directive to display a carousel
 
-
-## finally use a nice backdrop image
-add a background-image to the body with a variable on the app scope.
-set this variable in the moviectrl (hint: since its a child scope it can see its parent ;-) )
-don't forget to reset the backdrop when path changes.
-
-
-
-
-## theory
-
-utilisation d'autres directives
-
-show carousel
 http://vasyabigi.github.io/angular-slick/
 
 ```sh
@@ -901,14 +1151,9 @@ add 'slick' to movieApp
 
 
 
-## ng-animate?
+## Exercice
 
-
-
-
-## exercice
-
-try to make the country as flags with ng-flags use master.
+Dsiplay the countries with flags using the ng-flags directive. Use the master version.
 
 ```sh
 bower install ng-flags#master --save
@@ -922,12 +1167,16 @@ bower install world-flags-sprite --save
 
 
 
+![](images/movies_04_third_party_directives.png)
 
-## make magic
 
-add class slide to ng-view
 
-and this css
+
+### Make magic animations
+
+ng-animate provides animation defined in css
+
+- add class slide to ng-view
 
 ```css
 .slide.ng-enter,
@@ -954,13 +1203,45 @@ and this css
 
 
 
-## Theory
+# Other additions
 
-formulaire et validation
-ngMessages
+- Adding search
+- Highlight current path / virtual subpage
+- Nice backdrop image
 
-créer ses directives
 
+
+## Adding search
+
+- create a controller search and map it to search
+- we can reuse the result view of upcoming for the search
+- to start the research and handle the right navmenu highlight lets create a new controllerfor the whole app add it to the body
+- add a serach bar to the menu and when it changes get the field value and trigger the search on moviedb
+
+
+
+## Highlight current path / virtual subpage
+
+- in the app controller we can listen to the $locationChangeSuccess event and if the path is not /search empty the search field
+- set a new variable on this controller scope with the current path
+- use this to add the active class on the link menu which is the current active one
+
+
+
+## Nice backdrop image
+
+- add a background-image to the body with a variable on the app scope.
+- set this variable in the moviectrl (hint: since its a child scope it can see its parent ;-) )
+- don't forget to reset the backdrop when path changes.
+
+
+
+
+## Custom Directives
+
+Advanced level!
+
+https://docs.angularjs.org/guide/directive
 
 
 
@@ -972,45 +1253,58 @@ Lets fix our data and make poster more reusable with a custom directive
 
 
 
-
-## Step1 replace poster
+## Step 1: Replace poster
 
 ```html
 <div class="poster" ng-style="{\'background-image\': (movie|toBackgroundCSS) }"></div>
 ```
-with `<poster movie="m"></poster>`
-in results and movie
-
-use a scope for omovie
-
+- with `<poster movie="m"></poster>`
+- in results and movie
+- use a scope for movie
 
 
 
-## step2 add fuctionnality
+## Step 2: add fuctionnality
 
-add a star button to the poster directive template and handle the click function inside the directives link function
-change moviedb to store a movie object with the needed information, id, title, poster_path
-create a isMovieFavorite
-modify addMovie/removeMovie to use object instead of array to make lookup by id easyer... (or loop array ...)
-cleanup unused functions  emptyMovie, getMovies
+- add a star button to the poster directive template and handle the click function inside the directives link function
+- change `moviedb` to store a movie object with the needed information, id, title, poster_path
+- create a `isMovieFavorite`
+- modify `addMovie/removeMovie` to use object instead of array to make lookup by id easyer... (or loop array ...)
+- cleanup unused functions `emptyMovie`, `getMovies`
 
-to reuse results.html in main we can create afunction that links movieResults with movies
-favoriteMovies
+to reuse results.html in main we can create a function that links `movieResults` with `favoriteMovies`
 
 
 
 
-## firebase
+#### ng-wat
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/M_Wp-2XA9ZU?rel=0&start=300" frameborder="0" allowfullscreen></iframe>
+
+[ng-wat - Shai Reznik](https://youtu.be/M_Wp-2XA9ZU?t=5m)
+
+
+
+
+### Firebase: Persistance and Sync as a Service
 
 ![](images/movies_06_firebase.png)
-![](images/movies_06_firebase_login.png)
 
+
+
+### Install firebase
+
+![](images/movies_06_firebase_login.png)
 
 https://www.firebase.com/docs/web/libraries/angular/quickstart.html
 
 ```sh
 bower install angularfire --save
 ```
+
+
+
+### Setup user security
 
 ```javascript
 {
@@ -1026,10 +1320,11 @@ bower install angularfire --save
 }
 ```
 
-add login/logout button based on login state
 
-add 3 methods to moviedb
-$firebaseAuth, $firebaseObject
+### Exercice
+
+- add login/logout button based on login state
+- add methods to moviedd and use these services: $firebaseAuth, $firebaseObject
 
 ```javascript
     var ref = new Firebase('https://ptw.firebaseio.com');
@@ -1085,24 +1380,14 @@ $firebaseAuth, $firebaseObject
 
 ## After deploy
 
-A/B testing on similar list
-
-theory
-
-ng-wat 5
-
-https://www.youtube.com/watch?v=M_Wp-2XA9ZU
-
-virutal page views
-event
-
+- Analytics & SPA
+  - Virutal page views
+  - Events
+- A/B testing your site!
 
 
 
 ## Exercice
-
-http://luisfarzati.github.io/angulartics/
-https://github.com/GoAugust/angular-google-experiments
 
 ```sh
 bower install angulartics --save
@@ -1131,3 +1416,11 @@ googleExperiments
 <div variation="0">Original</div>
 <div variation="1">Variation #1</div>
 ```
+
+http://luisfarzati.github.io/angulartics/
+
+<!-- .element: class="credits" -->
+
+https://github.com/GoAugust/angular-google-experiments
+
+<!-- .element: class="credits" -->
