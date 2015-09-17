@@ -92,7 +92,7 @@ Alternatives: Bootstrap, Foundation, Angular Material,
   </body>
 </html>
 ```
-<!-- .element: class="jsbin-embed" data-href="http://jsbin.com/kexeda/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="jsbin-embed" data-href="//jsbin.com/kexeda/1/edit?html,output" data-height="600px" -->
 [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
 
 <!-- .element: class="credits" -->
@@ -175,7 +175,7 @@ Alternatives: Bootstrap, Foundation, Angular Material,
   </body>
 </html>
 ```
-<!-- .element: class="jsbin-embed" data-href="http://jsbin.com/lelopa/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="jsbin-embed" data-href="//jsbin.com/lelopa/1/edit?html,output" data-height="600px" -->
 
 
 
@@ -228,7 +228,7 @@ A preprocessor is a program that processes its input data to produce output, tha
 ```
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/mumavu/9/edit?html,css,js" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/mumavu/9/edit?html,css,js" data-height="600px" -->
 
 
 
@@ -697,7 +697,7 @@ http://api.jquery.com/
 ```xml
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
 
 
 

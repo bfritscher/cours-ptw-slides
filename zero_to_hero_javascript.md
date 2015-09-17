@@ -290,7 +290,7 @@ http://api.jquery.com/
 ```xml
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
 
 
 
@@ -563,7 +563,7 @@ console.log('4. anotherGlobalVar: ' + anotherGlobalVar);
 console.log('5. iAmNotALocalVariable: ' + iAmNotALocalVariable);
 console.log('6. localVar: ' + localVar);
 ```
-<!-- .element: class="jsbin-embed" data-href="http://jsbin.com/toluqe/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed" data-href="//jsbin.com/toluqe/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -632,7 +632,7 @@ for (var key in person) {
     console.log(key + ' : ' + person[key]);
 }
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/yecuxe/2/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/yecuxe/2/edit?js,console" data-height="500px" -->
 
 
 
@@ -720,7 +720,7 @@ var john = new Person('John', 'Doe');
 // john's prototype is Person.prototype
 console.log(Object.getPrototypeOf(john) === Person.prototype);
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/mevuja/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/mevuja/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -807,7 +807,7 @@ var p1 = new Person('John', 'Smith');
 p1.badGreet();
 p1.greet();
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/zezeya/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/zezeya/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -833,7 +833,7 @@ for (var i = 0; i < fruits.length; i++) {
     console.log('fruits[' + i + '] = ' + fruits[i]);
 }
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/qakame/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/qakame/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -864,7 +864,7 @@ aFruits.forEach(function (fruit) {
     console.log(fruit);
 });
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/zumaci/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/zumaci/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -974,7 +974,7 @@ var h = function(aFunctionObj){
 h(f);
 h(g);
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="http://jsbin.com/qonahi/1/edit?js,console" data-height="500px" -->
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/qonahi/1/edit?js,console" data-height="500px" -->
 
 
 

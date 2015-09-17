@@ -266,7 +266,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 ```xml
 
 ```
-<!-- .element: class="nodpf jsbin-embed" data-href="http://jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
+<!-- .element: class="nodpf jsbin-embed" data-href="//jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
 
 
 
@@ -365,7 +365,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 ```xml
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
 
 
 
@@ -407,7 +407,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 ```xml
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
 
 
 
@@ -565,7 +565,7 @@ div {
   color: red;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/gemuko/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/gemuko/1/edit?html,css,output" data-height="600px" -->
 
 
 
@@ -657,7 +657,7 @@ footer{
   width: 100%;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/danase/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/danase/1/edit?html,css,output" data-height="600px" -->
 
 
 
@@ -678,7 +678,7 @@ h1{
   clear: left;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/qositu/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/qositu/1/edit?html,css,output" data-height="600px" -->
 
 
 
@@ -785,7 +785,7 @@ body{ font-family: sans-serif; font-size: 20px; }
 ```css
 
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="http://jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
 
 
 

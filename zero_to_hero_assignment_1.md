@@ -9,15 +9,14 @@ Highligh your technology skill with number, stars or percentages.
 
 - NO wysiwyg
 - prototype/plan your page on paper first
+- *What tools do you use?*
+- *Is your code valid?*
+- *What are all the tasks involved?*
 
+<!-- .element: class="small" -->
 
-*- What tools do you use?*
+**Describe in a short txt. NO Word!**
 
-*- Is your code valid?*
-
-*- What are all the tasks involved?*
-
-Describe in a short txt. NO Word!
 
 
 # Valid HTML/CSS
