@@ -17,6 +17,16 @@ Highligh your technology skill with number, stars or percentages.
 
 **Describe in a short txt. NO Word!**
 
+note:
+
+Structure:
+
+CV_NAME.zip
+| index.html
+| readme.txt
+| */ *.* ...
+
+
 
 
 # Valid HTML/CSS
