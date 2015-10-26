@@ -64,6 +64,14 @@ Tasks:
 
 # Assignment 2: MonCV
 
+Déployer votre siteweb en mode gh-pages (branch) dans le repository heg-web que vous créer avec le lien suivant:
+
+[Github moncv assignment](https://classroom.github.com/assignment-invitations/ddafe8d05757d905a85d6804ffc25e52)
+
+- Le site doit être minimifié (grunt build) utiliser bootstrap et au moins un plugin jQuery.
+- Le code source doit également se trouver dans le git master et inclure un fichier Readme.md qui décrit le processus et les outils utilisés c'est à dire.  En bref, qu'elle outil fait quoi et quelles commandes utiliser. Une sorte de mini guide pour que un nouveau collègue développeur puisse créer son propre cv de la même facon. (Github permet directement d'éditer le fichier ou sinon un editeur qui support markdown comme par exemple http://dillinger.io/ )
+- La version de votre code source évalué sera celle que vous aurez tagé/release avec le nom 2.0.0 (avant la date de rendu de ce devoir!)
+
 - Add a chart widget for your skills
 - Document your learnings of the toolchain process in the readme.md
 - Publish your final CV site on Github and provide the link on cyberlearn.

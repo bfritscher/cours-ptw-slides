@@ -643,6 +643,32 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 
 
+### Deploying dist to gh-pages
+
+After  `grunt build` in the shell under /dist
+
+1st time:
+
+```sh
+git init
+git add .
+git commit -m
+git remote add origin git@github.com:heg-web/moncv-xyz.git
+git push origin master:gh-pages --set-upstream
+```
+The site can be accessed at: https://heg-web.github.io/moncv-xyz/
+
+<!-- .element: class="small" -->
+
+next updates:
+```sh
+git add . --all
+git commit -m
+git push
+```
+
+
+
 
 # Adding interactions to the web
 
