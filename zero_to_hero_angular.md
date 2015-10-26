@@ -104,6 +104,12 @@ Note:
 
 
 
+![](images/angular_jsf.png)
+
+THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
+
+
+
 
 # Angular Basics
 
