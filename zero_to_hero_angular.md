@@ -319,6 +319,17 @@ myApp.controller('GreetingController', function( $scope ) {
 });
 ```
 
+controllerAs instance version
+```javascript
+var myApp = angular.module('myApp', []);
+
+myApp.controller('GreetingController', function( ) {
+  var ctrl = this;
+  ctrl.greeting = 'Hola!';
+  ctrl.double = function( value ) { return value * 2; };
+});
+```
+
 https://docs.angularjs.org/guide/controller
 
 <!-- .element: class="credits" -->
