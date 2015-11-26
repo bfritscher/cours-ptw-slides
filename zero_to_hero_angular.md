@@ -1313,11 +1313,21 @@ to reuse results.html in main we can create a function that links `movieResults`
 
 ![](images/movies_06_firebase_login.png)
 
-https://www.firebase.com/docs/web/libraries/angular/quickstart.html
-
 ```sh
 bower install angularfire --save
 ```
+Add firebase to dependencies:
+```javascript
+var app = angular.module("sampleApp", ["firebase"]);
+```
+
+
+
+### Documentation
+
+https://www.firebase.com/docs/web/libraries/angular/quickstart.html
+
+https://www.firebase.com/docs/web/libraries/angular/api.html
 
 
 
@@ -1337,11 +1347,14 @@ bower install angularfire --save
 }
 ```
 
+https://www.firebase.com/docs/security/quickstart.html
+
+
 
 ### Exercice
 
 - add login/logout button based on login state
-- add methods to moviedd and use these services: $firebaseAuth, $firebaseObject
+- add methods to moviedb and use these services: $firebaseAuth, $firebaseObject
 
 ```javascript
     var ref = new Firebase('https://ptw.firebaseio.com');
