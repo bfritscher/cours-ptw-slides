@@ -197,7 +197,7 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 ![](images/webstorm.png)
 <!-- .element: class="w-60 float-left" -->
 
-In between: [Notepad++](https://notepad-plus-plus.org/)
+In between: [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), [Visual Studio Code](https://code.visualstudio.com/)
 <br/>Online editors: [Cloud9](https://c9.io/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
