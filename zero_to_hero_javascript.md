@@ -303,44 +303,6 @@ http://api.jquery.com/
 
 
 
-# Lab 1c: better interactions
-
-We want to improve our page with some interactions and behaviors.
-
-
-
-### Step 8: Use bower to install jquery plugins
-
-```sh
-bower install jquery-smooth-scroll --save
-```
-
-*Notice that our index.html is automatically updated! (by grunt-rev-dep)*
-
-Use the plugin:
-
-```javascript
-$(document).ready(function(){
-  'use strict';
-  $('a').smoothScroll();
-});
-```
-
-*maybe you need to edit jshint file*
-
-
-
-### Step 9: DevTools
-
-**F12** opens the browser's developer tools, explore your webpage DOM structure.
-
-Can you edit the page?
-Can you test different CSS?
-
-
-
-
-
 Douglas Crockford: JavaScript: The Good Parts
 https://www.youtube.com/watch?v=_DKkVvOt6dk
 
@@ -500,7 +462,7 @@ add(2, 3, 4); // 5
 
 
 
-### Scopes
+### Scopes before ECMAScript 2015
 
 There are 2 scopes for variables:
 
@@ -639,7 +601,7 @@ for (var key in person) {
 
 ### Creating objects
 
-JavaScript has **no support for classes** (before ES6)
+JavaScript has **no support for classes** (< ECMAScript 2015)
 
 There are 3 ways to create objects:
 
@@ -647,7 +609,7 @@ There are 3 ways to create objects:
 JavaScript, but it is not used
 in the current version of the
 language (reserved for the
-future ES6).<br/><br/>
+future ECMAScript 2015).<br/><br/>
 A **constructor** is function like
 any other (capitalized is a
 coding convention).<br/><br/>
