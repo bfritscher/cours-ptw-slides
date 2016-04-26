@@ -431,15 +431,33 @@ Git is a free and open source distributed version control system designed to han
 
 
 
+### Distributed VCS Advantages
+
+* FAST
+* OFFLINE (fix/commit multiple operations)
+* Geography
+* Flexible Workflows
+* Easier Merging
+* Implicit Backup
+* Scale out, not just up
+
+*Disadvantages: no Locks, Disk space*
+
+http://ericsink.com/vcbe/html/dvcs_advantages.html
+
+<!-- .element: class="credits" -->
+
+
+
 ### Git basics
 
-* `git init` create a new local git repository
-* `git add .` add all modified and new files to stage
-* `git commit -m 'msg'` commit staged files with msg
-* `git push` send commits to remote server
-* `git pull` download remote commits
-* `git clone` copy a remote repository
-* `.gitignore` ignore files or folders
+* **`git init`** create a new local git repository
+* **`git add .`** add all modified and new files to stage
+* **`git commit -m 'msg'`** commit staged files with msg
+* **`git push`** send commits to remote server
+* **`git pull`** download remote commits
+* **`git clone`** copy a remote repository
+* **`.gitignore`** ignore files or folders
 
 
 
@@ -507,6 +525,17 @@ a web-based **graphical interface and desktop integration** (https://desktop.git
 Browse commits, issues, fork, pull requests, wiki, Readme.md
 
 ![](images/github.png)
+
+
+
+
+# Do Your Commit Messages Suck?
+
+https://www.youtube.com/watch?v=8YjSty6bfog
+
+<!-- .element: class="center" -->
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/8YjSty6bfog?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
 
