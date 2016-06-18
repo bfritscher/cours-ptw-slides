@@ -233,6 +233,11 @@ A preprocessor is a program that processes its input data to produce output, tha
 
 
 
+![](images/Strip-Pepperidge-farm-650-final.jpg)
+
+
+
+
 ### Yeoman
 
 Yeoman is a combination of tools, which allows you to setup a complete,
@@ -534,6 +539,8 @@ Browse commits, issues, fork, pull requests, wiki, Readme.md
 https://www.youtube.com/watch?v=8YjSty6bfog
 
 <!-- .element: class="center" -->
+
+
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/8YjSty6bfog?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 

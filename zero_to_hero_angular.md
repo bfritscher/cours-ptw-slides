@@ -110,6 +110,11 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
+![](images/Strip-Prendre-le-train-en-marche-650-final1.jpg)
+<!-- .element: class="w-50"-->
+
+
+
 
 # Angular Basics
 
