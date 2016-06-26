@@ -305,10 +305,10 @@ Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
 Download and install [Node.js](https://nodejs.org/) to get `npm`.
 
-Use `npm` to install `yeoman`, `bower` and `grunt`
+Use `npm` to install `yeoman`, `bower`, `grunt`, `gulp`
 
 ```sh
-$ npm install -g yo bower grunt-cli
+$ npm install -g yo bower grunt-cli gulp-cli
 ```
 
 Use `npm` to install the desired `yeoman` generator
