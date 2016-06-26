@@ -649,12 +649,12 @@ Create a [github.com](https://github.com) account and install [Github Desktop](h
 
 Create a built, mimified version of your page with your toolchain
 ```sh
-grunt build
+gulp build
 ```
 *Notice that you have a dist folder with this new content*
 
 ```sh
-grunt serve:dist
+gulp serve:dist
 ```
 Helps to test the minified version.
 
@@ -681,27 +681,52 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 ### Deploying dist to gh-pages
 
-After  `grunt build` in the shell under /dist
-
-1st time:
+1st time setup create local gh-pages inside of dist and setup remote repository
 
 ```sh
+gulp build
+cd dist
 git init
+git checkout -b gh-pages
 git add .
-git commit -m
+git commit
 git remote add origin git@github.com:heg-web/moncv-xyz.git
-git push origin master:gh-pages --set-upstream
+git push --set-upstream origin gh-pages
 ```
 The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 
 <!-- .element: class="small" -->
 
-next updates:
+next updates after a gulp build:
 ```sh
 git add . --all
 git commit -m
 git push
 ```
+
+
+
+### Simplify deploy
+
+Setup a task to simplify deploy
+
+install a gulp plugin
+```sh
+npm install --save-dev gulp-deploy-git
+```
+configure the plugin inside `gulpfile.js`
+```javascript
+var deploy = require('gulp-deploy-git');
+gulp.task('deploy', function() {
+  return gulp.src('**/*',  { read: false, cwd: 'dist'  })
+    .pipe(deploy({
+      repository: 'git@github.com:heg-web/moncv-bfritscher.git',
+      remoteBranch:   'gh-pages'
+    }))
+});
+```
+
+Now we can use `gulp deploy` after `gulp build`
 
 
 
