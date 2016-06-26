@@ -427,6 +427,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
+### components
+discover sub-generators
+yo --generators
+
+
+
+
 ### Multiples Views and Router
 
 A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes with http fragment.
