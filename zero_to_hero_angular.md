@@ -422,29 +422,92 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
-### TODO components based applications
+### Component Based Applications
+
+Components provide a way to write small parts with a consistent API that can easily be orchestrated as part of a larger screen, application or system.
+
+<!-- .element: class="small" -->
+
+An encapsulated set of behaviors or process and logic, with a well-known interface or API to access that component’s functionality.
+
+<!-- .element: class="small" -->
+
+![](images/webcomponents.jpg)
+
+<!-- .element: class="w-60" -->
+
+https://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/
+
+<!-- .element: class="credits" -->
 
 
 
+### Advantages of Components
+
+A component is a small, potentially re-usable set of logic, behaviors and interface elements
+
+* Reusable
+* Data flow boundaries in/out
+* Isolated scope
+* Simple or with state easier to predict
+* Testable
+
+<!-- .element: class="float-left w-50" -->
+
+![](images/component_example.png)
+
+<!-- .element: class="w-40 float-right" -->
+
+http://busypeoples.github.io/post/thinking-in-components-angular-js/
+
+<!-- .element: class="clear credits" -->
 
 
-### components
-discover sub-generators
-yo --generators
+
+### Components in Angular 1.5
 
 ```javascript
 .component('poster', {
-        templateUrl: 'scripts/components/poster/poster.html',
+        templateUrl: 'components/poster/poster.html',
         controller: function () {
              var $ctrl = this;
-              $ctrl.$onChanges = function () {
+              $ctrl.$onChanges = function () { // called on input change
                 $ctrl.movie;
               }:
         },
         bindings: {
-            movie: '<'
+            movie: '<', // input on way-binding
+            onSelect: '&' // output callback
         }
     });
+```
+
+Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
+
+https://docs.angularjs.org/guide/component
+
+<!-- .element: class="credits" -->
+
+
+
+### Using yeoman sub-generators
+
+Discover available sub-generators
+
+```sh
+yo --generators
+
+ fountain-angular1
+    component
+    directive
+    filter
+    service
+```
+
+Create a component inside a fountain-angular1 project
+
+```sh
+yo fountain-angular1:component --name myComponent --dir components/game
 ```
 
 
@@ -481,7 +544,6 @@ https://docs.angularjs.org/guide/di
 
 
 
-### TODO ui-router?
 ### $routeProvider
 
 ```javascript
@@ -531,6 +593,17 @@ The role of the ng-view directive is to include the view template for the curren
 <!-- views/phone-detail.html -->
 <div>View content phone {{phoneId}}</div>
 ```
+
+
+
+
+### ui-router for nested states
+
+https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views
+
+
+Angualr Component Router: alpha / dead /...
+https://docs.angularjs.org/guide/component-router
 
 
 
