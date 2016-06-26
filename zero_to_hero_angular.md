@@ -194,29 +194,8 @@ intimidating at first (learning curve to understand the skeleton).
 ## Exercice setup:
 
 ```sh
-yo angular
-
-     _-----_
-    |       |    .--------------------------.
-    |--(o)--|    |    Welcome to Yeoman,    |
-   `---------´   |   ladies and gentlemen!  |
-    ( _´U`_ )    '--------------------------'
-    /___A___\
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
-
-? Would you like to use Sass (with Compass)? (Y/n) No
-? Would you like to include Bootstrap? (Y/n) Yes
-? Which modules would you like to include?
- (*) angular-animate.js
- ( ) angular-aria.js
- ( ) angular-cookies.js
- ( ) angular-resource.js
- (*) angular-messages.js
- (*) angular-route.js
- (*) angular-sanitize.js
- (*) angular-touch.js
+npm install -g generator-fountain-angular1
+yo fountain-angular1
 ```
 
 
@@ -225,16 +204,15 @@ Explore folder
 
 Launch server
 ```sh
-grunt serve
+gulp serve
 ```
 
 Let's use Chrome DevTools as IDE
 
 * add folder to workspace
 * map to file system resource
-* Focus on MainCtrl + view/main.html
-* styles/main.css
-* cleanup main.css, index.html add title
+* Explore files
+* What happens if identation is wrong in a js file? (lint)
 
 
 
@@ -245,6 +223,7 @@ Let's use Chrome DevTools as IDE
 | View                 | what the user sees (the DOM)                                             |
 | Template             | HTML with additional markup                                              |
 | Directives           | extend HTML with custom attributes and elements                          |
+| Components           | a special kind of directive used for component-based application structure |
 | Controller           | the business logic behind views                                          |
 | Data Binding         | sync data between the model and the view                                 |
 | Scope                | context where the model is stored so that controllers, directives and expressions can access it |
@@ -286,8 +265,8 @@ https://docs.angularjs.org/guide/expression
 |-------------------|-------------|
 | ng-app            | auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page. |
 | ng-model          | binds an input, select, textarea (or custom form control) to a property on the scope. |
-| ng-bind           |  replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
-| ng-hide / ng-show | shows or hides the given HTML element based on the expression provided to the directive's attribute. |
+| ng-bind           | replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
+| ng-if             | shows the given HTML element based on the expression provided to the directive's attribute. |
 | ng-repeat         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
 | ng-click          | allows to specify custom behavior when an element is clicked. |
 | ng-controller     | attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern. |
@@ -329,9 +308,9 @@ controllerAs instance version
 var myApp = angular.module('myApp', []);
 
 myApp.controller('GreetingController', function( ) {
-  var ctrl = this;
-  ctrl.greeting = 'Hola!';
-  ctrl.double = function( value ) { return value * 2; };
+  var $ctrl = this;
+  $ctrl.greeting = 'Hola!';
+  $ctrl.double = function( value ) { return value * 2; };
 });
 ```
 
@@ -443,6 +422,11 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
+### TODO components based applications
+
+
+
+
 ### Multiples Views and Router
 
 A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes with http fragment.
@@ -473,6 +457,8 @@ https://docs.angularjs.org/guide/di
 
 
 
+
+### TODO ui-router?
 ### $routeProvider
 
 ```javascript
@@ -548,13 +534,13 @@ https://docs.angularjs.org/api
 Transform your app to use a service as storage for the movies and helps persiste the into local storage.
 A movie is now more than a title it is an object which has two properties a title and a comment.
 
-- create a moviedb service (factory)
+- create a moviedb service
 - create a controller and a view to display a movie
 - modify the frontpage
 
 
 
-### create a moviedb service (factory)
+### create a moviedb service
 
   - which has 2 private helper methods
     - `loadLocalStorage`: to help restore the movies array from storage (json->array)
