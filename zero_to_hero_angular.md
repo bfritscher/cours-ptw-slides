@@ -427,9 +427,25 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
+
 ### components
 discover sub-generators
 yo --generators
+
+```javascript
+.component('poster', {
+        templateUrl: 'scripts/components/poster/poster.html',
+        controller: function () {
+             var $ctrl = this;
+              $ctrl.$onChanges = function () {
+                $ctrl.movie;
+              }:
+        },
+        bindings: {
+            movie: '<'
+        }
+    });
+```
 
 
 
