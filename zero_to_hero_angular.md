@@ -473,7 +473,7 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
              var $ctrl = this;
               $ctrl.$onChanges = function () { // called on input change
                 $ctrl.movie;
-              }:
+              };
         },
         bindings: {
             movie: '<', // input on way-binding
@@ -605,6 +605,28 @@ https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views
 Angualr Component Router: alpha / dead /...
 https://docs.angularjs.org/guide/component-router
 
+
+
+### ui-router parameters
+
+
+```javascript
+$stateProvider
+    .state('movie.detail', {
+      url: '/movie/:movieId',
+    });
+```
+
+```javascript
+controller: function ($stateParams) {
+    // If we got here from a url of /movie/42
+    $stateParams.movieId === '42'
+}
+```
+
+```html
+<a ui-sref="movie.detail({movieId: 42})">View movie</a>
+```
 
 
 
