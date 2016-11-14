@@ -365,7 +365,7 @@ $ npm install && bower install
 
 Start the server
 ```sh
-grunt serve
+gulp serve
 ```
 
 edit a file and watch livereload in action
