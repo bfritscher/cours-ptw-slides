@@ -269,7 +269,7 @@ https://docs.angularjs.org/guide/expression
 | ng-if             | shows the given HTML element based on the expression provided to the directive's attribute. |
 | ng-repeat         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
 | ng-click          | allows to specify custom behavior when an element is clicked. |
-| ng-controller     | attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern. |
+| *ng-controller*   | *(used in angular < 1.5) attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern.* |
 
 https://docs.angularjs.org/api
 
@@ -294,16 +294,7 @@ Do **not** use controllers to: Manipulate DOM, Format input, Filter output, Shar
 
 ### Controller Example
 
-```javascript
-var myApp = angular.module('myApp', []);
-
-myApp.controller('GreetingController', function( $scope ) {
-  $scope.greeting = 'Hola!';
-  $scope.double = function( value ) { return value * 2; };
-});
-```
-
-controllerAs instance version
+controllerAs instance version (Default in components)
 ```javascript
 var myApp = angular.module('myApp', []);
 
@@ -311,6 +302,17 @@ myApp.controller('GreetingController', function( ) {
   var $ctrl = this;
   $ctrl.greeting = 'Hola!';
   $ctrl.double = function( value ) { return value * 2; };
+});
+```
+
+Old controller (<1.5)
+
+```javascript
+var myApp = angular.module('myApp', []);
+
+myApp.controller('GreetingController', function( $scope ) {
+  $scope.greeting = 'Hola!';
+  $scope.double = function( value ) { return value * 2; };
 });
 ```
 
@@ -470,14 +472,19 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
 .component('poster', {
         templateUrl: 'components/poster/poster.html',
         controller: function () {
-             var $ctrl = this;
+              var $ctrl = this;
+              $ctrl.localVar = 2;
               $ctrl.$onChanges = function () { // called on input change
                 $ctrl.movie;
               };
+              $ctrl.something = function () {
+                 $ctrl.onSelect($ctrl.localVar);
+              }
         },
         bindings: {
-            movie: '<', // input on way-binding
-            onSelect: '&' // output callback
+            movie: '<', // Input on way-binding (use $onChanges)
+            onSelect: '&' // Output callback
+            attribute: '@' // String in attribute
         }
     });
 ```
@@ -597,19 +604,34 @@ The role of the ng-view directive is to include the view template for the curren
 
 
 
-### ui-router for nested states
+### A better router: UI-Router
 
+```javascript
+app.config( function( $stateProvider, $urlRouterProvider ) {
+  $urlRouterProvider.otherwise('/');
+  $stateProvider
+    .state('home', {
+      url: '/',
+      component: 'home',
+      onEnter: function (someService) {
+        someService.doSomething();
+      }
+    })
+    .state('movie', {
+      url: '/movie/:id',
+      component: 'movie'
+    });
+});
+```
+
+Supports nested routes
 https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views
 
 
-Angualr Component Router: alpha / dead /...
-https://docs.angularjs.org/guide/component-router
 
+### UI-Router Parameters & Links
 
-
-### ui-router parameters
-
-
+Config
 ```javascript
 $stateProvider
     .state('movie.detail', {
@@ -617,16 +639,21 @@ $stateProvider
     });
 ```
 
+Controller
 ```javascript
-controller: function ($stateParams) {
+controller: function ($stateParams, $state) {
     // If we got here from a url of /movie/42
     $stateParams.movieId === '42'
+    // if we want to go to 43;
+    $state.go('movie.detail', {id: 43});
 }
 ```
 
+HTML
 ```html
 <a ui-sref="movie.detail({movieId: 42})">View movie</a>
 ```
+
 
 
 
@@ -647,6 +674,7 @@ https://docs.angularjs.org/api
 
 
 
+
 ### Exercice: localStorage and routes
 
 Transform your app to use a service as storage for the movies and helps persiste the into local storage.
@@ -664,20 +692,18 @@ A movie is now more than a title it is an object which has two properties a titl
     - `loadLocalStorage`: to help restore the movies array from storage (json->array)
     - `saveLocalStorage`: to help to save the movies array to storage array->json
   - 4 public api methods
-    - `getMovies`: returns a array of movies
-    - `addMovie`: takes a movie object and adds it to the internal movies array and also perssits to localstorage
-    - `removeMovie`: removes the given movie from the list and perssistent storage
-    - `emptyMovie`: return as movie object which has two empty properties title, comment;
+    - `getMovies()`: returns a array of movies
+    - `addMovie(movie)`: takes a movie object and adds it to the internal movies array and also perssits to localstorage
+    - `removeMovie(movie)`: removes the given movie from the list and perssistent storage
+    - `getMovie(id)`: return as movie object matching the id;
 
 
 
-### create a controller and a view to display a movie
+### create a component and route to display a movie
 
   - map it to the /movie/:id url
   - it will display a movie at index id in the movies array
   - use a filter to display the title in uppercase
-
-TODO: screenshot?
 
 
 
@@ -1097,7 +1123,7 @@ https://www.getpostman.com/docs/introduction
 
 
 
-### Constante
+### Constant
 
 Since simple values, like URL prefixes, don't have dependencies or configuration, it's often handy to make them available in both the configuration and run phases. This is what the Constant is for.
 
@@ -1230,13 +1256,13 @@ body {
 
 
 
-### Extensions images
+### Movie Poster Images
 
-- display the results with a new controller upcoming url and view results
-- iterate over moviedb.getMovieResults()
+- display the results of upcoming movies on a different url
+- iterate over moviedb.getMovies()
 - create a link for each movie with class movie and col-sm-3 point to the movie page with id from the movie result
 - title of the movie as h2
-- for the poster image use a div with background-image
+- for the poster image use a div with background-image (and later create a reusable component)
 ```html
 <div class="poster" ng-style="{'background-image': (m|toBackgroundCSS) }"></div>
 ```
@@ -1265,7 +1291,7 @@ http://vasyabigi.github.io/angular-slick/
 bower install angular-slick --save
 ```
 
-add 'slick' to movieApp
+add 'slick' to your app's needed modules
 
 ```html
 <div class="col-sm-10 col-sm-offset-1">
@@ -1282,7 +1308,7 @@ add 'slick' to movieApp
 Dsiplay the countries with flags using the ng-flags directive. Use the master version.
 
 ```sh
-bower install ng-flags#master --save
+bower install ng-flags --save
 ```
 
 https://github.com/asafdav/ng-flags
@@ -1341,33 +1367,16 @@ ng-animate provides animation defined in css
 
 - create a controller search and map it to search
 - we can reuse the result view of upcoming for the search
-- to start the research and handle the right navmenu highlight lets create a new controllerfor the whole app add it to the body
 - add a serach bar to the menu and when it changes get the field value and trigger the search on moviedb
-
-
-
-## Highlight current path / virtual subpage
-
-- in the app controller we can listen to the $locationChangeSuccess event and if the path is not /search empty the search field
-- set a new variable on this controller scope with the current path
-- use this to add the active class on the link menu which is the current active one
 
 
 
 ## Nice backdrop image
 
-- add a background-image to the body with a variable on the app scope.
-- set this variable in the moviectrl (hint: since its a child scope it can see its parent ;-) )
-- don't forget to reset the backdrop when path changes.
+- add a background-image to the a backdrop component which transcludes the content.
+- set the backdrop variable in the moviedb to share its location
+- don't forget to reset the backdrop when not in /movie.
 
-
-
-
-## Custom Directives
-
-Advanced level!
-
-https://docs.angularjs.org/guide/directive
 
 
 
@@ -1386,19 +1395,15 @@ Lets fix our data and make poster more reusable with a custom directive
 ```
 - with `<poster movie="m"></poster>`
 - in results and movie
-- use a scope for movie
 
 
 
 ## Step 2: add fuctionnality
 
-- add a star button to the poster directive template and handle the click function inside the directives link function
+- add a star button to the poster component and handle the click
 - change `moviedb` to store a movie object with the needed information, id, title, poster_path
-- create a `isMovieFavorite`
+- create a `isMovieFavorite()`
 - modify `addMovie/removeMovie` to use object instead of array to make lookup by id easyer... (or loop array ...)
-- cleanup unused functions `emptyMovie`, `getMovies`
-
-to reuse results.html in main we can create a function that links `movieResults` with `favoriteMovies`
 
 
 
@@ -1418,7 +1423,7 @@ to reuse results.html in main we can create a function that links `movieResults`
 
 
 
-### Install firebase
+### Install Firebase
 
 ![](images/movies_06_firebase_login.png)
 
@@ -1434,9 +1439,26 @@ var app = angular.module("sampleApp", ["firebase"]);
 
 ### Documentation
 
-https://www.firebase.com/docs/web/libraries/angular/quickstart.html
+https://firebase.google.com/
 
-https://www.firebase.com/docs/web/libraries/angular/api.html
+https://github.com/firebase/angularfire
+
+https://firebase.google.com/docs/auth/web/github-auth
+
+```javascript
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    storageBucket: "",
+    messagingSenderId: ""
+  };
+  firebase.initializeApp(config);
+</script>
+```
+copy from google console (Authentication>Web Setup)
 
 
 
@@ -1456,7 +1478,7 @@ https://www.firebase.com/docs/web/libraries/angular/api.html
 }
 ```
 
-https://www.firebase.com/docs/security/quickstart.html
+https://firebase.google.com/docs/database/security/quickstart
 
 
 
@@ -1466,58 +1488,53 @@ https://www.firebase.com/docs/security/quickstart.html
 - add methods to moviedb and use these services: $firebaseAuth, $firebaseObject
 
 ```javascript
-    var ref = new Firebase('https://ptw.firebaseio.com');
-    var authObj = $firebaseAuth(ref);
-    var authData = null;
+  var self = this;
+  var movies;
 
-    function getFirebaseData(){
-        console.log('Logged in as:', authData.uid);
-        //could do some merge with localStorage...
-        movies = $firebaseObject(new Firebase('https://ptw.firebaseio.com/users/' + authData.uid + '/movies'));
+  var authObj = $firebaseAuth();
+  var authData = null;
+  authObj.$onAuthStateChanged(function (data) {
+    authData = data;
+    if (data) {
+      getFirebaseData();
     }
+  });
 
-    function login(manualLogin){
-        authData = authObj.$getAuth();
-        if (authData) {
-            getFirebaseData();
-            return;
-        }
-        console.log('Logged out');
-        if(manualLogin){
-            authObj.$authWithOAuthPopup('github')
-            .then(function(auth) {
-                authData = auth;
-                getFirebaseData();
-            }).catch(function(error) {
-                console.error('Authentication failed:', error);
-            });
-        }
-    }
-    login();
+  function getFirebaseData() {
+    console.log('Logged in as:', authData.uid);
+    var ref = firebase.database().ref().child('users').child(authData.uid).child('movies');
+    movies = $firebaseObject(ref);
+    movies.$loaded().then(function () {
+      // now movies contains the data and we can do something with it;
+      // ...
+    });
+  }
 
-    function isLoggedIn(){
-        return authData;
-    }
+  this.login = function () {
+    authObj.$signInWithPopup('github')
+      .catch(function (error) {
+        console.error('Authentication failed:', error);
+      });
+  };
 
-    function logout(){
-        authObj.$unauth();
-        authData = null;
-    }
+  this.logout = function () {
+    authData = null;
+    // destroy local copy to not get permission errors
+    movies.$destroy();
+    // optional do something
+    // ...
+    authObj.$signOut();
+  };
 
-    function saveLocalStorage(){
-      localStorage.setItem('movies', angular.toJson(movies));
-      if(authData){
-        movies.$save();
-      }
-    }
-
-    if(savedMovies && Object.keys(movies).length === 0){
+  this.isLoggedIn = function () {
+    return authData;
+  };
 ```
 
 
 
 
-## After deploy
+## Possible next steps after deploy
 
 - Analytics & SPA
   - Virutal page views
