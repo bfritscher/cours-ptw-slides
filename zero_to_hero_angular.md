@@ -1269,8 +1269,8 @@ body {
 
 - create the toBackgroundCSS filter:
   - this is a function which get a movie object and returns either the css url to the placeholder picture or to the poster
-  - url(images/noposter.jpg)
-  - url( baseUrlofmoviedb/w185/movie_poster_path_property)
+  - `url(images/noposter.jpg)`
+  - `url( baseUrlofmoviedb/w185/movie_poster_path_property)`
 
 <!-- .element: class="small" -->
 
