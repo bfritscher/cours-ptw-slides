@@ -93,10 +93,21 @@ Current knowledge:
 
 
 
+## The ECMAScript Standard Timeline
+
+![](images/ecmascript_evolution.png)
+
+http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
+
+<!-- .element: class="credits" -->
+
+
+
+
 
 #JavaScript Basics
 
-* Variables
+* Variables / Constants
 * Types
 * Operators
 * Array
