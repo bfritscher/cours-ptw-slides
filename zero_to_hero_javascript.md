@@ -1,3 +1,112 @@
+https://babeljs.io/learn-es2015/
+
+let
+const
+
+for (let value of array) {
+  // do something with value
+}
+
+for (let property in object) {
+  // do something with object property
+}
+
+Arrow functions
+
+Classes
+
+class SkinnedMesh extends THREE.Mesh {
+  constructor(geometry, materials) {
+    super(geometry, materials);
+
+    this.idMatrix = SkinnedMesh.defaultMatrix();
+    this.bones = [];
+    this.boneMatrices = [];
+    //...
+  }
+  update(camera) {
+    //...
+    super.update();
+  }
+  static defaultMatrix() {
+    return new THREE.Matrix4();
+  }
+}
+
+Enhanced Object Literals
+let name: 'Hello'
+{name}
+
+Template Strings
+
+// Basic literal string creation
+`This is a pretty little template string.`
+
+// Multiline strings
+`In ES5 this is
+ not legal.`
+
+// Interpolate variable bindings
+var name = "Bob", time = "today";
+`Hello ${name}, how are you ${time}?`
+
+
+Destructuring
+
+// list matching
+var [a, ,b] = [1,2,3];
+a === 1;
+b === 3;
+
+// Fail-soft destructuring
+var [a] = [];
+a === undefined;
+
+// Fail-soft destructuring with defaults
+var [a = 1] = [];
+a === 1;
+
+// object matching
+var { op: a, lhs: { op: b }, rhs: c }
+       = getASTNode()
+
+Default + Rest + Spread
+function f(x, y=12) {
+  // y is 12 if not passed (or passed as undefined)
+  return x + y;
+}
+f(3) == 15
+
+function f(x, ...y) {
+  // y is an Array
+  return x * y.length;
+}
+f(3, "hello", true) == 6
+
+function f(x, y, z) {
+  return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1,2,3]) == 6
+
+Modules
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+
+// app.js
+import * as math from "lib/math";
+console.log("2π = " + math.sum(math.pi, math.pi));
+
+
+Iterators, Generators, Unicode, Map, Set, WeakMap, WeakSet, Proxies, Symbols, Promises, Tail Calls
+
+
+
+
+
 643-1-1 Projet de technologies WEB de présentation
 <!-- .element style="font-size:0.7em;margin:4em 0;" -->
 
