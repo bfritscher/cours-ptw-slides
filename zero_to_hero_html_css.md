@@ -843,6 +843,56 @@ body{ font-family: sans-serif; font-size: 20px; }
 
 ### CSS Variables (Custom Properties)
 
+Can be changed dynamically, follow CSS inheritance, can be changed from JavaScript
+
+write:
+
+`--var_name: value;`
+
+read:
+
+`var(--var_name);`
+
+https://drafts.csswg.org/css-variables/
+
+https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
+
+
+
+### Example
+
+```css
+:root { /* or any other css selector */
+  --primary-color: red;
+  --indent-size: 10px;
+  --indent-xl: calc(2*var(--indent-size));
+  --spacer: 10;
+}
+
+h1, h2 {
+   color: var(--primary-color);
+}
+.primary {
+   color: var(--primary-color);
+}
+.box {
+  padding: var(--indent-xl);
+}
+
+.box2{
+  padding: var(--spacer)px 0; /* DOESN'T work */
+  padding: calc(var(--spacer)*1px) 0; /* WORKS */
+}
+```
+
+
+
+```css
+
+```
+<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/leweyuc/1/edit?html,css,output" data-height="600px" -->
+
+
 
 
 ### References
