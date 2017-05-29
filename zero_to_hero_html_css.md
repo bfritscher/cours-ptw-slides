@@ -133,7 +133,14 @@ Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your user
 * Real-time
 * Tooling
 * Automated Development Workflows
+
 ![](images/intro-adw.png)
+
+<!-- .element: class="w-50 float-left center" -->
+
+![](images/webpack-logo.png)
+
+<!-- .element: class="w-50 float-left center" -->
 
 
 
@@ -480,6 +487,27 @@ Script tags at the end in order to not block page loading.
 
 
 
+### Other script loading attributes
+
+```html
+<script src="" defer></script>
+```
+ script is meant to be executed after the document has been parsed, but before firing *DOMContentLoaded*
+
+```html
+<script src="" async></script>
+```
+ specifies that the script will be executed asynchronously as soon as it is available.
+
+
+- If async is present: The script is executed asynchronously with the rest of the page (the script will be executed while the page continues the parsing)
+- If async is not present and defer is present: The script is executed when the page has finished parsing
+- If neither async or defer is present: The script is fetched and executed immediately, before the browser continues parsing the page
+
+<!-- .element: class="smaller" -->
+
+
+
 
 # <br/>CSS
 
@@ -696,6 +724,12 @@ http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 
 
 
+### CSS: Grid
+
+
+
+
+
 ### CSS: Media Queries
 
 Lets the presentation of content be **tailored** to a specific range of output devices **without having to change the content** itself.
@@ -787,6 +821,10 @@ body{ font-family: sans-serif; font-size: 20px; }
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
 
+
+
+
+### CSS Variables (Custom Properties)
 
 
 

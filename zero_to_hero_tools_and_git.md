@@ -180,6 +180,197 @@ Alternatives: Bootstrap, Foundation, Angular Material,
 
 
 
+# Design
+
+![](images/web_development_process.jpg)
+
+<!-- .element: class="center" -->
+
+
+
+
+
+### Why Writing Web Design On Paper Will Help
+
+- Easier and more accessible (draw everywhere)
+- Chaos can be helpful (break the rules)
+- It saves time & energy (more iterations)
+- Easier to make notes and alterations on paper
+- Focus on the big picture, not getting lost in details
+
+http://gohunters.com/blog/10-reasons-writing-web-design-paper-will-help/
+
+<!-- .element: class="credits" -->
+
+
+
+![](images/04_paper_sketches.png)
+
+<!-- .element: class="center w-80" -->
+
+https://www.smashingmagazine.com/2014/03/building-clickthrough-prototypes-to-support-participatory-design/
+
+<!-- .element: class="credits" -->
+
+
+
+![](images/12.website-sketches.jpg)
+
+<!-- .element: class="center" -->
+
+http://designbeep.com/2012/05/17/33-great-examples-of-web-design-sketches/
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Typography
+
+Ty­pog­ra­phy mat­ters be­cause it helps con­serve reader at­ten­tion.
+
+Good ty­pog­ra­phy can help your reader de­vote less at­ten­tion to the me­chan­ics of read­ing and more at­ten­tion to your mes­sage
+
+http://practicaltypography.com/
+
+<!-- .element: class="credits" -->
+
+
+
+### Which is more readable?
+
+![](images/roadsign-standard.jpg)
+
+<!-- .element: class="float-left w-50" -->
+
+![](images/roadsign-script.jpg)
+
+<!-- .element: class="float-right w-50" -->
+
+A high­way sign has a spe­cial pur­pose: it’s meant to be read quickly, from long dis­tances, at odd an­gles, and un­der vari­able light­ing and weather con­di­tions.
+
+http://practicaltypography.com/
+
+<!-- .element: class="credits" -->
+
+
+
+### Same font different balance
+
+![](images/speed-limit-75.svg)
+<!-- .element: class="w-80" -->
+
+<!-- .element: class="center" -->
+
+http://practicaltypography.com/
+
+<!-- .element: class="credits" -->
+
+
+
+### **Underlining** *Absolutely not*
+
+<u>Un­der­lin­ing is an­other dreary type­writer habit. Type­writ­ers had no bold or italic styling. So the only way to em­pha­size text was to back up the car­riage and type un­der­scores be­neath the text. It was a workaround for short­com­ings in type­writer technology.</u>
+
+Nei­ther your word proces­sor nor your web browser suf­fers from these short­com­ings. If you feel the urge to un­der­line, use **bold** or *italic* in­stead. In spe­cial sit­u­a­tions, like head­ings, you can also con­sider us­ing ALL CAPS, <span style="font-variant: small-caps">small caps</span>, or a change in <span style="font-size: 130%">point size</span>.
+
+http://practicaltypography.com/
+
+<!-- .element: class="credits" -->
+
+
+
+
+# Design Principles
+
+## Visual Perception And The Principles Of Gestalt
+
+https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and-the-principles-of-gestalt/
+
+<!-- .element: class="credits" -->
+
+
+
+### The Key Ideas Behind Gestalt Theory
+
+> The whole is other than the sum of the parts.
+> — Kurt Koffka
+
+
+
+### Similarity
+
+> Elements that share similar characteristics are perceived as more related than elements that don’t share those characteristics.
+
+![](images/gestalt-similarity-1.png)
+<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-similarity-2.png)
+<!-- .element: class="left fragment fade-in w-80" -->
+
+
+
+### Common regions / Enclosure
+
+> Elements are perceived as part of a group if they are located within the same closed region.
+
+![](images/gestalt-similarity-1.png)
+<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-enclosure-2.png)
+<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-enclosure-3.png)
+<!-- .element: class="left fragment fade-in w-80" -->
+
+
+
+### Proximity
+
+> Objects that are closer together are perceived as more related than objects that are further apart.
+
+![](images/gestalt-similarity-1.png)
+<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-proximity-2.png)
+<!-- .element: class="left fragment fade-in w-80" -->
+
+
+
+### Closure
+
+> When seeing a complex arrangement of elements, we tend to look for a single, recognizable pattern.
+
+![](images/gestalt-closure-1.png)
+<!-- .element: class="left w-80" -->
+
+
+
+### Continuation
+
+> Elements arranged on a line or curve are perceived as more related than elements not on the line or curve.
+
+![](images/gestalt-continuation-1.png)
+<!-- .element: class="left w-80" -->
+
+
+
+### Connection
+
+> Elements that are visually connected are perceived as more related than elements with no connection.
+
+![](images/gestalt-connection-1.png)
+<!-- .element: class="left fragment current-visible w-50" -->
+![](images/gestalt-connection-2.png)
+<!-- .element: class="left fragment fade-in w-50" -->
+
+
+
+
+### Beyond Frameworks, Design Guidelines
+
+- https://material.io/guidelines/
+- https://www.microsoft.com/en-us/design
+
+
+
+
 # Tooling
 
 ![](images/yeoman-packages.png)
@@ -197,8 +388,8 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 ![](images/webstorm.png)
 <!-- .element: class="w-60 float-left" -->
 
-In between: [Notepad++](https://notepad-plus-plus.org/), [Atom](https://atom.io/), [Visual Studio Code](https://code.visualstudio.com/)
-<br/>Online editors: [Cloud9](https://c9.io/)
+In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/)
+<br/>Online editors: [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
@@ -288,6 +479,19 @@ https://nodejs.org/
 ![](images/npm-logo.svg) <!-- .element: class="float-right w-15" -->
 **npm** is a package manager for JavaScript bundled with Node.js
 https://www.npmjs.com/
+
+
+
+
+## WebPack
+
+Webpack is an open-source JavaScript module bundler. Webpack takes modules with dependencies and generates static assets representing those modules.
+
+![](images/webpack-process.svg)
+
+<!-- .element: class="float-right w-60" -->
+
+It takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes.
 
 
 
