@@ -726,6 +726,23 @@ http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 
 ### CSS: Grid
 
+![](images/Holy_Grail_CSS_Grid.gif)
+
+https://bitsofco.de/holy-grail-layout-css-grid/
+
+
+
+### Source-Order Independence
+
+![](images/game-landscape.png)
+![](images/game-portrait.png)
+
+
+https://drafts.csswg.org/css-grid/
+
+https://gridbyexample.com/
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
 
 
 
