@@ -1,112 +1,3 @@
-https://babeljs.io/learn-es2015/
-
-let
-const
-
-for (let value of array) {
-  // do something with value
-}
-
-for (let property in object) {
-  // do something with object property
-}
-
-Arrow functions
-
-Classes
-
-class SkinnedMesh extends THREE.Mesh {
-  constructor(geometry, materials) {
-    super(geometry, materials);
-
-    this.idMatrix = SkinnedMesh.defaultMatrix();
-    this.bones = [];
-    this.boneMatrices = [];
-    //...
-  }
-  update(camera) {
-    //...
-    super.update();
-  }
-  static defaultMatrix() {
-    return new THREE.Matrix4();
-  }
-}
-
-Enhanced Object Literals
-let name: 'Hello'
-{name}
-
-Template Strings
-
-// Basic literal string creation
-`This is a pretty little template string.`
-
-// Multiline strings
-`In ES5 this is
- not legal.`
-
-// Interpolate variable bindings
-var name = "Bob", time = "today";
-`Hello ${name}, how are you ${time}?`
-
-
-Destructuring
-
-// list matching
-var [a, ,b] = [1,2,3];
-a === 1;
-b === 3;
-
-// Fail-soft destructuring
-var [a] = [];
-a === undefined;
-
-// Fail-soft destructuring with defaults
-var [a = 1] = [];
-a === 1;
-
-// object matching
-var { op: a, lhs: { op: b }, rhs: c }
-       = getASTNode()
-
-Default + Rest + Spread
-function f(x, y=12) {
-  // y is 12 if not passed (or passed as undefined)
-  return x + y;
-}
-f(3) == 15
-
-function f(x, ...y) {
-  // y is an Array
-  return x * y.length;
-}
-f(3, "hello", true) == 6
-
-function f(x, y, z) {
-  return x + y + z;
-}
-// Pass each elem of array as argument
-f(...[1,2,3]) == 6
-
-Modules
-// lib/math.js
-export function sum(x, y) {
-  return x + y;
-}
-export var pi = 3.141593;
-
-// app.js
-import * as math from "lib/math";
-console.log("2π = " + math.sum(math.pi, math.pi));
-
-
-Iterators, Generators, Unicode, Map, Set, WeakMap, WeakSet, Proxies, Symbols, Promises, Tail Calls
-
-
-
-
-
 643-1-1 Projet de technologies WEB de présentation
 <!-- .element style="font-size:0.7em;margin:4em 0;" -->
 
@@ -227,17 +118,27 @@ http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
 
 
 
-### Variables
+### Variables / Constants / Comments
 
 ```js
 // This is a single line comment
+
+// block variables use let over var!
+let bar;
+bar = 'hello';
+let baz = 'world';
+
+// variables before ES2015
+// scope is only at the function level
 var foo;
+
+// constants
+const cannotBeReassigned = 'The One';
 
 /*
   This is a multi-line comment. It can go on
   for several lines, like this.
  */
-var anotherFoo;
 ```
 
 
@@ -256,10 +157,10 @@ JavaScript defines **6 types**:
 <!-- .element: class="w-40 float-left" -->
 
 ```javascript
-var aNumber = 3.12;
-var aBoolean = true;
-var aString = 'John Smith';
-var anObject = { aProperty: null };
+let aNumber = 3.12;
+let aBoolean = true;
+let aString = 'John Smith';
+let anObject = { aProperty: null };
 typeof aNumber === 'number';
 typeof aBoolean === 'boolean';
 typeof aString === 'string';
@@ -289,13 +190,32 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 
 
+### Template Strings
+
+New in ES2015 in addition to '', "", there are ``.
+
+```js
+// Basic literal string creation
+const s1 = `This is a pretty little template string.`;
+
+// Multiline strings
+const s2 = `In ES5 this is
+ not legal.`;
+
+// Interpolate variable bindings
+let name = "Bob", time = "today";
+const s3 = `Hello ${name}, how are you ${time}?`;
+```
+
+
+
 ### Array
 
 ```js
-var myArray = [ 'a', 'b', 'c' ];
-var firstItem = myArray[ 0 ];
-var secondItem = myArray[ 1 ]; // access the item at index 1
-var arrayLength = myArray.length;
+let myArray = [ 'a', 'b', 'c' ];
+let firstItem = myArray[ 0 ];
+let secondItem = myArray[ 1 ]; // access the item at index 1
+let arrayLength = myArray.length;
 ```
 
 
@@ -319,17 +239,29 @@ if ( notANumber ) {
 ### Loop
 
 ```js
-var i;
-for (i = 0; i < myArray.length; i = i + 1) {
+let i = 0;
+for (i; i < myArray.length; i = i + 1) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
 }
 ```
 
 ```js
-var i = 0;
+let i = 0;
 while (i < myArray.length) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
   i++;
+}
+```
+
+```js
+for (let value of array) {
+  // do something with value
+}
+```
+
+```js
+for (let property in object) {
+  // do something with object property
 }
 ```
 
@@ -342,10 +274,30 @@ function cornify( unicorns /* integer */, rainbows /* integer */ ) {
 
 }
 
-var addTwoNumbers = function(a, b) {
+const addTwoNumbers = function(a, b) {
   return a + b;
 };
 ```
+
+
+
+### Arrow functions
+
+```js
+const hello = () => {
+  return 'world';
+}
+
+// Parentheses are optional when there's only one parameter name:
+(singleParam) => { statements }
+singleParam => { statements }
+```
+
+An arrow function does not create its own this context, so this has its original meaning from the enclosing context. => this behaves more like you might think
+
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es
+
+<!-- .element: class="credits" -->
 
 
 
@@ -894,6 +846,31 @@ p1.greet();
 
 
 
+### Classes since ECMAScript 2015
+
+```js
+class SkinnedMesh extends THREE.Mesh {
+  constructor(geometry, materials) {
+    super(geometry, materials);
+
+    this.idMatrix = SkinnedMesh.defaultMatrix();
+    this.bones = [];
+    this.boneMatrices = [];
+    //...
+  }
+  update(camera) {
+    //...
+    super.update();
+  }
+  static defaultMatrix() {
+    return new THREE.Matrix4();
+  }
+}
+```
+
+
+
+
 ### Arrays are objects
 
 ```javascript
@@ -925,24 +902,24 @@ for (var i = 0; i < fruits.length; i++) {
 ```javascript
 var fruits = ['abricot', 'ananas', 'strawberry', 'orange'];
 
-var transformedFruits = fruits.map(function (fruit) {
+var transformedFruits = fruits.map(fruit => {
     return fruit.toUpperCase();
 });
 
-transformedFruits.forEach(function (fruit) {
+transformedFruits.forEach(fruit => {
     console.log(fruit);
 });
 
-var count = fruits.reduce(function (val, fruit) {
+var count = fruits.reduce((val, fruit) => {
     console.log('reducer invoked with ' + val);
     return val + 1;
 }, 0);
 console.log('There are ' + count + ' fruits in the array');
 
-var aFruits = fruits.filter(function (fruit) {
+var aFruits = fruits.filter(fruit => {
     return fruit.charAt(0) === 'a';
 });
-aFruits.forEach(function (fruit) {
+aFruits.forEach(fruit => {
     console.log(fruit);
 });
 ```
@@ -1119,7 +1096,7 @@ f1(1);
 
 
 
-### Module patterns
+### Module patterns in ES5
 
 Patterns are applied to create modules
 
@@ -1150,6 +1127,27 @@ myModule.publicFunction();
 
 ![](images/module.png)
 <!-- .element: class="top right" -->
+
+
+
+
+### Modules since ECMAScript 2015
+
+import/export functions and variables between files.
+
+```js
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+```
+
+```js
+// app.js
+import * as math from "lib/math";
+console.log("2π = " + math.sum(math.pi, math.pi));
+```
 
 
 
@@ -1213,6 +1211,111 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 
 
 
+## ECMAScript 2015-2016
+
+ - Enhanced Object Literals
+ - Destructuring
+ - Default + Rest + Spread
+
+
+
+### Enhanced Object Literals
+
+```js
+const make = 'Kia', model = 'Sorento', value = 40000
+const car = {
+  // with property value shorthand
+  // syntax, you can omit the property
+  // value if key matches variable
+  // name
+  make,  // same as make: make
+  model, // same as model: model
+  value, // same as value: value
+
+  // computed values now work with
+  // object literals
+  ['make' + make]: true,
+
+  // Method definition shorthand syntax
+  // omits `function` keyword & colon
+  depreciate() {
+    this.value -= 2500;
+  }
+};
+```
+
+http://www.benmvp.com/learning-es6-enhanced-object-literals/
+
+<!-- .element: class="credits" -->
+
+
+
+### Destructuring
+
+```js
+// list matching
+const [a, ,b] = [1,2,3];
+a === 1;
+b === 3;
+
+// Fail-soft destructuring
+const [a] = [];
+a === undefined;
+
+// Fail-soft destructuring with defaults
+[a = 1] = [];
+a === 1;
+
+// object matching
+const {name: n, likes: [,,c]} = {name: 'hello', likes: ['cat', 'dog', 'cow']};
+n === 'hello';
+c === 'cow';
+```
+
+
+
+### Default + Rest + Spread
+```js
+function f(x, y=12) {
+  // y is 12 if not passed (or passed as undefined)
+  return x + y;
+}
+f(3) == 15
+
+function f(x, ...y) {
+  // y is an Array
+  return x * y.length;
+}
+f(3, "hello", true) == 6
+
+function f(x, y, z) {
+  return x + y + z;
+}
+// Pass each elem of array as argument
+f(...[1,2,3]) == 6
+```
+
+
+
+### ECMAScript 2015-2016
+
+And a lot more:
+- Iterators
+- Generators
+- Unicode
+- Map, Set, WeakMap, WeakSet
+- Proxies
+- Symbols
+- Promises
+- Tail Calls
+
+https://babeljs.io/learn-es2015/
+
+<!-- .element: class="credits" -->
+
+
+
+
 # Lab
 
 * Chrome DevTools as IDE
@@ -1229,6 +1332,7 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 * http://sutterlity.gitbooks.io/apprendre-jquery/content/rappel_javascript.html
 * http://eloquentjavascript.net/
 * https://developer.chrome.com/devtools
+* https://babeljs.io/learn-es2015/
 
 ### Sources
 * Cours TWEB@heig-vd, Olivier Liechti https://github.com/wasadigi/Teaching-HEIGVD-TWEB/
