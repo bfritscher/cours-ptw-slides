@@ -24,3 +24,12 @@ firebase help functions:log
 
 
  firebase deploy --only functions
+ firebase deploy --only hosting
+ firebase deploy --only functions:function1,function2
+
+exports.groupA = {
+  function1: functions.https.onRequest(...);
+  function2: functions.database.ref('\path').onWrite(...);
+}
+exports.groupB = require('./groupB);
+https://firebase.google.com/docs/cli/
