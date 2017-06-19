@@ -847,11 +847,15 @@ Can be changed dynamically, follow CSS inheritance, can be changed from JavaScri
 
 write:
 
-`--var_name: value;`
+```css
+--var_name: value;
+```
 
 read:
 
-`var(--var_name);`
+```css
+var(--var_name);
+```
 
 https://drafts.csswg.org/css-variables/
 
