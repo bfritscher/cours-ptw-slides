@@ -65,7 +65,7 @@ Alternatives: Bootstrap, Foundation, Angular Material,
 
 #### Grid system
 
-```xml
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -99,7 +99,7 @@ Alternatives: Bootstrap, Foundation, Angular Material,
 
 
 
-```xml
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -587,7 +587,7 @@ bower install bootswatch --save
 https://bootswatch.com/
 
 try different CSS files from bootswatch in index.html
-```xml
+```html
 <link rel="stylesheet" href="bower_components/bootswatch/???/bootstrap.css" />
 ```
 
@@ -985,7 +985,7 @@ http://api.jquery.com/
 
 
 
-```xml
+```html
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->

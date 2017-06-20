@@ -130,6 +130,7 @@ Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your user
 ## Some Trends
 
 * Single Page Applications (SPA)
+* Progressive Web Apps (PWA)
 * Real-time
 * Tooling
 * Automated Development Workflows
@@ -181,7 +182,8 @@ Learn theory and tools, see examples and practice!
 
 
 
-## Labs: MonCV & Movie
+## Labs: MonCV & ShoppingList
+TODO: new pictures
 ![](images/monCV_final.png)
 <!-- .element: class="w-30 float-left pdf-w-30 pdf-float-left" -->
 
@@ -199,24 +201,24 @@ Learn theory and tools, see examples and practice!
 Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
-* HTML, CSS, JavaScript
-* Lab 1: MonCV
-* Assignments
+* ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> HTML, CSS, JavaScript
+* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab 1: MonCV
+*  ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Assignments MonCV <span class="red">33%</span>
 
 <!-- .element: class="w-50" -->
 
 
-* AngularJS
-* Lab: Movie
-* Project: Your choice
+* ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> Vue.js
+* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: ShoppingList
+* ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Project <span class="red">33%</span>
 
 <!-- .element: class="w-40" -->
 
 <br/>Grades:
 * Assignments: individual grade
-* Project: team grade
-  * product
-  * presentation
+* Project: team grade <span class="red">66%</span>
+  * Product (ShoppingList++ / own idea)
+  * Presentation
 
 <!-- .element: class="left" -->
 
@@ -245,7 +247,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
 ### HTML
-```xml
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -270,7 +272,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
 
-```xml
+```html
 
 ```
 <!-- .element: class="nodpf jsbin-embed" data-href="//jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
@@ -307,7 +309,7 @@ Elements can have attributes **`name="value"`**
 | `<img src="" alt="">` | Image from `src` with `alt` description
 | `<a href="">` | Anchor, hyperlink to a target destination
 
-```xml
+```html
 <div id="page2">
   <p>A <span class="fun">funny</span> dog:
      <img src="" alt="" /></p>
@@ -341,7 +343,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 ### HTML: Tables
 
-```xml
+```html
 <!DOCTYPE html>
 <table>
   <caption>Caption of the table (optional)</caption>
@@ -369,7 +371,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 
 
-```xml
+```html
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
@@ -379,7 +381,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 ### HTML: Forms
 
-```xml
+```html
 <form>
   <!-- two ways to associate labels -->
   <p><label for="n">Name: </label>
@@ -411,7 +413,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 
 
 
-```xml
+```html
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
@@ -465,7 +467,7 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Cat%C3%A9gorie_de_contenu
 
 ### HTML: including CSS and JavaScript
 
-```xml
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -572,7 +574,7 @@ element, class, pseudo-class, id
 
 
 
-```css
+```CSS
 #b1.box{
   color: yellow;
 }
@@ -630,7 +632,7 @@ center a block element: *margin: 0 auto*;
 
 
 
-```xml
+```html
   <header>
     <nav>menu</nav>
   </header>
@@ -689,7 +691,7 @@ footer{
 
 
 
-```xml
+```html
   <div class="box">a</div>
   <div class="box">b</div>
   <div class="box">c</div>
@@ -797,7 +799,7 @@ http://mediaqueri.es/int/
 
 
 
-```xml
+```html
 <div id="box1">Box 1</div><div id="box2">Box 2</div><div id="box3">Box 3</div>
 ```
 
