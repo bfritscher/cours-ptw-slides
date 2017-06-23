@@ -617,6 +617,109 @@ center a block element: *margin: 0 auto*;
 
 
 
+### CSS: border
+
+
+```css
+border-width: 4px;
+border-color: red;
+border-style: solid;
+
+border-top-width: 8px;
+border-top-color: green;
+border-top-style: dashed;
+
+/* shorthand */
+border: 2px solid #0000FF;
+
+border-left: 10px solid #FFFF00; 
+
+border-radius: 10px;
+```
+
+<div style="width:100px;height:50px;border:4px solid red;position: absolute; top:100px;right:0"></div>
+<div style="width:100px;height:50px;border:4px solid red;border-top: 8px dashed green;position: absolute; top:180px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;position: absolute; top:260px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:340px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:420px;right:0;border-radius: 10px"></div>
+
+- https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius?v=example
+- http://css3pie.com/demos/border-radius/
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Border-radius_generator
+
+<!-- .element class="smaller" -->
+
+
+
+
+### CSS background
+
+```css
+background-color: [#color, gradient];
+background-image: url('..image.jpg');
+background-position: x y;
+background-repeat: [repeat, repeat-x, repeat-y, no-repeat, space, round];
+background-size: [auto, x y, cover, contain];
+
+background-clip: [border-box, padding-box, content-box, inherit];
+background-origin: [border-box, padding-box, content-box, inherit];
+background-attachment: [scroll, fixed, local];
+```
+
+- https://css-tricks.com/almanac/properties/b/background/
+- http://www.colorzilla.com/gradient-editor/
+
+<!-- .element class="smaller" -->
+
+
+
+
+### CSS text
+
+```css
+font-family: [Times New Roman, serif, Arial, sans-serif, Consolas, monospace];
+font-style: [normal, italic];
+font-weight: [normal, bold, 100-900];
+font-size: 20px;
+line-height: 30px;
+```
+<span style="font-family: Times New Roman">Times New Roman,</span>
+<span style="font-family: Arial">Arial,</span>
+<span style="font-family: Consolas">Consolas,</span>
+<span>Open Sans and many more with [WebFonts](https://fonts.google.com/)</span>
+
+<!-- .element class="smaller" -->
+
+
+<div class="fragment" style="font-size:80px;color:#f0f0f0; text-shadow:0 1px 0 hsl(174,5%,80%), 0 2px 0 hsl(174,5%,75%),0 3px 0 hsl(174,5%,70%),0 4px 0 hsl(174,5%,66%), 0 5px 0 hsl(174,5%,64%),0 6px 0 hsl(174,5%,62%),0 7px 0 hsl(174,5%,61%),0 8px 0 hsl(174,5%,60%),0 0 5px rgba(0,0,0,.05),0 1px 3px rgba(0,0,0,.2),0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.2), 0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.3);">... and crazy text-shadow</div>
+
+- https://css-tricks.com/almanac/properties/t/text-shadow/
+
+<!-- .element class="smaller fragment" -->
+
+note:
+Browser chooses closest available font.
+Use Element > computed style in chrome devtools to see which font is really used.
+
+
+
+
+### CSS box-shadow
+
+<div style="background-color: #9EB3EB;width: 100%; height:100px;box-shadow:-7px 13px 4px rgba(0, 0, 0, 0.3), 0px -2px 20px rgba(0, 0, 0, 0.1) inset;"></div>
+
+Use chrome dev-tools editor to adjust box-shadow.
+
+![](images/box-shadow-devtools.png)
+<!-- .element class="w-40 left" -->
+
+- https://css-tricks.com/almanac/properties/b/box-shadow/
+
+<!-- .element class="smaller right" -->
+
+
+
+
 ### CSS: Positioning
 
 `position: static|fixed|absolute|relative;`
@@ -897,6 +1000,19 @@ h1, h2 {
 
 ```
 <!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/leweyuc/1/edit?html,css,output" data-height="600px" -->
+
+
+
+
+
+
+### CSS transition and animation
+
+<iframe height='320' scrolling='no' title='Css3 Spinners' src='//codepen.io/huckbit/embed/RRmyzY/?height=265&theme-id=light&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/huckbit/pen/RRmyzY/'>Css3 Spinners</a> by Massimiliano Ranauro (<a href='https://codepen.io/huckbit'>@huckbit</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+- http://easings.net/ (easing functions)
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
 
 
 
