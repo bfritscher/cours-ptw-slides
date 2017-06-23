@@ -447,45 +447,6 @@ A preprocessor is a program that processes its input data to produce output, tha
 
 
 
-### Yeoman
-
-Yeoman is a combination of tools, which allows you to setup a complete,
-automated, efficient and reliable development workflow.
-
-![](images/yeoman-workflow.jpg)
-
-<!-- .element: class="center" -->
-
-It is composed of three tools: yo, bower and grunt (or gulp).
-
-
-
-![](images/yeoman-logo.png) <!-- .element: class="float-right w-15" -->
-**Yo** is a tool for generating project skeletons (scaffolding). You can create and
-share your skeletons. Yo *generators* are npm modules and you can find one
-for most popular web frameworks.
-http://yeoman.io/
-
-<!-- .element: class="pdf-w-30 pdf-float-left" -->
-
-![](images/bower-logo.png) <!-- .element: class="float-right w-15 pdf-w-30" -->
-**Bower** is a tool for managing *web dependencies*. Not only JavaScript
-modules, but also CSS files, images, etc.
-http://bower.io/
-
-<!-- .element: class="pdf-w-30 pdf-float-left" -->
-
-![](images/grunt-logo.png) <!-- .element: class="float-right w-15 pdf-w-30" -->
-**Grunt** is a task runner. It is the tool that drives your *automated process*, by
-executing a series of tasks. There are lots of grunt plugins provided by the
-community for all aspects of your project.
-http://gruntjs.com/
-
-<!-- .element: class="pdf-w-30 pdf-float-left" -->
-
-
-
-
 ## Node.js & npm
 
 ![](images/nodejs-logo.png) <!-- .element: class="float-right w-15" -->
@@ -495,7 +456,7 @@ https://nodejs.org/
 *It allows to run JavaScript outside of the browser*
 
 ![](images/npm-logo.svg) <!-- .element: class="float-right w-15" -->
-**npm** is a package manager for JavaScript bundled with Node.js
+**npm** is a package manager for JavaScript bundled with Node.js and can run some tasks.
 https://www.npmjs.com/
 
 
@@ -511,10 +472,12 @@ Webpack is an open-source JavaScript module bundler. Webpack takes modules with 
 
 It takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes.
 
+WebPack Loader plugins help to pre/postprocess files without needing a tasks pipeline.
 
 
 
-## Lab 1a: MonCV
+
+## Lab 1a: MonCV TODO
 
 Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
@@ -836,16 +799,13 @@ some: `c0de`
 
 
 
-<iframe data-src="http://dillinger.io/" class="nopdf" style="width:100%;height:100%"></iframe>
-
-http://dillinger.io/
-
-<!-- .element: class="credits" -->
+TODO code markdown preview
+Warning github markdown speical variant
 
 
 
 
-# Lab 1b: deploy
+# Lab 1b: deploy TODO
 
 ![](images/yeoman-ship.png)
 <!-- .element: class="w-30" -->
