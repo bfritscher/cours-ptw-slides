@@ -280,6 +280,11 @@ http://practicaltypography.com/
 
 
 
+<!-- .slide: data-background="images/typography-terminology.jpg" -->
+<a href="https://www.supremo.tv/typeterms" target="_blank" style="width:100%;height:80vh;display:block;"></a>
+
+
+
 
 # Design Principles
 
@@ -362,11 +367,24 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 
 
+### Concepts applied to web composition
+
+![](images/layout_mockup.png)
+<!-- .element: class="w-80" -->
+
+<!-- .element: class="center" -->
+
+- https://www.gcflearnfree.org/beginning-graphic-design/layout-and-composition/1/
+
+<!-- .element: class="smaller" -->
+
+
+
 
 ### Beyond Frameworks, Design Guidelines
 
-- https://material.io/guidelines/
-- https://www.microsoft.com/en-us/design
+- Google:  [Material Design](https://material.io/guidelines/)
+- Microsoft: [Fluent Design System](http://fluent.microsoft.com/)
 
 
 
