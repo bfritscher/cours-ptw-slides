@@ -9,9 +9,10 @@ Highligh your technology skill with number, stars or percentages.
 
 - NO wysiwyg
 - prototype/plan your page on paper first
-- *What tools do you use?*
+- *What tools do you use?* Notepad, Windows Explorer
 - *Is your code valid?*
-- *What are all the tasks involved?*
+- *What are all the tasks involved?* Copy files, start Firefox,...
+- *In which order? How many times?" 
 
 <!-- .element: class="small" -->
 
