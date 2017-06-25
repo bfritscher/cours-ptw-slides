@@ -285,6 +285,19 @@ http://practicaltypography.com/
 
 
 
+### What is typography?
+
+![](images/typo_realworld.png)
+<!-- .element: class="w-80" -->
+
+<!-- .element: class="center" -->
+
+- https://www.gcflearnfree.org/beginning-graphic-design/typography/1/
+
+<!-- .element: class="smaller" -->
+
+
+
 
 # Design Principles
 
@@ -413,6 +426,26 @@ In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](ht
 
 
 
+![](images/web_dev_in_2017_intro.png)
+<!-- .element: class="w-100" -->
+
+https://github.com/kamranahmedse/developer-roadmap
+
+<!-- .element: class="credits" -->
+
+
+
+![](images/web_dev_in_2017_frontend.png)
+<!-- .element: class="w-80" -->
+
+<!-- .element: class="center" -->
+
+https://github.com/kamranahmedse/developer-roadmap
+
+<!-- .element: class="credits" -->
+
+
+
 
 ### Preprocessors
 
@@ -472,12 +505,16 @@ Webpack is an open-source JavaScript module bundler. Webpack takes modules with 
 
 It takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes.
 
+<!-- .element: class="smaller" -->
+
 WebPack Loader plugins help to pre/postprocess files without needing a tasks pipeline.
 
+<!-- .element: class="smaller" -->
 
 
 
-## Lab 1a: MonCV TODO
+
+## Lab 1a: MonCV
 
 Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
@@ -490,22 +527,11 @@ Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
 Download and install [Node.js](https://nodejs.org/) to get `npm`.
 
-Use `npm` to install `yeoman`, `bower`, `grunt`, `gulp`
+Use `npm` to install `vue-cli` globally (--global or -g)
 
 ```sh
-$ npm install -g yo bower grunt-cli gulp-cli
+$ npm install -g vue-cli
 ```
-
-Use `npm` to install the desired `yeoman` generator
-
-```sh
-$ npm install -g generator-webapp
-```
-
-https://github.com/yeoman/generator-webapp
-
-<!-- .element: class="credits" -->
-
 *We are using the -g (--global flag) to install in the global shared space accessible to all projects.*
 <!-- .element: class="small" -->
 
@@ -513,34 +539,29 @@ https://github.com/yeoman/generator-webapp
 
 ### Step 1: Create a new project
 
-Create project folder
+Use vue-cli to create a new project using the `webpack` template
 
 ```sh
-$ mkdir monCV
-$ cd monCV
+$ vue init webpack moncv
 ```
 
-Use yeoman generator to scaffold a new application
-
-```sh
-$ yo webapp
-```
-
-![](images/yeoman-webapp.png)
-<!-- .element: class="w-66" -->
+![](images/vue-cli-moncv.png)
+<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
 
 
-### Step 2: Review the Yeoman-generated app
-
-package.json <-- npm dependencies
-
-bower.json <-- bower dependencies
+### Step 2: Review the generated app
 
 ```sh
-$ npm install && bower install
+$ code .
+```
+
+Install dependencies
+
+```sh
+$ npm install
 ```
 
 
@@ -548,28 +569,108 @@ $ npm install && bower install
 ### Step 3: Preview your app in the browser
 
 
-Start the server
+Start the development server
 ```sh
-gulp serve
+npm run dev
 ```
 
 edit a file and watch livereload in action
 
-Stop the server (ctrl+c)
+Stop the server `ctrl+c`
 
 
 
-### Step 4: Use Bower to install packages
+### Step 4a: Cleanup and Configure
+
+ Delete `src/components` and `src/App.vue`
+
+Add/Remove dependencies
 
 ```sh
-bower install bootswatch --save
+$ npm uninstall vue --save
+$ npm install jquery bootstrap@3 --save
+```
+
+check package.json (before and after)
+
+<!-- .element: class="small" -->
+
+
+
+### Step 4b: Configuring code linting
+
+Adapt ESLint to our coding style
+
+`.eslintrc.js`
+```js
+{
+  ...,
+  "rules": {
+    // enforce semi
+    "semi":  ["error", "always"],
+    // use 4 spaces indent
+    "indent": ["error", 4],
+    ...
+  },
+  ...
+}
+```
+
+
+
+### Step 4c: Fix webpack config to support jquery
+
+Inside `build/webpack.dev.conf` and `build/webpack.prod.conf` add this plugin lines.
+
+```js
+{
+  ...,
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    }),
+    ...,
+  ]
+}
+```
+
+Fix debugging by changing:
+```js
+devtool: 'source-map',
+```
+
+
+
+### Step 5: Setup boostrap and jQuery
+
+Inside `src/main.js`
+
+```es6
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+$(document).ready(() => {
+  console.log('it works!');
+});
+```
+
+
+
+### Step 6: Use npm to install other packages
+
+```sh
+npm install bootswatch --save
 ```
 
 https://bootswatch.com/
 
 try different CSS files from bootswatch in index.html
-```html
-<link rel="stylesheet" href="bower_components/bootswatch/???/bootstrap.css" />
+
+```es6
+import 'bootswatch/darkly/bootstrap.min.css';
 ```
 
 
@@ -799,13 +900,24 @@ some: `c0de`
 
 
 
-TODO code markdown preview
-Warning github markdown speical variant
+### Visual Studio Code
+
+Can preview markdown in realtime.
+
+<!-- .element: class="smaller" -->
+
+![](images/vscode_markdown_preview.png)
+
+<!-- .element: class="w-60" -->
+
+Warning: markdown on github is a speical variant!
+
+<!-- .element: class="red" -->
 
 
 
 
-# Lab 1b: deploy TODO
+# Lab 1b: deploy
 
 ![](images/yeoman-ship.png)
 <!-- .element: class="w-30" -->
@@ -831,14 +943,9 @@ Create a [github.com](https://github.com) account and install [Github Desktop](h
 
 Create a built, mimified version of your page with your toolchain
 ```sh
-gulp build
+npm run build
 ```
 *Notice that you have a dist folder with this new content*
-
-```sh
-gulp serve:dist
-```
-Helps to test the minified version.
 
 
 
@@ -863,52 +970,39 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 ### Deploying dist to gh-pages
 
-1st time setup create local gh-pages inside of dist and setup remote repository
+Install a plugin which creates a commit and pushes to the right branch.
 
 ```sh
-gulp build
-cd dist
-git init
-git checkout -b gh-pages
-git add .
-git commit
-git remote add origin git@github.com:heg-web/moncv-xyz.git
-git push --set-upstream origin gh-pages
+$ npm install push-dir --save-dev
 ```
-The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 
-<!-- .element: class="small" -->
+#### Add new deploy task to npm package.json
 
-next updates after a gulp build:
+```es6on
+{
+...,
+  "scripts": {
+    ...,
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+  },
+...
+}
+```
+
+
+
+### Try to deploy
+
+After a successful ```npm run build``` commit all changes and deploy:
 ```sh
 git add . --all
 git commit -m
-git push
+npm run deploy
 ```
 
+The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 
-
-### Simplify deploy
-
-Setup a task to simplify deploy
-
-install a gulp plugin
-```sh
-npm install --save-dev gulp-deploy-git
-```
-configure the plugin inside `gulpfile.js`
-```javascript
-var deploy = require('gulp-deploy-git');
-gulp.task('deploy', function() {
-  return gulp.src('**/*',  { read: false, cwd: 'dist'  })
-    .pipe(deploy({
-      repository: 'git@github.com:heg-web/moncv-bfritscher.git',
-      remoteBranch:   'gh-pages'
-    }))
-});
-```
-
-Now we can use `gulp deploy` after `gulp build`
+<!-- .element: class="small" -->
 
 
 
@@ -980,21 +1074,19 @@ We want to improve our page with some interactions and behaviors.
 ### Step 1: Use bower to install a jquery plugin
 
 ```sh
-bower install jquery-smooth-scroll --save
+$ npm install jquery-smooth-scroll --save
 ```
-
-*Notice that our index.html is automatically updated! (by grunt-rev-dep)*
 
 Use the plugin:
 
 ```javascript
-$(document).ready(function(){
-  'use strict';
+import 'jquery-smooth-scroll';
+
+$(document).ready(() => {
   $('a').smoothScroll();
 });
 ```
 
-*maybe you need to edit jshint file*
 
 
 

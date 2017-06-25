@@ -120,7 +120,7 @@ http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
 
 ### Variables / Constants / Comments
 
-```js
+```es6
 // This is a single line comment
 
 // block variables use let over var!
@@ -194,7 +194,7 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 New in ES2015 in addition to '', "", there are ``.
 
-```js
+```es6
 // Basic literal string creation
 const s1 = `This is a pretty little template string.`;
 
@@ -211,7 +211,7 @@ const s3 = `Hello ${name}, how are you ${time}?`;
 
 ### Array
 
-```js
+```es6
 let myArray = [ 'a', 'b', 'c' ];
 let firstItem = myArray[ 0 ];
 let secondItem = myArray[ 1 ]; // access the item at index 1
@@ -222,7 +222,7 @@ let arrayLength = myArray.length;
 
 ### Condition
 
-```js
+```es6
 if ( notANumber ) {
   // this code will not run!
   console.log( 'notANumber was truthy' );
@@ -238,14 +238,14 @@ if ( notANumber ) {
 
 ### Loop
 
-```js
+```es6
 let i = 0;
 for (i; i < myArray.length; i = i + 1) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
 }
 ```
 
-```js
+```es6
 let i = 0;
 while (i < myArray.length) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
@@ -253,13 +253,13 @@ while (i < myArray.length) {
 }
 ```
 
-```js
+```es6
 for (let value of array) {
   // do something with value
 }
 ```
 
-```js
+```es6
 for (let property in object) {
   // do something with object property
 }
@@ -269,7 +269,7 @@ for (let property in object) {
 
 ### Functions
 
-```js
+```es6
 function cornify( unicorns /* integer */, rainbows /* integer */ ) {
 
 }
@@ -283,7 +283,7 @@ const addTwoNumbers = function(a, b) {
 
 ### Arrow functions
 
-```js
+```es6
 const hello = () => {
   return 'world';
 }
@@ -303,7 +303,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctio
 
 ### Objects
 
-```js
+```es6
 var obj = {
   property1: 'some text',
   age: 3
@@ -848,7 +848,7 @@ p1.greet();
 
 ### Classes since ECMAScript 2015
 
-```js
+```es6
 class SkinnedMesh extends THREE.Mesh {
   constructor(geometry, materials) {
     super(geometry, materials);
@@ -1135,7 +1135,7 @@ myModule.publicFunction();
 
 import/export functions and variables between files.
 
-```js
+```es6
 // lib/math.js
 export function sum(x, y) {
   return x + y;
@@ -1143,7 +1143,7 @@ export function sum(x, y) {
 export var pi = 3.141593;
 ```
 
-```js
+```es6
 // app.js
 import * as math from "lib/math";
 console.log("2π = " + math.sum(math.pi, math.pi));
@@ -1221,7 +1221,7 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 
 ### Enhanced Object Literals
 
-```js
+```es6
 const make = 'Kia', model = 'Sorento', value = 40000
 const car = {
   // with property value shorthand
@@ -1252,7 +1252,7 @@ http://www.benmvp.com/learning-es6-enhanced-object-literals/
 
 ### Destructuring
 
-```js
+```es6
 // list matching
 const [a, ,b] = [1,2,3];
 a === 1;
@@ -1275,7 +1275,7 @@ c === 'cow';
 
 
 ### Default + Rest + Spread
-```js
+```es6
 function f(x, y=12) {
   // y is 12 if not passed (or passed as undefined)
   return x + y;
