@@ -659,7 +659,19 @@ $(document).ready(() => {
 
 
 
-### Step 6: Use npm to install other packages
+### Step 6: add custom style file
+
+Create a main.css file under src
+
+Inside `src/main.js` after `boostrap.min.css`;
+
+```es6
+import './main.css';
+```
+
+
+
+### Step 7: Use npm to install other packages
 
 ```sh
 npm install bootswatch --save
@@ -1029,25 +1041,25 @@ API that works **across a multitude of browsers**.
 
 **Selecting Elements by ID**
 
-```javascript
+```es6
 $('#myId'); // IDs must be unique per page.
 ```
 
 **Selecting Elements by Class Name**
 
-```javascript
+```es6
 $('.myClass');
 ```
 
 **Selecting Elements by Attributes**
 
-```javascript
+```es6
 $('input[name="first_name"]'); // this can be very slow in older browsers
 ```
 
 **Selecting Elements by Compound CSS Selector**
 
-```javascript
+```es6
 $('#myId ul.people li');
 ```
 
@@ -1079,7 +1091,7 @@ $ npm install jquery-smooth-scroll --save
 
 Use the plugin:
 
-```javascript
+```es6
 import 'jquery-smooth-scroll';
 
 $(document).ready(() => {

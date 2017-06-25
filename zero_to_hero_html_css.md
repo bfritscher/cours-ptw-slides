@@ -25,6 +25,8 @@
 
 <!-- .element: class="center nopdf" -->
 
+[https://marmix.ig.he-arc.ch/poll/](https://marmix.ig.he-arc.ch/poll/)
+
 
 
 
@@ -632,7 +634,7 @@ border-top-style: dashed;
 /* shorthand */
 border: 2px solid #0000FF;
 
-border-left: 10px solid #FFFF00; 
+border-left: 10px solid #FFFF00;
 
 border-radius: 10px;
 ```

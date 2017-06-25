@@ -14,12 +14,13 @@
 
 #### Part 2: Build and deploy a Single Page Application
 
-#### Angular.js
+#### Vue.js
 
 
 
 
-# Multi Page App (classic)<br/>vs Single Page Application (SPA)
+
+# Multi Page App<br/>vs<br/>Single Page Application (SPA)
 
 
 
@@ -72,14 +73,19 @@ Mobile application developement can also be done wiht HTML/CSS/JavaScript, with 
 
 
 
+## TODO UX
+
+
+
 
 # Objectifs
 
-* Learn SPA with AngularJS
+* Learn SPA with Vue.js
+* Learn by Example: Shopping List App
 * Only focus on frontent-app
-* Learn by Example: Movie Collection App
+* With Api's and some cloud functions ("serverless")
 
-
+TODO PIC
 ![](images/movies_06_firebase_login.png)
 <!-- .element: class="w-40" -->
 ![](images/movies_04_third_party_directives.png)
@@ -88,9 +94,24 @@ Mobile application developement can also be done wiht HTML/CSS/JavaScript, with 
 
 
 
-# Why AngularJS
+## Why Vue.Js?
 
-![](images/AngularJS-large.png)
+<!-- https://codepen.io/jotavejv/pen/KgrXEa -->
+<style>
+  .reveal div.w{width:220px;height:220px;margin:auto;position:absolute;top:0;right:0;left:0;bottom:0;}:root{--outer:#2FB982;--inner:#34475F}.w svg{width:100%;height:auto}#outer,#inner{stroke-width:.5;stroke:var(--outer)}#outer{stroke-dasharray:285.5394592285156 285.5394592285156;stroke-dashoffset:285.5394592285156;animation:outer 4s 1s ease infinite}#inner{stroke-dasharray:165.98031616210938 165.98031616210938;stroke-dashoffset:165.98031616210938;animation:inner 4s 1s ease infinite}@keyframes outer{25%{stroke-dashoffset:0;stroke-width:.5;fill:#fff}50%,75%{stroke-dashoffset:0;fill:var(--outer);stroke-width:0}}@keyframes inner{25%{stroke-dashoffset:0;stroke-width:.5;fill:#fff}50%,75%{stroke-dashoffset:0;fill:var(--inner);stroke-width:0}}
+</style>
+<div style="position:relative;width:100%;height:220px;">
+  <div class="w">
+    <svg width="82px" height="70px" viewBox="-4 1 82 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="vue" stroke="none" fill="none" transform="translate(-3.000000, 2.000000)">
+        <path d="M15,0 L31,0 C31,0 33.7431643,4.8767365 35.1147464,7.31510474 L40,16 L50,0 L65,0 L40,42 L15,0 Z" id="inner">
+        </path>
+        <path d="M0,0 L40,68 L80,0 L65,0 C65,0 50.2018448,24.8609007 42.8027673,37.291351 C41.8685115,38.8609007 40,42 40,42 L15,0 L0,0 Z" id="outer">
+        </path>
+      </g>
+    </svg>
+  </div>
+</div>
 
 ![](images/google_trends.png)
 
@@ -101,6 +122,7 @@ Note:
 - decouple the client side of an application from the server side
 - declarative programming for user interface
 - imperative programming for application business logic
+- best of anagularjs and react
 
 
 
@@ -116,37 +138,13 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
-# Angular Basics
-
-MVC: http://mattiash.github.io/angular-presentation/presentation.html#1
-
-Scope: http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs (slide 12)
-
-Tool: https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk
-
-
-
-![](images/angular_cycle.png)
-
-
-
-![](images/angular_scope.png)
+# TODO VUE INTRO
 
 
 
 
 ### Resources
 
-### https://docs.angularjs.org/guide
-
-### https://docs.angularjs.org/api
-
-* http://openclassrooms.com/courses/developpez-vos-applications-web-avec-angularjs
-* https://www.youtube.com/watch?v=aBE0St5yI7U&list=PLjwdMgw5TTLUDlJyx4yIPQjoI-w-7Zs1r
-* http://openclassrooms.com/courses/validation-de-formulaire-simplifiee-avec-angularjs
-* http://www.slideshare.net/vinnylinck/google-developers-group-porto-alegre-angularjs
-
-<!-- .element: class="smaller" -->
 
 
 
@@ -194,8 +192,7 @@ intimidating at first (learning curve to understand the skeleton).
 ## Exercice setup:
 
 ```sh
-npm install -g generator-fountain-angular1
-yo fountain-angular1
+npm install -g vue-cli
 ```
 
 
@@ -204,7 +201,7 @@ Explore folder
 
 Launch server
 ```sh
-gulp serve
+npm run dev
 ```
 
 Let's use Chrome DevTools as IDE
@@ -217,33 +214,26 @@ Let's use Chrome DevTools as IDE
 
 
 
-| Angular Concepts     | Description                                                              |
+| Vue.js Concepts     | Description                                                              |
 |----------------------|--------------------------------------------------------------------------|
-| Model                | the data shown to the user in the view and with which the user interacts |
+| ViewModel            | the data shown to the user in the view and with which the user interacts |
 | View                 | what the user sees (the DOM)                                             |
 | Template             | HTML with additional markup                                              |
 | Directives           | extend HTML with custom attributes and elements                          |
 | Components           | a special kind of directive used for component-based application structure |
-| Controller           | the business logic behind views                                          |
-| Data Binding         | sync data between the model and the view                                 |
-| Scope                | context where the model is stored so that controllers, directives and expressions can access it |
 | Expressions          | access variables and functions from the scope                            |
 | Filter               | formats the value of an expression for display to the user               |
-| Module               | a container for the different parts of an app including controllers, services, filters, directives which configures the Injector |
-| Dependency Injection | Creates and wires objects and functions                                  |
-| Provider             | Providers are objects that provide (create) instances of services and expose configuration APIs |
-| Service              | reusable business logic independent of views                             |
 
-https://docs.angularjs.org/guide/concepts
+https://
 
 <!-- .element: class="credits" -->
 
 
 
 
-### Angular Expressions
+### Vue.js Expressions
 
-Angular expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
+Vue.js expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
 
 For example, these are valid expressions in Angular:
 
@@ -252,7 +242,7 @@ For example, these are valid expressions in Angular:
  - `user.name`
  - `items[index]`
 
-https://docs.angularjs.org/guide/expression
+https://
 
 <!-- .element: class="credits" -->
 
@@ -263,67 +253,25 @@ https://docs.angularjs.org/guide/expression
 
 | Directive         | Description |
 |-------------------|-------------|
-| ng-app            | auto-bootstrap an AngularJS application. The ngApp directive designates the root element of the application and is typically placed near the root element of the page. |
-| ng-model          | binds an input, select, textarea (or custom form control) to a property on the scope. |
-| ng-bind           | replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
-| ng-if             | shows the given HTML element based on the expression provided to the directive's attribute. |
-| ng-repeat         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
-| ng-click          | allows to specify custom behavior when an element is clicked. |
-| *ng-controller*   | *(used in angular < 1.5) attaches a controller class to the view. This is a key aspect of how angular supports the principles behind the Model-View-Controller design pattern.* |
-
-https://docs.angularjs.org/api
-
-<!-- .element: class="credits" -->
+| v-model          | binds an input, select, textarea (or custom form control) to a property on the scope. |
+| v-bind           | replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
+| v-if             | shows the given HTML element based on the expression provided to the directive's attribute. |
+| v-for         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
+| v-on:click          | allows to specify custom behavior when an element is clicked. |
 
 
-
-
-### Controller
-
-A *Controller* is defined by a JavaScript constructor **function** that is used to augment the Angular Scope.
-A new child **scope** will be created and made available as an injectable parameter to the Controller's constructor function as **$scope**.
-
-Use controllers to:
-
-- Set up the initial state of the $scope object.
-- Add behavior to the $scope object.
-
-Do **not** use controllers to: Manipulate DOM, Format input, Filter output, Share code or state across controllers
-
-
-
-### Controller Example
-
-controllerAs instance version (Default in components)
-```javascript
-var myApp = angular.module('myApp', []);
-
-myApp.controller('GreetingController', function( ) {
-  var $ctrl = this;
-  $ctrl.greeting = 'Hola!';
-  $ctrl.double = function( value ) { return value * 2; };
-});
-```
-
-Old controller (<1.5)
-
-```javascript
-var myApp = angular.module('myApp', []);
-
-myApp.controller('GreetingController', function( $scope ) {
-  $scope.greeting = 'Hola!';
-  $scope.double = function( value ) { return value * 2; };
-});
-```
-
-https://docs.angularjs.org/guide/controller
+https://
 
 <!-- .element: class="credits" -->
 
 
 
+### VM
 
-### Filters
+
+
+
+### Filters TODO
 
 A filter formats the value of an expression for display to the user.
 
@@ -360,7 +308,7 @@ https://docs.angularjs.org/api/ng/filter
 
 JavaScript Object Notation is a lightweight data-interchange format. It is easy for *humans* to **read and write**. It is easy for *machines* to **parse and generate**. It is based on a subset of the JavaScript Programming Language
 
-```javascript
+```json
 {
   "key_string": "hello",
   "key_number": 3,
@@ -386,7 +334,7 @@ http://json.org/
 | angular.toJson( *object* )        | create a JSON_string (removing angular's internal variables) |
 | angular.fromJson( *JSON_string* ) | create an object from a string                               |
 
-```javascript
+```es6
 //optional formatter and indentation spacing for pretty-print
 JSON.stringify( {hello: {text: 'world'}}, null, 2 )
 //results in the following string
@@ -466,211 +414,32 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
 
 
 
-### Components in Angular 1.5
+### Components in vue.js
 
-```javascript
-.component('poster', {
-        templateUrl: 'components/poster/poster.html',
-        controller: function () {
-              var $ctrl = this;
-              $ctrl.localVar = 2;
-              $ctrl.$onChanges = function () { // called on input change
-                $ctrl.movie;
-              };
-              $ctrl.something = function () {
-                 $ctrl.onSelect($ctrl.localVar);
-              }
-        },
-        bindings: {
-            movie: '<', // Input on way-binding (use $onChanges)
-            onSelect: '&' // Output callback
-            attribute: '@' // String in attribute
-        }
-    });
+```es6
+
 ```
 
 Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
 
-https://docs.angularjs.org/guide/component
+https://
 
 <!-- .element: class="credits" -->
 
 
-
-### Using yeoman sub-generators
-
-Discover available sub-generators
-
-```sh
-yo --generators
-
- fountain-angular1
-    component
-    directive
-    filter
-    service
-```
-
-Create a component inside a fountain-angular1 project
-
-```sh
-yo fountain-angular1:component --name myComponent --dir components/game
-```
+USING code plugin
 
 
 
 
-### Multiples Views and Router
+
+### Multiples Views and Router TODO
 
 A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes with http fragment.
 
-Application routes in Angular are declared via the `$routeProvider`, which is the *provider* of the `$route` *service*.
-
-This service makes it easy to wire together controllers, view templates, and the current URL location in the browser
-
-https://docs.angularjs.org/tutorial/step_07
 
 <!-- .element: class="credits" -->
 
-
-
-### Dependency Injection
-
-Dependency Injection (DI) is a software design pattern that deals with how components get hold of their dependencies.
-
-When the application bootstraps, Angular creates an injector that will be used to find and inject all of the services that are required by your app.
-
-Providers are objects that provide (create) instances of services and expose configuration APIs.
-
-In case of the $route service, the $routeProvider exposes APIs that allow you to define routes for your application.
-
-https://docs.angularjs.org/guide/di
-
-<!-- .element: class="credits" -->
-
-
-
-
-### $routeProvider
-
-```javascript
-app.config( function( $routeProvider ) {
-    $routeProvider.
-      when('/phones', {
-        templateUrl: 'views/phone-list.html',
-        controller: 'PhoneListCtrl'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'views/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/phones'
-      });
-});
-```
-
-The $routeParams service allows you to retrieve the current set of route parameters.
-
-```javascript
-app.controller( 'PhoneDetailCtrl', function( $scope, $routeParams ) {
-    $scopre.phoneId = $routeParams.phoneId;
-});
-```
-
-
-
-### Template
-
-The $route and $routeParams service are usually used in conjunction with the ngView directive.
-
-The role of the ng-view directive is to include the view template for the current route into the layout template.
-
-```html
-<!-- index.html -->
-<html ng-app="app">
-  ...
-  <body>
-    <ng-view></ng-view>
-  </body>
-</html>
-```
-
-```html
-<!-- views/phone-detail.html -->
-<div>View content phone {{phoneId}}</div>
-```
-
-
-
-
-### A better router: UI-Router
-
-```javascript
-app.config( function( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise('/');
-  $stateProvider
-    .state('home', {
-      url: '/',
-      component: 'home',
-      onEnter: function (someService) {
-        someService.doSomething();
-      }
-    })
-    .state('movie', {
-      url: '/movie/:id',
-      component: 'movie'
-    });
-});
-```
-
-Supports nested routes
-https://github.com/angular-ui/ui-router/wiki/Nested-States-%26-Nested-Views
-
-
-
-### UI-Router Parameters & Links
-
-Config
-```javascript
-$stateProvider
-    .state('movie.detail', {
-      url: '/movie/:movieId',
-    });
-```
-
-Controller
-```javascript
-controller: function ($stateParams, $state) {
-    // If we got here from a url of /movie/42
-    $stateParams.movieId === '42'
-    // if we want to go to 43;
-    $state.go('movie.detail', {id: 43});
-}
-```
-
-HTML
-```html
-<a ui-sref="movie.detail({movieId: 42})">View movie</a>
-```
-
-
-
-
-### More Directives
-
-Using Angular markup like `{{hash}}` in an href or src attribute will make the link go to the wrong URL if Angular has not replaced the `{{hash}}` markup with its value.
-
-| Directive         | Description |
-|-------------------|-------------|
-| ng-href           | solves the wrong href problem. |
-| ng-src            | solves the wrong src problem. |
-| ng-class          | allows to dynamically set CSS classes on an HTML element by databinding an expression that represents all classes to be added. The result of the evaluation can be a string representing space delimited class names, an array, or a map of class names to boolean values.|
-| ng-style          | allows to set CSS style on an HTML element conditionally. Expression which evals to an object whose keys are CSS style names and values are corresponding values for those CSS keys. |
-
-https://docs.angularjs.org/api
-
-<!-- .element: class="credits" -->
 
 
 
@@ -683,33 +452,6 @@ A movie is now more than a title it is an object which has two properties a titl
 - create a moviedb service
 - create a controller and a view to display a movie
 - modify the frontpage
-
-
-
-### create a moviedb service
-
-  - which has 2 private helper methods
-    - `loadLocalStorage`: to help restore the movies array from storage (json->array)
-    - `saveLocalStorage`: to help to save the movies array to storage array->json
-  - 4 public api methods
-    - `getMovies()`: returns a array of movies
-    - `addMovie(movie)`: takes a movie object and adds it to the internal movies array and also perssits to localstorage
-    - `removeMovie(movie)`: removes the given movie from the list and perssistent storage
-    - `getMovie(id)`: return as movie object matching the id;
-
-
-
-### create a component and route to display a movie
-
-  - map it to the /movie/:id url
-  - it will display a movie at index id in the movies array
-  - use a filter to display the title in uppercase
-
-
-
-### modify the frontpage
-
-- make title in the main.html page clickable to lead to your new movie detail page
 
 
 
@@ -733,7 +475,7 @@ programming:
 
 ### Callback
 
-```javascript
+```es6
 setTimeout( function() {
     console.log("the callback has been invoked");
 }, 2000);
@@ -744,7 +486,9 @@ words, the function passed as the first argument will be invoked
 in 2 seconds or more (the thread might be busy when the event
 is posted...).
 
-```javascript
+<!-- .element: class="small" -->
+
+```es6
 $(document).mousemove( function(event) {
     $("span").text(event.pageX + ", " + event.pageY);
 });
@@ -754,9 +498,11 @@ An event will be added to the queue whenever the mouse
 moves. In each case, the callback function has access to the
 event attributes (coordinates, key states, etc.).
 
+<!-- .element: class="small" -->
 
 
-```javascript
+
+```es6
 $.get( "ajax/test.html", function( data ) {
     $( ".result" ).html( data );
     alert( "Load was performed." );
@@ -786,7 +532,7 @@ Do this first...
 
 ### A first attempt...
 
-```javascript
+```es6
 var milkAvailable = false;
 
 function milkCow() {
@@ -808,7 +554,7 @@ FAIL
 
 ### Fixing the issue with a callback...
 
-```javascript
+```es6
 var milkAvailable = false;
 
 function milkCow(done) {
@@ -837,7 +583,7 @@ SUCCESS
 
 * Let’s say we want to have the sequence B, C, D, X, Y, Z, E, F, where X, Y and Z are asynchronous tasks.
 
-```javascript
+```js
 function f() {
   syncB();
   syncC();
@@ -868,7 +614,7 @@ X  result  available
 
 ### Sequence with callbacks
 
-```javascript
+```es6
 function f() {
   syncB();
   syncC();
@@ -912,7 +658,7 @@ But welcome to the **"callback hell"** aka **"callback pyramid"**
 
 <!-- .element: class="small" -->
 
-```javascript
+```es6
 function f( done ) {
  async1( function( r1 ) {
     reportResult( r1 );
@@ -937,7 +683,7 @@ Double fail: not only is done() invoked to early, but also there is no result to
 
 ### Callback parallel tasks with counter
 
-```javascript
+```es6
 function f( done ) {
   <span class="fragment highlight-current-red" data-fragment-index="1">var numberOfPendingTasks = 3;</span>
   var results = [];
@@ -1055,7 +801,7 @@ http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-t
 
 <!-- .element: class="credits" -->
 
-```javascript
+```es6
 var d1 = new $.Deferred();
 var d2 = new $.Deferred();
 $.when( d1, d2 ).done(function ( v1, v2 ) {
@@ -1069,35 +815,111 @@ d2.resolve( "Pizza" );
 
 
 
-### $q promise service
+### Promise in ECMAScript 2015
 
-```javascript
-function asyncGreet(name) {
-  // perform some asynchronous operation,
-  // resolve or reject the promise when appropriate.
-  return $q(function(resolve, reject) {
-    setTimeout(function() {
-      if (okToGreet(name)) {
-        resolve('Hello, ' + name + '!');
-      } else {
-        reject('Greeting ' + name + ' is not allowed.');
-      }
-    }, 1000);
-  });
-}
+```es6
+var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
 
-var promise = asyncGreet('Robin Hood');
-promise.then(function(greeting) {
-  alert('Success: ' + greeting);
-}, function(reason) {
-  alert('Failed: ' + reason);
+  if (/* everything turned out fine */) {
+    resolve("Stuff worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
 });
+
+promise.then(function(result) {
+  console.log(result); // "Stuff worked!"
+}, function(err) {
+  console.log(err); // Error: "It broke"
+});
+
+
+var promise = new Promise(function(resolve, reject) {
+  resolve(1);
+});
+// Chaining Transforming values
+promise.then(function(val) {
+  console.log(val); // 1
+  return val + 2;
+}).then(function(val) {
+  console.log(val); // 3
+})
+
+
+// wait for all
+Promise.all(arrayOfPromises).then(function(arrayOfResults) {
+  //...
+})
 ```
 
-https://docs.angularjs.org/api/ng/service/$q
 
+https://developers.google.com/web/fundamentals/getting-started/primers/promises
 <!-- .element: class="credits" -->
 
+
+
+fetch('./api/some.json')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
+https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+
+
+asnyc
+
+async function myFirstAsyncFunction() {
+  try {
+    const fulfilledValue = await promise;
+  }
+  catch (rejectedValue) {
+    // …
+  }
+}
+
+function logFetch(url) {
+  return fetch(url)
+    .then(response => response.text())
+    .then(text => {
+      console.log(text);
+    }).catch(err => {
+      console.error('fetch failed', err);
+    });
+}
+
+async function logFetch(url) {
+  try {
+    const response = await fetch(url);
+    console.log(await response.text());
+  }
+  catch (err) {
+    console.log('fetch failed', err);
+  }
+}
+
+// map some URLs to json-promises
+const jsonPromises = urls.map(async url => {
+  const response = await fetch(url);
+  return response.json();
+});
+
+https://developers.google.com/web/fundamentals/getting-started/primers/async-functions
 
 
 
@@ -1127,7 +949,7 @@ https://www.getpostman.com/docs/introduction
 
 Since simple values, like URL prefixes, don't have dependencies or configuration, it's often handy to make them available in both the configuration and run phases. This is what the Constant is for.
 
-```javascript
+```es6
 myApp.constant('planetName', 'Greasy Giant');
 
 myApp.controller('DemoCtrl', function DemoCtrl( $scope, planetName ) {
@@ -1147,7 +969,7 @@ https://docs.angularjs.org/guide/providers#constant-recipe
 
 Scopes provide APIs (`$watch`) to observe model mutations.
 
-```javascript
+```es6
 $watch(watchExpression, listener, [objectEquality]);
 ```
 
@@ -1164,7 +986,7 @@ https://docs.angularjs.org/api/ng/type/$rootScope.Scope
 
 `{{"hello"|reverse:true}}` ===  OLLEH
 
-```javascript
+```es6
 angular.module('myReverseFilterApp', [])
 .filter('reverse', function() {
   return function(input, uppercase) {
@@ -1194,7 +1016,7 @@ For now we leave the first page as is and extend the app to display movies from 
 
 Add the following to the moviedb service or even better make them constants.
 
-```javascript
+```es6
 var apiUrl = 'http://api.themoviedb.org/3/'; //proxy
 var baseUrl = 'http://image.tmdb.org/t/p/';
 ```
@@ -1431,7 +1253,7 @@ Lets fix our data and make poster more reusable with a custom directive
 bower install angularfire --save
 ```
 Add firebase to dependencies:
-```javascript
+```es6
 var app = angular.module("sampleApp", ["firebase"]);
 ```
 
@@ -1445,7 +1267,7 @@ https://github.com/firebase/angularfire
 
 https://firebase.google.com/docs/auth/web/github-auth
 
-```javascript
+```es6
 <script>
   // Initialize Firebase
   var config = {
@@ -1464,7 +1286,7 @@ copy from google console (Authentication>Web Setup)
 
 ### Setup user security
 
-```javascript
+```es6
 {
     "rules": {
        "users": {
@@ -1487,7 +1309,7 @@ https://firebase.google.com/docs/database/security/quickstart
 - add login/logout button based on login state
 - add methods to moviedb and use these services: $firebaseAuth, $firebaseObject
 
-```javascript
+```es6
   var self = this;
   var movies;
 
@@ -1549,7 +1371,7 @@ https://firebase.google.com/docs/database/security/quickstart
 bower install angulartics --save
 ```
 
-```javascript
+```es6
 'angulartics', 'angulartics.google.analytics'
 // Google Analytics example
 ga('send', 'pageview'); // <---- delete this line!
@@ -1559,7 +1381,7 @@ ga('send', 'pageview'); // <---- delete this line!
 bower install angular-google-experiments --save
 ```
 
-```javascript
+```es6
 googleExperiments
  .config(function(googleExperimentsProvider) {
         googleExperimentsProvider.configure({

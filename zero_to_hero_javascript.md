@@ -156,7 +156,7 @@ JavaScript defines **6 types**:
 
 <!-- .element: class="w-40 float-left" -->
 
-```javascript
+```es6
 let aNumber = 3.12;
 let aBoolean = true;
 let aString = 'John Smith';
@@ -331,25 +331,25 @@ API that works **across a multitude of browsers**.
 
 **Selecting Elements by ID**
 
-```javascript
+```es6
 $('#myId'); // IDs must be unique per page.
 ```
 
 **Selecting Elements by Class Name**
 
-```javascript
+```es6
 $('.myClass');
 ```
 
 **Selecting Elements by Attributes**
 
-```javascript
+```es6
 $('input[name="first_name"]'); // this can be very slow in older browsers
 ```
 
 **Selecting Elements by Compound CSS Selector**
 
-```javascript
+```es6
 $('#myId ul.people li');
 ```
 
@@ -461,11 +461,11 @@ JavaScript defines **6 types**:
 
 <!-- .element: class="w-40 float-left" -->
 
-```javascript
-var aNumber = 3.12;
-var aBoolean = true;
-var aString = 'John Smith';
-var anObject = { aProperty: null };
+```es6
+let aNumber = 3.12;
+let aBoolean = true;
+let aString = 'John Smith';
+let anObject = { aProperty: null };
 typeof aNumber === 'number';
 typeof aBoolean === 'boolean';
 typeof aString === 'string';
@@ -485,8 +485,8 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 ### Conditions
 
-```javascript
-var name = "kittens";
+```es6
+let name = "kittens";
 if (name === "puppies") {
   name += "!";
 } else if (name === "kittens") {
@@ -503,8 +503,8 @@ name === "kittens!!"
 
 ### Loop
 
-```javascript
-for (var i = 0; i < 5; i++) {
+```es6
+for (const i = 0; i < 5; i++) {
   // Will execute 5 times
 }
 
@@ -518,9 +518,9 @@ while ( true ) {
 
 ### Functions
 
-```javascript
+```es6
 function add(x, y) {
-  var total = x + y;
+  const total = x + y;
   return total;
 }
 
@@ -555,7 +555,7 @@ There is **no block scope**.
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```javascript
+```es6
 var aVariableInGlobalScope;
 
 function myFunction() {
@@ -579,7 +579,7 @@ function myFunction2() {
 
 ### Exploring scopes
 
-```javascript
+```es6
 var aGlobalVar = 'hello';
 var anotherGlobalVar = 'world';
 function myFunction() {
@@ -616,9 +616,9 @@ of properties (**no class**).
 
 <!-- .element: class="w-40 float-right small" -->
 
-```javascript
+```es6
 // create an object
-var person = {
+const person = {
     firstName: 'John',
     lastName: 'Smith'
 };
@@ -634,7 +634,7 @@ delete person.zip;
 person.hasOwnProperty('gender');
 
 // enumerate properties
-for (var key in person) {
+for (const key in person) {
     console.log(key + ' : ' + person[key]);
 }
 ```
@@ -644,9 +644,9 @@ for (var key in person) {
 
 ### Exploring objects
 
-```javascript
+```es6
 // create an object
-var person = {
+const person = {
     firstName: 'John',
     lastName: 'Smith'
 };
@@ -662,7 +662,7 @@ delete person.zip;
 person.hasOwnProperty('gender');
 
 // enumerate properties
-for (var key in person) {
+for (const key in person) {
     console.log(key + ' : ' + person[key]);
 }
 ```
@@ -691,18 +691,18 @@ object creation process.
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```javascript
+```es6
 //create an object with a literal
-var person = {
+const person = {
   firstName: 'John',
   lastName: 'Smith'
 };
 
 // create an object with a prototype
-var child = Object.create(person);
+let child = Object.create(person);
 
 // create an object with a constructor
-var child = new Person('John', 'Smith');
+child = new Person('John', 'Smith');
 ```
 <!-- .element: class="w-50 float-left" -->
 
@@ -711,15 +711,15 @@ var child = new Person('John', 'Smith');
 
 ### Every object inherits from a prototype object
 
-```javascript
-var person = {
+```es6
+const person = {
     firstName: 'John',
     lastName: 'Smith'
 };
 // person's prototype is Object.prototype
 
-var father = {};
-var child = Object.create(father);
+const father = {};
+const child = Object.create(father);
 // child's prototype is father
 
 
@@ -727,13 +727,13 @@ function Person(fn, ln) {
     this.firstName = fn;
     this.lastName = ln;
 }
-var john = new Person('John', 'Doe');
+const john = new Person('John', 'Doe');
 // john's prototype is Person.prototype
 ```
 
 
 
-```javascript
+```es6
 var person = {
     firstName: 'John',
     lastName: 'Smith'
@@ -741,8 +741,8 @@ var person = {
 // person's prototype is Object.prototype
 console.log(Object.getPrototypeOf(person) === Object.prototype);
 
-var father = {};
-var child = Object.create(father);
+const father = {};
+const child = Object.create(father);
 // child's prototype is father
 console.log(Object.getPrototypeOf(child) === father);
 
@@ -750,7 +750,7 @@ function Person(fn, ln) {
     this.firstName = fn;
     this.lastName = ln;
 }
-var john = new Person('John', 'Doe');
+const john = new Person('John', 'Doe');
 // john's prototype is Person.prototype
 console.log(Object.getPrototypeOf(john) === Person.prototype);
 ```
@@ -797,7 +797,7 @@ outside of the constructor.<br/><br/>
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```javascript
+```es6
 function Person(fn, ln) {
     var privateVar;
     this.firstName = fn;
@@ -811,7 +811,7 @@ Person.prototype.greet = function () {
     console.log('Hey ' + this.firstName);
 };
 
-var p1 = new Person('John', 'Smith');
+const p1 = new Person('John', 'Smith');
 
 p1.badGreet();
 p1.greet();
@@ -822,7 +822,7 @@ p1.greet();
 
 ### Exploring function constructor
 
-```javascript
+```es6
 function Person(fn, ln) {
     var privateVar;
     this.firstName = fn;
@@ -836,7 +836,7 @@ Person.prototype.greet = function () {
     console.log('Hey ' + this.firstName);
 };
 
-var p1 = new Person('John', 'Smith');
+const p1 = new Person('John', 'Smith');
 
 p1.badGreet();
 p1.greet();
@@ -873,8 +873,8 @@ class SkinnedMesh extends THREE.Mesh {
 
 ### Arrays are objects
 
-```javascript
-var fruits = ['apple', 'pear'];
+```es6
+const fruits = ['apple', 'pear'];
 console.log(Object.getPrototypeOf(fruits)); //[]
 console.log(typeof fruits); //object
 
@@ -882,13 +882,13 @@ console.log(typeof fruits); //object
 fruits.push('banana');
 
 // check if an array contains an element
-var inArray = fruits.indexOf('banana') > -1;
+const inArray = fruits.indexOf('banana') > -1;
 
 // remove 1 element from array
-var removed = fruits.splice(fruits.indexOf('pear'), 1);
+const removed = fruits.splice(fruits.indexOf('pear'), 1);
 
 //iterate over an array
-for (var i = 0; i < fruits.length; i++) {
+for (const i = 0; i < fruits.length; i++) {
     console.log('fruits[' + i + '] = ' + fruits[i]);
 }
 ```
@@ -899,10 +899,10 @@ for (var i = 0; i < fruits.length; i++) {
 
 ### Arrays the functional way
 
-```javascript
-var fruits = ['abricot', 'ananas', 'strawberry', 'orange'];
+```es6
+const fruits = ['abricot', 'ananas', 'strawberry', 'orange'];
 
-var transformedFruits = fruits.map(fruit => {
+const transformedFruits = fruits.map(fruit => {
     return fruit.toUpperCase();
 });
 
@@ -910,13 +910,13 @@ transformedFruits.forEach(fruit => {
     console.log(fruit);
 });
 
-var count = fruits.reduce((val, fruit) => {
+const count = fruits.reduce((val, fruit) => {
     console.log('reducer invoked with ' + val);
     return val + 1;
 }, 0);
 console.log('There are ' + count + ' fruits in the array');
 
-var aFruits = fruits.filter(fruit => {
+const aFruits = fruits.filter(fruit => {
     return fruit.charAt(0) === 'a';
 });
 aFruits.forEach(fruit => {
@@ -984,17 +984,25 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 
 
 
-# Lab 1d: JavaScript
+## Lab 1d: JavaScript
 
-Use [Chart.js](http://www.chartjs.org/docs/#doughnut-pie-chart) to display your skill level with a doughnut chart.
+Use [Chart.js](http://www.chartjs.org/docs/latest/charts/doughnut.html) to display your skill level with a doughnut chart.
 
 ```sh
-bower install Chart.js --save
+npm install chart.js --save
+```
+
+```es6
+import Chart from 'chart.js';
 ```
 
 ![](images/chartjs.jpg)
 
+<!-- .element: class="center" -->
+
 *Read the documentation!*
+
+<!-- .element: class="red" -->
 
 
 
@@ -1011,19 +1019,19 @@ bower install Chart.js --save
 
 ### Functions are objects
 
-```javascript
+```es6
 function aFunc(){ return true; } // no semicolon
 
 // anonymous function
-var f = function(i){ return i; }; // semicolon since assignment
+const f = function(i){ return i; }; // semicolon since assignment
 
-var g = function g(i){
+const g = function g(i){
   if(i > 100){
     return i;
   }
   return g(i+1); // recursive call
 };
-var h = function(aFunctionObj){
+const h = function(aFunctionObj){
   // 3 ways to call a function
   console.log(aFunctionObj(0));
   console.log(aFunctionObj.apply(this, [0]));
@@ -1045,7 +1053,7 @@ An **object** is created for every function.
 
 Each function has access to variables defined in the **parent** functions (an in the **global scope**).
 
-```javascript
+```es6
 function f1(p1){
   console.log('f1 can see ' + p1);
   function f2(p2){
@@ -1075,7 +1083,7 @@ A closure is formed when a nested function accesses a **free variable**
 <!-- .element: class="small" -->
 
 
-```javascript
+```es6
 function f1(p1){
   console.log('f1 can see ' + p1);
   function f2(p2){
@@ -1106,7 +1114,7 @@ When `privateFunction1` accesses `aPrivateVar`, a **closure** is formed.<br/><br
 
 <!-- .element: class="w-33 float-right smaller" -->
 
-```javascript
+```es6
 var myModule = (function(){
 
     var aPrivateVar = 'World';
@@ -1140,7 +1148,7 @@ import/export functions and variables between files.
 export function sum(x, y) {
   return x + y;
 }
-export var pi = 3.141593;
+export const pi = 3.141593;
 ```
 
 ```es6
@@ -1158,12 +1166,12 @@ console.log("2π = " + math.sum(math.pi, math.pi));
 * It is dynamic, which means the value could change
 * You can change the `this` context through `.call()`, `.apply()` and `.bind()`
 
-```javascript
+```es6
 // let's assume .elem is <div class="elem"></div>
-var element = document.querySelector('.elem');
+const element = document.querySelector('.elem');
 
 // our function
-var someFunc = function () {
+const someFunc = function () {
   console.log(this);
 };
 
@@ -1179,8 +1187,8 @@ someFunc(); // [object Window]
 
 ### Saving this scope
 
-```javascript
-var obj = {};
+```es6
+const obj = {};
 obj.myMethod = function () {
   console.log(this); // this = obj
     setTimeout(function () {
@@ -1190,8 +1198,8 @@ obj.myMethod = function () {
 obj.myMethod();
 ```
 
-```javascript
-var obj = {};
+```es6
+const obj = {};
 obj.myMethod = function () {
 
   var that = this; //saving this scope
