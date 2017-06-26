@@ -185,15 +185,12 @@ Learn theory and tools, see examples and practice!
 
 
 ## Labs: MonCV & ShoppingList
-TODO: new pictures
+
 ![](images/monCV_final.png)
-<!-- .element: class="w-30 float-left pdf-w-30 pdf-float-left" -->
+<!-- .element: class="w-40 float-left pdf-w-40 pdf-float-left" -->
 
-![](images/movies_03_upcoming.png)
-<!-- .element: class="w-33 float-left pdf-w-30 pdf-float-left" -->
-
-![](images/movies_04_third_party_directives.png)
-<!-- .element: class="w-33 float-left pdf-w-30 pdf-float-left" -->
+![](images/shoppinglist.png)
+<!-- .element: class="w-40 float-right pdf-w-40 pdf-float-right" -->
 
 
 
