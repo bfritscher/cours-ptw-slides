@@ -1283,6 +1283,8 @@ And a lot more:
 - Promises
 - Tail Calls
 
+https://github.com/DrkSephy/es6-cheatsheet
+
 https://babeljs.io/learn-es2015/
 
 <!-- .element: class="credits" -->
