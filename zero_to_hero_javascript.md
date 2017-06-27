@@ -352,6 +352,7 @@ $('input[name="first_name"]'); // this can be very slow in older browsers
 ```es6
 $('#myId ul.people li');
 ```
+https://github.com/oneuijs/You-Dont-Need-jQuery
 
 http://api.jquery.com/
 
