@@ -110,10 +110,10 @@ http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
 * Variables / Constants
 * Types
 * Operators
-* Array
-* Condition
-* Loop
-* Function
+* Arrays
+* Conditions
+* Loops
+* Functions
 * Object
 
 
@@ -181,7 +181,7 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 | Operator | Example |
 |----------| --------|
-| + | |
+| + | 2 + 5 === 7<br> 'H' + 3 === 'H3' |
 | - | |
 | == | 3 == var3 <br> "3" == var3 <br> 3 == '3' |
 | != | |
@@ -444,41 +444,6 @@ JavaScript: The Good Parts -- Douglas Crockford
 * More on functions
 * Constructors
 * Arrays
-
-
-
-
-### Types
-
-JavaScript defines **6 types**:
-
-* number
-* boolean
-* string
-* object
-* undefined
-* null
-
-<!-- .element: class="w-40 float-left" -->
-
-```es6
-let aNumber = 3.12;
-let aBoolean = true;
-let aString = 'John Smith';
-let anObject = { aProperty: null };
-typeof aNumber === 'number';
-typeof aBoolean === 'boolean';
-typeof aString === 'string';
-typeof anObject === 'object';
-typeof anObject.aProperty === 'object';
-typeof anObject.foobar === 'undefined';
-// null is a type but
-typeof null === 'object';
-```
-<!-- .element: class="w-50 float-left" -->
-
-JavaScript is a dynamic language: when you declare a variable, you don't specify a type (and the type can change over time).
-<!-- .element: class="small clear" -->
 
 
 
