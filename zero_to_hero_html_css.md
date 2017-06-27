@@ -821,6 +821,8 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ![](images/flexbox-flex-direction.png)
 
+https://philipwalton.github.io/solved-by-flexbox/
+
 http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 
 <!-- .element: class="credits" -->
