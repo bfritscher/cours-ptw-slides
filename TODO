@@ -1,54 +1,5 @@
-UX, VUE, PROMISE,  CLOUD FUNCTIONS, APIS and more
-
-
-http://www.usabilitypost.com/2010/11/17/the-design-of-everyday-things/
-
-interaction design
-stove_unnatural.png
-
-The mappings are not great because the controls don’t represent the alignment of the burners, so you always have to refer to the labels when you want to turn them on or off. We can improve this by using a natural mapping, using a spacial analogy to show the relationship between the controls and the burners they operate:
-
-stove_natural.png
-
-
-https://onepotprojects.com/an-introduction-user-experience-design-2a7f8167bf03
-
-
-https://www.youtube.com/watch?v=yY96hTb8WgI
-
-It's not you. Bad doors are everywhere.
-
-
-
-ux_balance.png
-
-ux_stack.png
-
-
-initial strategy and scope phases
-
-fundamental business questions (what to build)
-
-Do users need the product you are making?
-Do they want it enough that they will either pay for it or if it is free, spend time looking for it and learning to use it?
-Are you missing a key feature they will need?
-Are you spending time building features they will never use?
-
-
-structure and skeleton phases
-
- critical implementation questions (how to build?)
-
-How should the content be organised so that users can easily find it?
-Will users find your app easy to use? Where do they get confused or lost?
-What content is needed and how should it be written to be most engaging?
-
-
-the surface of the product
-
-user’s first impression is critical
-
-What should the visual tone of the product be?
-How do users feel when they see your product? Do they trust it?
-It the product visually appealing and does it spark joy?
-Is the visual design usable and accessible?
+UX
+VUE
+PROMISE
+CLOUD FUNCTIONS
+APIS and more
