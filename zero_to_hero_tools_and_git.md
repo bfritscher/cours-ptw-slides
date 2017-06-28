@@ -616,6 +616,11 @@ Adapt ESLint to our coding style
 }
 ```
 
+`.editorconfig`
+```
+indent_size = 4
+```
+
 
 
 ### Step 4c: Fix webpack config to support jquery
@@ -653,7 +658,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(() => {
-  console.log('it works!');
+    console.log('it works!');
 });
 ```
 
