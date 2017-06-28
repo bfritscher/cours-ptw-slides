@@ -73,70 +73,146 @@ Mobile application developement can also be done wiht HTML/CSS/JavaScript, with 
 
 
 
-## TODO UX
+## Who is guilty?
 
+![](images/pebkac.jpg)
+<!-- .element class="w-40" -->
+
+<!-- .element class="center" -->
 
 http://www.usabilitypost.com/2010/11/17/the-design-of-everyday-things/
 
+<!-- .element class="credits" -->
+
+note:
+The user of the device often assumes blame by default. They believe that because they were the ones that made the error, or they were the ones who couldn’t figure how the thing works, then they’re the ones to blame.
+
+Norman argues that in most cases this isn’t so. The designer is to blame because they produced something that’s not easy to understand or something that lets errors and misuse happen. If we have trouble using something then it’s probably because that thing is badly designed, rather than us being stupid.
 
 
-interaction design
 
-Natural Mapping
+### Interaction Design: Natural Mapping
+
+Controls arrangement:
 
 ![](images/stove_unnatural.png)
 
+<!-- .element class="w-50 float-left" -->
+
 ![](images/stove_natural.png)
 
-The mappings are not great because the controls don’t represent the alignment of the burners, so you always have to refer to the labels when you want to turn them on or off. We can improve this by using a natural mapping, using a spacial analogy to show the relationship between the controls and the burners they operate:
+<!-- .element class="w-50 float-right" -->
+
+Completely detached
+<!-- .element class="w-50 float-left small clear" -->
+
+Natural Mapping
+<!-- .element class="w-50 float-right small" -->
+
+http://www.usabilitypost.com/2010/11/17/the-design-of-everyday-things/
+
+<!-- .element class="credits" -->
+
+note:
+The mappings are not great because the controls don’t represent the alignment of the burners, so you always have to refer to the labels when you want to turn them on or off. We can improve this by using a natural mapping, using a spacial analogy to show the relationship between the controls and the burners they operate.
 
 
 
-Perceived Affordances
+### Interaction Design: Perceived Affordances
 
-https://www.youtube.com/watch?v=yY96hTb8WgI
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yY96hTb8WgI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-It's not you. Bad doors are everywhere.
+> It's not you. Bad doors are everywhere.
 
 
-User Experience Design
+
+### Affordances for Web Design
+
+![](images/affordance_button.jpg)
+
+<!-- .element class="center" -->
+
+> Use Visual Affordance to Ensure Buttons Look Clickable
+
+http://www.usefulusability.com/15-user-experience-details-you-missed/
+
+<!-- .element class="credits" -->
+
+
+
+### When Design Fails
+
+![](images/integration_fail.gif)
+
+<!-- .element class="fragment current-visible left" -->
+
+![](images/water_fail.gif)
+
+<!-- .element class="fragment current-visible left w-40" -->
+
+![](images/doors_fail.gif)
+
+<!-- .element class="fragment current-visible left" -->
+
+![](images/warning_fail.jpg)
+
+<!-- .element class="fragment current-visible left w-70" -->
+
+
+
+### UX: User Experience Design
+
+![](images/ux_balance.png)
 
 https://onepotprojects.com/an-introduction-user-experience-design-2a7f8167bf03
 
-![](images/ux_balance.png)
+<!-- .element class="credits" -->
+
+note:
+While focusing on user needs it is also important for a UX Designer to be aware of balancing business goals with technology constraints (or opportunities). While it is true that a product cannot succeed without a healthy business, a business cannot succeed without a happy customer — and it is the UX Designer’s job to be the customer advocate.
+
+
+
+![](images/ux_is_not_ui.png)
+<!-- .element class="w-60" -->
+
+<!-- .element class="center" -->
+
+
 
 ![](images/ux_stack.png)
 
 
-initial strategy and scope phases
 
-fundamental business questions (what to build)
+### Initial Strategy and Scope Phases
 
-Do users need the product you are making?
-Do they want it enough that they will either pay for it or if it is free, spend time looking for it and learning to use it?
-Are you missing a key feature they will need?
-Are you spending time building features they will never use?
+Fundamental business questions (what to build)
 
-
-structure and skeleton phases
-
- critical implementation questions (how to build?)
-
-How should the content be organised so that users can easily find it?
-Will users find your app easy to use? Where do they get confused or lost?
-What content is needed and how should it be written to be most engaging?
+- Do users need the product you are making?
+- Do they want it enough that they will either pay for it or if it is free, spend time looking for it and learning to use it?
+- Are you missing a key feature they will need?
+- Are you spending time building features they will never use?
 
 
-the surface of the product
 
-user’s first impression is critical
+### Structure and Skeleton Phases
 
-What should the visual tone of the product be?
-How do users feel when they see your product? Do they trust it?
-It the product visually appealing and does it spark joy?
-Is the visual design usable and accessible?
+Critical implementation questions (how to build?)
+
+- How should the content be organised so that users can easily find it?
+- Will users find your app easy to use? Where do they get confused or lost?
+- What content is needed and how should it be written to be most engaging?
 
 
+
+### The Surface of the Product
+
+User’s first impression is critical
+
+- What should the visual tone of the product be?
+- How do users feel when they see your product? Do they trust it?
+- It the product visually appealing and does it spark joy?
+- Is the visual design usable and accessible?
 
 
 
@@ -213,41 +289,6 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 ![](images/angular_feelings.png)
-
-
-
-
-## Javascript libraries
-
-*How do you pick a generator for your project?*
-
-You probably have an idea of the framework(s) you want to use on the server
-and or client side (express, angular, backbone, etc.). You will use this as a first
-filter.
-<!-- .element class="small" -->
-
-
-* Some of the generators are supported by the Yeoman Team. That is probably a
-good indication about the quality and support over time (evolution).
-
-* Developers who use generators can “star” those they like. Sorting by
-popularity is also an interesting indication. If the community is big, you can
-expect issues to be reported and fixed, to see new features, etc.
-
-<!-- .element class="small" -->
-
-
-
-* After you have identified promising candidates, you need to get a first
-impression. Generate and build a project with each candidate. Look at their
-Github repository. Do you like what you see? Do you like the documentation?
-
-* Often, you will need to choose between “lightweight” and very “rich”
-generators. Lightweight generators are easier to learn and give you more control
-(but more work). Rich generators do a lot of things out-of-the-box but can be
-intimidating at first (learning curve to understand the skeleton).
-
-<!-- .element class="small" -->
 
 
 
