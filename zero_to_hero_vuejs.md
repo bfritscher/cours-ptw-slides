@@ -787,7 +787,7 @@ http://json.org/
 | angular.toJson( *object* )        | create a JSON_string (removing angular's internal variables) |
 | angular.fromJson( *JSON_string* ) | create an object from a string                               |
 
-```es6
+```javascript
 //optional formatter and indentation spacing for pretty-print
 JSON.stringify( {hello: {text: 'world'}}, null, 2 )
 //results in the following string
@@ -869,7 +869,7 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
 
 ### Components in vue.js
 
-```es6
+```javascript
 
 ```
 
@@ -928,7 +928,7 @@ programming:
 
 ### Callback
 
-```es6
+```javascript
 setTimeout( function() {
     console.log("the callback has been invoked");
 }, 2000);
@@ -941,7 +941,7 @@ is posted...).
 
 <!-- .element: class="small" -->
 
-```es6
+```javascript
 $(document).mousemove( function(event) {
     $("span").text(event.pageX + ", " + event.pageY);
 });
@@ -955,7 +955,7 @@ event attributes (coordinates, key states, etc.).
 
 
 
-```es6
+```javascript
 $.get( "ajax/test.html", function( data ) {
     $( ".result" ).html( data );
     alert( "Load was performed." );
@@ -985,7 +985,7 @@ Do this first...
 
 ### A first attempt...
 
-```es6
+```javascript
 var milkAvailable = false;
 
 function milkCow() {
@@ -1007,7 +1007,7 @@ FAIL
 
 ### Fixing the issue with a callback...
 
-```es6
+```javascript
 var milkAvailable = false;
 
 function milkCow(done) {
@@ -1067,7 +1067,7 @@ X  result  available
 
 ### Sequence with callbacks
 
-```es6
+```javascript
 function f() {
   syncB();
   syncC();
@@ -1111,7 +1111,7 @@ But welcome to the **"callback hell"** aka **"callback pyramid"**
 
 <!-- .element: class="small" -->
 
-```es6
+```javascript
 function f( done ) {
  async1( function( r1 ) {
     reportResult( r1 );
@@ -1136,7 +1136,7 @@ Double fail: not only is done() invoked to early, but also there is no result to
 
 ### Callback parallel tasks with counter
 
-```es6
+```javascript
 function f( done ) {
   <span class="fragment highlight-current-red" data-fragment-index="1">var numberOfPendingTasks = 3;</span>
   var results = [];
@@ -1254,7 +1254,7 @@ http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-t
 
 <!-- .element: class="credits" -->
 
-```es6
+```javascript
 var d1 = new $.Deferred();
 var d2 = new $.Deferred();
 $.when( d1, d2 ).done(function ( v1, v2 ) {
@@ -1270,7 +1270,7 @@ d2.resolve( "Pizza" );
 
 ### Promise in ECMAScript 2015
 
-```es6
+```javascript
 const promise = new Promise(function(resolve, reject) {
   // do a thing, possibly async, then…
 
@@ -1296,7 +1296,7 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 
 
 Chaining Transforming values
-```es6
+```javascript
 const promise = new Promise(function(resolve, reject) {
   resolve(1);
 });
@@ -1311,7 +1311,7 @@ promise.then(function(val) {
 
 
 Wait for all
-```es6
+```javascript
 Promise.all(arrayOfPromises).then(function(arrayOfResults) {
   //...
 })
@@ -1326,7 +1326,7 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 
 ### Getting JSON content
 
-```
+```javascript
 fetch('./api/some.json')
   .then( response => {
       return response.json();
@@ -1344,7 +1344,7 @@ fetch('./api/some.json')
 
 ### Async / Await
 
-```
+```javascript
 async function myFirstAsyncFunction() {
   try {
     const fulfilledValue = await promise;
@@ -1357,7 +1357,7 @@ async function myFirstAsyncFunction() {
 
 
 
-```
+```javascript
 function logFetch(url) {
   return fetch(url)
     .then(response => response.text())
@@ -1379,7 +1379,7 @@ async function logFetch(url) {
 }
 ```
 
-```
+```javascript
 // map some URLs to json-promises
 const jsonPromises = urls.map(async url => {
   const response = await fetch(url);
@@ -1411,7 +1411,7 @@ For now we leave the first page as is and extend the app to display movies from 
 
 Add the following to the moviedb service or even better make them constants.
 
-```es6
+```javascript
 var apiUrl = 'http://api.themoviedb.org/3/'; //proxy
 var baseUrl = 'http://image.tmdb.org/t/p/';
 ```
@@ -1434,7 +1434,7 @@ var baseUrl = 'http://image.tmdb.org/t/p/';
 bower install angularfire --save
 ```
 Add firebase to dependencies:
-```es6
+```javascript
 var app = angular.module("sampleApp", ["firebase"]);
 ```
 
@@ -1448,7 +1448,7 @@ https://github.com/firebase/angularfire
 
 https://firebase.google.com/docs/auth/web/github-auth
 
-```es6
+```javascript
 <script>
   // Initialize Firebase
   var config = {
@@ -1467,7 +1467,7 @@ copy from google console (Authentication>Web Setup)
 
 ### Setup user security
 
-```es6
+```javascript
 {
     "rules": {
        "users": {

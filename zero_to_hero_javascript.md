@@ -105,7 +105,7 @@ http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
 
 
 
-#JavaScript Basics
+# JavaScript Basics
 
 * Variables / Constants
 * Types
@@ -120,7 +120,7 @@ http://wirfs-brock.com/allen/talks/forwardjs2016.pdf
 
 ### Variables / Constants / Comments
 
-```es6
+```javascript
 // This is a single line comment
 
 // block variables use let over var!
@@ -156,7 +156,7 @@ JavaScript defines **6 types**:
 
 <!-- .element: class="w-40 float-left" -->
 
-```es6
+```javascript
 let aNumber = 3.12;
 let aBoolean = true;
 let aString = 'John Smith';
@@ -194,7 +194,7 @@ JavaScript is a dynamic language: when you declare a variable, you don't specify
 
 New in ES2015 in addition to '', "", there are ``.
 
-```es6
+```javascript
 // Basic literal string creation
 const s1 = `This is a pretty little template string.`;
 
@@ -211,7 +211,7 @@ const s3 = `Hello ${name}, how are you ${time}?`;
 
 ### Array
 
-```es6
+```javascript
 let myArray = [ 'a', 'b', 'c' ];
 let firstItem = myArray[ 0 ];
 let secondItem = myArray[ 1 ]; // access the item at index 1
@@ -222,7 +222,7 @@ let arrayLength = myArray.length;
 
 ### Condition
 
-```es6
+```javascript
 if ( notANumber ) {
   // this code will not run!
   console.log( 'notANumber was truthy' );
@@ -238,14 +238,14 @@ if ( notANumber ) {
 
 ### Loop
 
-```es6
+```javascript
 let i = 0;
 for (i; i < myArray.length; i = i + 1) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
 }
 ```
 
-```es6
+```javascript
 let i = 0;
 while (i < myArray.length) {
   console.log( 'item at index ' + i + ' is ' + myArray[ i ] );
@@ -253,13 +253,13 @@ while (i < myArray.length) {
 }
 ```
 
-```es6
+```javascript
 for (let value of array) {
   // do something with value
 }
 ```
 
-```es6
+```javascript
 for (let property in object) {
   // do something with object property
 }
@@ -269,7 +269,7 @@ for (let property in object) {
 
 ### Functions
 
-```es6
+```javascript
 function cornify( unicorns /* integer */, rainbows /* integer */ ) {
 
 }
@@ -283,7 +283,7 @@ const addTwoNumbers = function(a, b) {
 
 ### Arrow functions
 
-```es6
+```javascript
 const hello = () => {
   return 'world';
 }
@@ -303,7 +303,7 @@ https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctio
 
 ### Objects
 
-```es6
+```javascript
 var obj = {
   property1: 'some text',
   age: 3
@@ -331,25 +331,25 @@ API that works **across a multitude of browsers**.
 
 **Selecting Elements by ID**
 
-```es6
+```javascript
 $('#myId'); // IDs must be unique per page.
 ```
 
 **Selecting Elements by Class Name**
 
-```es6
+```javascript
 $('.myClass');
 ```
 
 **Selecting Elements by Attributes**
 
-```es6
+```javascript
 $('input[name="first_name"]'); // this can be very slow in older browsers
 ```
 
 **Selecting Elements by Compound CSS Selector**
 
-```es6
+```javascript
 $('#myId ul.people li');
 ```
 https://github.com/oneuijs/You-Dont-Need-jQuery
@@ -451,7 +451,7 @@ JavaScript: The Good Parts -- Douglas Crockford
 
 ### Conditions
 
-```es6
+```javascript
 let name = "kittens";
 if (name === "puppies") {
   name += "!";
@@ -469,7 +469,7 @@ name === "kittens!!"
 
 ### Loop
 
-```es6
+```javascript
 for (const i = 0; i < 5; i++) {
   // Will execute 5 times
 }
@@ -484,7 +484,7 @@ while ( true ) {
 
 ### Functions
 
-```es6
+```javascript
 function add(x, y) {
   const total = x + y;
   return total;
@@ -521,7 +521,7 @@ There is **no block scope**.
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```es6
+```javascript
 var aVariableInGlobalScope;
 
 function myFunction() {
@@ -545,7 +545,7 @@ function myFunction2() {
 
 ### Exploring scopes
 
-```es6
+```javascript
 var aGlobalVar = 'hello';
 var anotherGlobalVar = 'world';
 function myFunction() {
@@ -582,7 +582,7 @@ of properties (**no class**).
 
 <!-- .element: class="w-40 float-right small" -->
 
-```es6
+```javascript
 // create an object
 const person = {
     firstName: 'John',
@@ -610,7 +610,7 @@ for (const key in person) {
 
 ### Exploring objects
 
-```es6
+```javascript
 // create an object
 const person = {
     firstName: 'John',
@@ -657,7 +657,7 @@ object creation process.
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```es6
+```javascript
 //create an object with a literal
 const person = {
   firstName: 'John',
@@ -677,7 +677,7 @@ child = new Person('John', 'Smith');
 
 ### Every object inherits from a prototype object
 
-```es6
+```javascript
 const person = {
     firstName: 'John',
     lastName: 'Smith'
@@ -699,7 +699,7 @@ const john = new Person('John', 'Doe');
 
 
 
-```es6
+```javascript
 var person = {
     firstName: 'John',
     lastName: 'Smith'
@@ -763,7 +763,7 @@ outside of the constructor.<br/><br/>
 
 <!-- .element: class="w-40 float-right smaller" -->
 
-```es6
+```javascript
 function Person(fn, ln) {
     var privateVar;
     this.firstName = fn;
@@ -788,7 +788,7 @@ p1.greet();
 
 ### Exploring function constructor
 
-```es6
+```javascript
 function Person(fn, ln) {
     var privateVar;
     this.firstName = fn;
@@ -814,7 +814,7 @@ p1.greet();
 
 ### Classes since ECMAScript 2015
 
-```es6
+```javascript
 class SkinnedMesh extends THREE.Mesh {
   constructor(geometry, materials) {
     super(geometry, materials);
@@ -839,7 +839,7 @@ class SkinnedMesh extends THREE.Mesh {
 
 ### Arrays are objects
 
-```es6
+```javascript
 const fruits = ['apple', 'pear'];
 console.log(Object.getPrototypeOf(fruits)); //[]
 console.log(typeof fruits); //object
@@ -865,7 +865,7 @@ for (const i = 0; i < fruits.length; i++) {
 
 ### Arrays the functional way
 
-```es6
+```javascript
 const fruits = ['abricot', 'ananas', 'strawberry', 'orange'];
 
 const transformedFruits = fruits.map(fruit => {
@@ -958,7 +958,7 @@ Use [Chart.js](http://www.chartjs.org/docs/latest/charts/doughnut.html) to displ
 npm install chart.js --save
 ```
 
-```es6
+```javascript
 import Chart from 'chart.js';
 ```
 
@@ -985,7 +985,7 @@ import Chart from 'chart.js';
 
 ### Functions are objects
 
-```es6
+```javascript
 function aFunc(){ return true; } // no semicolon
 
 // anonymous function
@@ -1019,7 +1019,7 @@ An **object** is created for every function.
 
 Each function has access to variables defined in the **parent** functions (an in the **global scope**).
 
-```es6
+```javascript
 function f1(p1){
   console.log('f1 can see ' + p1);
   function f2(p2){
@@ -1049,7 +1049,7 @@ A closure is formed when a nested function accesses a **free variable**
 <!-- .element: class="small" -->
 
 
-```es6
+```javascript
 function f1(p1){
   console.log('f1 can see ' + p1);
   function f2(p2){
@@ -1080,7 +1080,7 @@ When `privateFunction1` accesses `aPrivateVar`, a **closure** is formed.<br/><br
 
 <!-- .element: class="w-33 float-right smaller" -->
 
-```es6
+```javascript
 var myModule = (function(){
 
     var aPrivateVar = 'World';
@@ -1109,7 +1109,7 @@ myModule.publicFunction();
 
 import/export functions and variables between files.
 
-```es6
+```javascript
 // lib/math.js
 export function sum(x, y) {
   return x + y;
@@ -1117,7 +1117,7 @@ export function sum(x, y) {
 export const pi = 3.141593;
 ```
 
-```es6
+```javascript
 // app.js
 import * as math from "lib/math";
 console.log("2π = " + math.sum(math.pi, math.pi));
@@ -1132,7 +1132,7 @@ console.log("2π = " + math.sum(math.pi, math.pi));
 * It is dynamic, which means the value could change
 * You can change the `this` context through `.call()`, `.apply()` and `.bind()`
 
-```es6
+```javascript
 // let's assume .elem is <div class="elem"></div>
 const element = document.querySelector('.elem');
 
@@ -1153,7 +1153,7 @@ someFunc(); // [object Window]
 
 ### Saving this scope
 
-```es6
+```javascript
 const obj = {};
 obj.myMethod = function () {
   console.log(this); // this = obj
@@ -1164,7 +1164,7 @@ obj.myMethod = function () {
 obj.myMethod();
 ```
 
-```es6
+```javascript
 const obj = {};
 obj.myMethod = function () {
 
@@ -1195,7 +1195,7 @@ http://toddmotto.com/understanding-the-this-keyword-in-javascript/
 
 ### Enhanced Object Literals
 
-```es6
+```javascript
 const make = 'Kia', model = 'Sorento', value = 40000
 const car = {
   // with property value shorthand
@@ -1226,7 +1226,7 @@ http://www.benmvp.com/learning-es6-enhanced-object-literals/
 
 ### Destructuring
 
-```es6
+```javascript
 // list matching
 const [a, ,b] = [1,2,3];
 a === 1;
@@ -1249,7 +1249,7 @@ c === 'cow';
 
 
 ### Default + Rest + Spread
-```es6
+```javascript
 function f(x, y=12) {
   // y is 12 if not passed (or passed as undefined)
   return x + y;
@@ -1280,7 +1280,7 @@ And a lot more:
 - Map, Set, WeakMap, WeakSet
 - Proxies
 - Symbols
-- Promises
+- asics
 - Tail Calls
 
 https://github.com/DrkSephy/es6-cheatsheet

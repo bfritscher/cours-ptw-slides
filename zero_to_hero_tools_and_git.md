@@ -652,7 +652,7 @@ devtool: 'source-map',
 
 Inside `src/main.js`
 
-```es6
+```javascript
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -670,7 +670,7 @@ Create a main.css file under src
 
 Inside `src/main.js` after `boostrap.min.css`;
 
-```es6
+```javascript
 import './main.css';
 ```
 
@@ -686,7 +686,7 @@ https://bootswatch.com/
 
 try different CSS files from bootswatch in index.html
 
-```es6
+```javascript
 import 'bootswatch/darkly/bootstrap.min.css';
 ```
 
@@ -995,7 +995,7 @@ $ npm install push-dir --save-dev
 
 #### Add new deploy task to npm package.json
 
-```es6on
+```javascript
 {
 ...,
   "scripts": {
@@ -1046,25 +1046,25 @@ API that works **across a multitude of browsers**.
 
 **Selecting Elements by ID**
 
-```es6
+```javascript
 $('#myId'); // IDs must be unique per page.
 ```
 
 **Selecting Elements by Class Name**
 
-```es6
+```javascript
 $('.myClass');
 ```
 
 **Selecting Elements by Attributes**
 
-```es6
+```javascript
 $('input[name="first_name"]'); // this can be very slow in older browsers
 ```
 
 **Selecting Elements by Compound CSS Selector**
 
-```es6
+```javascript
 $('#myId ul.people li');
 ```
 https://github.com/oneuijs/You-Dont-Need-jQuery#dom-manipulation
@@ -1097,7 +1097,7 @@ $ npm install jquery-smooth-scroll --save
 
 Use the plugin:
 
-```es6
+```javascript
 import 'jquery-smooth-scroll';
 
 $(document).ready(() => {
