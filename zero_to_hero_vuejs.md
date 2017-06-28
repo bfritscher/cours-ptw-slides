@@ -279,7 +279,356 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 # TODO VUE INTRO
 
+https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
+MODULE AS A SERVICE
+FETCH
+PROMISE
+
+mvvm.png
+vue-format.png
+
+<div id="app">
+{{message}}
+</div>
+
+
+DATA
+
+new Vue({
+  el: '#app',
+  data: function () {
+    return {
+      message: 'Hello Vue.js!'
+    };
+  }
+});
+
+vue constructor and text interpolation
+
+
+{{message.toUpperCase()}
+{{message.slice(0,5)}}
+{{ ok ? 'YES' : 'NO' }}
+
+FILTERS
+
+capitalize
+
+used inside mustache interpolations and v-bind expressions
+primarily designed for text transformation
+
+filters: {
+  reverse: function(input) {
+    return input.split(' ').reverse().join(' ')
+  }
+}
+
+{{message | reverse}}
+
+Filters can be chained
+{{ message | filterA | filterB }}
+
+Filters are JavaScript functions, therefore they can take arguments:
+{{ message | filterA('arg1', arg2) }}
+
+GLOBAL vs local registrations
+
+Vue.filter
+
+DIRECTIVES
+v-bind:attributes=  :attributes=
+v-if
+v-else
+v-else-if
+
+<div v-if="type === 'A'">
+  A
+</div>
+<div v-else-if="type === 'B'">
+  B
+</div>
+<div v-else-if="type === 'C'">
+  C
+</div>
+<div v-else>
+  Not A/B/C
+</div>
+
+v-for
+
+<div v-for="item in items">
+  {{ item.text }}
+</div>
+<div v-for="(item, index) in items"></div>
+<div v-for="(val, key) in object"></div>
+<div v-for="(val, key, index) in object"></div>
+
+v-model
+
+.number - cast input string to numbers
+.trim - trim input
+
+v-on:click @click
+
+<form v-on:submit.prevent="onSubmit"></form>
+
+.stop - call event.stopPropagation().
+.prevent - call event.preventDefault().
+.{keyCode | keyAlias} - only trigger handler on certain keys.
+.left - (2.2.0+) only trigger handler for left button mouse events.
+.right - (2.2.0+) only trigger handler for right button mouse events.
+.middle - (2.2.0+) only trigger handler for middle button mouse events.
+
+<!-- chain modifiers -->
+<button @click.stop.prevent="doThis"></button>
+
+<!-- key modifier using keyAlias -->
+<input @keyup.enter="onEnter">
+
+<div v-bind:class="{ active: isActive }"></div>
+
+- GOTCHAS new attributes/ arrays
+
+Tracked mutate
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+
+or replace
+filter(), concat() and slice()
+
+do note [] or .length
+
+// Vue.set
+Vue.set(example1.items, indexOfItem, newValue)
+
+
+METHODS
+function (event)
+
+can be called with ($event) or without
+
+COMPUTED
+
+
+show with now()
+
+
+Computed properties are by default getter-only, but you can also provide a setter when you need it:
+// ...
+computed: {
+  fullName: {
+    // getter
+    get: function () {
+      return this.firstName + ' ' + this.lastName
+    },
+    // setter
+    set: function (newValue) {
+      var names = newValue.split(' ')
+      this.firstName = names[0]
+      this.lastName = names[names.length - 1]
+    }
+  }
+}
+// ...
+
+COMPONENTS props + events
+props: ['myprop']
+v-bind:myprop
+v-bind:key=
+
+![](images/props-events.png)
+
+prop validation
+
+click.native - listen for a native event on the root element of component.
+
+ By default, v-model on a component uses value as the prop and input as the event
+
+components.png
+
+
+SLOTS
+
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name="footer"></slot>
+  </footer>
+</div>
+
+<app-layout>
+  <h1 slot="header">Here might be a page title</h1>
+  <p>A paragraph for the main content.</p>
+  <p>And another one.</p>
+  <p slot="footer">Here's some contact info</p>
+</app-layout>
+
+LIFECYCLE HOOKS
+
+https://vuejs.org/v2/guide/instance.html
+
+created: function () {
+this.fetchData()
+
+ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
+
+TRANSITIONS
+
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+
+  <transition-group name="flip-list" tag="ul">
+  </transition-group>
+
+
+.flip-list-move {
+  transition: transform 1s;
+}
+
+ROUTER
+
+const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: '/user/:id', name: 'user', component: User }
+  ]
+})
+
+{{ $route.params.id }}
+
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+
+router.push({ name: 'user', params: { userId: 123 }})
+
+ <router-view></router-view>
+
+watch: {
+    '$route' (to, from) {
+      // react to route changes...
+    }
+  }
+
+  beforeRouteUpdate (to, from, next) {
+    // react to route changes...
+    // don't forget to call next()
+  }
+
+
+WATCH
+
+vm.$watch('a', function (newVal, oldVal) {
+  // this callback will be called when `vm.a` changes
+})
+
+! no arrow functions!
+
+data.png
+
+EVENTBUS
+https://alligator.io/vuejs/global-event-bus/
+
+import Vue from 'vue';
+export const EventBus = new Vue();
+
+import { EventBus } from './event-bus.js';
+
+EventBus.$emit('i-got-clicked', this.clickCount);
+const clickHandler = clickCount => {
+  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
+}
+EventBus.$on('i-got-clicked', clickHandler);
+
+// Stop listening.
+EventBus.$off('i-got-clicked', clickHandler);
+
+MIXINS
+CUSTOM DIRECTIVE
+Vue.nextTick
+PLUGINS
+
+
+Vue.component('my-component', {
+
+  // Props
+  props: [ 'myprop' ],
+
+  // Local state
+  data() {
+    return {
+      firstName: 'John',
+      lastName: 'Smith'
+    }
+  },
+
+  // Computed property
+  computed: {
+    fullName() {
+      return this.firstName + ' ' + this.lastName;
+    }
+  },
+
+  // Template
+  template: `
+    <div>
+      <p>Vue components typically have string templates.</p>
+      <p>Here's some local state: {{ firstName }}</p>
+      <p>Here's a computed value: {{ fullName }}</p>
+      <p>Here's a prop passed down from the parent: {{ myprop }}</p>
+    </div>
+  `,
+
+  // Lifecycle hook
+  created() {
+    setTimeout(() => {
+      this.message = 'Goodbye World'
+    }, 2000);
+  }
+});
+
+
+
+
+new Vue({
+  el: '#app',
+  data: function () {
+    return {
+      dataLoaded: false,
+      apiReply: {}
+    };
+  },
+  methods: {
+    loadData: function() {
+      fetch('/api').then(response => {
+        return response.json();
+      }).then(reply => {
+        this.apiReply = reply;
+        this.dataLoaded = true;
+      });
+    }
+  },
+  created: function () {
+    this.loadData();
+  }
+});
 
 
 ### Resources
@@ -922,7 +1271,7 @@ d2.resolve( "Pizza" );
 ### Promise in ECMAScript 2015
 
 ```es6
-var promise = new Promise(function(resolve, reject) {
+const promise = new Promise(function(resolve, reject) {
   // do a thing, possibly async, then…
 
   if (/* everything turned out fine */) {
@@ -938,56 +1287,64 @@ promise.then(function(result) {
 }, function(err) {
   console.log(err); // Error: "It broke"
 });
+```
+
+https://developers.google.com/web/fundamentals/getting-started/primers/promises
+
+<!-- .element: class="credits" -->
 
 
-var promise = new Promise(function(resolve, reject) {
+
+Chaining Transforming values
+```es6
+const promise = new Promise(function(resolve, reject) {
   resolve(1);
 });
-// Chaining Transforming values
+
 promise.then(function(val) {
   console.log(val); // 1
   return val + 2;
 }).then(function(val) {
   console.log(val); // 3
 })
+```
 
 
-// wait for all
+Wait for all
+```es6
 Promise.all(arrayOfPromises).then(function(arrayOfResults) {
   //...
 })
 ```
 
-
 https://developers.google.com/web/fundamentals/getting-started/primers/promises
+
 <!-- .element: class="credits" -->
 
 
 
-fetch('./api/some.json')
-  .then(
-    function(response) {
-      if (response.status !== 200) {
-        console.log('Looks like there was a problem. Status Code: ' +
-          response.status);
-        return;
-      }
 
-      // Examine the text in the response
-      response.json().then(function(data) {
-        console.log(data);
-      });
+### Getting JSON content
+
+```
+fetch('./api/some.json')
+  .then( response => {
+      return response.json();
     }
   )
+  .then(data => {
+      console.log(data);
+  })
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
+```
 
-https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 
 
-asnyc
+### Async / Await
 
+```
 async function myFirstAsyncFunction() {
   try {
     const fulfilledValue = await promise;
@@ -996,7 +1353,11 @@ async function myFirstAsyncFunction() {
     // …
   }
 }
+```
 
+
+
+```
 function logFetch(url) {
   return fetch(url)
     .then(response => response.text())
@@ -1016,14 +1377,20 @@ async function logFetch(url) {
     console.log('fetch failed', err);
   }
 }
+```
 
+```
 // map some URLs to json-promises
 const jsonPromises = urls.map(async url => {
   const response = await fetch(url);
   return response.json();
 });
+```
 
 https://developers.google.com/web/fundamentals/getting-started/primers/async-functions
+
+<!-- .element: class="credits" -->
+
 
 
 

@@ -1,5 +1,7 @@
 https://fr.vuejs.org/
 
+setup
+
 chrome devtool extension
 vetur
 https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
@@ -15,13 +17,18 @@ in vscode edit settings
     ]
 
 
+
 vscode
 eslint
-Node.js Modules Intellisense
+
+other ressources
+https://www.grafikart.fr/formations/vuejs
+
+---
 
 
 
-
+--- advanced project
 
 logo
 https://www.iconfinder.com/icons/701495/shooping_cart_shopping_shoppingbag_icon#size=128
@@ -31,9 +38,13 @@ https://commons.wikimedia.org/wiki/File:Shopping_cart_with_food_clip_art_2.svg
 https://pixabay.com/en/bag-seeds-food-natural-organic-576697/
 
 
-https://vuematerial.github.io
 
- material
+-- material
+
+http://vuematerial.io/#/
+
+
+
 
  npm install vue-material --save
 
@@ -58,7 +69,7 @@ barcode
 
 https://serratus.github.io/quaggaJS/
 
- npm install quagga --save
+npm install quagga --save
 
 import Quagga from 'quagga';
 
