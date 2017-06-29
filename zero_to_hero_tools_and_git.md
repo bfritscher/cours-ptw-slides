@@ -1089,7 +1089,7 @@ We want to improve our page with some interactions and behaviors.
 
 
 
-### Step 1: Use bower to install a jquery plugin
+### Step 1: Use npm to install a jquery plugin
 
 ```sh
 $ npm install jquery-smooth-scroll --save
