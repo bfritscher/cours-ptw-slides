@@ -610,6 +610,11 @@ Adapt ESLint to our coding style
     "semi":  ["error", "always"],
     // use 4 spaces indent
     "indent": ["error", 4],
+    // make rule equal vs code auto formatting
+    "space-before-function-paren": ["error", {
+        "anonymous": "always",
+        "named": "never"
+    }],
     ...
   },
   ...
