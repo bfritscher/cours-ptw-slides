@@ -1125,6 +1125,42 @@ console.log("2π = " + math.sum(math.pi, math.pi));
 
 
 
+### import/export syntax
+```javascript
+import defaultMember from "module-name";
+import * as name from "module-name";
+import { member } from "module-name";
+import { member as alias } from "module-name";
+import { member1 , member2 } from "module-name";
+import { member1 , member2 as alias2 , [...] } from "module-name";
+import defaultMember, { member [ , [...] ] } from "module-name";
+import defaultMember, * as name from "module-name";
+import "module-name";
+```
+
+```javascript
+export { name1, name2, …, nameN };
+export { variable1 as name1, variable2 as name2, …, nameN };
+export let name1, name2, …, nameN; // also var
+export let name1 = …, name2 = …, …, nameN; // also var, const
+
+export default expression;
+export default function (…) { … } // also class, function*
+export default function name1(…) { … } // also class, function*
+export { name1 as default, … };
+
+export * from …;
+export { name1, name2, …, nameN } from …;
+export { import1 as name1, import2 as name2, …, nameN } from …;
+```
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import<br/>
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+
+<!-- .element: class="credits" -->
+
+
+
 
 ### this
 
@@ -1280,11 +1316,10 @@ And a lot more:
 - Map, Set, WeakMap, WeakSet
 - Proxies
 - Symbols
-- asics
+- Async Await
 - Tail Calls
 
-https://github.com/DrkSephy/es6-cheatsheet
-
+https://github.com/DrkSephy/es6-cheatsheet<br/>
 https://babeljs.io/learn-es2015/
 
 <!-- .element: class="credits" -->
