@@ -1,32 +1,3 @@
-https://fr.vuejs.org/
-
-setup
-
-chrome devtool extension
-vetur
-https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
-
-
-
-in vscode edit settings
-
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "vue"
-    ]
-
-
-
-vscode
-eslint
-
-other ressources
-https://www.grafikart.fr/formations/vuejs
-
----
-
-
 
 --- advanced project
 
@@ -41,28 +12,17 @@ https://pixabay.com/en/bag-seeds-food-natural-organic-576697/
 
 -- material
 
-http://vuematerial.io/#/
 
 
 
 
- npm install vue-material --save
-
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.css';
 
 
-https://www.materialpalette.com/green/blue
-https://materialdesignicons.com/
-https://materialdesignicons.com/
 
 
-manifest
 
-https://tomitm.github.io/appmanifest/
+
+
 
 
 barcode
@@ -75,7 +35,6 @@ import Quagga from 'quagga';
 
 https://world.openfoodfacts.org/code/7614800238001.json
 fetch('https://world.openfoodfacts.org/api/v0/product/7614800238001.json').then((response) => {return response.json()}).then(console.log)
-
 
 status: 1 / 0 = not_found
 product.image_front_small_url

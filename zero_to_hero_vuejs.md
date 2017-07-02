@@ -224,11 +224,10 @@ User’s first impression is critical
 * Only focus on frontent-app
 * With Api's and some cloud functions ("serverless")
 
-TODO PIC
-![](images/movies_06_firebase_login.png)
-<!-- .element: class="w-40" -->
-![](images/movies_04_third_party_directives.png)
-<!-- .element: class="w-40" -->
+![](images/shop-mobile.png)
+<!-- .element: class="w-20" -->
+![](images/shop-desktop.png)
+<!-- .element: class="w-60" -->
 
 
 
@@ -277,97 +276,249 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
-# TODO VUE INTRO
+![](images/angular_feelings.png)
 
-https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
-MODULE AS A SERVICE
-FETCH
-PROMISE
 
-mvvm.png
-vue-format.png
 
+### Vue.js a Model View ViewModel (MVVM) framework
+
+![](images/mvvm.png)
+
+
+
+
+### Vue constructor and text interpolation
+
+HTML
+
+<!-- .element: class="w-40 float-left" -->
+
+Javascript
+
+<!-- .element: class="w-40 float-right" -->
+
+```html
 <div id="app">
-{{message}}
+  {{ message }}
 </div>
+```
+<!-- .element: class="w-40 float-left" -->
 
 
-DATA
-
-new Vue({
+```javascript
+const vm = new Vue({
   el: '#app',
-  data: function () {
+  data() {
     return {
       message: 'Hello Vue.js!'
     };
   }
 });
+```
+<!-- .element: class="w-40 float-right" -->
 
-vue constructor and text interpolation
 
 
-{{message.toUpperCase()}
-{{message.slice(0,5)}}
-{{ ok ? 'YES' : 'NO' }}
+```
+```
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/towevux/3/edit?html,js,output" data-height="500px" -->
 
-FILTERS
+![](images/vue-format.png)
+https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
-capitalize
 
-used inside mustache interpolations and v-bind expressions
+
+
+### Text interpolation
+
+Vue.js expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
+
+```html
+<div>{{ message.toUpperCase() }}</div>       <!-- HELLO VUE.JS! -->
+<div>{{ message.slice(0,5) }}</div>          <!-- Hello         -->
+<div>You say {{ ok ? 'YES' : 'NO' }}</div>   <!-- You say NO    -->
+```
+
+> Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.
+
+https://vuejs.org/v2/guide/syntax.html#Interpolations
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Filters
+
+> used inside mustache interpolations and v-bind expressions
 primarily designed for text transformation
 
-filters: {
-  reverse: function(input) {
-    return input.split(' ').reverse().join(' ')
-  }
-}
-
-{{message | reverse}}
+```html
+<div>{{ message | reverse }}</div> <!-- !sj.euV olleH -->
+```
 
 Filters can be chained
-{{ message | filterA | filterB }}
+
+`{{ message | filterA | filterB }}`
+
+<!-- .element: class="small" -->
 
 Filters are JavaScript functions, therefore they can take arguments:
-{{ message | filterA('arg1', arg2) }}
 
-GLOBAL vs local registrations
+`{{ message | filterA('arg2', arg3) }}`
 
-Vue.filter
+<!-- .element: class="small" -->
 
-DIRECTIVES
-v-bind:attributes=  :attributes=
-v-if
-v-else
-v-else-if
 
+
+```
+```
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/wiwujav/3/edit?html,js,output" data-height="500px" -->
+
+
+
+
+### Some Directives
+
+| Directive         | Description |
+|-------------------|-------------|
+| v-model          | Create a two-way binding on a form input element or a component. |
+| v-bind           | Dynamically bind one or more attributes, or a component prop to an expression. |
+| v-if, v-else-if, v-else             | Conditionally render the element based on the truthy-ness of the expression value. |
+| v-show | Toggle’s the element’s display CSS property based on the truthy-ness of the expression value. |
+| v-for         | Render the element or template block multiple times based on the source data. |
+| v-on:click          | Attaches an event listener to the element. |
+
+
+https://vuejs.org/v2/api/#Directives
+
+<!-- .element: class="credits" -->
+
+
+
+
+### Directives show / hide elements
+
+Conditionally render the element based on the truthy-ness of the expression value.
+```html
+<div v-if="type === 'A'"> A </div>
+```
+
+Toggle’s the element’s display CSS property based on the truthy-ness of the expression value.
+```html
+<div v-show="type === 'B'"> B </div>
+```
+
+
+
+```
+```
+<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/wibare/3/edit?html,js,output" data-height="500px" -->
+
+
+
+### Directives conditional
+```html
 <div v-if="type === 'A'">
   A
 </div>
+
 <div v-else-if="type === 'B'">
   B
 </div>
+
 <div v-else-if="type === 'C'">
   C
 </div>
+
 <div v-else>
   Not A/B/C
 </div>
+```
 
-v-for
 
+
+
+### Directives repeat elements
+
+```html
 <div v-for="item in items">
   {{ item.text }}
 </div>
 <div v-for="(item, index) in items"></div>
 <div v-for="(val, key) in object"></div>
 <div v-for="(val, key, index) in object"></div>
+```
+
+`v-bind:key="item.id"` needed on custom elements or move ordering purpose
+
+<!-- .element: class="small" -->
+
+
+
+
+### Directives dynamique attributes
+
+Dynamically bind one or more attributes, or a component prop to an expression.
+
+```html
+<div v-bind:attributes=""></div>
+
+<img v-bind:src="'/base/' + n + '.jpg'">
+```
+
+A short form exists
+
+```html
+<div :attributes=""></div>
+
+<img :src="'/base/' + n + '.jpg'">
+```
+
+
+
+### Directives bind multiples attributes
+
+```html
+<div :attr1="" :attr2=""></div>
+
+<div v-bind="{attr1: '', attr2: ''}"></div>
+```
+
+
+
+### Directives bind dynamic css classes
+
+```html
+string   :class="'classString'"
+variable :class="classNameVariable"
+array    :class="[classVarA, 'classNameB']"
+object   :class="{className: someBooleann}"
+ternary  :class="bool ? 'active' : 'inactive'"
+method   :class="classNameReturningFunction()"
+```
+
+https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
+
+<!-- .element: class="credits" -->
+
+
 
 v-model
 
 .number - cast input string to numbers
 .trim - trim input
+
+
+
+
+# Methods
+function (event)
+
+can be called with ($event) or without
+
+
 
 v-on:click @click
 
@@ -388,38 +539,16 @@ v-on:click @click
 
 <div v-bind:class="{ active: isActive }"></div>
 
-- GOTCHAS new attributes/ arrays
-
-Tracked mutate
-push()
-pop()
-shift()
-unshift()
-splice()
-sort()
-reverse()
-
-or replace
-filter(), concat() and slice()
-
-do note [] or .length
-
-// Vue.set
-Vue.set(example1.items, indexOfItem, newValue)
 
 
-METHODS
-function (event)
-
-can be called with ($event) or without
-
-COMPUTED
-
+# Computed properties
 
 show with now()
 
 
 Computed properties are by default getter-only, but you can also provide a setter when you need it:
+
+```javascript
 // ...
 computed: {
   fullName: {
@@ -436,13 +565,103 @@ computed: {
   }
 }
 // ...
+```
+
+
+
+
+### GOTCHAS new attributes/ arrays
+
+Tracked mutate
+```javascript
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+
+// or replace
+filter()
+concat()
+slice()
+```
+
+> do note [] or .length
+
+```javascript
+Vue.set(example1.items, indexOfItem, newValue)
+```
+
+
+
+
+| Vue.js Concepts      | Description                                                              |
+|----------------------|--------------------------------------------------------------------------|
+| ViewModel            | the data shown to the user in the view and with which the user interacts |
+| View                 | what the user sees (the DOM)                                             |
+| Template             | HTML with additional markup                                              |
+| Directives           | extend HTML with custom attributes and elements                          |
+| Components           | a special kind of tag used for component-based application structure     |
+| Expressions          | access variables and functions from the ViewModel                        |
+| Filter               | formats the value of an expression for display to the user               |
+| Computed             | Computed properties are cached, and only re-computed on reactive dependency changes  |
+| Methods              | Methods to be mixed into the Vue instance                                |
+
+
+
+
+### Component Based Applications
+
+Components provide a way to write small parts with a consistent API that can easily be orchestrated as part of a larger screen, application or system.
+
+<!-- .element: class="small" -->
+
+An encapsulated set of behaviors or process and logic, with a well-known interface or API to access that component’s functionality.
+
+<!-- .element: class="small" -->
+
+![](images/webcomponents.jpg)
+
+<!-- .element: class="w-60" -->
+
+https://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/
+
+<!-- .element: class="credits" -->
+
+
+
+### Advantages of Components
+
+A component is a small, potentially re-usable set of logic, behaviors and interface elements
+
+* Reusable
+* Data flow boundaries in/out
+* Isolated scope
+* Simple or with state easier to predict
+* Testable
+
+<!-- .element: class="float-left w-50" -->
+
+![](images/component_example.png)
+
+<!-- .element: class="w-40 float-right" -->
+
+http://busypeoples.github.io/post/thinking-in-components-angular-js/
+
+<!-- .element: class="clear credits" -->
+
+
+
+### Components in vue.js
+
+```javascript
 
 COMPONENTS props + events
 props: ['myprop']
 v-bind:myprop
 v-bind:key=
-
-![](images/props-events.png)
 
 prop validation
 
@@ -450,11 +669,30 @@ click.native - listen for a native event on the root element of component.
 
  By default, v-model on a component uses value as the prop and input as the event
 
-components.png
+
+```
+
+![](images/props-events.png)
+![](images/components.png)
+
+Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
+
+https://
+
+<!-- .element: class="credits" -->
 
 
-SLOTS
 
+### GLOBAL vs local registrations
+
+Vue.filter
+
+
+
+
+### Content Distribution with Slots
+
+```html
 <div class="container">
   <header>
     <slot name="header"></slot>
@@ -466,17 +704,71 @@ SLOTS
     <slot name="footer"></slot>
   </footer>
 </div>
+```
 
+```html
 <app-layout>
   <h1 slot="header">Here might be a page title</h1>
   <p>A paragraph for the main content.</p>
   <p>And another one.</p>
   <p slot="footer">Here's some contact info</p>
 </app-layout>
+```
 
-LIFECYCLE HOOKS
+
+
+
+### Multiples Views and Router
+
+A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes and components.
+
+```javascript
+const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: '/user/:id', name: 'user', component: User }
+  ]
+})
+```
+
+```html
+<router-view></router-view>
+
+<div>{{ $route.params.id }}</div>
+
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+
+```
+
+```javascript
+this.$router.push({ name: 'user', params: { userId: 123 }})
+```
+
+
+
+
+### Events
+
+this.$root.$emit('i-got-clicked', this.clickCount);
+const clickHandler = clickCount => {
+  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
+}
+this.$root.$on('i-got-clicked', clickHandler);
+
+// Stop listening.
+this.$root.$off('i-got-clicked', clickHandler);
+
+
+
+
+# Lifecycle Hooks
 
 https://vuejs.org/v2/guide/instance.html
+
+  beforeRouteUpdate (to, from, next) {
+    // react to route changes...
+    // don't forget to call next()
+  }
 
 created: function () {
 this.fetchData()
@@ -504,255 +796,57 @@ TRANSITIONS
   transition: transform 1s;
 }
 
-ROUTER
-
-const router = new VueRouter({
-  routes: [
-    // dynamic segments start with a colon
-    { path: '/user/:id', name: 'user', component: User }
-  ]
-})
-
-{{ $route.params.id }}
-
-<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
-
-router.push({ name: 'user', params: { userId: 123 }})
-
- <router-view></router-view>
-
-watch: {
-    '$route' (to, from) {
-      // react to route changes...
-    }
-  }
-
-  beforeRouteUpdate (to, from, next) {
-    // react to route changes...
-    // don't forget to call next()
-  }
 
 
-WATCH
-
-vm.$watch('a', function (newVal, oldVal) {
-  // this callback will be called when `vm.a` changes
-})
 
 ! no arrow functions!
 
-data.png
-
-EVENTBUS
-https://alligator.io/vuejs/global-event-bus/
-
-import Vue from 'vue';
-export const EventBus = new Vue();
-
-import { EventBus } from './event-bus.js';
-
-EventBus.$emit('i-got-clicked', this.clickCount);
-const clickHandler = clickCount => {
-  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
-}
-EventBus.$on('i-got-clicked', clickHandler);
-
-// Stop listening.
-EventBus.$off('i-got-clicked', clickHandler);
-
-MIXINS
-CUSTOM DIRECTIVE
-Vue.nextTick
-PLUGINS
+![](images/data.png)
 
 
-Vue.component('my-component', {
+### Vue.js more
 
-  // Props
-  props: [ 'myprop' ],
-
-  // Local state
-  data() {
-    return {
-      firstName: 'John',
-      lastName: 'Smith'
-    }
-  },
-
-  // Computed property
-  computed: {
-    fullName() {
-      return this.firstName + ' ' + this.lastName;
-    }
-  },
-
-  // Template
-  template: `
-    <div>
-      <p>Vue components typically have string templates.</p>
-      <p>Here's some local state: {{ firstName }}</p>
-      <p>Here's a computed value: {{ fullName }}</p>
-      <p>Here's a prop passed down from the parent: {{ myprop }}</p>
-    </div>
-  `,
-
-  // Lifecycle hook
-  created() {
-    setTimeout(() => {
-      this.message = 'Goodbye World'
-    }, 2000);
-  }
-});
+- Transitioning State
+- Mixins
+- Custom Directives
+- Vue.nextTick
+- Plugins
+- Server-Side Rendering
+- Webpack Code Splitting
+- Route lazy loading
+- State Management: VueX
 
 
-
-
-new Vue({
-  el: '#app',
-  data: function () {
-    return {
-      dataLoaded: false,
-      apiReply: {}
-    };
-  },
-  methods: {
-    loadData: function() {
-      fetch('/api').then(response => {
-        return response.json();
-      }).then(reply => {
-        this.apiReply = reply;
-        this.dataLoaded = true;
-      });
-    }
-  },
-  created: function () {
-    this.loadData();
-  }
-});
 
 
 ### Resources
 
+- https://vuejs.org/v2/guide/
+- https://vuejs.org/v2/api/
+- https://www.grafikart.fr/formations/vuejs
+- https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
 
+## Setup environement:
 
-
-![](images/angular_feelings.png)
-
-
-
-
-## Exercice setup:
-
-```sh
-npm install -g vue-cli
+- init a new vue webpack project
+- install dependencies
+- Adapt ESLint to our coding style
+- Inside `build/webpack.dev.conf` Fix debugging by changing
+```js
+devtool: 'source-map'
 ```
 
-
-
-Explore folder
-
-Launch server
-```sh
-npm run dev
+- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- install vscode **vetur** extension
+- change vscode settings eslint.validate
 ```
-
-Let's use Chrome DevTools as IDE
-
-* add folder to workspace
-* map to file system resource
-* Explore files
-* What happens if identation is wrong in a js file? (lint)
-
-
-
-
-| Vue.js Concepts     | Description                                                              |
-|----------------------|--------------------------------------------------------------------------|
-| ViewModel            | the data shown to the user in the view and with which the user interacts |
-| View                 | what the user sees (the DOM)                                             |
-| Template             | HTML with additional markup                                              |
-| Directives           | extend HTML with custom attributes and elements                          |
-| Components           | a special kind of directive used for component-based application structure |
-| Expressions          | access variables and functions from the scope                            |
-| Filter               | formats the value of an expression for display to the user               |
-
-https://
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Vue.js Expressions
-
-Vue.js expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
-
-For example, these are valid expressions in Angular:
-
- - `1 + 2`
- - `a + b`
- - `user.name`
- - `items[index]`
-
-https://
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Some Directives
-
-| Directive         | Description |
-|-------------------|-------------|
-| v-model          | binds an input, select, textarea (or custom form control) to a property on the scope. |
-| v-bind           | replace the text content of the specified HTML element with the value of a given expression, and to update the text content on changes. |
-| v-if             | shows the given HTML element based on the expression provided to the directive's attribute. |
-| v-for         | instantiates a template once per item from a collection. Each template instance gets its own scope, where the given loop variable is set to the current collection item, and *$index* is set to the item index or key. |
-| v-on:click          | allows to specify custom behavior when an element is clicked. |
-
-
-https://
-
-<!-- .element: class="credits" -->
-
-
-
-### VM
-
-
-
-
-### Filters TODO
-
-A filter formats the value of an expression for display to the user.
-
+"eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ]
 ```
-{{ expression | filter1:argument1:argument2:... | filter2 | ... }}
-```
-
-| Filter | Description |
-|--------|-------------|
-| uppercase | Converts string to uppercase. |
-| limitTo:*limit* | Creates a new array or string containing only a specified number of elements. |
-| orderBy:*expression* | Orders a specified array by the expression predicate (string, array or function). |
-| filter:*expression* | Selects a subset of items from array and returns it as a new array (string, object or function(value, index, array)). |
-
-https://docs.angularjs.org/api/ng/filter
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Exercice: Step 1
-
-![](images/movies_01.png)
-
-- Create a form to add a new movie to a list of movies
-- Display the list of movies
-- Be able to delete a movie from the list
 
 
 
@@ -825,86 +919,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
-### Component Based Applications
-
-Components provide a way to write small parts with a consistent API that can easily be orchestrated as part of a larger screen, application or system.
-
-<!-- .element: class="small" -->
-
-An encapsulated set of behaviors or process and logic, with a well-known interface or API to access that component’s functionality.
-
-<!-- .element: class="small" -->
-
-![](images/webcomponents.jpg)
-
-<!-- .element: class="w-60" -->
-
-https://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/
-
-<!-- .element: class="credits" -->
-
-
-
-### Advantages of Components
-
-A component is a small, potentially re-usable set of logic, behaviors and interface elements
-
-* Reusable
-* Data flow boundaries in/out
-* Isolated scope
-* Simple or with state easier to predict
-* Testable
-
-<!-- .element: class="float-left w-50" -->
-
-![](images/component_example.png)
-
-<!-- .element: class="w-40 float-right" -->
-
-http://busypeoples.github.io/post/thinking-in-components-angular-js/
-
-<!-- .element: class="clear credits" -->
-
-
-
-### Components in vue.js
-
-```javascript
-
-```
-
-Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
-
-https://
-
-<!-- .element: class="credits" -->
-
-
-USING code plugin
-
-
-
-
-
-### Multiples Views and Router TODO
-
-A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes with http fragment.
-
-
-<!-- .element: class="credits" -->
-
-
-
-
 
 ### Exercice: localStorage and routes
 
-Transform your app to use a service as storage for the movies and helps persiste the into local storage.
-A movie is now more than a title it is an object which has two properties a title and a comment.
 
-- create a moviedb service
-- create a controller and a view to display a movie
-- modify the frontpage
 
 
 
@@ -1340,6 +1358,37 @@ fetch('./api/some.json')
   });
 ```
 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+
+
+### Load Data in Vue.js
+
+```javascript
+new Vue({
+  el: '#app',
+  data: function () {
+    return {
+      dataLoaded: false,
+      apiReply: {}
+    };
+  },
+  methods: {
+    loadData: function() {
+      fetch('/api').then(response => {
+        return response.json();
+      }).then(reply => {
+        this.apiReply = reply;
+        this.dataLoaded = true;
+      });
+    }
+  },
+  created: function () {
+    this.loadData();
+  }
+});
+```
+
 
 
 ### Async / Await
@@ -1405,6 +1454,18 @@ https://www.getpostman.com/docs/introduction
 
 
 
+### google search
+
+
+https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+
+```javascript
+`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
+```
+
+
+
+
 ## Exercice real data
 
 For now we leave the first page as is and extend the app to display movies from an external web service
@@ -1426,25 +1487,76 @@ var baseUrl = 'http://image.tmdb.org/t/p/';
 
 
 
-### Install Firebase
+### Using Material instead of bootstrap
 
-![](images/movies_06_firebase_login.png)
+http://vuematerial.io/#/
 
 ```sh
-bower install angularfire --save
+$ npm install vue-material --save
 ```
-Add firebase to dependencies:
+
+```html
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+```
+
 ```javascript
-var app = angular.module("sampleApp", ["firebase"]);
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.css';
 ```
+
+```
+ref=""
+this.$refs
+```
+
+
+
+
+### Material Design Ressources
+
+- https://www.materialpalette.com/green/blue
+- https://materialdesignicons.com/
+
+
+
+
+### Web App Manifest
+
+Web App Manifests are one of the key pieces to making your web app look and feel like a native app
+
+https://tomitm.github.io/appmanifest/
+
+- Add to Homescreen
+- Fullscreen
+- Notifications
+
+
+
+
+### Install Firebase
+
+```sh
+$ npm install -g firebase-tools
+```
+
+login, init, serve, deploy
+
+https://github.com/vuejs/vuefire
+
+https://github.com/firebase/FirebaseUI-Web
+
+```sh
+$ npm install firebase vuefire --save
+$ npm install firebaseui --save
+```
+
 
 
 
 ### Documentation
 
 https://firebase.google.com/
-
-https://github.com/firebase/angularfire
 
 https://firebase.google.com/docs/auth/web/github-auth
 
@@ -1483,6 +1595,40 @@ copy from google console (Authentication>Web Setup)
 
 https://firebase.google.com/docs/database/security/quickstart
 
+
+
+### Serverless: firebase cloud functions
+
+
+
+
+
+### keeping secrets
+
+```sh
+$ firebase functions:config:set service.name="value"
+firebase functions:config:get
+```
+
+```javascript
+functions.config().someservice.id
+
+exports.groupA = {
+  function1: functions.https.onRequest(...);
+  function2: functions.database.ref('\path').onWrite(...);
+}
+exports.groupB = require('./groupB');
+```
+
+
+
+### deploy
+
+```sh
+ $ firebase deploy --only functions
+ $ firebase deploy --only hosting
+ $ firebase deploy --only functions:function1,function2
+```
 
 
 
