@@ -50,12 +50,12 @@ Over a dozen reusable components built to provide iconography, dropdowns, input 
 
 **Javascript**
 
-Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.
+Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one. Or native javascript if using Boostrap.native.
 <!-- .element: class="smaller" -->
 
 Note:
 
-Alternatives: Bootstrap, Foundation, Angular Material,
+Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 
 
 
@@ -588,7 +588,8 @@ Add/Remove dependencies
 
 ```sh
 $ npm uninstall vue --save
-$ npm install jquery bootstrap@3 --save
+$ npm install bootstrap-css-only@3 --save
+$ npm install bootstrap.native --save
 ```
 
 check package.json (before and after)
@@ -600,7 +601,7 @@ check package.json (before and after)
 ### Step 4b: Configuring code linting
 
 Adapt ESLint to our coding style
-
+// TODO: check with airbnb
 `.eslintrc.js`
 ```js
 {
@@ -628,39 +629,23 @@ indent_size = 4
 
 
 
-### Step 4c: Fix webpack config to support jquery
+### Step 4c: Fix webpack config for debugging
 
-Inside `build/webpack.dev.conf` and `build/webpack.prod.conf` add this plugin lines.
+Inside `build/webpack.dev.conf`. Fix debugging by changing:
 
-```js
-{
-  ...,
-  plugins: [
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-      $: 'jquery',
-      jquery: 'jquery'
-    }),
-    ...,
-  ]
-}
-```
-
-Fix debugging by changing:
 ```js
 devtool: 'source-map',
 ```
 
 
 
-### Step 5: Setup boostrap and jQuery
+### Step 5: Setup boostrap
 
 Inside `src/main.js`
 
 ```javascript
-import $ from 'jquery';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap.native';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 
 $(document).ready(() => {
     console.log('it works!');

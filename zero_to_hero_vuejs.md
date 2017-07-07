@@ -827,6 +827,8 @@ TRANSITIONS
 - https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
 
+
+
 ## Setup environement:
 
 - init a new vue webpack project
@@ -839,6 +841,9 @@ devtool: 'source-map'
 
 - install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - install vscode **vetur** extension
+
+
+
 - change vscode settings eslint.validate
 ```
 "eslint.validate": [
