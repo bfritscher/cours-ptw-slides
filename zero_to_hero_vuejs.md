@@ -1366,6 +1366,19 @@ fetch('./api/some.json')
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 
+npm install --save axios
+
+axios.get('/user?ID=12345')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+
+
 
 ### Load Data in Vue.js
 
