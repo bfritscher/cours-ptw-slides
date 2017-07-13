@@ -92,7 +92,19 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
   </body>
 </html>
 ```
-<!-- .element: class="jsbin-embed" data-href="//jsbin.com/kexeda/1/edit?html,output" data-height="600px" -->
+```css
+.row > div {
+  background-color: rgb(0, 170, 255);
+  height: 100px;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 90px;
+  font-size: 20px;
+  font-weight: bold;
+}
+```
+<!-- .element: class="hide" -->
+
 [http://getbootstrap.com/css/#grid](http://getbootstrap.com/css/#grid)
 
 <!-- .element: class="credits" -->
@@ -175,7 +187,6 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
   </body>
 </html>
 ```
-<!-- .element: class="jsbin-embed" data-href="//jsbin.com/lelopa/1/edit?html,output" data-height="600px" -->
 
 
 
@@ -1018,68 +1029,15 @@ The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 
 
 
-
-### ![jQuery](images/jQuery-Logo.png) <!-- .element: class="w-40" -->
-
-<!-- .element: class="pdf-w-30" -->
-
-jQuery is a **fast, small**, and feature-rich JavaScript
-library. It makes things like HTML **document traversal**
-and **manipulation, event handling, animation**,
-and **Ajax** much simpler with an easy-touse
-API that works **across a multitude of browsers**.
-
-
-
-
-### jQuery Selecting Elements
-
-**Selecting Elements by ID**
-
-```javascript
-$('#myId'); // IDs must be unique per page.
-```
-
-**Selecting Elements by Class Name**
-
-```javascript
-$('.myClass');
-```
-
-**Selecting Elements by Attributes**
-
-```javascript
-$('input[name="first_name"]'); // this can be very slow in older browsers
-```
-
-**Selecting Elements by Compound CSS Selector**
-
-```javascript
-$('#myId ul.people li');
-```
-https://github.com/oneuijs/You-Dont-Need-jQuery#dom-manipulation
-
-http://api.jquery.com/
-
-<!-- .element: class="credits" -->
-
-
-
-```html
-
-```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
-
-
-
-
 # Lab 1c: better interactions
 
 We want to improve our page with some interactions and behaviors.
 
 
 
-### Step 1: Use npm to install a jquery plugin
+### Step 1: Use npm to install a plugin
+
+// TODO change
 
 ```sh
 $ npm install jquery-smooth-scroll --save

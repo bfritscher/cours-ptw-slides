@@ -361,9 +361,42 @@ http://api.jquery.com/
 
 
 ```html
-
+<!DOCTYPE html>
+<html>
+<body>
+  <ul class="list">
+    <li>a</li>
+    <li>b</li>
+  </ul>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</body>
+</html>
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/falune/1/edit?html,css,js,output" data-height="600px" -->
+
+```css
+.big{
+  font-size: 200%;
+}
+```
+
+```javascript
+$(document).ready(function(){
+  'use strict';
+    $('body').append('<div>Hello</div>');
+
+    $('.list li').click(function(event){
+      $(this).toggleClass('big');
+    });
+    /*
+    //Better with Event delegation
+    $('.list').on('click', 'li', function(event){
+      $(this).toggleClass('big');
+    });
+    */
+    //Not clicking without Event delegation
+    $('.list').append('<li>c</li>');
+});
+```
 
 
 
@@ -563,7 +596,6 @@ console.log('4. anotherGlobalVar: ' + anotherGlobalVar);
 console.log('5. iAmNotALocalVariable: ' + iAmNotALocalVariable);
 console.log('6. localVar: ' + localVar);
 ```
-<!-- .element: class="jsbin-embed" data-href="//jsbin.com/toluqe/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -605,34 +637,6 @@ for (const key in person) {
 }
 ```
 <!-- .element: class="w-50 float-left" -->
-
-
-
-### Exploring objects
-
-```javascript
-// create an object
-const person = {
-    firstName: 'John',
-    lastName: 'Smith'
-};
-
-// dynamically add properties
-person.gender = 'male';
-person['zip'] = 2000;
-
-// remove a property
-delete person.zip;
-
-// check existence of a property
-person.hasOwnProperty('gender');
-
-// enumerate properties
-for (const key in person) {
-    console.log(key + ' : ' + person[key]);
-}
-```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/yecuxe/2/edit?js,console" data-height="500px" -->
 
 
 
@@ -678,28 +682,6 @@ child = new Person('John', 'Smith');
 ### Every object inherits from a prototype object
 
 ```javascript
-const person = {
-    firstName: 'John',
-    lastName: 'Smith'
-};
-// person's prototype is Object.prototype
-
-const father = {};
-const child = Object.create(father);
-// child's prototype is father
-
-
-function Person(fn, ln) {
-    this.firstName = fn;
-    this.lastName = ln;
-}
-const john = new Person('John', 'Doe');
-// john's prototype is Person.prototype
-```
-
-
-
-```javascript
 var person = {
     firstName: 'John',
     lastName: 'Smith'
@@ -720,7 +702,6 @@ const john = new Person('John', 'Doe');
 // john's prototype is Person.prototype
 console.log(Object.getPrototypeOf(john) === Person.prototype);
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/mevuja/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -786,31 +767,6 @@ p1.greet();
 
 
 
-### Exploring function constructor
-
-```javascript
-function Person(fn, ln) {
-    var privateVar;
-    this.firstName = fn;
-    this.lastName = ln;
-    this.badGreet = function () {
-      console.log('Hi ' + this.firstName);
-    };
-}
-
-Person.prototype.greet = function () {
-    console.log('Hey ' + this.firstName);
-};
-
-const p1 = new Person('John', 'Smith');
-
-p1.badGreet();
-p1.greet();
-```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/zezeya/1/edit?js,console" data-height="500px" -->
-
-
-
 
 ### Classes since ECMAScript 2015
 
@@ -858,7 +814,6 @@ for (const i = 0; i < fruits.length; i++) {
     console.log('fruits[' + i + '] = ' + fruits[i]);
 }
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/qakame/1/edit?js,console" data-height="500px" -->
 
 
 
@@ -889,7 +844,7 @@ aFruits.forEach(fruit => {
     console.log(fruit);
 });
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/zumaci/1/edit?js,console" data-height="500px" -->
+
 
 
 
@@ -1007,7 +962,6 @@ const h = function(aFunctionObj){
 h(f);
 h(g);
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/qonahi/1/edit?js,console" data-height="500px" -->
 
 
 

@@ -271,13 +271,6 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
 
-```html
-
-```
-<!-- .element: class="nodpf jsbin-embed" data-href="//jsbin.com/bokize/2/edit?html,output" data-height="500px" -->
-
-
-
 
 ### HTML: Elements
 
@@ -368,12 +361,21 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 ![](images/table.png)
 <!-- .element: class="top right pageborder" -->
 
+```css
+body{
+  font-family: sans-serif;
+  font-size: 20px;
+}
+table{
+  border: 1px solid #000;
+}
 
-
-```html
-
+td{
+  border: 1px solid #999;
+  text-align: center;
+}
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/cadoya/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="nopdf hide"-->
 
 
 
@@ -410,12 +412,13 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 ![](images/form.png)
 <!-- .element: class="top right pageborder" -->
 
-
-
-```html
-
+```css
+body{
+  font-family: sans-serif;
+  font-size: 20px;
+}
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/jivune/1/edit?html,output" data-height="600px" -->
+<!-- .element: class="nopdf hide" -->
 
 
 
@@ -573,7 +576,17 @@ element, class, pseudo-class, id
 
 
 
-```CSS
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="b1" class="box">BOX1</div>
+</body>
+</html>
+```
+<!-- .element: class="nopdf" -->
+
+```css
 #b1.box{
   color: yellow;
 }
@@ -594,7 +607,7 @@ div {
   color: red;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/gemuko/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="nopdf" -->
 
 
 
@@ -742,6 +755,10 @@ Use chrome dev-tools editor to adjust box-shadow.
   <div id="s2" class="square"></div>
   <div id="s3" class="square"></div>
   <footer>Bottom</footer>
+```
+<!-- .element: class="w-50 float-left" -->
+
+```css
 header{
   position: relative;
   top: 100px;
@@ -789,7 +806,7 @@ footer{
   width: 100%;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/danase/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="w-50 float-left" -->
 
 
 
@@ -799,6 +816,10 @@ footer{
   <div class="box">c</div>
   <div class="box">d</div>
   <h1>title</h1>
+```
+<!-- .element: class="nopdf" -->
+
+```css
 .box{
   border: 3px solid #FF851B;
   width: 30%;
@@ -810,7 +831,7 @@ h1{
   clear: left;
 }
 ```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/qositu/1/edit?html,css,output" data-height="600px" -->
+<!-- .element: class="nopdf" -->
 
 
 
@@ -939,13 +960,6 @@ body{ font-family: sans-serif; font-size: 20px; }
 
 
 
-```css
-
-```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/sedene/1/edit?css,output" data-height="600px" -->
-
-
-
 
 ### CSS Variables (Custom Properties)
 
@@ -969,7 +983,12 @@ https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/
 
 
 
-### Example
+```html
+<h1>Title</h1>
+<p>Some Text <span class="primary">primary text color</span></p>
+<div class="box">box</div>
+<div class="box">box</div>
+```
 
 ```css
 :root { /* or any other css selector */
@@ -994,13 +1013,6 @@ h1, h2 {
   padding: calc(var(--spacer)*1px) 0; /* WORKS */
 }
 ```
-
-
-
-```css
-
-```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/leweyuc/1/edit?html,css,output" data-height="600px" -->
 
 
 

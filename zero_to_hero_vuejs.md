@@ -302,12 +302,17 @@ Javascript
 <div id="app">
   {{ message }}
 </div>
+
+
+<script
+src="https://unpkg.com/vue">
+</script>
 ```
 <!-- .element: class="w-40 float-left" -->
 
 
 ```javascript
-const vm = new Vue({
+new Vue({
   el: '#app',
   data() {
     return {
@@ -320,10 +325,8 @@ const vm = new Vue({
 
 
 
-```
-```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/towevux/3/edit?html,js,output" data-height="500px" -->
 
+//TODO: move
 ![](images/vue-format.png)
 https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
@@ -372,9 +375,28 @@ Filters are JavaScript functions, therefore they can take arguments:
 
 
 
+```html
+<div id="app">
+  {{ message | reverse }}
+</div>
+
+<script src="https://unpkg.com/vue"></script>
 ```
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      message: 'Hello Vue.js!'
+    };
+  },
+  filters: {
+    reverse: function(input) {
+      return input.split('').reverse().join('');
+    }
+  }
+});
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/wiwujav/3/edit?html,js,output" data-height="500px" -->
 
 
 
@@ -412,9 +434,31 @@ Toggle’s the element’s display CSS property based on the truthy-ness of the 
 
 
 
+```html
+<div id="app">
+  <div v-if="type === 'A'"> A </div>
+  <div v-show="type === 'B'"> B </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
 ```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      type: 'A'
+    };
+  },
+  filters: {
+    reverse: function(input) {
+      return input.split('').reverse().join('');
+    }
+  }
+});
 ```
-<!-- .element: class="jsbin-embed nodpf" data-href="//jsbin.com/wibare/3/edit?html,js,output" data-height="500px" -->
+
 
 
 
@@ -436,6 +480,10 @@ Toggle’s the element’s display CSS property based on the truthy-ness of the 
   Not A/B/C
 </div>
 ```
+
+
+
+// TODO: v-cloak
 
 
 
