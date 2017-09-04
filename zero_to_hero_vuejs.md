@@ -173,6 +173,12 @@ While focusing on user needs it is also important for a UX Designer to be aware 
 
 
 
+### UX is not UI
+
+![](images/01-The-Surprising-Relationship-Between-Gamification-and-Modern-Persuasion-preview-opt.png)
+
+
+
 ![](images/ux_is_not_ui.png)
 <!-- .element class="w-60" -->
 

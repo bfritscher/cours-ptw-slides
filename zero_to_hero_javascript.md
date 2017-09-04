@@ -76,6 +76,10 @@ Relationship to Java:
 
 
 
+![](images/segue-blog-java-vs-javascript.png)
+
+
+
 ### What is your current perception of JavaScript?
 
 Current knowledge:

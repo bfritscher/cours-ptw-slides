@@ -23,6 +23,9 @@
 
 
 
+![](images/fry_melting.gif)
+
+
 
 ### Livrables
 
@@ -37,7 +40,21 @@
   * Principales leçons apprises
 * L'application web devrait être compréhensible sans guide d'utilisateur (infobulle et indication sont intégrées)
 
+Git
+Git commit (petit, bien commenté)
+Git Deploy to gh-pages
+Production version in gh-pages
+Design visual and interaction
+Multiple Components
+Router
+localStorage or other persistence (firebase)
+no debug output (console.log,...) in production
+doc readme.md Problème / solution, retour d'expérience
+doc readme.md schéma de l'architecture (Structure des imbrications des composants et accès au données)
 
+use axios to get external data
+good use of plugins to solve problems
+Autre...
 
 
 ### Evaluation
