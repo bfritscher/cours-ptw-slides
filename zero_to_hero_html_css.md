@@ -631,6 +631,13 @@ center a block element: *margin: 0 auto*;
 
 ### CSS: border
 
+<div style="position:relative" class="float-right">
+<div style="width:100px;height:50px;border:4px solid red;position: absolute; top:100px;right:0"></div>
+<div style="width:100px;height:50px;border:4px solid red;border-top: 8px dashed green;position: absolute; top:180px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;position: absolute; top:260px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:340px;right:0"></div>
+<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:420px;right:0;border-radius: 10px"></div>
+</div>
 
 ```css
 border-width: 4px;
@@ -648,12 +655,6 @@ border-left: 10px solid #FFFF00;
 
 border-radius: 10px;
 ```
-
-<div style="width:100px;height:50px;border:4px solid red;position: absolute; top:100px;right:0"></div>
-<div style="width:100px;height:50px;border:4px solid red;border-top: 8px dashed green;position: absolute; top:180px;right:0"></div>
-<div style="width:100px;height:50px;border:6px solid #0000FF;position: absolute; top:260px;right:0"></div>
-<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:340px;right:0"></div>
-<div style="width:100px;height:50px;border:6px solid #0000FF;border-left: 10px double #00FFFF;position: absolute; top:420px;right:0;border-radius: 10px"></div>
 
 - https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius?v=example
 - http://css3pie.com/demos/border-radius/
