@@ -387,7 +387,7 @@ td{
   <!-- two ways to associate labels -->
   <p><label for="n">Name: </label>
   <input id="n" name="name"
-         type="text" placeholder="name"/></p>
+         type="text" placeholder="Enter your name"/></p>
 
   <p><label>Password: <input type="password" /></label></p>
 
