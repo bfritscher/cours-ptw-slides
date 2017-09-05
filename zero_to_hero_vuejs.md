@@ -293,7 +293,6 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
-
 ### Vue constructor and text interpolation
 
 HTML
@@ -331,14 +330,6 @@ new Vue({
 
 
 
-
-//TODO: move
-![](images/vue-format.png)
-https://speakerdeck.com/bhawkes/introduction-to-vue-js
-
-
-
-
 ### Text interpolation
 
 Vue.js expressions are JavaScript-like code snippets that are usually placed in bindings such as `{{ expression }}`.
@@ -352,6 +343,15 @@ Vue.js expressions are JavaScript-like code snippets that are usually placed in 
 > Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.
 
 https://vuejs.org/v2/guide/syntax.html#Interpolations
+
+<!-- .element: class="credits" -->
+
+
+
+
+![](images/vue-format.png)
+
+https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
 <!-- .element: class="credits" -->
 
@@ -425,6 +425,13 @@ https://vuejs.org/v2/api/#Directives
 
 
 
+v-model
+
+.number - cast input string to numbers
+.trim - trim input
+
+
+
 
 ### Directives show / hide elements
 
@@ -457,11 +464,6 @@ new Vue({
       type: 'A'
     };
   },
-  filters: {
-    reverse: function(input) {
-      return input.split('').reverse().join('');
-    }
-  }
 });
 ```
 
@@ -489,10 +491,6 @@ new Vue({
 
 
 
-// TODO: v-cloak
-
-
-
 
 ### Directives repeat elements
 
@@ -500,12 +498,12 @@ new Vue({
 <div v-for="item in items">
   {{ item.text }}
 </div>
-<div v-for="(item, index) in items"></div>
+<div v-for="(val, index) in array"></div>
 <div v-for="(val, key) in object"></div>
 <div v-for="(val, key, index) in object"></div>
 ```
 
-`v-bind:key="item.id"` needed on custom elements or move ordering purpose
+`v-bind:key="item.id"` needed on custom elements or for move ordering purpose
 
 <!-- .element: class="small" -->
 
@@ -559,11 +557,6 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
 
 
 
-v-model
-
-.number - cast input string to numbers
-.trim - trim input
-
 
 
 
@@ -572,6 +565,10 @@ function (event)
 
 can be called with ($event) or without
 
+Runs whenever an update occurs
+Not cached
+Typically invoked from v-on/@, but flexible
+Getter/setter
 
 
 v-on:click @click
@@ -597,8 +594,12 @@ v-on:click @click
 
 # Computed properties
 
-show with now()
+show with now() vs method
 
+
+- Runs only when a dependency has changed
+- Cached
+- Should be used as a property, in place of data
 
 Computed properties are by default getter-only, but you can also provide a setter when you need it:
 
@@ -721,6 +722,26 @@ prop validation
 
 click.native - listen for a native event on the root element of component.
 
+
+
+camelCasing will be converted
+In HTML it will be kebab-case:
+
+props: ['booleanValue']
+<checkbox :boolean-value="booleanValue"></checkbox>
+
+Vue.component('child', {
+  props: {
+    text: {
+      type: String,
+      required: true,
+      default: 'hello mr. magoo'
+    }
+  },
+  template: `<div>{{ text }}<div>`
+});
+
+
  By default, v-model on a component uses value as the prop and input as the event
 
 
@@ -732,6 +753,21 @@ click.native - listen for a native event on the root element of component.
 Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
 
 https://
+
+
+Note: Objects and arrays need their defaults to be returned from a function:
+text: {
+  type: Object,
+  default: function () {
+    return { message: 'hello mr. magoo' }
+  }
+}
+
+Each component instance has its own isolated scope
+{
+}
+data must be a function.
+https://codepen.io/sdras/pen/63d98696878200f6c0e987cd58341c39
 
 <!-- .element: class="credits" -->
 
@@ -802,6 +838,12 @@ this.$router.push({ name: 'user', params: { userId: 123 }})
 
 
 ### Events
+
+methods: {
+  fireEvent() {
+    this.$emit('myEvent', eventValueOne, eventValueTwo);
+  }
+}
 
 this.$root.$emit('i-got-clicked', this.clickCount);
 const clickHandler = clickCount => {
@@ -1399,6 +1441,25 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 <!-- .element: class="credits" -->
 
 
+## API and remote data
+
+![](images/postman-logo.png)
+
+[POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop) a tool to test apis
+
+https://www.getpostman.com/docs/introduction
+
+
+
+
+### google search
+
+https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+
+```javascript
+`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
+```
+
 
 
 ### Getting JSON content
@@ -1422,6 +1483,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 npm install --save axios
 
+import
+
 axios.get('/user?ID=12345')
   .then(function (response) {
     console.log(response);
@@ -1432,7 +1495,13 @@ axios.get('/user?ID=12345')
 
 
 
-
+axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${this.$route.params.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
+  .then((response) => {
+      console.log(response);
+  })
+  .catch(error => {
+      console.log(error);
+  });
 
 ### Load Data in Vue.js
 
@@ -1515,26 +1584,6 @@ https://developers.google.com/web/fundamentals/getting-started/primers/async-fun
 
 
 
-## API and remote data
-
-![](images/postman-logo.png)
-
-[POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop) a tool to test apis
-
-https://www.getpostman.com/docs/introduction
-
-
-
-
-### google search
-
-
-https://developers.google.com/custom-search/json-api/v1/reference/cse/list
-
-```javascript
-`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
-```
-
 
 
 
@@ -1561,6 +1610,7 @@ var baseUrl = 'http://image.tmdb.org/t/p/';
 
 ### Using Material instead of bootstrap
 
+// TODO change
 http://vuematerial.io/#/
 
 ```sh
@@ -1603,7 +1653,7 @@ https://tomitm.github.io/appmanifest/
 - Fullscreen
 - Notifications
 
-
+meta viewport, ...
 
 
 ### Install Firebase
@@ -1647,6 +1697,12 @@ https://firebase.google.com/docs/auth/web/github-auth
 ```
 copy from google console (Authentication>Web Setup)
 
+https://gist.github.com/bfritscher/9e0752f27d867d83a2d2bbd733b1adbc
+# firebase messages
+
+
+# firebase game
+
 
 
 ### Setup user security
@@ -1669,9 +1725,19 @@ https://firebase.google.com/docs/database/security/quickstart
 
 
 
+
+
+
 ### Serverless: firebase cloud functions
 
 
+https://github.com/firebase/functions-samples/tree/master/exif-images
+
+https://firebase.google.com/docs/reference/functions/functions.storage.ObjectMetadata
+
+https://cloud.google.com/vision/docs/reference/libraries#client-libraries-install-nodejs
+
+https://firebase.google.com/docs/functions/config-env
 
 
 
@@ -1701,7 +1767,6 @@ exports.groupB = require('./groupB');
  $ firebase deploy --only hosting
  $ firebase deploy --only functions:function1,function2
 ```
-
 
 
 
