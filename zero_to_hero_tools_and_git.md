@@ -650,6 +650,18 @@ devtool: 'source-map',
 
 
 
+### Step 4d: Use LF also on windows
+
+Create `.gitattributes` with content:
+
+```txt
+* text eol=lf
+```
+
+
+
+
+
 ### Step 5: Setup boostrap
 
 Inside `src/main.js`
