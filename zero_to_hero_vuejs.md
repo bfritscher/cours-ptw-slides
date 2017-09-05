@@ -834,6 +834,11 @@ const router = new VueRouter({
 this.$router.push({ name: 'user', params: { userId: 123 }})
 ```
 
+![](images/architecture_vue_general.png)
+
+![](images/architecture_vue.png)
+
+
 
 
 
@@ -1610,23 +1615,27 @@ var baseUrl = 'http://image.tmdb.org/t/p/';
 
 ### Using Material instead of bootstrap
 
-// TODO change
-http://vuematerial.io/#/
+https://vuetifyjs.com/
 
 ```sh
-$ npm install vue-material --save
+$ npm install vuetify --save
 ```
 
 ```html
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 ```
 
 ```javascript
-import VueMaterial from 'vue-material';
-import 'vue-material/dist/vue-material.css';
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import('./node_modules/vuetify/dist/vuetify.min.css');
+
+Vue.use(Vuetify)
 ```
 
+
+
+# Access DOM through Refs
 ```
 ref=""
 this.$refs
