@@ -209,7 +209,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 * ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> Vue.js
 * ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: ShoppingList
-* ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Project <span class="red">33%</span>
+* ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Project <span class="red">66%</span>
 
 <!-- .element: class="w-40" -->
 
