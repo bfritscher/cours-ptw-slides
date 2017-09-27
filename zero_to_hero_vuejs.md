@@ -411,12 +411,12 @@ new Vue({
 
 | Directive         | Description |
 |-------------------|-------------|
-| v-model          | Create a two-way binding on a form input element or a component. |
-| v-bind           | Dynamically bind one or more attributes, or a component prop to an expression. |
-| v-if, v-else-if, v-else             | Conditionally render the element based on the truthy-ness of the expression value. |
+| v-model           | Create a two-way binding on a form input element or a component. |
+| v-bind            | Dynamically bind one or more attributes, or a component prop to an expression. |
+| v-if, v-else-if, v-else   | Conditionally render the element based on the truthy-ness of the expression value. |
 | v-show | Toggle’s the element’s display CSS property based on the truthy-ness of the expression value. |
-| v-for         | Render the element or template block multiple times based on the source data. |
-| v-on:click          | Attaches an event listener to the element. |
+| v-for             | Render the element or template block multiple times based on the source data. |
+| v-on:click        | Attaches an event listener to the element. |
 
 
 https://vuejs.org/v2/api/#Directives
@@ -456,7 +456,7 @@ new Vue({
 
 
 
-### Directives show / hide elements
+### Directive show / hide elements
 
 Conditionally render the element based on the truthy-ness of the expression value.
 ```html
@@ -493,7 +493,7 @@ new Vue({
 
 
 
-### Directives conditional
+### Directive conditional
 ```html
 <div v-if="type === 'A'">
   A
@@ -515,7 +515,7 @@ new Vue({
 
 
 
-### Directives repeat elements
+### Directive repeat elements
 
 ```html
 <div v-for="item in items">
@@ -533,7 +533,7 @@ new Vue({
 
 
 
-### Directives dynamique attributes
+### Directive dynamique attributes
 
 Dynamically bind one or more attributes, or a component prop to an expression.
 
@@ -553,7 +553,7 @@ A short form exists
 
 
 
-### Directives bind multiples attributes
+### Directive bind multiples attributes
 
 ```html
 <div :attr1="" :attr2=""></div>
@@ -566,6 +566,10 @@ A short form exists
 ### Directives bind dynamic css classes
 
 ```html
+<div v-bind:class="{ active: isActive }"></div>
+```
+
+```
 string   :class="'classString'"
 variable :class="classNameVariable"
 array    :class="[classVarA, 'classNameB']"
@@ -574,6 +578,7 @@ ternary  :class="bool ? 'active' : 'inactive'"
 method   :class="classNameReturningFunction()"
 ```
 
+
 https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
 
 <!-- .element: class="credits" -->
@@ -581,18 +586,40 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
 
 
 
-
-
-# Methods
-function (event)
-
-can be called with ($event) or without
+### Methods
 
 Runs whenever an update occurs
 Not cached
-Typically invoked from v-on/@, but flexible
 Getter/setter
+Typically invoked from v-on/@, but flexible
 
+```html
+<div id="app">
+  <p><label>Nom: <input v-model.trim="name"></label></p>
+  <p>Hello {{name}}</p>
+  <pre>{{name}}</pre>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      type: 'A'
+    };
+  },
+
+});
+```
+
+
+
+### Methods and Events
+function (event)
+can be called with ($event) or without
 
 v-on:click @click
 
@@ -611,11 +638,10 @@ v-on:click @click
 <!-- key modifier using keyAlias -->
 <input @keyup.enter="onEnter">
 
-<div v-bind:class="{ active: isActive }"></div>
 
 
 
-# Computed properties
+### Computed Properties
 
 show with now() vs method
 
@@ -648,7 +674,7 @@ computed: {
 
 
 
-### GOTCHAS new attributes/ arrays
+### GOTCHAS new attributes / arrays
 
 Tracked mutate
 ```javascript
@@ -796,6 +822,7 @@ https://codepen.io/sdras/pen/63d98696878200f6c0e987cd58341c39
 
 
 
+
 ### GLOBAL vs local registrations
 
 Vue.filter
@@ -865,7 +892,7 @@ this.$router.push({ name: 'user', params: { userId: 123 }})
 
 
 
-### Events
+### Custom Events
 
 methods: {
   fireEvent() {
@@ -885,7 +912,7 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 
 
-# Lifecycle Hooks
+### Lifecycle Hooks
 
 https://vuejs.org/v2/guide/instance.html
 
@@ -898,6 +925,13 @@ created: function () {
 this.fetchData()
 
 ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
+
+# Access DOM through Refs
+```
+ref=""
+this.$refs
+```
+
 
 TRANSITIONS
 
@@ -926,6 +960,8 @@ TRANSITIONS
 ! no arrow functions!
 
 ![](images/data.png)
+
+
 
 
 ### Vue.js more
@@ -1469,7 +1505,9 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 <!-- .element: class="credits" -->
 
 
-## API and remote data
+
+
+## API and Remote Data
 
 ![](images/postman-logo.png)
 
@@ -1480,13 +1518,14 @@ https://www.getpostman.com/docs/introduction
 
 
 
-### google search
+### Google Cusom Search API
 
 https://developers.google.com/custom-search/json-api/v1/reference/cse/list
 
 ```javascript
 `https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
 ```
+
 
 
 
@@ -1531,6 +1570,9 @@ axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a
       console.log(error);
   });
 
+
+
+
 ### Load Data in Vue.js
 
 ```javascript
@@ -1557,6 +1599,7 @@ new Vue({
   }
 });
 ```
+
 
 
 
@@ -1612,9 +1655,6 @@ https://developers.google.com/web/fundamentals/getting-started/primers/async-fun
 
 
 
-
-
-
 ## Exercice real data
 
 For now we leave the first page as is and extend the app to display movies from an external web service
@@ -1658,14 +1698,6 @@ Vue.use(Vuetify)
 
 
 
-# Access DOM through Refs
-```
-ref=""
-this.$refs
-```
-
-
-
 
 ### Material Design Ressources
 
@@ -1688,6 +1720,8 @@ https://tomitm.github.io/appmanifest/
 meta viewport, ...
 
 
+
+
 ### Install Firebase
 
 ```sh
@@ -1704,7 +1738,6 @@ https://github.com/firebase/FirebaseUI-Web
 $ npm install firebase vuefire --save
 $ npm install firebaseui --save
 ```
-
 
 
 
@@ -1730,10 +1763,17 @@ https://firebase.google.com/docs/auth/web/github-auth
 copy from google console (Authentication>Web Setup)
 
 https://gist.github.com/bfritscher/9e0752f27d867d83a2d2bbd733b1adbc
+
+
+
+
 # firebase messages
 
 
+
+
 # firebase game
+
 
 
 
@@ -1758,10 +1798,7 @@ https://firebase.google.com/docs/database/security/quickstart
 
 
 
-
-
 ### Serverless: firebase cloud functions
-
 
 https://github.com/firebase/functions-samples/tree/master/exif-images
 
@@ -1770,6 +1807,7 @@ https://firebase.google.com/docs/reference/functions/functions.storage.ObjectMet
 https://cloud.google.com/vision/docs/reference/libraries#client-libraries-install-nodejs
 
 https://firebase.google.com/docs/functions/config-env
+
 
 
 
