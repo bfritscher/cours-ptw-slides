@@ -425,10 +425,33 @@ https://vuejs.org/v2/api/#Directives
 
 
 
-v-model
+
+### Directive v-model data-bind input elements
 
 .number - cast input string to numbers
+
 .trim - trim input
+
+```html
+<div id="app">
+  <p><label>Nom: <input v-model.trim="name"></label></p>
+  <p>Hello {{name}}</p>
+  <pre>{{name}}</pre>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      name: ''
+    };
+  },
+});
+```
 
 
 
