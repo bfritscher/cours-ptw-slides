@@ -349,15 +349,6 @@ https://vuejs.org/v2/guide/syntax.html#Interpolations
 
 
 
-![](images/vue-format.png)
-
-https://speakerdeck.com/bhawkes/introduction-to-vue-js
-
-<!-- .element: class="credits" -->
-
-
-
-
 ### Filters
 
 > used inside mustache interpolations and v-bind expressions
@@ -569,15 +560,14 @@ A short form exists
 <div v-bind:class="{ active: isActive }"></div>
 ```
 
-```
-string   :class="'classString'"
-variable :class="classNameVariable"
-array    :class="[classVarA, 'classNameB']"
-object   :class="{className: someBooleann}"
-ternary  :class="bool ? 'active' : 'inactive'"
-method   :class="classNameReturningFunction()"
-```
-
+|          |                                       |
+|----------|---------------------------------------|
+| string   | :class="'classString'"                |
+| variable | :class="classNameVariable"            |
+| array    | :class="[classVarA, 'classNameB']"    |
+| object   | :class="{className: someBooleann}"    |
+| ternary  | :class="bool ? 'active' : 'inactive'" |
+| method   | :class="classNameReturningFunction()" |
 
 https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
 
@@ -586,18 +576,18 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
 
 
 
-### Methods
+### Vue Instance Methods
 
-Runs whenever an update occurs
-Not cached
-Getter/setter
-Typically invoked from v-on/@, but flexible
+- Runs whenever an update occurs
+- Not cached
+- Getter/setter
+- Typically invoked from v-on/@, but flexible
+
+
 
 ```html
 <div id="app">
-  <p><label>Nom: <input v-model.trim="name"></label></p>
-  <p>Hello {{name}}</p>
-  <pre>{{name}}</pre>
+  <button v-on:click="addOne">Click Me!</button> {{count}}
 </div>
 
 <script src="https://unpkg.com/vue"></script>
@@ -608,47 +598,106 @@ new Vue({
   el: '#app',
   data() {
     return {
-      type: 'A'
+      count: 0
     };
   },
-
+  methods: {
+    addOne() {
+      this.add(1);
+    },
+    add(nb) {
+      this.count += nb;
+    }
+  }
 });
 ```
 
 
 
 ### Methods and Events
-function (event)
-can be called with ($event) or without
 
-v-on:click @click
+Methods used to handle events can access event object through $event
 
-<form v-on:submit.prevent="onSubmit"></form>
+For common event manipulation there are helpers
 
-.stop - call event.stopPropagation().
-.prevent - call event.preventDefault().
-.{keyCode | keyAlias} - only trigger handler on certain keys.
-.left - (2.2.0+) only trigger handler for left button mouse events.
-.right - (2.2.0+) only trigger handler for right button mouse events.
-.middle - (2.2.0+) only trigger handler for middle button mouse events.
+|                            |                                                      |
+|----------------------------|------------------------------------------------------|
+| .stop                      | call event.stopPropagation().                        |
+| .prevent                   | call event.preventDefault().                         |
+| .{keyCode &#124; keyAlias} | only trigger handler on certain keys.                |
+| .right                     | only trigger handler for right button mouse events.  |
+| .left                      | only trigger handler for left button mouse events.   |
+| .middle                    | only trigger handler for middle button mouse events. |
 
-<!-- chain modifiers -->
-<button @click.stop.prevent="doThis"></button>
 
-<!-- key modifier using keyAlias -->
-<input @keyup.enter="onEnter">
+
+```html
+<div id="app">
+  <form v-on:submit.prevent="onSubmit"></form>
+
+  <!-- chain modifiers -->
+  <button @click.stop.prevent="showCoordinates($event)">Where did you click?</button>
+
+  <!-- key modifier using keyAlias -->
+  <input @keyup.enter="onEnter">
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      count: 0
+    };
+  },
+  methods: {
+    showCoordinates(evt) {
+      console.log(evt.clientX, evt.clientY);
+    },
+    onEnter() {},
+    onSubmit() {}
+  }
+});
+```
 
 
 
 
 ### Computed Properties
 
-show with now() vs method
-
-
 - Runs only when a dependency has changed
 - Cached
 - Should be used as a property, in place of data
+
+```html
+<div id="app">
+  <p>{{date1}} {{date2()}} {{count}}</p>
+  <button @click="count+=1">render</button>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() { return { count: 0 };
+  },
+  computed: {
+    date1() { return new Date(); }
+  },
+  methods: {
+    date2() { return new Date(); }
+  }
+});
+```
+
+
+
+### Computed Properties Setter
 
 Computed properties are by default getter-only, but you can also provide a setter when you need it:
 
@@ -674,32 +723,45 @@ computed: {
 
 
 
-### GOTCHAS new attributes / arrays
+### GOTCHAS arrays
 
-Tracked mutate
-```javascript
-push()
-pop()
-shift()
-unshift()
-splice()
-sort()
-reverse()
-
-// or replace
-filter()
-concat()
-slice()
-```
-
-> do note [] or .length
+Arrays mutation are only tracked on the following methods
 
 ```javascript
-Vue.set(example1.items, indexOfItem, newValue)
+array.push()
+array.pop()
+array.shift()
+array.unshift()
+array.splice()
+array.sort()
+array.reverse()
+```
+
+> Setting [index] or .length will not work!
+
+Replace entire array with
+```javascript
+array.filter()
+array.concat()
+array.slice()
 ```
 
 
 
+### GOTCHAS new attributes
+
+There are also methods on Vue and the vue instance to set new observed attributes onto an array or an object.
+
+```javascript
+Vue.set( example1.items, indexOfItem, newValue )
+
+vm.$set( target, key, value )
+```
+
+
+
+
+### Vue Concepts Summary
 
 | Vue.js Concepts      | Description                                                              |
 |----------------------|--------------------------------------------------------------------------|
@@ -728,7 +790,7 @@ An encapsulated set of behaviors or process and logic, with a well-known interfa
 
 ![](images/webcomponents.jpg)
 
-<!-- .element: class="w-60" -->
+<!-- .element: class="w-40" -->
 
 https://derickbailey.com/2015/08/26/building-a-component-based-web-ui-with-modern-javascript-frameworks/
 
@@ -758,81 +820,221 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
 
 
 
-### Components in vue.js
+### Components in Vue.js
 
-```javascript
-
-COMPONENTS props + events
-props: ['myprop']
-v-bind:myprop
-v-bind:key=
-
-prop validation
-
-click.native - listen for a native event on the root element of component.
+![](images/components.png)
 
 
 
-camelCasing will be converted
-In HTML it will be kebab-case:
+```html
+<div id="app">
+  <my-tag></my-tag>
+</div>
 
-props: ['booleanValue']
-<checkbox :boolean-value="booleanValue"></checkbox>
-
-Vue.component('child', {
-  props: {
-    text: {
-      type: String,
-      required: true,
-      default: 'hello mr. magoo'
-    }
-  },
-  template: `<div>{{ text }}<div>`
-});
-
-
- By default, v-model on a component uses value as the prop and input as the event
-
-
+<script src="https://unpkg.com/vue"></script>
 ```
 
+```javascript
+Vue.component('my-tag', {
+  template: `<div>{{ text }}<div>`,
+  data() {
+    return {
+      text: 'Hello From My Tag!'
+    }
+  }
+});
+
+new Vue({
+  el: '#app'
+});
+```
+
+> Note that Vue does not enforce the W3C rules for custom tag names (all-lowercase, must contain a hyphen) though following this convention is considered good practice.
+
+<!-- .element: class="small" -->
+
+
+
+### Components using .vue
+
+![](images/vue-format.png)
+
+https://speakerdeck.com/bhawkes/introduction-to-vue-js
+
+<!-- .element: class="credits" -->
+
+
+
+### Global vs Local Registrations
+
+Global
+
+```javascript
+Vue.component('my-component', {
+  // options
+})
+```
+
+Local
+
+```javascript
+import MyTag from './components/MyTag';
+const Child = {
+  template: '<div>A custom component!</div>'
+}
+new Vue({
+  // ...
+  components: {
+    // <my-component> will only be available in parent's template
+    'my-component': Child,
+    MyTag
+  }
+})
+```
+
+
+
+### Components Communication in Vue.js
+
 ![](images/props-events.png)
-![](images/components.png)
+
+<!-- .element: class="float-right w-50" -->
+
+Component receive data through attributes binding by exposing properties.
+
+Component send changes up to the parent by emiting events, to avoid mutations!
+
+
+
+### Components Properties in Vue.js
+
+In javascript use **camelCasing**, which will be converted to **kebab-case** in HTML.
+
+In compoonent expose properties
+```javascript
+{
+  //...
+  props: ['myprop', 'myProp2'],
+  // ...
+  mounted(){
+    this.myProp2;
+  }
+}
+```
+
+```html
+<my-comp v-bind:myprop="" :my-prop2></my-comp>
+```
 
 Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
 
-https://
 
 
-Note: Objects and arrays need their defaults to be returned from a function:
+### Components Properties Validation in Vue.js
+
+Define
+```javascript
+Vue.component('myCheckbox', {
+  props: {
+    isOk: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    name: {
+      type: String,
+      required: true,
+      default: 'Bob'
+    }
+  },
+  template: `<label>{{name}} <span v-if="isOk">✓</span></label>`
+});
+```
+
+Use
+
+```html
+<my-checkbox :is-ok="booleanValue"></my-checkbox>
+```
+
+
+
+### Components Properties Validation GOTCHA
+
+Objects and arrays need their defaults to be returned from a function:
+
+```javascript
 text: {
   type: Object,
   default: function () {
     return { message: 'hello mr. magoo' }
   }
 }
+```
 
-Each component instance has its own isolated scope
-{
-}
-data must be a function.
-https://codepen.io/sdras/pen/63d98696878200f6c0e987cd58341c39
-
-<!-- .element: class="credits" -->
+[Example](https://codepen.io/sdras/pen/63d98696878200f6c0e987cd58341c39)
 
 
+To listen for a native event on the root element of component, .native has to be added:
 
+<my-checkbox @click.native="doSomething"></my-checkbox>
 
-### GLOBAL vs local registrations
-
-Vue.filter
+ By default, v-model on a component uses **value** as the prop and **input** as the event
 
 
 
+### Components Emitting Events
 
-### Content Distribution with Slots
+Define
+```javascript
+Vue.component('myCheckbox', {
+  methodes: {
+    change() {
+      this.$emit('hello', 'world');
+    }
+  },
+  template: `<label>{{name}} <span @click="change">✓</span></label>`
+});
+```
+
+Use
 
 ```html
+<my-checkbox @hello="doSomethingWithWorld"></my-checkbox>
+```
+
+
+
+
+### Custom Events
+
+Events can also be used to communicated between components.
+Vue.js events do not *bubble up* or *trickle down* the tree.
+
+We attach and emit on a common object for example the **$root**.
+
+```javascript
+// in component A
+const clickHandler = clickCount => {
+  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
+}
+this.$root.$on('i-got-clicked', clickHandler);
+
+// in component B
+this.$root.$emit('i-got-clicked', this.clickCount);
+
+// in component A to stop listening
+// Stop listening.
+this.$root.$off('i-got-clicked', clickHandler);
+```
+
+
+
+
+### Content Distribution Inside a Component with Slots
+
+```html
+<!-- app-layout component -->
 <div class="container">
   <header>
     <slot name="header"></slot>
@@ -858,9 +1060,13 @@ Vue.filter
 
 
 
-### Multiples Views and Router
+# Multiples Views and Router
 
-A SPA has to support multiple virtual views to simulate pages. This can be achieved with routes and components.
+A SPA has to support multiple virtual views to simulate pages.
+
+This can be achieved with a router, routes and components.
+
+
 
 ```javascript
 const router = new VueRouter({
@@ -872,43 +1078,68 @@ const router = new VueRouter({
 ```
 
 ```html
+ <!-- will host the component corresponding to the route -->
 <router-view></router-view>
 
+<!-- Vue instance has a special property with route params -->
 <div>{{ $route.params.id }}</div>
 
+<!-- create links by lookup of the route -->
 <router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
-
 ```
 
 ```javascript
+// changing route in code.
 this.$router.push({ name: 'user', params: { userId: 123 }})
 ```
 
+
+
+### Example Flow of Components and Router
+
+
 ![](images/architecture_vue_general.png)
+
+<!-- .element: class="float-left w-50" -->
+
 
 ![](images/architecture_vue.png)
 
+<!-- .element: class="float-right w-50" -->
 
 
 
 
-### Custom Events
+# Vue.js Advanced Stuff
 
-methods: {
-  fireEvent() {
-    this.$emit('myEvent', eventValueOne, eventValueTwo);
+
+
+### Access DOM through Refs
+
+**ref** is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
+
+```html
+<div id="app">
+  <div ref="someID"></div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  mounted() {
+    this.$refs.someID.innerText = 'DOM Direct Manipulation is BAD!';
   }
-}
+});
+```
 
-this.$root.$emit('i-got-clicked', this.clickCount);
-const clickHandler = clickCount => {
-  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
-}
-this.$root.$on('i-got-clicked', clickHandler);
 
-// Stop listening.
-this.$root.$off('i-got-clicked', clickHandler);
 
+### Watches
+
+![](images/data.png)
 
 
 
@@ -916,29 +1147,33 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 https://vuejs.org/v2/guide/instance.html
 
-  beforeRouteUpdate (to, from, next) {
-    // react to route changes...
-    // don't forget to call next()
-  }
+created, mounted, ...
 
-created: function () {
-this.fetchData()
+router also has some hooks
 
-ref is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
-
-# Access DOM through Refs
-```
-ref=""
-this.$refs
+```javascript
+beforeRouteUpdate (to, from, next) {
+  // react to route changes...
+  // don't forget to call next()
+}
 ```
 
 
-TRANSITIONS
 
-  <transition name="fade">
-    <p v-if="show">hello</p>
-  </transition>
+### Transitions
 
+```html
+<transition name="fade">
+  <p v-if="show">hello</p>
+</transition>
+
+<transition-group name="flip-list" tag="ul">
+  <!-- multiple elements / move animations -->
+</transition-group>
+
+```
+
+```css
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
 }
@@ -946,20 +1181,12 @@ TRANSITIONS
   opacity: 0
 }
 
-  <transition-group name="flip-list" tag="ul">
-  </transition-group>
-
-
 .flip-list-move {
   transition: transform 1s;
 }
 
+```
 
-
-
-! no arrow functions!
-
-![](images/data.png)
 
 
 
@@ -1084,18 +1311,12 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
-
 ### Exercice: localStorage and routes
 
 
 
 
-
-
 # Asynchronous programming techniques
-
-
-
 
 We have already seen that JavaScript relies on asynchronous
 programming:
@@ -1529,7 +1750,7 @@ https://developers.google.com/custom-search/json-api/v1/reference/cse/list
 
 
 
-### Getting JSON content
+### Getting JSON content with Fetch
 
 ```javascript
 fetch('./api/some.json')
@@ -1548,9 +1769,16 @@ fetch('./api/some.json')
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 
-npm install --save axios
 
-import
+
+### Getting JSON content with axios
+
+```sh
+npm install axios --save
+```
+
+```javascript
+import axios from 'axios';
 
 axios.get('/user?ID=12345')
   .then(function (response) {
@@ -1559,9 +1787,11 @@ axios.get('/user?ID=12345')
   .catch(function (error) {
     console.log(error);
   });
+```
 
 
 
+```javascript
 axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${this.$route.params.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
   .then((response) => {
       console.log(response);
@@ -1569,7 +1799,7 @@ axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a
   .catch(error => {
       console.log(error);
   });
-
+```
 
 
 
@@ -1586,15 +1816,13 @@ new Vue({
   },
   methods: {
     loadData: function() {
-      fetch('/api').then(response => {
-        return response.json();
-      }).then(reply => {
-        this.apiReply = reply;
+      axios.get('/api').then(response => {
+        this.apiReply = response.data;
         this.dataLoaded = true;
       });
     }
   },
-  created: function () {
+  created() { // or mounted
     this.loadData();
   }
 });
@@ -1696,6 +1924,7 @@ import('./node_modules/vuetify/dist/vuetify.min.css');
 Vue.use(Vuetify)
 ```
 
+Read the docs, copy examples, ...
 
 
 
@@ -1716,9 +1945,15 @@ https://tomitm.github.io/appmanifest/
 - Add to Homescreen
 - Fullscreen
 - Notifications
+- Meta viewport
+- Colors
+- Zoom, touch interactions
 
-meta viewport, ...
 
+
+
+# Synchronised persistent datastorage
+## Firebase Database
 
 
 
@@ -1728,16 +1963,20 @@ meta viewport, ...
 $ npm install -g firebase-tools
 ```
 
-login, init, serve, deploy
+Available commands: login, init, serve, deploy
 
-https://github.com/vuejs/vuefire
-
-https://github.com/firebase/FirebaseUI-Web
-
+Integration with Vue.js
 ```sh
 $ npm install firebase vuefire --save
+```
+https://github.com/vuejs/vuefire
+
+To use login UI for firebase authentification
+
+```sh
 $ npm install firebaseui --save
 ```
+https://github.com/firebase/FirebaseUI-Web
 
 
 
@@ -1747,37 +1986,67 @@ https://firebase.google.com/
 
 https://firebase.google.com/docs/auth/web/github-auth
 
+
 ```javascript
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    storageBucket: "",
-    messagingSenderId: ""
-  };
-  firebase.initializeApp(config);
-</script>
+// firebase.js
+import Vue from 'vue';
+import firebase from 'firebase';
+import VueFire from 'vuefire';
+Vue.use(VueFire);
+
+// Initialize Firebase
+// Copy from google firebase console (Authentication>Web Setup)
+const config = {
+    apiKey: 'AIzaSyAauSkomxxlcgMqlYABWkzuEvHkxaT0xHc',
+    authDomain: 'ptw.firebaseapp.com',
+    databaseURL: 'https://ptw.firebaseio.com',
+    projectId: 'firebase-ptw',
+    storageBucket: 'firebase-ptw.appspot.com',
+    messagingSenderId: '281865054216'
+};
+export default firebase.initializeApp(config);
 ```
-copy from google console (Authentication>Web Setup)
-
-https://gist.github.com/bfritscher/9e0752f27d867d83a2d2bbd733b1adbc
 
 
 
+### Lab: Firebase Messages
 
-# firebase messages
+```javascript
+import firebase from '../firebase';
+export default {
+    data() {
+        return {
+            newMsg: '',
+        };
+    },
+    firebase() {
+        return {
+            messages: {
+                source: firebase.database().ref('/demo/messages')
+            }
+        };
+    },
+    methods: {
+        send() {
+            this.$firebaseRefs.messages.push({txt: this.newMsg});
+            this.newMsg = '';
+        },
+        remove(p) {
+            this.$firebaseRefs.messages.child(p['.key']).remove();
+        }
+    }
+};
+```
 
 
 
+### Lab: Firebase Game
 
-# firebase game
+https://gist.github.com/bfritscher/f15258ad2161eda24a32159632738bcc
 
 
 
-
-### Setup user security
+### Setup Firebase User Security
 
 ```javascript
 {
@@ -1798,7 +2067,7 @@ https://firebase.google.com/docs/database/security/quickstart
 
 
 
-### Serverless: firebase cloud functions
+### Serverless: Firebase Cloud Functions
 
 https://github.com/firebase/functions-samples/tree/master/exif-images
 
@@ -1810,8 +2079,7 @@ https://firebase.google.com/docs/functions/config-env
 
 
 
-
-### keeping secrets
+### Firebase Functions: Keeping Secrets
 
 ```sh
 $ firebase functions:config:set service.name="value"
@@ -1830,7 +2098,8 @@ exports.groupB = require('./groupB');
 
 
 
-### deploy
+
+### Deploy to Firebase
 
 ```sh
  $ firebase deploy --only functions
@@ -1848,3 +2117,8 @@ exports.groupB = require('./groupB');
 - A/B testing your site!
 
 
+
+
+![](images/buzz.jpg)
+
+<!-- .element: class="center" -->
