@@ -732,6 +732,8 @@ Add a progress bar for your skills.
 
 Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
 
+Download on [git-scm.com](https://git-scm.com/download/win)
+
 
 
 ### Centralized VCS
