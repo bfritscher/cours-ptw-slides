@@ -483,7 +483,7 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 <!-- .element: class="w-60 float-left" -->
 
 In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/)
-<br/>Online editors: [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
+<br/>Online editors: [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
