@@ -1218,14 +1218,8 @@ beforeRouteUpdate (to, from, next) {
 
 ## Setup environement:
 
-- init a new vue webpack project
+- init a new vue project
 - install dependencies
-- Adapt ESLint to our coding style
-- Inside `build/webpack.dev.conf` Fix debugging by changing
-```js
-devtool: 'source-map'
-```
-
 - install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 - install vscode **vetur** extension
 
