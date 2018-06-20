@@ -593,7 +593,7 @@ Download and install [Node.js](https://nodejs.org/) to get `npm`.
 Use `npm` to install `vue-cli` globally (--global or -g)
 
 ```sh
-$ npm install -g vue-cli
+$ npm install -g @vue/cli
 ```
 *We are using the -g (--global flag) to install in the global shared space accessible to all projects.*
 <!-- .element: class="small" -->
@@ -602,10 +602,10 @@ $ npm install -g vue-cli
 
 ### Step 1: Create a new project
 
-Use vue-cli to create a new project using the `webpack` template
+Use vue-cli to create a new project.
 
 ```sh
-$ vue init webpack moncv
+$ vue create moncv
 ```
 
 ![](images/vue-cli-moncv.png)
@@ -618,6 +618,7 @@ $ vue init webpack moncv
 ### Step 2: Review the generated app
 
 ```sh
+$ cd moncv
 $ code .
 ```
 
@@ -634,7 +635,7 @@ $ npm install
 
 Start the development server
 ```sh
-npm run dev
+npm run serve
 ```
 
 edit a file and watch livereload in action
@@ -651,8 +652,9 @@ Add/Remove dependencies
 
 ```sh
 $ npm uninstall vue --save
-$ npm install bootstrap-css-only@3 --save
-$ npm install bootstrap.native --save
+$ npm install jquery --save
+$ npm install popper.js --save
+$ npm install bootstrap --save
 ```
 
 check package.json (before and after)
@@ -661,69 +663,74 @@ check package.json (before and after)
 
 
 
-### Step 4b: Configuring code linting
-
-Adapt ESLint to our coding style
-// TODO: check with airbnb
-`.eslintrc.js`
-```js
-{
-  ...,
-  "rules": {
-    // enforce semi
-    "semi":  ["error", "always"],
-    // use 4 spaces indent
-    "indent": ["error", 4],
-    // make rule equal vs code auto formatting
-    "space-before-function-paren": ["error", {
-        "anonymous": "always",
-        "named": "never"
-    }],
-    ...
-  },
-  ...
-}
-```
-
-`.editorconfig`
-```
-indent_size = 4
-```
-
-
-
-### Step 4c: Fix webpack config for debugging
-
-Inside `build/webpack.dev.conf`. Fix debugging by changing:
-
-```js
-devtool: 'source-map',
-```
-
-
-
-### Step 4d: Use LF also on windows
+### Step 4b: Use LF also on windows
 
 Create `.gitattributes` with content:
 
 ```txt
+# Force all line endings to be \n
 * text eol=lf
+
+############################################################
+# git can corrupt binary files if they're not set to binary.
+############################################################
+
+# Apple office documents are actually folders, so treat them as binary.
+*.numbers binary
+*.pages binary
+*.keynote binary
+
+# Image files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
+# Movie and audio files
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.ogg binary
+
+# Compression formats
+*.gz binary
+*.bz2 binary
+*.7z binary
+*.zip binary
+
+# Web fonts
+*.ttf binary
+*.eot binary
+*.woff binary
+*.otf binary
+
+# Other
+*.fla binary
+*.swf binary
+*.pdf binary
+
+############################################################
+# End binary settings
+############################################################
 ```
 
 
 
+### Step 5: Setup bootstrap
 
-
-### Step 5: Setup boostrap
-
-Inside `src/main.js`
+Inside `src/main.js` replace all with
 
 ```javascript
-import 'bootstrap.native';
-import 'bootstrap-css-only/css/bootstrap.min.css';
+import $ from "jquery";
+window.$ = $;
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 $(document).ready(() => {
-    console.log('it works!');
+  console.log("it works!");
 });
 ```
 
@@ -752,7 +759,7 @@ https://bootswatch.com/
 try different CSS files from bootswatch in index.html
 
 ```javascript
-import 'bootswatch/darkly/bootstrap.min.css';
+import "bootswatch/dist/darkly/bootstrap.min.css";
 ```
 
 
@@ -1090,6 +1097,22 @@ The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 
 
 
+### FIX path of static assets
+
+Create a `vue.config.js` file to handle subfolder deployment.
+```sh
+module.exports = {
+  baseUrl: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/"
+};
+```
+Rebuild and deploy site to test the fix.
+
+https://cli.vuejs.org/config/#baseurl
+
+<!-- .element: class="small" -->
+
+
+
 
 # Adding interactions to the web
 
@@ -1110,36 +1133,11 @@ $ npm install jquery-smooth-scroll --save
 Use the plugin:
 
 ```javascript
-import 'jquery-smooth-scroll';
+import "jquery-smooth-scroll";
 
 $(document).ready(() => {
-    $('a').smoothScroll();
+    $("a").smoothScroll();
 });
-```
-
-
-
-### Step 2: Fix WebPack & eslint to support jQuery
-
-webpack.dev.conf.js and webpack.prod.conf.js
-```javascript
-...
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    }),
-    ...
-```
-
-.eslintrc.js
-
-```javascript
-  ...
-  globals: {
-    $: false
-  },
-  ...
 ```
 
 
