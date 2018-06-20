@@ -1103,8 +1103,6 @@ We want to improve our page with some interactions and behaviors.
 
 ### Step 1: Use npm to install a plugin
 
-// TODO change
-
 ```sh
 $ npm install jquery-smooth-scroll --save
 ```
@@ -1115,8 +1113,33 @@ Use the plugin:
 import 'jquery-smooth-scroll';
 
 $(document).ready(() => {
-  $('a').smoothScroll();
+    $('a').smoothScroll();
 });
+```
+
+
+
+### Step 2: Fix WebPack & eslint to support jQuery
+
+webpack.dev.conf.js and webpack.prod.conf.js
+```javascript
+...
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    ...
+```
+
+.eslintrc.js
+
+```javascript
+  ...
+  globals: {
+    $: false
+  },
+  ...
 ```
 
 

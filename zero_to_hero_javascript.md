@@ -507,7 +507,7 @@ name === "kittens!!"
 ### Loop
 
 ```javascript
-for (const i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
   // Will execute 5 times
 }
 
@@ -814,7 +814,7 @@ const inArray = fruits.indexOf('banana') > -1;
 const removed = fruits.splice(fruits.indexOf('pear'), 1);
 
 //iterate over an array
-for (const i = 0; i < fruits.length; i++) {
+for (let i = 0; i < fruits.length; i++) {
     console.log('fruits[' + i + '] = ' + fruits[i]);
 }
 ```
