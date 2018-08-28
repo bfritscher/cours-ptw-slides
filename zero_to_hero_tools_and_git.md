@@ -655,6 +655,7 @@ $ npm uninstall vue --save
 $ npm install jquery --save
 $ npm install popper.js --save
 $ npm install bootstrap --save
+$ npm install @fortawesome/fontawesome-free --save
 ```
 
 check package.json (before and after)
@@ -728,6 +729,7 @@ import $ from "jquery";
 window.$ = $;
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 $(document).ready(() => {
   console.log("it works!");
