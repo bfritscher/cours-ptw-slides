@@ -3,14 +3,11 @@
 
 # Zero to Hero
 
-![](images/common/logo_heg.png)
-<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
+![](images/common/logo_heg.png) <!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
 
-![](images/common/logo_hes-so.jpg)
-<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
+![](images/common/logo_hes-so.jpg) <!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
 
-[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
-<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch) <!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Part 1: From blank page to deployed website
 
@@ -32,6 +29,7 @@
 
 # Introduction
 <br/>
+
 ## The Web as an Application Platform
 
 
@@ -67,38 +65,32 @@
 #### Web application are becoming more powerful; thanks to HTML5
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
-Multimedia
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Multimedia<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Performance_512.png)
-Performance
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Performance<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Device_Access_512.png)
-Device&nbsp;Access
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Device&nbsp;Access<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Connectivity_512.png)
-Connectivity
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Connectivity<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Offline_Storage_512.png)
-Offline/Storage
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Offline/Storage<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
-![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)
-<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
-&nbsp;Graphics&nbsp;
+![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Graphics
 
 <!-- .element: class="w-33 float-left center" -->
 
@@ -187,9 +179,11 @@ Learn theory and tools, see examples and practice!
 ## Labs: MonCV & ShoppingList
 
 ![](images/monCV_final.png)
+
 <!-- .element: class="w-40 float-left pdf-w-40 pdf-float-left" -->
 
 ![](images/shoppinglist.png)
+
 <!-- .element: class="w-40 float-right pdf-w-40 pdf-float-right" -->
 
 
@@ -264,8 +258,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 </html>
 ```
 
-![](images/html-1st-page.png)
-<!-- .element: class="pageborder"-->
+![](images/html-1st-page.png)<!-- .element: class="pageborder"-->
 
 <!-- .element: class="center"-->
 
@@ -358,8 +351,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
 </table>
 ```
 
-![](images/table.png)
-<!-- .element: class="top right pageborder" -->
+![](images/table.png)<!-- .element: class="top right pageborder" -->
 
 ```css
 body{
@@ -409,8 +401,7 @@ td{
 </form>
 ```
 
-![](images/form.png)
-<!-- .element: class="top right pageborder" -->
+![](images/form.png)<!-- .element: class="top right pageborder" -->
 
 ```css
 body{
@@ -450,8 +441,7 @@ A block-level element occupies the entire space of its parent element (container
 
 In HTML5, this binary distinction of **block-level** vs. **inline** elements is is replaced with a more complex set of content categories
 
-![](images/Content_categories_venn.png)
-<!-- .element: class="w-50" -->
+![](images/Content_categories_venn.png)<!-- .element: class="w-50" -->
 
 <!-- .element: class="center" -->
 
@@ -625,6 +615,8 @@ div {
 Collapsing margins: depending on setting a border or padding, margins are collapsed or put apart. Normally, bottom and top margin margins are merged together.
 
 center a block element: *margin: 0 auto*;
+
+<!-- .element: class="small" -->
 
 
 

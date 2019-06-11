@@ -350,8 +350,7 @@ http://practicaltypography.com/
 
 ### What is typography?
 
-![](images/typo_realworld.png)
-<!-- .element: class="w-80" -->
+![](images/typo_realworld.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
@@ -383,10 +382,8 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > Elements that share similar characteristics are perceived as more related than elements that don’t share those characteristics.
 
-![](images/gestalt-similarity-1.png)
-<!-- .element: class="left fragment current-visible w-80" -->
-![](images/gestalt-similarity-2.png)
-<!-- .element: class="left fragment fade-in w-80" -->
+![](images/gestalt-similarity-1.png)<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-similarity-2.png)<!-- .element: class="left fragment fade-in w-80" -->
 
 
 
@@ -394,12 +391,9 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > Elements are perceived as part of a group if they are located within the same closed region.
 
-![](images/gestalt-similarity-1.png)
-<!-- .element: class="left fragment current-visible w-80" -->
-![](images/gestalt-enclosure-2.png)
-<!-- .element: class="left fragment current-visible w-80" -->
-![](images/gestalt-enclosure-3.png)
-<!-- .element: class="left fragment fade-in w-80" -->
+![](images/gestalt-similarity-1.png)<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-enclosure-2.png)<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-enclosure-3.png)<!-- .element: class="left fragment fade-in w-80" -->
 
 
 
@@ -407,10 +401,8 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > Objects that are closer together are perceived as more related than objects that are further apart.
 
-![](images/gestalt-similarity-1.png)
-<!-- .element: class="left fragment current-visible w-80" -->
-![](images/gestalt-proximity-2.png)
-<!-- .element: class="left fragment fade-in w-80" -->
+![](images/gestalt-similarity-1.png)<!-- .element: class="left fragment current-visible w-80" -->
+![](images/gestalt-proximity-2.png)<!-- .element: class="left fragment fade-in w-80" -->
 
 
 
@@ -418,8 +410,7 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > When seeing a complex arrangement of elements, we tend to look for a single, recognizable pattern.
 
-![](images/gestalt-closure-1.png)
-<!-- .element: class="left w-80" -->
+![](images/gestalt-closure-1.png)<!-- .element: class="left w-80" -->
 
 
 
@@ -427,8 +418,7 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > Elements arranged on a line or curve are perceived as more related than elements not on the line or curve.
 
-![](images/gestalt-continuation-1.png)
-<!-- .element: class="left w-80" -->
+![](images/gestalt-continuation-1.png)<!-- .element: class="left w-80" -->
 
 
 
@@ -436,17 +426,14 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 > Elements that are visually connected are perceived as more related than elements with no connection.
 
-![](images/gestalt-connection-1.png)
-<!-- .element: class="left fragment current-visible w-50" -->
-![](images/gestalt-connection-2.png)
-<!-- .element: class="left fragment fade-in w-50" -->
+![](images/gestalt-connection-1.png)<!-- .element: class="left fragment current-visible w-50" -->
+![](images/gestalt-connection-2.png)<!-- .element: class="left fragment fade-in w-50" -->
 
 
 
 ### Concepts applied to web composition
 
-![](images/layout_mockup.png)
-<!-- .element: class="w-80" -->
+![](images/layout_mockup.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
@@ -467,8 +454,7 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 # Tooling
 
-![](images/yeoman-packages.png)
-<!-- .element: class="w-40" -->
+![](images/yeoman-packages.png)<!-- .element: class="w-40" -->
 
 
 
@@ -476,11 +462,9 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrains.com/webstorm/)
 
-![](images/notepad.png)
-<!-- .element: class="w-40 float-left" -->
+![](images/notepad.png)<!-- .element: class="w-40 float-left" -->
 
-![](images/webstorm.png)
-<!-- .element: class="w-60 float-left" -->
+![](images/webstorm.png)<!-- .element: class="w-60 float-left" -->
 
 In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/)
 <br/>Online editors: [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
@@ -489,8 +473,7 @@ In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](ht
 
 
 
-![](images/web_dev_in_2017_intro.png)
-<!-- .element: class="w-100" -->
+![](images/web_dev_in_2017_intro.png)<!-- .element: class="w-100" -->
 
 https://github.com/kamranahmedse/developer-roadmap
 
@@ -498,8 +481,7 @@ https://github.com/kamranahmedse/developer-roadmap
 
 
 
-![](images/web_dev_in_2017_frontend.png)
-<!-- .element: class="w-80" -->
+![](images/web_dev_in_2017_frontend.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
@@ -581,8 +563,7 @@ WebPack Loader plugins help to pre/postprocess files without needing a tasks pip
 
 Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
-![](images/yeoman-packages.png)
-<!-- .element: class="w-30" -->
+![](images/yeoman-packages.png)<!-- .element: class="w-30" -->
 
 
 
@@ -608,8 +589,7 @@ Use vue-cli to create a new project.
 $ vue create moncv
 ```
 
-![](images/vue-cli-moncv.png)
-<!-- .element: class="w-80" -->
+![](images/vue-cli-moncv.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
@@ -783,8 +763,7 @@ Add a progress bar for your skills.
 
 -> Need for a version control system
 
-![](images/code_quality_wtf.png)
-<!-- .element: class="bottom right" -->
+![](images/code_quality_wtf.png)<!-- .element: class="bottom right" -->
 
 
 
@@ -799,8 +778,7 @@ Download on [git-scm.com](https://git-scm.com/download/win)
 
 ### Centralized VCS
 
-![](images/vcs-centralized.png)
-<!-- .element: class="w-75" -->
+![](images/vcs-centralized.png)<!-- .element: class="w-75" -->
 
 <!-- .element: class="center" -->
 
@@ -808,8 +786,7 @@ Download on [git-scm.com](https://git-scm.com/download/win)
 
 ### Distributed VCS like Git
 
-![](images/vcs-distributed.png)
-<!-- .element: class="w-50" -->
+![](images/vcs-distributed.png)<!-- .element: class="w-50" -->
 
 <!-- .element: class="center" -->
 
@@ -1012,8 +989,7 @@ Warning: markdown on github is a speical variant!
 
 # Lab 1b: deploy
 
-![](images/yeoman-ship.png)
-<!-- .element: class="w-30" -->
+![](images/yeoman-ship.png)<!-- .element: class="w-30" -->
 
 
 
