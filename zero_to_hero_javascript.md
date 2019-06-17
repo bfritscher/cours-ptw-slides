@@ -3,14 +3,11 @@
 
 # Zero to Hero
 
-![](images/common/logo_heg.png)
-<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
+![](images/common/logo_heg.png)<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
 
-![](images/common/logo_hes-so.jpg)
-<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
+![](images/common/logo_hes-so.jpg)<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
 
-[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
-<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Part 1: From blank page to deployed website
 
@@ -21,8 +18,7 @@
 
 # JavaScript
 
-![](images/JavaScript-logo.png)
-<!-- .element: class="w-50" -->
+![](images/JavaScript-logo.png)<!-- .element: class="w-50" -->
 
 <!-- .element: class="center pdf-w-30" -->
 
@@ -176,8 +172,7 @@ typeof null === 'object';
 ```
 <!-- .element: class="w-50 float-left" -->
 
-JavaScript is a dynamic language: when you declare a variable, you don't specify a type (and the type can change over time).
-<!-- .element: class="small clear" -->
+JavaScript is a dynamic language: when you declare a variable, you don't specify a type (and the type can change over time).<!-- .element: class="small clear" -->
 
 
 
@@ -423,8 +418,7 @@ https://www.youtube.com/watch?v=_DKkVvOt6dk
 
 # JavaScript
 
-![](images/book-javascript-the-good-parts.jpg)
-<!-- .element: class="w-40" -->
+![](images/book-javascript-the-good-parts.jpg)<!-- .element: class="w-40" -->
 
 <!-- .element: class="center" -->
 
@@ -1022,8 +1016,7 @@ function f1(p1){
 f1(1);
 ```
 
-![](images/closure.png)
-<!-- .element: class="top right" -->
+![](images/closure.png)<!-- .element: class="top right" -->
 
 
 
@@ -1057,8 +1050,7 @@ myModule.publicFunction();
 ```
 <!-- .element: class="w-66 float-left" -->
 
-![](images/module.png)
-<!-- .element: class="top right" -->
+![](images/module.png)<!-- .element: class="top right" -->
 
 
 

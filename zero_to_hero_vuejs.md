@@ -3,14 +3,11 @@
 
 # Zero to Hero
 
-![](images/common/logo_heg.png)
-<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
+![](images/common/logo_heg.png)<!-- .element style="position:absolute; top:0; left:0;width:40%;" class="nopdf" -->
 
-![](images/common/logo_hes-so.jpg)
-<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
+![](images/common/logo_hes-so.jpg)<!-- .element style="position:absolute; top:0; right:0;width:10%;" class="nopdf" -->
 
-[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
-<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
+[Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)<!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
 #### Part 2: Build and deploy a Single Page Application
 
@@ -75,8 +72,7 @@ Mobile application developement can also be done wiht HTML/CSS/JavaScript, with 
 
 ## Who is guilty?
 
-![](images/pebkac.jpg)
-<!-- .element class="w-40" -->
+![](images/pebkac.jpg)<!-- .element class="w-40" -->
 
 <!-- .element class="center" -->
 
@@ -179,8 +175,7 @@ While focusing on user needs it is also important for a UX Designer to be aware 
 
 
 
-![](images/ux_is_not_ui.png)
-<!-- .element class="w-60" -->
+![](images/ux_is_not_ui.png)<!-- .element class="w-60" -->
 
 <!-- .element class="center" -->
 
@@ -230,10 +225,8 @@ User’s first impression is critical
 * Only focus on frontent-app
 * With Api's and some cloud functions ("serverless")
 
-![](images/shop-mobile.png)
-<!-- .element: class="w-20" -->
-![](images/shop-desktop.png)
-<!-- .element: class="w-60" -->
+![](images/shop-mobile.png)<!-- .element: class="w-20" -->
+![](images/shop-desktop.png)<!-- .element: class="w-60" -->
 
 
 
@@ -276,8 +269,7 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
-![](images/Strip-Prendre-le-train-en-marche-650-final1.jpg)
-<!-- .element: class="w-50"-->
+![](images/Strip-Prendre-le-train-en-marche-650-final1.jpg)<!-- .element: class="w-50"-->
 
 
 
