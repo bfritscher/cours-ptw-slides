@@ -21,9 +21,7 @@
 
 
 
-
 ![](images/multipage_app.png)
-
 
 
 
@@ -49,7 +47,10 @@ page to a “Customer Details” page).
 
 
 
-![](images/8-1-ajax-pattern.png)
+![](images/8-1-ajax-pattern.png)<!--- .element: class="w-40" -->
+
+<!--- .element: class="center" -->
+
 http://www.websiteoptimization.com/secrets/ajax/8-1-ajax-pattern.html
 <!--- .element: class="credits" -->
 
@@ -223,7 +224,7 @@ User’s first impression is critical
 * Learn SPA with Vue.js
 * Learn by Example: Shopping List App
 * Only focus on frontent-app
-* With Api's and some cloud functions ("serverless")
+* With API's and some cloud functions ("serverless")
 
 ![](images/shop-mobile.png)<!-- .element: class="w-20" -->
 ![](images/shop-desktop.png)<!-- .element: class="w-60" -->
@@ -968,10 +969,12 @@ text: {
 
 
 To listen for a native event on the root element of component, .native has to be added:
-
-<my-checkbox @click.native="doSomething"></my-checkbox>
-
+<!-- .element class="small" -->
+`<my-checkbox @click.native="doSomething"></my-checkbox>`
+<!-- .element class="small" -->
  By default, v-model on a component uses **value** as the prop and **input** as the event
+<!-- .element class="small" -->
+
 
 
 
@@ -1256,8 +1259,7 @@ http://json.org/
 |-----------------------------------|--------------------------------------------------------------|
 | JSON.stringify( *object* )        | create a JSON_string                                         |
 | JSON.parse( *JSON_string* )       | create an object from a string                               |
-| angular.toJson( *object* )        | create a JSON_string (removing angular's internal variables) |
-| angular.fromJson( *JSON_string* ) | create an object from a string                               |
+
 
 ```javascript
 //optional formatter and indentation spacing for pretty-print
@@ -1302,7 +1304,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
-# Asynchronous programming techniques
+## Asynchronous programming techniques
 
 We have already seen that JavaScript relies on asynchronous
 programming:
@@ -1313,6 +1315,7 @@ programming:
   * A dispatcher takes the next event in the queue and invokes the callback function (on the single thread).
   * When the callback function returns, the dispatcher takes the next event in the queue, and continues forever (it’s an event loop).
 
+<!-- .element: class="small" -->
 
 
 
@@ -1355,7 +1358,6 @@ $.get( "ajax/test.html", function( data ) {
 An event will be added when the AJAX request has been
 processed, i.e. when a response has been received. The
 callback function has access to the payload.
-
 
 
 
@@ -1636,28 +1638,6 @@ https://github.com/promises-aplus/promises-spec
 
 
 
-### Deferred objects in JQuery
-
-"a **promise** represents a value that is not yet known, a **deferred** represents work that is not yet finished"
-
-http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics
-
-<!-- .element: class="credits" -->
-
-```javascript
-var d1 = new $.Deferred();
-var d2 = new $.Deferred();
-$.when( d1, d2 ).done(function ( v1, v2 ) {
-  console.log( v1 ); // "Fish"
-  console.log( v2 ); // "Pizza"
-});
-d1.resolve( "Fish" );
-d2.resolve( "Pizza" );
-```
-
-
-
-
 ### Promise in ECMAScript 2015
 
 ```javascript
@@ -1724,7 +1704,6 @@ https://www.getpostman.com/docs/introduction
 
 
 
-
 ### Google Cusom Search API
 
 https://developers.google.com/custom-search/json-api/v1/reference/cse/list
@@ -1732,7 +1711,6 @@ https://developers.google.com/custom-search/json-api/v1/reference/cse/list
 ```javascript
 `https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
 ```
-
 
 
 
@@ -1756,7 +1734,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 
 
-
 ### Getting JSON content with axios
 
 ```sh
@@ -1774,7 +1751,6 @@ axios.get('/user?ID=12345')
     console.log(error);
   });
 ```
-
 
 
 ```javascript

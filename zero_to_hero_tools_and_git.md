@@ -372,7 +372,7 @@ http://practicaltypography.com/
 
 <!-- .element: class="center" -->
 
-- https://www.gcflearnfree.org/beginning-graphic-design/typography/1/
+https://www.gcflearnfree.org/beginning-graphic-design/typography/1/
 
 <!-- .element: class="smaller" -->
 
@@ -455,7 +455,7 @@ https://www.smashingmagazine.com/2014/03/design-principles-visual-perception-and
 
 <!-- .element: class="center" -->
 
-- https://www.gcflearnfree.org/beginning-graphic-design/layout-and-composition/1/
+https://www.gcflearnfree.org/beginning-graphic-design/layout-and-composition/1/
 
 <!-- .element: class="smaller" -->
 
@@ -485,7 +485,7 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 ![](images/webstorm.png)<!-- .element: class="w-60 float-left" -->
 
 In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/)
-<br/>Online editors: [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
+<br/>Online editors: [CodeSandbox](https://codesandbox.io), [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
@@ -769,7 +769,7 @@ import "bootswatch/dist/darkly/bootstrap.min.css";
 
 Use lab1 to recreate/improve your CV with Boostrap and a development workflow
 
-Add a progress bar for your skills.
+Add a [bootstrap progress bar](https://getbootstrap.com/docs/4.1/components/progress/) for your skills.
 
 
 
@@ -852,11 +852,16 @@ http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
 ### Exercice
 
-https://try.github.io/levels/1/challenges/1
+Référence [git - petit guide](https://rogerdudler.github.io/git-guide/index.fr.html)
 
-![](images/logo-trygit.gif)
+#### [Learn Git](https://www.katacoda.com/courses/git)
 
-<!-- .element: class="top right" -->
+- Scenario 1 - Committing Files
+- Scenario 2 - Committing Changes
+- Scenario 3 - Working Remotely
+- Scenario 4 - Undoing Changes
+
+
 
 ### Quiz
 
@@ -872,11 +877,10 @@ https://try.github.io/levels/1/challenges/1
 ### Ressources
 
 * http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
-* http://marklodato.github.io/visual-git-guide/index-fr.html
 * http://rogerdudler.github.io/git-guide/
 * http://onlywei.github.io/explain-git-with-d3/#freeplay
 * http://pcottle.github.io/learnGitBranching/
-
+* http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
 
 
@@ -889,21 +893,26 @@ its own features:
 Wikis, bug tracking, **Markdown** rendering and static page hosting.
 
 Unlike Git, which is strictly a command-line tool, GitHub provides
-a web-based **graphical interface and desktop integration** (https://desktop.github.com/).
+a web-based **graphical interface**
 
 
 
-### Github Desktop
-
-![](images/github_desktop.png)
-
-
-
-### Github
+### Github Web
 
 Browse commits, issues, fork, pull requests, wiki, Readme.md
 
 ![](images/github.png)
+
+
+
+
+### Visual Studio Code Git Support
+
+![](images/vscode_git.png)
+<!-- .element: class="center" -->
+
+[Documentation](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)
+<!-- .element: class="small" -->
 
 
 
@@ -1013,26 +1022,26 @@ Warning: markdown on github is a speical variant!
 
 ### Step 0: Install
 
-Create a [github.com](https://github.com) account and install [Github Desktop](https://desktop.github.com/) to have a version of `git`.
+Create a [github.com](https://github.com) account and install [git-scm.com](https://git-scm.com/download/win) to have a version of `git`.
 
 
 
 ### Step 1: Git Master
 
-- Commit your code to a git repository
-- Commit & push your code to Github
+- Commit your code to a git repository.
+- Commit & push your code to Github.
 - Change something and create a new commit.
-- Clone the project from your neighbour
+- Clone the project into another folder.
 
 
 
 ### Step 2: Production version
 
-Create a built, mimified version of your page with your toolchain
+Create a built, mimified version of your page with your .
 ```sh
 npm run build
 ```
-*Notice that you have a dist folder with this new content*
+*Notice that you have a dist folder with this new content.*
 
 
 
@@ -1083,7 +1092,7 @@ $ npm install push-dir --save-dev
 After a successful ```npm run build``` commit all changes and deploy:
 ```sh
 git add . --all
-git commit -m
+git commit
 npm run deploy
 ```
 

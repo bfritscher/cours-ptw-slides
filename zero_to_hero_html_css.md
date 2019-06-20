@@ -548,7 +548,17 @@ element, class, pseudo-class, id
 | a:hover	         | selects the a element if the mouse hovers over it (pseudo-classes). |
 | aa > bb	         | selects the bb element if it's a direct child of aa.                |
 | aa + bb	         | selects the bb element if it's immediately preceded by aa.          |
+| aa ~ bb	         | selects every bb element that are preceded by a aa element.         |
 | aa[attr="value"] | selects the aa element with a attr="value" attribute.               |
+| :first-child     | selects all first child elements.                                   |
+| :nth-child(A)    | selects every element that is the Ath child of another element.     |
+
+Visualization:
+[CSS Visualizer](https://fritscher.ch/dom-css/)
+
+Exercise:
+[CSS Diner](https://flukeout.github.io/)
+
 
 
 
@@ -832,10 +842,15 @@ h1{
 ### CSS: Flexbox
 
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+<!-- .element: class="small" -->
 
-![](images/flexbox-flex-direction.png)
+![](images/flexbox-flex-direction.png)<!-- .element: class="w-60" -->
+<!-- .element: class="center" -->
 
 https://philipwalton.github.io/solved-by-flexbox/
+<!-- .element: class="small" -->
+
+Exercise: [Flexbox Froggy](https://flexboxfroggy.com/)
 
 http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 
@@ -846,9 +861,14 @@ http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 
 ### CSS: Grid
 
-![](images/Holy_Grail_CSS_Grid.gif)
+![](images/Holy_Grail_CSS_Grid.gif)<!-- .element: class="w-70" -->
+<!-- .element: class="center" -->
+
+Exercise: [Grid Garden](http://cssgridgarden.com/)
 
 https://bitsofco.de/holy-grail-layout-css-grid/
+
+<!-- .element: class="credits" -->
 
 
 
