@@ -222,9 +222,13 @@ User’s first impression is critical
 # Objectifs
 
 * Learn SPA with Vue.js
-* Learn by Example: Shopping List App
+* Learn by Example: CatList App
 * Only focus on frontent-app
-* With API's and some cloud functions ("serverless")
+* With API's <span class="smaller">and some cloud functions ("serverless")</span>
+
+![](images/project_cat.png)<!-- .element: class="w-50" -->
+
+
 
 ![](images/shop-mobile.png)<!-- .element: class="w-20" -->
 ![](images/shop-desktop.png)<!-- .element: class="w-60" -->
@@ -1845,21 +1849,15 @@ https://developers.google.com/web/fundamentals/getting-started/primers/async-fun
 
 
 
-## Exercice real data
+## API with real data
 
-For now we leave the first page as is and extend the app to display movies from an external web service
-
-Add the following to the moviedb service or even better make them constants.
-
-```javascript
-var apiUrl = 'http://api.themoviedb.org/3/'; //proxy
-var baseUrl = 'http://image.tmdb.org/t/p/';
-```
-
-- `getMovie()` returns a promise http of a movie (http://apiUrlEndpoint/movie/id?api_key=apiKey&append_to_response=similar,releases,credits&language=fr)
-- `getMovieResults()` retrieve movie results array
-- `searchMovies()`  http://apiUrlEndpoint/search/movie?api_key=apiKey&language=fr&query=movie_name updates internal movieResults array
-- `upcomingMovies()` http://apiUrlEndpoint/movie/upcoming?api_key=apiKey&language=fr updates internal movieResults array
+- https://countapi.xyz/
+- https://docs.thedogapi.com/
+- https://docs.thecatapi.com/
+- https://transport.opendata.ch/docs.html
+- http://api.themoviedb.org/3/ //need proxy for api key or cors
+- https://www.themealdb.com/api.php
+- https://www.thecocktaildb.com/api.php
 
 <!-- .element: class="smaller" -->
 
@@ -1869,6 +1867,11 @@ var baseUrl = 'http://image.tmdb.org/t/p/';
 ### Using Material instead of bootstrap
 
 https://vuetifyjs.com/
+
+```sh
+vue add vuetify
+```
+or
 
 ```sh
 $ npm install vuetify --save
@@ -1944,27 +1947,35 @@ https://github.com/firebase/FirebaseUI-Web
 
 ### Documentation
 
-https://firebase.google.com/
+- https://firebase.google.com/
+- https://firebase.google.com/docs/web/setup#add-sdks-initialize
+- https://vuefire.vuejs.org/vuefire/getting-started.html
+- https://firebase.google.com/docs/auth/web/github-auth
 
-https://firebase.google.com/docs/auth/web/github-auth
+<!-- .element class="smaller" -->
 
 
 ```javascript
-// firebase.js
-import Vue from 'vue';
-import firebase from 'firebase';
-import VueFire from 'vuefire';
-Vue.use(VueFire);
+// plugins/firebase.js
+import Vue from "vue";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+// import "firebase/storage";
+// import "firebase/firestore";
+import { rtdbPlugin } from "vuefire";
+Vue.use(rtdbPlugin);
 
 // Initialize Firebase
 // Copy from google firebase console (Authentication>Web Setup)
 const config = {
-    apiKey: 'AIzaSyAauSkomxxlcgMqlYABWkzuEvHkxaT0xHc',
-    authDomain: 'ptw.firebaseapp.com',
-    databaseURL: 'https://ptw.firebaseio.com',
-    projectId: 'firebase-ptw',
-    storageBucket: 'firebase-ptw.appspot.com',
-    messagingSenderId: '281865054216'
+  apiKey: "AIzaSyAauSkomxxlcgMqlYABWkzuEvHkxaT0xHc",
+  authDomain: "ptw.firebaseapp.com",
+  databaseURL: "https://ptw.firebaseio.com",
+  projectId: "firebase-ptw",
+  storageBucket: "firebase-ptw.appspot.com",
+  messagingSenderId: "281865054216",
+  appId: "1:281865054216:web:e2d79f491c1cc7d1"
 };
 export default firebase.initializeApp(config);
 ```
@@ -1974,29 +1985,26 @@ export default firebase.initializeApp(config);
 ### Lab: Firebase Messages
 
 ```javascript
-import firebase from '../firebase';
+import firebase from "@/plugins/firebase";
 export default {
-    data() {
-        return {
-            newMsg: '',
-        };
+  data() {
+    return {
+      newMsg: "",
+      messages: []
+    };
+  },
+  firebase: {
+    messages: firebase.database().ref("/demo/messages")
+  },
+  methods: {
+    send() {
+      this.$firebaseRefs.messages.push({ txt: this.newMsg });
+      this.newMsg = "";
     },
-    firebase() {
-        return {
-            messages: {
-                source: firebase.database().ref('/demo/messages')
-            }
-        };
-    },
-    methods: {
-        send() {
-            this.$firebaseRefs.messages.push({txt: this.newMsg});
-            this.newMsg = '';
-        },
-        remove(p) {
-            this.$firebaseRefs.messages.child(p['.key']).remove();
-        }
+    remove(p) {
+      this.$firebaseRefs.messages.child(p[".key"]).remove();
     }
+  }
 };
 ```
 

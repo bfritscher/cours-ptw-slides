@@ -176,13 +176,13 @@ Learn theory and tools, see examples and practice!
 
 
 
-## Labs: MonCV & ShoppingList
+## Labs: MonCV & CatProject
 
 ![](images/monCV_final.png)
 
 <!-- .element: class="w-40 float-left pdf-w-40 pdf-float-left" -->
 
-![](images/shoppinglist.png)
+![](images/project_cat.png)
 
 <!-- .element: class="w-40 float-right pdf-w-40 pdf-float-right" -->
 
@@ -202,7 +202,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 
 
 * ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> Vue.js
-* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: ShoppingList
+* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: CatList
 * ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Project <span class="red">66%</span>
 
 <!-- .element: class="w-40" -->
@@ -210,7 +210,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
 <br/>Grades:
 * Assignments: individual grade
 * Project: team grade <span class="red">66%</span>
-  * Product (ShoppingList++ / own idea)
+  * Project (CatList++ / own idea)
   * Presentation
 
 <!-- .element: class="left" -->
