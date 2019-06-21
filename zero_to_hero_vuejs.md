@@ -1718,7 +1718,7 @@ https://developers.google.com/custom-search/json-api/v1/reference/cse/list
 
 ```javascript
 fetch('./api/some.json')
-  .then( response => {
+  .then(response => {
       return response.json();
     }
   )
@@ -1744,10 +1744,10 @@ npm install axios --save
 import axios from 'axios';
 
 axios.get('/user?ID=12345')
-  .then(function (response) {
+  .then(response => {
     console.log(response);
   })
-  .catch(function (error) {
+  .catch(error => {
     console.log(error);
   });
 ```
@@ -1755,7 +1755,7 @@ axios.get('/user?ID=12345')
 
 ```javascript
 axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${this.$route.params.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
-  .then((response) => {
+  .then(response => {
       console.log(response);
   })
   .catch(error => {
