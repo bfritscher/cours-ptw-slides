@@ -707,14 +707,14 @@ Computed properties are by default getter-only, but you can also provide a sette
 computed: {
   fullName: {
     // getter
-    get: function () {
-      return this.firstName + ' ' + this.lastName
+    get() {
+      return this.firstName + ' ' + this.lastName;
     },
     // setter
-    set: function (newValue) {
-      var names = newValue.split(' ')
-      this.firstName = names[0]
-      this.lastName = names[names.length - 1]
+    set(newValue) {
+      const names = newValue.split(' ');
+      this.firstName = names[0];
+      this.lastName = names[names.length - 1];
     }
   }
 }
@@ -888,7 +888,7 @@ new Vue({
   components: {
     // <my-component> will only be available in parent's template
     'my-component': Child,
-    MyTag
+    'my-tag': MyTag // shorthand MyTag possible
   }
 })
 ```
@@ -1053,10 +1053,14 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 ```html
 <app-layout>
-  <h1 slot="header">Here might be a page title</h1>
+  <template v-slot:header>
+    <h1>Here might be a page title</h1>
+  </template>
   <p>A paragraph for the main content.</p>
   <p>And another one.</p>
-  <p slot="footer">Here's some contact info</p>
+  <template v-slot:footer>
+    <p>Here's some contact info</p>
+  </template>
 </app-layout>
 ```
 
