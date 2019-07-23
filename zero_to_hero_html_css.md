@@ -257,10 +257,7 @@ Part1 <span>Part2</span><!-- .element: style="margin-left: 40%;" -->
   </body>
 </html>
 ```
-
-![](images/html-1st-page.png)<!-- .element: class="pageborder"-->
-
-<!-- .element: class="center"-->
+<!-- .element: class="html-preview output-right output-w-40"-->
 
 
 
@@ -350,8 +347,7 @@ Ids and classes are used by css and javascript to reference specific indvidual o
   </tbody>
 </table>
 ```
-
-![](images/table.png)<!-- .element: class="top right pageborder" -->
+<!-- .element: class="html-preview output-right output-w-30"-->
 
 ```css
 body{
@@ -376,11 +372,9 @@ td{
 
 ```html
 <form>
-  <!-- two ways to associate labels -->
-  <p><label for="n">Name: </label>
+  <p><label for="n">Name: </label> <!-- two ways to associate labels -->
   <input id="n" name="name"
          type="text" placeholder="Enter your name"/></p>
-
   <p><label>Password: <input type="password" /></label></p>
 
   <p><input type="checkbox" name="on" value="1"/>on
@@ -396,12 +390,10 @@ td{
     <option value="v3">Value 3</option>
     </select></p>
 
-  <p><button>Hello</button>
-     <input type="submit" /></p>
+  <p><button>Hello</button> <input type="submit" /></p>
 </form>
 ```
-
-![](images/form.png)<!-- .element: class="top right pageborder" -->
+<!-- .element: class="html-preview output-right output-w-25"-->
 
 ```css
 body{
@@ -584,7 +576,6 @@ Exercise:
 </body>
 </html>
 ```
-<!-- .element: class="nopdf" -->
 
 ```css
 #b1.box{
@@ -607,7 +598,6 @@ div {
   color: red;
 }
 ```
-<!-- .element: class="nopdf" -->
 
 
 
