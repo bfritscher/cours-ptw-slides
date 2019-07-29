@@ -186,42 +186,6 @@ While focusing on user needs it is also important for a UX Designer to be aware 
 
 
 
-![](images/ux_stack.png)
-
-
-
-### Initial Strategy and Scope Phases
-
-Fundamental business questions (what to build)
-
-- Do users need the product you are making?
-- Do they want it enough that they will either pay for it or if it is free, spend time looking for it and learning to use it?
-- Are you missing a key feature they will need?
-- Are you spending time building features they will never use?
-
-
-
-### Structure and Skeleton Phases
-
-Critical implementation questions (how to build?)
-
-- How should the content be organised so that users can easily find it?
-- Will users find your app easy to use? Where do they get confused or lost?
-- What content is needed and how should it be written to be most engaging?
-
-
-
-### The Surface of the Product
-
-User’s first impression is critical
-
-- What should the visual tone of the product be?
-- How do users feel when they see your product? Do they trust it?
-- It the product visually appealing and does it spark joy?
-- Is the visual design usable and accessible?
-
-
-
 
 # Objectifs
 
