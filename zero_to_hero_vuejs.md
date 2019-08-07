@@ -258,6 +258,10 @@ THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
 
 
 
+# [Guide Vue.js](https://fr.vuejs.org/v2/guide/index.html)
+
+
+
 ### Vue constructor and text interpolation
 
 HTML
@@ -314,55 +318,6 @@ https://vuejs.org/v2/guide/syntax.html#Interpolations
 
 
 
-### Filters
-
-> used inside mustache interpolations and v-bind expressions
-primarily designed for text transformation
-
-```html
-<div>{{ message | reverse }}</div> <!-- !sj.euV olleH -->
-```
-
-Filters can be chained
-
-`{{ message | filterA | filterB }}`
-
-<!-- .element: class="small" -->
-
-Filters are JavaScript functions, therefore they can take arguments:
-
-`{{ message | filterA('arg2', arg3) }}`
-
-<!-- .element: class="small" -->
-
-
-
-```html
-<div id="app">
-  {{ message | reverse }}
-</div>
-
-<script src="https://unpkg.com/vue"></script>
-```
-```javascript
-new Vue({
-  el: '#app',
-  data() {
-    return {
-      message: 'Hello Vue.js!'
-    };
-  },
-  filters: {
-    reverse: function(input) {
-      return input.split('').reverse().join('');
-    }
-  }
-});
-```
-
-
-
-
 ### Some Directives
 
 | Directive         | Description |
@@ -384,13 +339,36 @@ https://vuejs.org/v2/api/#Directives
 
 ### Directive v-model data-bind input elements
 
-.number - cast input string to numbers
+```html
+<div id="app">
+  <p><label>Nom: <input v-model="name"></label></p>
+  <p>Hello {{name}}</p>
+</div>
 
-.trim - trim input
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      name: ''  // Important attribute must exist on data object!
+    };
+  }
+});
+```
+
+
+
+### Directive v-model modifiers
+
+.trim - trim input<br>
+.lazy -  sync after change event
 
 ```html
 <div id="app">
-  <p><label>Nom: <input v-model.trim="name"></label></p>
+  <p><label>Nom: <input v-model.trim.lazy="name"></label></p>
   <p>Hello {{name}}</p>
   <pre>{{name}}</pre>
 </div>
@@ -408,6 +386,44 @@ new Vue({
   },
 });
 ```
+
+https://vuejs.org/v2/guide/forms.html#trim
+
+<!-- .element: class="credits" -->
+
+
+
+### Directive v-model modifiers
+
+.number - cast input string to numbers
+
+```html
+<div id="app">
+  <p>
+    <label>Num1: <input v-model.number="num1" type="number"></label> +
+    <label>Num2: <input v-model.number="num2" type="number"></label>
+    = {{ num1 + num2 }}
+  </p>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      num1: 4,
+      num2: 2
+    };
+  },
+});
+```
+
+https://vuejs.org/v2/guide/forms.html#trim
+
+<!-- .element: class="credits" -->
 
 
 
@@ -428,6 +444,7 @@ Toggle’s the element’s display CSS property based on the truthy-ness of the 
 
 ```html
 <div id="app">
+  <p><label>Nom: <input v-model="type"></label></p>
   <div v-if="type === 'A'"> A </div>
   <div v-show="type === 'B'"> B </div>
 </div>
@@ -445,7 +462,6 @@ new Vue({
   },
 });
 ```
-
 
 
 
@@ -488,55 +504,63 @@ new Vue({
 
 
 
-
-### Directive dynamique attributes
-
-Dynamically bind one or more attributes, or a component prop to an expression.
-
 ```html
-<div v-bind:attributes=""></div>
+<div id="app">
+  <ul>
+    <li v-for="name in names">{{ name }}</li>
+  </ul>
+</div>
 
-<img v-bind:src="'/base/' + n + '.jpg'">
+<script src="https://unpkg.com/vue"></script>
 ```
 
-A short form exists
-
-```html
-<div :attributes=""></div>
-
-<img :src="'/base/' + n + '.jpg'">
-```
-
-
-
-### Directive bind multiples attributes
-
-```html
-<div :attr1="" :attr2=""></div>
-
-<div v-bind="{attr1: '', attr2: ''}"></div>
+```javascript
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      names: ['Fred','Alice', 'Bob']
+    };
+  },
+});
 ```
 
 
 
-### Directives bind dynamic css classes
+### GOTCHAS arrays
 
-```html
-<div v-bind:class="{ active: isActive }"></div>
+Arrays mutation are only tracked on the following methods
+
+```javascript
+array.push()
+array.pop()
+array.shift()
+array.unshift()
+array.splice()
+array.sort()
+array.reverse()
 ```
 
-|          |                                       |
-|----------|---------------------------------------|
-| string   | :class="'classString'"                |
-| variable | :class="classNameVariable"            |
-| array    | :class="[classVarA, 'classNameB']"    |
-| object   | :class="{className: someBooleann}"    |
-| ternary  | :class="bool ? 'active' : 'inactive'" |
-| method   | :class="classNameReturningFunction()" |
+> Setting [index] or .length will not work!
 
-https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
+Replace entire array with
+```javascript
+array.filter()
+array.concat()
+array.slice()
+```
 
-<!-- .element: class="credits" -->
+
+
+### GOTCHAS new attributes
+
+There are also methods on Vue and the vue instance to set new observed attributes onto an array or an object.
+
+```javascript
+Vue.set( example1.items, indexOfItem, newValue )
+
+vm.$set( target, key, value )
+```
 
 
 
@@ -622,11 +646,100 @@ new Vue({
     showCoordinates(evt) {
       console.log(evt.clientX, evt.clientY);
     },
-    onEnter() {},
+    onEnter() {window.alert('hello');},
     onSubmit() {}
   }
 });
 ```
+
+
+
+
+## Setup environement to play with vue.js:
+
+- create a new vue project
+- install dependencies
+- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- install [vscode vetur extension](vscode:extension/octref.vetur)
+
+
+
+- change vscode settings eslint.validate
+```
+"eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ]
+```
+
+
+
+
+### Exercice Vue.js 01
+Editer App.vue pour créer la page suivante :
+
+![](images/exo_vue_01.jpg)<!-- .element: class="w-30" -->
+
+<!-- .element: class="center box" -->
+
+- Cliquer sur « Ajouter » ajoute le montant qui se trouve dans l’input à une liste en dessous.
+- Si le montant n’est pas supérieur à 0 il faut indiquer un message d’erreur, autrement le message est caché.
+- On peut effacer un élément de la liste avec le bouton « X »
+
+<!-- .element: class="small" -->
+
+
+
+
+### Directive dynamique attributes
+
+Dynamically bind one or more attributes, or a component prop to an expression.
+
+```html
+<div v-bind:attributes=""></div>
+
+<img v-bind:src="'/base/' + n + '.jpg'">
+```
+
+A short form exists
+
+```html
+<div :attributes=""></div>
+
+<img :src="'/base/' + n + '.jpg'">
+```
+
+
+
+### Directive bind multiples attributes
+
+```html
+<div :attr1="" :attr2=""></div>
+
+<div v-bind="{attr1: '', attr2: ''}"></div>
+```
+
+
+
+### Directives bind dynamic css classes
+
+```html
+<div v-bind:class="{ active: isActive }"></div>
+```
+
+|          |                                       |
+|----------|---------------------------------------|
+| string   | :class="'classString'"                |
+| variable | :class="classNameVariable"            |
+| array    | :class="[classVarA, 'classNameB']"    |
+| object   | :class="{className: someBooleann}"    |
+| ternary  | :class="bool ? 'active' : 'inactive'" |
+| method   | :class="classNameReturningFunction()" |
+
+https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
+
+<!-- .element: class="credits" -->
 
 
 
@@ -688,39 +801,50 @@ computed: {
 
 
 
-### GOTCHAS arrays
+### Filters
 
-Arrays mutation are only tracked on the following methods
+> used inside mustache interpolations and v-bind expressions
+primarily designed for text transformation
 
-```javascript
-array.push()
-array.pop()
-array.shift()
-array.unshift()
-array.splice()
-array.sort()
-array.reverse()
+```html
+<div>{{ message | reverse }}</div> <!-- !sj.euV olleH -->
 ```
 
-> Setting [index] or .length will not work!
+Filters can be chained
 
-Replace entire array with
-```javascript
-array.filter()
-array.concat()
-array.slice()
+`{{ message | filterA | filterB }}`
+
+<!-- .element: class="small" -->
+
+Filters are JavaScript functions, therefore they can take arguments:
+
+`{{ message | filterA('arg2', arg3) }}`
+
+<!-- .element: class="small" -->
+
+
+
+```html
+<div id="app">
+  {{ message | reverse }}
+</div>
+
+<script src="https://unpkg.com/vue"></script>
 ```
-
-
-
-### GOTCHAS new attributes
-
-There are also methods on Vue and the vue instance to set new observed attributes onto an array or an object.
-
 ```javascript
-Vue.set( example1.items, indexOfItem, newValue )
-
-vm.$set( target, key, value )
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      message: 'Hello Vue.js!'
+    };
+  },
+  filters: {
+    reverse: function(input) {
+      return input.split('').reverse().join('');
+    }
+  }
+});
 ```
 
 
@@ -739,6 +863,23 @@ vm.$set( target, key, value )
 | Filter               | formats the value of an expression for display to the user               |
 | Computed             | Computed properties are cached, and only re-computed on reactive dependency changes  |
 | Methods              | Methods to be mixed into the Vue instance                                |
+
+
+
+
+### Exercice Vue.js 02
+Editer App.vue pour créer la page suivante (avec des filtres et des computed):
+
+![](images/exo_vue_02.jpg)<!-- .element: class="w-30" -->
+
+<!-- .element: class="center box" -->
+
+- Récent ou Top filtre la liste selon les dernier ajouté d'abord ou de valeur décroissante.
+- L'affichage des montant est tranformé pour toujours afficher 2 chiffres après la virgule et CHF.
+- Ajouter une image du niveau: level 1 jusqu'à 10 level 2 jusqu'à 20 puis 3.
+```https://gistcdn.githack.com/bfritscher/6ff8e74b80d44616944843fe83cc5d19/raw/2d4e25748fbbe681681932444a7ef339c90d4dde/chevron_${level}.svg```
+
+<!-- .element: class="small" -->
 
 
 
@@ -895,6 +1036,79 @@ Warning: changing an attribute of a bound object mutates it's state outside the 
 
 
 
+### Components Emitting Events
+
+Define
+```javascript
+Vue.component('myCheckbox', {
+  methodes: {
+    change() {
+      this.$emit('hello', 'world');
+    }
+  },
+  template: `<label>{{name}} <span @click="change">✓</span></label>`
+});
+```
+
+Use
+
+```html
+<my-checkbox @hello="doSomethingWithWorld"></my-checkbox>
+```
+
+
+
+### Complet Component Example
+
+```html
+<div id="app">
+  <my-countdown v-bind:start="count" v-on:zero="alarm()"></my-countdown>
+</div>
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+// Vue component
+const MyCountdown = {
+  template: `<div v-on:click="countDown()">{{ count }}</div>`,
+  props: ['start'],
+  data() {
+    return {
+      count: this.start
+    };
+  },
+  methods: {
+    countDown() {
+      if (this.count <= 0) return;
+      this.count = this.count -1;
+      if(this.count === 0) {
+        this.$emit('zero');
+      }
+    }
+  }
+};
+// Main Vue instance
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      count: 10
+    };
+  },
+  methods: {
+    alarm(){
+      window.alert('Done');
+    }
+  },
+  components: { // local component reference
+    'my-countdown': MyCountdown
+  }
+});
+```
+
+
+
+
 ### Components Properties Validation in Vue.js
 
 Define
@@ -946,29 +1160,6 @@ To listen for a native event on the root element of component, .native has to be
 <!-- .element class="small" -->
  By default, v-model on a component uses **value** as the prop and **input** as the event
 <!-- .element class="small" -->
-
-
-
-
-### Components Emitting Events
-
-Define
-```javascript
-Vue.component('myCheckbox', {
-  methodes: {
-    change() {
-      this.$emit('hello', 'world');
-    }
-  },
-  template: `<label>{{name}} <span @click="change">✓</span></label>`
-});
-```
-
-Use
-
-```html
-<my-checkbox @hello="doSomethingWithWorld"></my-checkbox>
-```
 
 
 
@@ -1031,6 +1222,74 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 
 
+### Language Sensitive String Comparison
+
+The Intl.Collator object is a constructor for collators, objects that enable language sensitive string comparison. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Collator
+
+```javascript
+const copy = this.list.slice(0);
+copy.sort(new Intl.Collator().compare);
+```
+
+
+
+
+### Transitions
+
+```html
+<transition name="fade">
+  <p v-if="show">hello</p>
+</transition>
+
+<transition-group name="flip-list" tag="ul">
+  <!-- multiple elements / move animations -->
+</transition-group>
+
+```
+
+```css
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+.flip-list-move {
+  transition: transform 1s;
+}
+
+```
+https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components
+https://vuejs.org/v2/guide/transitions.html#List-Transitions
+
+
+
+
+### Exercice Vue.js 03
+Transformer (Refactor) l'application en composant selon:
+
+![](images/exo_vue_03.jpg)<!-- .element: class="w-40" -->
+
+<!-- .element: class="center box" -->
+
+- Créer un filtre global chf dans main.js
+- Ajouter, transformer le code, pour que l'applicaiton fonctionne encore de la même façon.
+
+<!-- .element: class="small" -->
+
+
+
+### Exercice Vue.js 04
+
+Ajouter des effets de transitions au message et à la liste:
+
+![](images/exo_vue_04.gif)<!-- .element: class="w-40" -->
+
+<!-- .element: class="center box" -->
+
+
+
+
 # Multiples Views and Router
 
 A SPA has to support multiple virtual views to simulate pages.
@@ -1078,6 +1337,24 @@ this.$router.push({ name: 'user', params: { userId: 123 }})
 
 <!-- .element: class="float-right w-50" -->
 
+
+
+### $route.params vs component props
+
+Using $route in your component creates a tight coupling with the route (views not reusable components).
+
+$route.params are visible in the URL and string only!
+
+Props are parameters of a component to pass down variables of any type.
+
+It is possible to [Pass Props to Route Components](https://router.vuejs.org/guide/essentials/passing-props.html) to decouple them.
+
+<!-- .element: class="smaller" -->
+
+
+
+### Exo route
+list with names
 
 
 
@@ -1131,36 +1408,6 @@ beforeRouteUpdate (to, from, next) {
 
 
 
-### Transitions
-
-```html
-<transition name="fade">
-  <p v-if="show">hello</p>
-</transition>
-
-<transition-group name="flip-list" tag="ul">
-  <!-- multiple elements / move animations -->
-</transition-group>
-
-```
-
-```css
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0
-}
-
-.flip-list-move {
-  transition: transform 1s;
-}
-
-```
-
-
-
-
 
 ### Vue.js more
 
@@ -1186,24 +1433,6 @@ beforeRouteUpdate (to, from, next) {
 
 
 
-
-## Setup environement:
-
-- init a new vue project
-- install dependencies
-- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-- install vscode **vetur** extension
-
-
-
-- change vscode settings eslint.validate
-```
-"eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "vue"
-    ]
-```
 
 
 
@@ -1672,16 +1901,9 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 
 ## API and Remote Data
 
-![](images/postman-logo.png)
-
-[POSTMAN](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop) a tool to test apis
-
-https://www.getpostman.com/docs/introduction
-
-
 ![](images/insomnia.png)
-https://insomnia.rest/download/#windows
 
+[Insomnia](https://insomnia.rest/download/#windows) a tool to test apis
 
 
 
@@ -1732,6 +1954,7 @@ axios.get('/user?ID=12345')
     console.log(error);
   });
 ```
+
 
 
 ```javascript
