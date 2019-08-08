@@ -676,7 +676,7 @@ new Vue({
 
 
 
-### Exercice Vue.js 01
+### Exercice Vue.js: model, if, for
 Editer App.vue pour créer la page suivante :
 
 ![](images/exo_vue_01.jpg)<!-- .element: class="w-30" -->
@@ -867,7 +867,7 @@ new Vue({
 
 
 
-### Exercice Vue.js 02
+### Exercice Vue.js: filter and computed
 Editer App.vue pour créer la page suivante (avec des filtres et des computed):
 
 ![](images/exo_vue_02.jpg)<!-- .element: class="w-30" -->
@@ -1265,7 +1265,7 @@ https://vuejs.org/v2/guide/transitions.html#List-Transitions
 
 
 
-### Exercice Vue.js 03
+### Exercice Vue.js: components
 Transformer (Refactor) l'application en composant selon:
 
 ![](images/exo_vue_03.jpg)<!-- .element: class="w-40" -->
@@ -1279,160 +1279,13 @@ Transformer (Refactor) l'application en composant selon:
 
 
 
-### Exercice Vue.js 04
+### Exercice Vue.js: transitions
 
 Ajouter des effets de transitions au message et à la liste:
 
 ![](images/exo_vue_04.gif)<!-- .element: class="w-40" -->
 
 <!-- .element: class="center box" -->
-
-
-
-
-# Multiples Views and Router
-
-A SPA has to support multiple virtual views to simulate pages.
-
-This can be achieved with a router, routes and components.
-
-
-
-```javascript
-const router = new VueRouter({
-  routes: [
-    // dynamic segments start with a colon
-    { path: '/user/:id', name: 'user', component: User }
-  ]
-})
-```
-
-```html
- <!-- will host the component corresponding to the route -->
-<router-view></router-view>
-
-<!-- Vue instance has a special property with route params -->
-<div>{{ $route.params.id }}</div>
-
-<!-- create links by lookup of the route -->
-<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
-```
-
-```javascript
-// changing route in code.
-this.$router.push({ name: 'user', params: { userId: 123 }})
-```
-
-
-
-### Example Flow of Components and Router
-
-
-![](images/architecture_vue_general.png)
-
-<!-- .element: class="float-left w-50" -->
-
-
-![](images/architecture_vue.png)
-
-<!-- .element: class="float-right w-50" -->
-
-
-
-### $route.params vs component props
-
-Using $route in your component creates a tight coupling with the route (views not reusable components).
-
-$route.params are visible in the URL and string only!
-
-Props are parameters of a component to pass down variables of any type.
-
-It is possible to [Pass Props to Route Components](https://router.vuejs.org/guide/essentials/passing-props.html) to decouple them.
-
-<!-- .element: class="smaller" -->
-
-
-
-### Exo route
-list with names
-
-
-
-# Vue.js Advanced Stuff
-
-
-
-### Access DOM through Refs
-
-**ref** is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
-
-```html
-<div id="app">
-  <div ref="someID"></div>
-</div>
-
-<script src="https://unpkg.com/vue"></script>
-```
-
-```javascript
-new Vue({
-  el: '#app',
-  mounted() {
-    this.$refs.someID.innerText = 'DOM Direct Manipulation is BAD!';
-  }
-});
-```
-
-
-
-### Watches
-
-![](images/data.png)
-
-
-
-### Lifecycle Hooks
-
-https://vuejs.org/v2/guide/instance.html
-
-created, mounted, ...
-
-router also has some hooks
-
-```javascript
-beforeRouteUpdate (to, from, next) {
-  // react to route changes...
-  // don't forget to call next()
-}
-```
-
-
-
-
-### Vue.js more
-
-- Transitioning State
-- Mixins
-- Custom Directives
-- Vue.nextTick
-- Plugins
-- Server-Side Rendering
-- Webpack Code Splitting
-- Route lazy loading
-- State Management: VueX
-
-
-
-
-### Resources
-
-- https://vuejs.org/v2/guide/
-- https://vuejs.org/v2/api/
-- https://www.grafikart.fr/formations/vuejs
-- https://speakerdeck.com/bhawkes/introduction-to-vue-js
-
-
-
 
 
 
@@ -1504,7 +1357,193 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 
 
-### Exercice: localStorage and routes
+### Lifecycle Hooks
+
+https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
+
+created, mounted, beforeDestroy, ...
+
+![](images/lifecycle.png)
+
+<!-- .element: class="w-30 right top" -->
+
+
+
+
+### Exercice Vue.js: localStorage
+
+Persister les données localement
+
+- Sauvegarder dans le localstorage la liste à chaque fois que celle-ci change.
+- Au chargement de la page, s'il y a une liste sauvegardé dans le localstorage, alors récupérer cette valeur.
+
+
+
+
+# Multiples Views and Router
+
+A SPA has to support multiple virtual views to simulate pages.
+
+This can be achieved with a router, routes and components.
+
+
+
+```javascript
+const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: '/user/:id', name: 'user', component: User }
+  ]
+});
+```
+
+```html
+<!-- will host the component corresponding to the route -->
+<router-view></router-view>
+
+<!-- Vue instance has a special property with route params -->
+<div>{{ $route.params.id }}</div>
+
+<!-- create links by lookup of the route -->
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+```
+
+```javascript
+// changing route in code.
+this.$router.push({ name: 'user', params: { userId: 123 }})
+```
+
+
+
+### Example Flow of Components and Router
+
+
+![](images/architecture_vue_general.png)
+
+<!-- .element: class="float-left w-50" -->
+
+
+![](images/architecture_vue.png)
+
+<!-- .element: class="float-right w-50" -->
+
+
+
+### $route.params vs component props
+
+Using $route in your component creates a tight coupling with the route (views not reusable components).
+
+$route.params are visible in the URL and string only!
+
+Props are parameters of a component to pass down variables of any type.
+
+It is possible to [Pass Props to Route Components](https://router.vuejs.org/guide/essentials/passing-props.html) to decouple them.
+
+<!-- .element: class="smaller" -->
+
+
+
+### Lifecycle Hooks
+
+Router also has some hooks
+
+https://router.vuejs.org/guide/essentials/dynamic-matching.html#reacting-to-params-changes
+
+https://router.vuejs.org/guide/advanced/navigation-guards.html#global-before-guards
+
+
+```javascript
+beforeRouteUpdate (to, from, next) {
+  // react to route changes...
+  // don't forget to call next()
+}
+```
+
+
+
+
+### Exercice Vue.js: router
+
+Créer un nouveau projet vue avec router sans history mode.
+
+```Use history mode for router? n```
+
+Ajouter deux pages supplémentaires pour créer ceci:
+
+![](images/exo_vue_06.png)<!-- .element: class="w-50" -->
+
+<!-- .element: class="center box" -->
+
+
+
+### Exercice Vue.js: router
+
+- Un lien principal Search,
+- Une page Search qui génère dynamiquement l'attribut `to` d'un `<router-link>` selon le texte d'un input.
+- Une page Profile qui affiche le nom du paramètre de l'URL.
+
+![](images/exo_vue_06.png)<!-- .element: class="w-50" -->
+
+<!-- .element: class="center box" -->
+
+
+
+
+# Vue.js Advanced Stuff
+
+
+
+### Access DOM through Refs
+
+**ref** is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
+
+```html
+<div id="app">
+  <div ref="someID"></div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+
+```javascript
+new Vue({
+  el: '#app',
+  mounted() {
+    this.$refs.someID.innerText = 'DOM Direct Manipulation is BAD!';
+  }
+});
+```
+
+
+
+### Watches
+
+![](images/data.png)
+
+
+
+
+### Vue.js more
+
+- Transitioning State
+- Mixins
+- Custom Directives
+- Vue.nextTick
+- Plugins
+- Server-Side Rendering
+- Webpack Code Splitting
+- Route lazy loading
+- State Management: VueX
+
+
+
+
+### Resources
+
+- https://vuejs.org/v2/guide/
+- https://vuejs.org/v2/api/
+- https://www.grafikart.fr/formations/vuejs
+- https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
 
 
@@ -1901,19 +1940,21 @@ https://developers.google.com/web/fundamentals/getting-started/primers/promises
 
 ## API and Remote Data
 
-![](images/insomnia.png)
+Example api: https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc
 
-[Insomnia](https://insomnia.rest/download/#windows) a tool to test apis
+Chrome DevTools allows to view Network Traffic
+
+![](images/api_devtools.png)
 
 
 
-### Google Cusom Search API
+### Testing API advanced requests
 
-https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+Most API require additional header in addition of other request than GET.
 
-```javascript
-`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
-```
+![](images/insomnia.png)<!-- .element: class="w-30" --> [Insomnia](https://insomnia.rest/download/#windows) a tool to test apis
+
+![](images/api_insomnia.png)
 
 
 
@@ -1946,9 +1987,14 @@ npm install axios --save
 ```javascript
 import axios from 'axios';
 
-axios.get('/user?ID=12345')
+axios.get('https://api.thecatapi.com/v1/images/search', {
+          headers: {
+            'x-api-key': 'DEMO-API-KEY'
+          }
+        })
   .then(response => {
-    console.log(response);
+    console.log(response.headers);
+    console.log(response.data);
   })
   .catch(error => {
     console.log(error);
@@ -1957,24 +2003,14 @@ axios.get('/user?ID=12345')
 
 
 
-```javascript
-axios.get(`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${this.$route.params.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`)
-  .then(response => {
-      console.log(response);
-  })
-  .catch(error => {
-      console.log(error);
-  });
-```
-
-
-
 ### Load Data in Vue.js
 
 ```javascript
+import axios from 'axios';
+
 new Vue({
   el: '#app',
-  data: function () {
+  data() {
     return {
       dataLoaded: false,
       apiReply: {}
@@ -1982,7 +2018,8 @@ new Vue({
   },
   methods: {
     loadData: function() {
-      axios.get('/api').then(response => {
+      axios.get('https://api.thecatapi.com/v1/images/search')
+        .then(response => {
         this.apiReply = response.data;
         this.dataLoaded = true;
       });
@@ -1992,6 +2029,50 @@ new Vue({
     this.loadData();
   }
 });
+```
+[![Edit Vue Axios](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue-template-ex783?fontsize=14&module=%2Fsrc%2FApp.vue)
+
+
+
+
+### Exercice Vue.js: axios
+Transformer le projet précédent pour utiliser le site thecatapi.com:
+
+![](images/exo_vue_07.png)<!-- .element: class="w-80" -->
+
+<!-- .element: class="center box" -->
+
+
+
+### Exercice Vue.js: axios
+
+- Entrer du texte dans la boîte de recherche affiche une liste de Breeds
+- Cliquer sur un élément de la liste amène à une page détaille.
+- La page détaille utilise le code id de la Breed récupérer en tant que paramètre d'URL pour rechercher 6 photos de cette race.
+
+
+
+
+## API with real data
+
+- https://countapi.xyz/
+- https://docs.thedogapi.com/
+- https://docs.thecatapi.com/
+- https://transport.opendata.ch/docs.html
+- http://api.themoviedb.org/3/ //need proxy for api key or cors
+- https://www.themealdb.com/api.php
+- https://www.thecocktaildb.com/api.php
+
+<!-- .element: class="smaller" -->
+
+
+
+### Google Cusom Search API
+
+https://developers.google.com/custom-search/json-api/v1/reference/cse/list
+
+```javascript
+`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
 ```
 
 
@@ -2046,20 +2127,6 @@ https://developers.google.com/web/fundamentals/getting-started/primers/async-fun
 
 <!-- .element: class="credits" -->
 
-
-
-
-## API with real data
-
-- https://countapi.xyz/
-- https://docs.thedogapi.com/
-- https://docs.thecatapi.com/
-- https://transport.opendata.ch/docs.html
-- http://api.themoviedb.org/3/ //need proxy for api key or cors
-- https://www.themealdb.com/api.php
-- https://www.thecocktaildb.com/api.php
-
-<!-- .element: class="smaller" -->
 
 
 
