@@ -1107,12 +1107,12 @@ The site can be accessed at: https://heg-web.github.io/moncv-xyz/
 Create a `vue.config.js` file to handle subfolder deployment.
 ```sh
 module.exports = {
-  baseUrl: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/"
 };
 ```
 Rebuild and deploy site to test the fix.
 
-https://cli.vuejs.org/config/#baseurl
+https://cli.vuejs.org/config/#publicpath
 
 <!-- .element: class="small" -->
 
