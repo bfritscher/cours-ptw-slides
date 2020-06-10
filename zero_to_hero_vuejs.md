@@ -2304,6 +2304,13 @@ https://firebase.google.com/docs/database/security/quickstart
 
 
 
+### Firebase Login:
+
+https://gist.github.com/bfritscher/dea68fd13dbd172647eb60ebe5a2c3e5
+
+
+
+
 ### Serverless: Firebase Cloud Functions
 
 https://github.com/firebase/functions-samples/tree/master/exif-images
