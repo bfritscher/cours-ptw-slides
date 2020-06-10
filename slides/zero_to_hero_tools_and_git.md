@@ -530,10 +530,9 @@ A preprocessor is a program that processes its input data to produce output, tha
 
 
 
-```
+### Example of Pre-Processors
 
-```
-<!-- .element: class="nopdf jsbin-embed" data-href="//jsbin.com/mumavu/9/edit?html,css,js" data-height="600px" -->
+[https://jsbin.com/mumavu/9/edit?html,css,js](https://jsbin.com/mumavu/9/edit?html,css,js)
 
 
 
