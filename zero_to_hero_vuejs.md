@@ -2236,7 +2236,7 @@ Vue.use(rtdbPlugin);
 // Initialize Firebase
 // Copy from google firebase console (Authentication>Web Setup)
 const config = {
-  apiKey: "AIzaSyAauSkomxxlcgMqlYABWkzuEvHkxaT0xHc",
+  apiKey: "AIzaSyDZt98CIUYUBPeW32wvtA5hWOFlSLp03C0",
   authDomain: "ptw.firebaseapp.com",
   databaseURL: "https://ptw.firebaseio.com",
   projectId: "firebase-ptw",
