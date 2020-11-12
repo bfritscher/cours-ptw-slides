@@ -676,6 +676,64 @@ new Vue({
 
 
 
+## Setup Github and gh-pages via Github Actions
+
+- configure vue-cli to support /labo-xyz/ in production
+- create project on github https://classroom.github.com/a/QiV2-Qn8
+- add remote to local git
+- configure github Actions to build and deploy to gh-pages (see below)
+- commit and push
+
+
+
+### Github Action Config
+
+- create folder .github\workflows
+- add this file build_deploy.yml
+
+```yml
+name: Build and Deploy to GH-Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.0
+        with:
+          node-version: '12.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      #- run: npm test
+      - run: npm run build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+```
+
+
+
+
 ### Exercice Vue.js: model, if, for
 Editer App.vue pour créer la page suivante :
 
@@ -801,7 +859,7 @@ computed: {
 
 
 
-### Filters
+### Filters (deprecated in Vue 3)
 
 > used inside mustache interpolations and v-bind expressions
 primarily designed for text transformation
@@ -840,9 +898,41 @@ new Vue({
     };
   },
   filters: {
-    reverse: function(input) {
+    reverse(input) {
       return input.split('').reverse().join('');
     }
+  }
+});
+```
+
+
+
+```html
+<div id="app">
+  <p>computed alternative: {{ reverseMessage }}</p>
+  <p>method alternative {{ reverse(message) }}</p>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+```
+```javascript
+function reverse(input) {
+  return input.split('').reverse().join('');
+}
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      message: 'Hello Vue.js!'
+    };
+  },
+  computed: {
+    reverseMessage() {
+      return reverse(this.message);
+    }
+  },
+  methods: {
+    reverse
   }
 });
 ```
@@ -867,19 +957,19 @@ new Vue({
 
 
 
-### Exercice Vue.js: filter and computed
-Editer App.vue pour créer la page suivante (avec des filtres et des computed):
+### Exercice Vue.js: computed and methods
+Editer App.vue pour créer la page suivante (avec des computed et des methods):
 
 ![](images/exo_vue_02.jpg)<!-- .element: class="w-30" -->
 
 <!-- .element: class="center box" -->
 
 - Récent ou Top filtre la liste selon les dernier ajouté d'abord ou de valeur décroissante.
-- L'affichage des montant est tranformé pour toujours afficher 2 chiffres après la virgule et CHF.
+- L'affichage des montants est tranformé pour toujours afficher 2 chiffres après la virgule et CHF.
 - Ajouter une image du niveau: level 1 jusqu'à 10 level 2 jusqu'à 20 puis 3.
 ```https://gistcdn.githack.com/bfritscher/6ff8e74b80d44616944843fe83cc5d19/raw/2d4e25748fbbe681681932444a7ef339c90d4dde/chevron_${level}.svg```
 
-<!-- .element: class="small" -->
+<!-- .element: class="smaller" -->
 
 
 
