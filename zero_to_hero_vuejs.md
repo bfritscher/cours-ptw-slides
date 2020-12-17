@@ -2315,7 +2315,7 @@ https://github.com/firebase/FirebaseUI-Web
 ```javascript
 // plugins/firebase.js
 import Vue from "vue";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 // import "firebase/storage";
