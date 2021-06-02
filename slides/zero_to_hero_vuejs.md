@@ -223,26 +223,51 @@ While focusing on user needs it is also important for a UX Designer to be aware 
   </div>
 </div>
 
-![](images/google_trends.png)
-
-Note:
 - address many of the challenges encountered in developing SPA
 - large acceptation
 - decouple DOM manipulation from application logic
 - decouple the client side of an application from the server side
 - declarative programming for user interface
 - imperative programming for application business logic
-- best of anagularjs and react
+
+<!-- .element: class="small"-->
 
 
 
-![](images/angular_jsf.png)
+![](images/programming_languages.png)
 
-THE DZONE GUIDE TO THE JAVA ECOSYSTEM, 2015
+<!-- .element: class="w-80"-->
+
+https://www.jetbrains.com/lp/devecosystem-2020/
+
+<!-- .element: class="credits"-->
 
 
 
-![](images/Strip-Prendre-le-train-en-marche-650-final1.jpg)<!-- .element: class="w-50"-->
+![](images/java_web_frameworks.png)
+
+https://www.jetbrains.com/lp/devecosystem-2020/java/
+
+<!-- .element: class="credits"-->
+
+
+
+![](images/2021-star-history.png)
+
+<!-- .element: class="w-80"-->
+
+https://www.codeinwp.com/blog/angular-vs-vue-vs-react/
+
+<!-- .element: class="credits"-->
+
+
+
+https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/
+
+<!-- .element: class="credits"-->
+
+![](images/inforgrafic-react-angular-vue.webp)
+
 
 
 
@@ -679,7 +704,7 @@ new Vue({
 ## Setup Github and gh-pages via Github Actions
 
 - configure vue-cli to support /labo-xyz/ in production
-- create project on github https://classroom.github.com/a/QiV2-Qn8
+- create project on github https://classroom.github.com/a/bZZSgIYq
 - add remote to local git
 - configure github Actions to build and deploy to gh-pages (see below)
 - commit and push
@@ -708,9 +733,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2.1.0
+        uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '14'
 
       - name: Cache dependencies
         uses: actions/cache@v2
