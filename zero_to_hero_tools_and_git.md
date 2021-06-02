@@ -935,6 +935,20 @@ https://www.youtube.com/watch?v=8YjSty6bfog
 
 
 
+### Conventional Commits
+
+https://www.conventionalcommits.org/fr/v1.0.0/
+
+* Automatically generating CHANGELOGs.
+* Automatically determining a semantic version bump (based on the types of commits landed).
+* Communicating the nature of changes to teammates, the public, and other stakeholders.
+* Triggering build and publish processes.
+* Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
+
+https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md
+
+
+
 
 # Markdown
 ## From text to HTML
