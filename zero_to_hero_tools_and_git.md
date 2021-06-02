@@ -491,7 +491,7 @@ In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](ht
 
 
 
-![](images/web_dev_in_2020_intro.png)<!-- .element: class="w-100" -->
+![](images/web_dev_in_2021_intro.png)<!-- .element: class="w-100" -->
 
 https://github.com/kamranahmedse/developer-roadmap
 
@@ -499,7 +499,7 @@ https://github.com/kamranahmedse/developer-roadmap
 
 
 
-![](images/web_dev_in_2020_frontend.png)<!-- .element: class="w-80" -->
+![](images/web_dev_in_2021_frontend.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
