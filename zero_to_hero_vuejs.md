@@ -679,7 +679,7 @@ new Vue({
 ## Setup Github and gh-pages via Github Actions
 
 - configure vue-cli to support /labo-xyz/ in production
-- create project on github https://classroom.github.com/a/QiV2-Qn8
+- create project on github https://classroom.github.com/a/bZZSgIYq
 - add remote to local git
 - configure github Actions to build and deploy to gh-pages (see below)
 - commit and push
@@ -708,9 +708,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2.1.0
+        uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '14'
 
       - name: Cache dependencies
         uses: actions/cache@v2

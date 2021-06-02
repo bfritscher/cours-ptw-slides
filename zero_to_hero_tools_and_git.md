@@ -1048,6 +1048,7 @@ Create a [github.com](https://github.com) account and install [git-scm.com](http
 
 ### Step 1: Git Master
 
+- Create github repository [moncv-xyz](https://classroom.github.com/a/ZvwkvhyX)
 - Commit your code to a git repository.
 - Commit & push your code to Github.
 - Change something and create a new commit.
@@ -1084,39 +1085,71 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 
 
-### Deploying dist to gh-pages
+## Setup Github and gh-pages via Github Actions
 
-Install a plugin which creates a commit and pushes to the right branch.
+- configure vue-cli to support /moncv-xyz/ in production
+- configure github Actions to build and deploy to gh-pages (see below)
+- commit and push
 
-```sh
-$ npm install push-dir --save-dev
-```
 
-#### Add new deploy task to npm package.json
 
-```javascript
-{
-...,
-  "scripts": {
-    ...,
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
-  },
-...
-}
+### Github Action Config
+
+- create folder .github\workflows
+- add this file build_deploy.yml
+
+```yml
+name: Build and Deploy to GH-Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      #- run: npm test
+      - run: npm run build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
 ```
 
 
 
 ### Try to deploy
 
-After a successful ```npm run build``` commit all changes and deploy:
+After a successful ```npm run build``` commit all changes and push:
 ```sh
 git add . --all
 git commit
-npm run deploy
+git push
 ```
 
-The site can be accessed at: https://heg-web.github.io/moncv-xyz/
+The site can be accessed at: https://heg-web.github.io/moncv-xyz/ when action workflow is finished.
 
 <!-- .element: class="small" -->
 
