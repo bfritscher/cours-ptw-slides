@@ -889,6 +889,7 @@ https://forms.office.com/Pages/ResponsePage.aspx?id=JPdyo7LAoE6r-w64xvhOQJIsLlkU
 <!-- .element: class="credits" -->
 
 
+
 ### Quiz git
 
 - What is the main branch called in Git?
@@ -1047,7 +1048,7 @@ Can preview markdown in realtime.
 
 <!-- .element: class="w-60" -->
 
-Warning: markdown on github is a speical variant!
+Warning: markdown on github is a special variant!
 
 <!-- .element: class="red" -->
 
