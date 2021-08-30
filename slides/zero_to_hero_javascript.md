@@ -460,7 +460,7 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 
 ### Assignment AlgoJS
 
-1. Generate a github repository for you by  [clicking here](https://classroom.github.com/a/AeVEXmBP)
+1. Generate a github repository for you by  [clicking here](https://classroom.github.com/a/_3sCGKng)
 2. Clone the project in VS Code
 3. `npm install` dependencies
 4. Install Mocha Sidebar [![Version](https://vsmarketplacebadge.apphb.com/version/maty.vscode-mocha-sidebar.svg)](https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar) for VSCode

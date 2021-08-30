@@ -1069,7 +1069,7 @@ Create a [github.com](https://github.com) account and install [git-scm.com](http
 
 ### Step 1: Git Master
 
-- Create github repository [moncv-xyz](https://classroom.github.com/a/ZvwkvhyX)
+- Create github repository [moncv-xyz](https://classroom.github.com/a/t120H1t3)
 - Commit your code to a git repository.
 - Commit & push your code to Github.
 - Change something and create a new commit.
