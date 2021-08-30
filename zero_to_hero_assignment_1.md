@@ -75,7 +75,7 @@ Tasks:
 
 Déployer votre siteweb en mode gh-pages (branch) dans le repository heg-web que vous créer avec le lien suivant:
 
-[Github moncv assignment](https://classroom.github.com/a/ZvwkvhyX)
+[Github moncv assignment](https://classroom.github.com/a/t120H1t3)
 
 ![](images/css.gif)
 

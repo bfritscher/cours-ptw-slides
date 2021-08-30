@@ -704,7 +704,7 @@ new Vue({
 ## Setup Github and gh-pages via Github Actions
 
 - configure vue-cli to support /labo-xyz/ in production
-- create project on github https://classroom.github.com/a/bZZSgIYq
+- create project on github https://classroom.github.com/a/HQfmAarx
 - add remote to local git
 - configure github Actions to build and deploy to gh-pages (see below)
 - commit and push
