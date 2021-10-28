@@ -851,7 +851,7 @@ npm install chart.js --save
 ```
 
 ```javascript
-import Chart from 'chart.js';
+import Chart from 'chart.js/auto';
 ```
 
 ![](images/chartjs.jpg)
