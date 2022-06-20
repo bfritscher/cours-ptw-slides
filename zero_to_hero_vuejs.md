@@ -2145,7 +2145,7 @@ new Vue({
   }
 });
 ```
-[![Edit Vue Axios](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue-template-ex783?fontsize=14&module=%2Fsrc%2FApp.vue)
+[![Edit Vue Axios](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/demo-vue-axios-piguss)
 
 
 
