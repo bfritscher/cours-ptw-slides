@@ -304,7 +304,7 @@ Javascript
 
 
 <script
-src="https://unpkg.com/vue">
+src="https://unpkg.com/vue@2">
 </script>
 ```
 <!-- .element: class="w-40 float-left" -->
@@ -370,7 +370,7 @@ https://vuejs.org/v2/api/#Directives
   <p>Hello {{name}}</p>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -398,7 +398,7 @@ new Vue({
   <pre>{{name}}</pre>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -431,7 +431,7 @@ https://vuejs.org/v2/guide/forms.html#trim
   </p>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -474,7 +474,7 @@ Toggle’s the element’s display CSS property based on the truthy-ness of the 
   <div v-show="type === 'B'"> B </div>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -536,7 +536,7 @@ new Vue({
   </ul>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -604,7 +604,7 @@ vm.$set( target, key, value )
   <button v-on:click="addOne">Click Me!</button> {{count}}
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -656,7 +656,7 @@ For common event manipulation there are helpers
   <input @keyup.enter="onEnter">
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -839,7 +839,7 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
   <button @click="count+=1">render</button>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -912,7 +912,7 @@ Filters are JavaScript functions, therefore they can take arguments:
   {{ message | reverse }}
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 ```javascript
 new Vue({
@@ -938,7 +938,7 @@ new Vue({
   <p>method alternative {{ reverse(message) }}</p>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 ```javascript
 function reverse(input) {
@@ -1052,7 +1052,7 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
   <my-tag></my-tag>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -1179,7 +1179,7 @@ Use
 <div id="app">
   <my-countdown v-bind:start="count" v-on:zero="alarm()"></my-countdown>
 </div>
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
@@ -1617,7 +1617,7 @@ Ajouter deux pages supplémentaires pour créer ceci:
   <div ref="someID"></div>
 </div>
 
-<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue@2"></script>
 ```
 
 ```javascript
